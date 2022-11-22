@@ -25,3 +25,19 @@ To access the second location, go to location of the array and then move over on
 Arrays are considered to be random access data structures because any location in the array can be accessed in constant time by adding the offset to the first location. This is possible because of the sequential layout.
 
 In almost all cases, everything we store in a single array is of the same type: all numbers or all strings or potentially something else
+
+## Built In Array Methods Time Complexity
+
+### Adding to the end of the array
+
+We can use the built-in JavaScript method `.push(elementToBeAddedToEndOfArray)` which will add a new element at the end of the array. This operation is constant time O(1). We're simply updating the last element in the array.
+
+### Adding to the begining of the array
+
+We can use the built-in JavaScript method `.unshift(elementToBeAddedToBeginningOfArray)` which will add a new element at the front of the array. This operation is linear time O(N). 
+
+Every element in the array will need to be shifted over by 1 index and as the size of the array gets larger it takes longer for the computer to complete this operation.
+
+As an example if we have the array `[2, 3]` and we want to add `1` to the beginning the computer will create a new element at the end `[2, 3, undefined]` then it will shift the element `3` over so `[2, 3, 3]` and then the `2` so `[2, 2, 3]` and then lastly it will replace the first index with `1` returning `[1, 2, 3]`. 
+
+This small example is only for an array with 2 elements but if the array had 100, 1,000, 10,000, 100,000 or more elements it would take longer to process.
