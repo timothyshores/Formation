@@ -7,12 +7,24 @@
 // print(reverse([1, 2, 3, 4, 5]) == [5, 4, 3, 2, 1]);
 
 const reverse = (array) => {
-    
+	// If array is empty or has one element return the array
+	if (array.length < 2) return array;
+
+	let start = 0;
+	let end = array.length - 1;
+
+	while (start < end) {
+		[array[start], array[end]] = [array[end], array[start]];
+		start++;
+		end--;
+	}
+
+	return array;
 };
 
-reverse([]) == [];
-reverse([5]) == [5];
-reverse([5, 10]) == [10, 5];
-reverse([5, 10, 15]) == [15, 10, 5];
-reverse([5, 10, 15, 20]) == [20, 15, 10, 5];
-reverse([1, 2, 3, 4, 5]) == [5, 4, 3, 2, 1];
+console.log(reverse([])); //
+console.log(reverse([5])); // [5]
+console.log(reverse([5, 10])); // [10, 5]
+console.log(reverse([5, 10, 15])); // [15, 10, 5]
+console.log(reverse([5, 10, 15, 20])); // [20, 15, 10, 5]
+console.log(reverse([1, 2, 3, 4, 5])); // [5, 4, 3, 2, 1]
