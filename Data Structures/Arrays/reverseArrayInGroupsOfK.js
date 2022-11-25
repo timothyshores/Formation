@@ -19,4 +19,29 @@
 // Input: (arr = [1, 2, 3, 4, 5, 6, 7, 8]), (k = 10);
 // Output: [8, 7, 6, 5, 4, 3, 2, 1];
 
-const reverse = (arr, k) => {};
+const reverse = (arr, k) => {
+	let lowerPointer, upperPointer, upperPointerHasValidIndex;
+
+	// Loop Math.ceiling(arr.length/k) number of times
+	for (let i = 0; i < arr.length; i += k) {
+		lowerPointer = i;
+		upperPointerHasValidIndex = lowerPointer + k - 1 < arr.length;
+		upperPointer = upperPointerHasValidIndex
+			? lowerPointer + k - 1
+			: arr.length - 1;
+
+		while (lowerPointer < upperPointer) {
+			// Swap elements in subarray
+			[arr[lowerPointer], arr[upperPointer]] = [
+				arr[upperPointer],
+				arr[lowerPointer],
+			];
+
+			// Increment lowerPointer and decrement upper pointer
+			lowerPointer++;
+			upperPointer--;
+		}
+	}
+
+	return arr;
+};
