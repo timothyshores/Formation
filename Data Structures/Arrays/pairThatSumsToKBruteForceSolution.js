@@ -1,7 +1,6 @@
 // Write a function that determines if an array contains a pair that adds up to a value, k
 // The array is sorted ahead of time.
 
-//Expected Runtime
 // Expected Runtime: O(N2) - find all pairs approach
 // Expected space complexity: O(1) to store a constant number of variables
 
