@@ -11,21 +11,38 @@
 // [2, 1] => true
 // [2, 1, 3] => false
 
-const isMontonic = (array) => {
+const isMonotonic = (array) => {
 	if (array.length < 2) return true;
 
-	// check every element of the array
-	// if all numbers are either all the same, all increase or all decreasing
-	// return true
+	let decreasing = false;
+	let increasing = false;
+	let index = 1;
 
-	// else return false
+	while (array[0] !== array[index] && index < array.length) {
+		// increasing
+		if (array[0] < array[index]) {
+			increasing = true;
+			break;
+		}
+		// decreasing
+		if (array[0] > array[index]) {
+			decreasing = true;
+			break;
+		}
+		// if every number is the same then we return true
+		if (index === array.length - 1) return true;
+
+		index++;
+	}
+
+	let previousElement, currentElement;
+
+	for (let i = index + 1; i < array.length; i++) {
+		previousElement = array[i - 1];
+		currentElement = array[i];
+		if (increasing && previousElement > currentElement) return false;
+		if (decreasing && previousElement < currentElement) return false;
+	}
+
+	return true;
 };
-
-// Test the following
-// empty array
-// 1-element array
-// strictly increasing array
-// strictly decreasing array
-// array with adjacent duplicates
-// array with separated duplicates
-// all elements of the same value
