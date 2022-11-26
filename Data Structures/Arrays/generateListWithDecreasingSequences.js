@@ -24,3 +24,11 @@ const generateSequence = (target) => {
 
 	return array;
 };
+
+// Test Cases
+console.log(generateSequence(0)); // []
+console.log(generateSequence(1)); // [1]
+console.log(generateSequence(2)); // [[2,1], [1]]
+console.log(generateSequence(3)); // [[3,2,1], [2,1], [1]]
+console.log(generateSequence(4)); // [[4, 3, 2, 1], [3,2,1], [2,1], [1]]
+console.log(generateSequence(5)); // [[5, 4, 3, 2, 1], [4, 3, 2, 1], [3,2,1], [2,1], [1]]
