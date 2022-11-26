@@ -9,4 +9,18 @@
 // Time: O(X2) to iterate X times from 1 to X
 // Space: O(X2) to store up to X elements X times in the matrix
 
-const generateSequence = (target) => {};
+const generateSequence = (target) => {
+	const array = [];
+	let subarray = [];
+
+	for (let i = target; i > 0; i--) {
+		for (let j = i; j > 0; j--) {
+			subarray.push(j);
+		}
+
+		array.push(subarray);
+		subarray = [];
+	}
+
+	return array;
+};
