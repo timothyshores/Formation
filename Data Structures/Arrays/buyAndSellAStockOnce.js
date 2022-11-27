@@ -30,3 +30,27 @@ const maxProfitPotential = (prices) => {
 
 	return maxProfit > 0 ? maxProfit : 0;
 };
+
+// an empty array
+console.log(maxProfitPotential([])); // 0
+
+// 1-element array
+console.log(maxProfitPotential([1])); // 0
+
+// 2-element array
+console.log(maxProfitPotential([1, 9])); // 8
+console.log(maxProfitPotential([8, 2])); // 0
+
+// array of all duplicate prices
+console.log(maxProfitPotential([3, 3, 3, 3, 3, 3])); // 0
+
+// array of decreasing prices
+console.log(maxProfitPotential([7, 6, 4, 3, 1])); // 0
+
+// array of increasing prices
+console.log(maxProfitPotential([1, 2, 3, 5, 6, 7])); // 6
+
+// array with fluctuating prices
+console.log(maxProfitPotential([3, 1, 5])); // 4
+console.log(maxProfitPotential([7, 1, 5, 3, 6, 4])); // 5
+console.log(maxProfitPotential([0.55, 1.23, 3.53, 1.75, 5.16])); // 4.61
