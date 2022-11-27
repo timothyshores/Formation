@@ -39,3 +39,35 @@ const diagonalSum = (matrix) => {
 
 	return sum;
 };
+
+// empty matrix
+console.log(diagonalSum([]) === 0);
+
+// 1-element matrix
+console.log(diagonalSum([[5]]) === 5);
+
+// odd-sized matrix
+console.log(
+	diagonalSum([
+		[1, 2, 3],
+		[4, 5, 6],
+		[7, 8, 9],
+	]) === 25
+);
+
+// even-sized matrix
+console.log(
+	diagonalSum([
+		[1, 3],
+		[1, 1],
+	]) === 6
+);
+
+console.log(
+	diagonalSum([
+		[1, 1, 1, 2],
+		[1, 2, 1, 1],
+		[1, 1, 1, 1],
+		[2, 1, 1, 2],
+	]) === 12
+);
