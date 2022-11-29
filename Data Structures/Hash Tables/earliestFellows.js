@@ -5,31 +5,37 @@
 // Expected Space Complexity: O(N) to store up to N resulting Fellows
 
 const earliestFellows = (fellowTimes) => {
+	const min = Math.min(...Object.values(fellowTimes));
+	const fellows = Object.entries(fellowTimes);
+	const earliestFellows = [];
 
-}
+	for (let [fellowName, time] of fellows) {
+		if (time === min) earliestFellows.push(fellowName);
+	}
+
+	return earliestFellows;
+};
 
 // empty dictionary
-// one element dictionary
-// dictionary with all the same value
-// dictionary with unique values
-// dictionary with mixed, repeated values
-
-
 console.log(JSON.stringify(earliestFellows(new Map())) === JSON.stringify([]));
 
+// one element dictionary
 let map = { oliver: 3 };
 console.log(
 	JSON.stringify(earliestFellows(map)) === JSON.stringify(["oliver"])
 );
 
+// dictionary with all the same value
 map = { oliver: 3, tobey: 3 };
 console.log(
 	JSON.stringify(earliestFellows(map)) === JSON.stringify(["oliver", "tobey"])
 );
 
+// dictionary with unique values
 map = { oliver: 3, pinky: 4, pixel: 2, tobey: 1 };
 console.log(JSON.stringify(earliestFellows(map)) === JSON.stringify(["tobey"]));
 
+// dictionary with mixed, repeated values
 map = { oliver: 3, pinky: 1, pixel: 2, tobey: 1 };
 console.log(
 	JSON.stringify(earliestFellows(map)) === JSON.stringify(["pinky", "tobey"])
