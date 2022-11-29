@@ -19,3 +19,33 @@ const limitedServings = (patrons, allowedServings) => {
 
 	return Math.max(...Object.values(patronsDrinksMap)) > allowedServings;
 };
+
+// Examples
+console.log(
+	limitedServings(["Joe", "Bart", "Larry", "Joe", "Carl", "Doug", "Joe"], 2)
+); // true
+// returns True because Joe went over the limit.
+
+// Test Cases
+// empty list of patrons
+console.log(limitedServings([], 2)); // false
+
+// no allowed drinks
+console.log(
+	limitedServings(["Joe", "Bart", "Larry", "Joe", "Carl", "Doug", "Joe"], 0)
+); // true
+
+// frequency of every patron < allowed servings
+console.log(
+	limitedServings(["Joe", "Bart", "Larry", "Joe", "Carl", "Doug", "Joe"], 5)
+); // false
+
+// frequency of a patron == allowed servings
+console.log(
+	limitedServings(["Joe", "Bart", "Larry", "Joe", "Bart", "Larry"], 2)
+); // false
+
+// frequency of a patron > allowed servings
+console.log(
+	limitedServings(["Joe", "Bart", "Larry", "Joe", "Bart", "Larry"], 1)
+); // true
