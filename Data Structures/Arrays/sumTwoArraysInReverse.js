@@ -24,3 +24,16 @@ const sumInReverse = (array1, array2) => {
 // array1 = [1, 5, 10, 12]
 // array2 = [2, 4, 3, 5]
 // result = [6, 8, 14, 14]
+
+// empty array
+console.log(sumInReverse([], [])); // []
+
+// 1-element arrays
+console.log(sumInReverse([1], [1])); // [2]
+
+// odd-length arrays
+console.log(sumInReverse([1, 2, 3], [4, 6, 10])); // [11, 8, 7]
+
+// even-length arrays
+console.log(sumInReverse([1, 2], [3, 4])); // [5,5]
+console.log(sumInReverse([1, 5, 10, 12], [2, 4, 3, 5])); // [6, 8, 14, 14]
