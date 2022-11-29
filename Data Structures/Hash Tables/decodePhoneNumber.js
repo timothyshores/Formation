@@ -35,7 +35,16 @@ const letterToDigit = {
 	Z: "9",
 };
 
-const decodePhoneNumber = (text) => {};
+const decodePhoneNumber = (text) => {
+	const isLetter = (char) => char.match(/[a-z]/i);
+	let digitsOnly = "";
+
+	for (let char of text) {
+		digitsOnly += isLetter(char) ? letterToDigit[char.toUpperCase()] : char;
+	}
+
+	return digitsOnly;
+};
 
 // Examples
 console.log(decodePhoneNumber("555-U-HUNGRY!") == "555-8-486479!"); // true
