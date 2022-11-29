@@ -5,21 +5,22 @@
 // Space: O(N) to store the length N result
 
 const sumInReverse = (array1, array2) => {
-	return;
+	const result = [];
+
+	for (let i = 0; i < array1.length; i++) {
+		result.push(array1[i] + array2[array2.length - 1 - i]);
+	}
+
+	return result;
 };
 
-// Examples
+// Example 1
 // array1 = [1, 2, 3]
 // array2 = [4, 6, 10]
 // result = [11, 8, 7]
 // Explanation: array1 is being traversed from left to right and array2 is traversed right to left, so 1 is added to 10 for 11, and so on.
 
+// Example 2
 // array1 = [1, 5, 10, 12]
 // array2 = [2, 4, 3, 5]
 // result = [6, 8, 14, 14]
-
-// Test Cases
-// empty array
-// 1-element arrays
-// odd-length arrays
-// even-length arrays
