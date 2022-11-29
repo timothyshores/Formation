@@ -10,4 +10,12 @@
 // Time: O(N) where N = # of total interactions (non-unique patrons)
 // Space: O(N) to store up to N patrons
 
-const limitedServings = (patrons, allowedServings) => {};
+const limitedServings = (patrons, allowedServings) => {
+	const patronsDrinksMap = {};
+
+	for (patron of patrons) {        
+        patronsDrinksMap[patron] = patronsDrinksMap[patron] ? ++patronsDrinksMap[patron]     : 1;
+	}
+
+	return Math.max(...Object.values(patronsDrinksMap)) > allowedServings;
+};
