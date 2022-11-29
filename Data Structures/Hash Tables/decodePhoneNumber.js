@@ -51,3 +51,17 @@ console.log(decodePhoneNumber("555-U-HUNGRY!") == "555-8-486479!"); // true
 console.log(decodePhoneNumber("1-888-GET-RICH") == "1-888-438-7424"); // true
 console.log(decodePhoneNumber("1-800-U-B-SMART") == "1-800-8-2-76278"); // true
 console.log(decodePhoneNumber("1.800.I.C.BUTTS") == "1.800.4.2.28887"); // true
+
+// Test Cases
+
+// empty string
+console.log(decodePhoneNumber("") == ""); // true
+
+// only uppercase alphabet characters
+console.log(decodePhoneNumber("1-877-CASH-NOW") === "1-877-2274-669"); // true
+
+// mixed-case alphabet characters
+console.log(decodePhoneNumber("1-877-Cash-Now") === "1-877-2274-669"); // true
+
+// non-alphabetical characters
+console.log(decodePhoneNumber("1-877-2274-669") === "1-877-2274-669"); // true
