@@ -13,8 +13,8 @@
 const limitedServings = (patrons, allowedServings) => {
 	const patronsDrinksMap = {};
 
-	for (patron of patrons) {        
-        patronsDrinksMap[patron] = patronsDrinksMap[patron] ? ++patronsDrinksMap[patron]     : 1;
+    for (patron of patrons) {        
+        patronsDrinksMap[patron] = patronsDrinksMap[patron] ? ++patronsDrinksMap[patron] : 1;
 	}
 
 	return Math.max(...Object.values(patronsDrinksMap)) > allowedServings;
