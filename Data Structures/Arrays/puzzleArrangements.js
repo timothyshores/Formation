@@ -70,3 +70,29 @@ console.log(puzzleArrangements([1, 1, 1], 2) === 2); // true
 // Output: 2, because [5, 3] and [3, 1, 4] are valid arrangements
 
 console.log(puzzleArrangements([5, 3, 1, 4], 8) === 2); // true
+
+// empty array
+console.log(puzzleArrangements([], 1) === 0); // true
+console.log(puzzleArrangements([], 2) === 0); // true
+
+// 1-element array
+console.log(puzzleArrangements([1], 1) === 1); // true
+console.log(puzzleArrangements([1], 2) === 0); // true
+
+// target > sum of entire array
+console.log(puzzleArrangements([1, 2], 4) === 0); // true
+
+// target == sum of entire array
+console.log(puzzleArrangements([1, 2], 3) === 1); // true
+
+// target == 1 element
+console.log(puzzleArrangements([1, 2, 3, 20], 20) === 1); // true
+
+// overlapping arrangements
+console.log(puzzleArrangements([1, 1, 1], 2) === 2); // true
+
+// disjoint arrangements
+console.log(puzzleArrangements([100, 1, 100], 100) === 2); // true
+
+// non-contiguous sums that add up to target
+console.log(puzzleArrangements([1, 2, 3, 100, 1, 2, 3], 6) === 2); // true
