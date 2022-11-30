@@ -8,12 +8,12 @@
 // [1, 2, 2, 3, 4], 3 => false (there are 4 distinct values)
 // [1, 1, 2, 2, 2], 3 => true (there are exactly 3 distinct values)
 
-const fewerThanTargetDistinct = (arr, target) => {};
+const fewerThanTargetDistinct = (arr, target) => {
+	let set = new Set();
 
-// Test cases
-// empty array
-// 1-element array
-// array with < X distinct values
-// array with == X distinct values
-// array with > X distinct values
-// array longer than X but with < X distinct values
+	for (num of arr) {
+		set.add(num);
+	}
+
+	return set.size < target;
+};
