@@ -6,6 +6,51 @@
 // Expected Space Complexity: O(N) to store up to N elements
 
 const puzzleArrangements = (pieces, targetSize) => {
+	if (pieces.length === 1 && pieces[0] === targetSize) return 1;
+	if (pieces.length < 2) return 0;
+
+	// start both p1 & p2 at index 0
+	let p1 = 0;
+	let p2 = 0;
+	let numberOfArrangements = 0;
+	let currentSum = pieces[0];
+
+	while (p1 < pieces.length) {
+		// two pointer approach
+
+		// if currentSum === target
+		if (currentSum === targetSize) {
+			numberOfArrangements++;
+			// set p1 to p2's current location
+			if (p1 < p2) {
+				p1 = p2;
+				// set p2 to equal p1 e.g.
+				p2 = p1;
+			} else if (p1 === p2) {
+				p1 = p2 + 1;
+				p2 = p1;
+			}
+			currentSum = pieces[p1];
+
+			if (p1 === pieces.length - 1 && p2 === pieces.length - 1) break;
+		}
+		// if currentSum < target
+		if (currentSum < targetSize) {
+			// move p2 one index to the right
+			p2++;
+			if (p2 === pieces.length) break;
+			currentSum += pieces[p2];
+		}
+		// if currentSum > target
+		if (currentSum > targetSize) {
+			// move p1 one index to the right
+			currentSum -= pieces[p1];
+			p1++;
+			if (p1 === pieces.length) break;
+		}
+	}
+
+	return numberOfArrangements;
 };
 
 // Example 1
