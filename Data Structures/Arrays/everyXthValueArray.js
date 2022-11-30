@@ -4,23 +4,11 @@
 // Expected Space Complexity: O(N/X) to store an array containing on the X elements from the length N array
 
 const everyXth = (input, x) => {
-    
+	const xthElements = [];
+
+	for (let i = x - 1; i < input.length; i += x) {
+		xthElements.push(input[i]);
+	}
+
+	return xthElements;
 };
-
-// Examples
-console.log(
-	JSON.stringify(everyXth([1, 2, 3, 4, 5, 6], 2)) === JSON.stringify([2, 4, 6])
-);
-
-console.log(
-	JSON.stringify(everyXth([1, 2, 3, 4, 5, 6], 3)) === JSON.stringify([3, 6])
-);
-
-// Independently create a comprehensive test suite for this problem. It should cover most general and boundary cases without enumerating every possible input permutation.
-// empty array
-// array with 1 element and X == 1
-// array with 1 element and X > 1
-// array with multiple elements and X == 1
-// array length is divisible by X
-// array length is not divisible by X (there is a remainder)
-// array length < X
