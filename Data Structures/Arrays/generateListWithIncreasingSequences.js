@@ -18,4 +18,16 @@
  * @param {number} target
  * @return {list[list[int]}
  */
-const generateSequence = (target) => {};
+const generateSequence = (target) => {
+	const sequence = [];
+
+	for (let i = 0; i < target; i++) {
+		const subsequence = [];
+		for (let j = 1; j <= i + 1; j++) {
+			subsequence.push(j);
+		}
+		sequence.push(subsequence);
+	}
+
+	return sequence;
+};
