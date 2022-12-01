@@ -25,3 +25,28 @@ const firstRepeatedElement = (input) => {
 
 	return null;
 };
+
+// empty array
+console.log(firstRepeatedElement([]) === null); // true
+
+// 1-element array
+console.log(firstRepeatedElement([1]) === null); // true
+
+// 2-element array
+console.log(firstRepeatedElement([1, 2]) === null); // true
+
+// 2-element array with duplicate
+console.log(firstRepeatedElement([1, 1]) === 1); // true
+
+// array with multiple duplicates
+console.log(firstRepeatedElement([1, 2, 2]) === 2); // true
+console.log(firstRepeatedElement([1, 2, 3, 3]) === 3); // true
+console.log(firstRepeatedElement([1, 2, 3, 3, 4]) === 3); // true
+console.log(firstRepeatedElement([1, 2, 3, 4, 4]) === 4); // true
+console.log(firstRepeatedElement([1, 1, 2, 3, 4]) === 1); // true
+console.log(firstRepeatedElement([1, 2, 2, 3, 4]) === 2); // true
+
+// array with an element repeating multiple times
+console.log(firstRepeatedElement([1, 2, 2, 3, 3]) === 2); // true
+console.log(firstRepeatedElement([1, 1, 2, 3, 3]) === 1); // true
+console.log(firstRepeatedElement([1, 1, 2, 2, 3]) === 1); // true
