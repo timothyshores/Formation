@@ -12,4 +12,16 @@
  * @param {number[]} input
  * @return {number}
  */
-const firstRepeatedElement = (input) => {};
+const firstRepeatedElement = (input) => {
+	const set = new Set();
+
+	for (const num of input) {
+		if (set.has(num)) {
+			return num;
+		} else {
+			set.add(num);
+		}
+	}
+
+	return null;
+};
