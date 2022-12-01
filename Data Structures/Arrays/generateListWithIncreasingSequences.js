@@ -31,3 +31,17 @@ const generateSequence = (target) => {
 
 	return sequence;
 };
+
+// target == 0
+console.log(generateSequence(0)); // [[]]
+
+// target == 1
+console.log(generateSequence(1)); // [[1]]
+
+// target is even
+console.log(generateSequence(2)); // [[1], [1, 2]]]
+console.log(generateSequence(4)); // [[1], [1, 2], [1, 2, 3], [1, 2, 3, 4]]
+
+// target is odd
+console.log(generateSequence(3)); // [[1], [1, 2], [1, 2, 3]]
+console.log(generateSequence(5)); // [[1], [1, 2], [1, 2, 3], [1, 2, 3, 4], [1, 2, 3, 4, 5]]
