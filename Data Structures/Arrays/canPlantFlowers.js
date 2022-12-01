@@ -37,3 +37,36 @@ const canPlantFlowers = (flowerbed, newFlowers) => {
 
 	return newFlowers <= 0;
 };
+
+// Test Cases
+// 1-slot flowerbeds
+console.log(canPlantFlowers([1], 0) === true);
+console.log(canPlantFlowers([1], 1) === false);
+// // 2-slot flowerbeds
+console.log(canPlantFlowers([0, 1], 1) === false);
+console.log(canPlantFlowers([0, 0], 1) === true);
+console.log(canPlantFlowers([1, 0], 1) === false);
+console.log(canPlantFlowers([1, 1], 1) === false);
+
+// every other slot filled
+console.log(canPlantFlowers([0, 1, 0, 1], 1) === false);
+console.log(canPlantFlowers([0, 1, 0, 1, 0, 1], 1) === false);
+console.log(canPlantFlowers([0, 1, 0, 1, 0, 1, 0, 1], 1) === false);
+
+// no slot filled
+console.log(canPlantFlowers([0, 0], 1) === true);
+console.log(canPlantFlowers([0, 0], 2) === false);
+console.log(canPlantFlowers([0, 0, 0], 2) === true);
+console.log(canPlantFlowers([0, 0, 0], 3) === false);
+console.log(canPlantFlowers([0, 0, 0, 0], 3) === false);
+console.log(canPlantFlowers([0, 0, 0, 0, 0], 3) === true);
+
+// all slots filled
+console.log(canPlantFlowers([1], 1) === false);
+console.log(canPlantFlowers([1, 1], 1) === false);
+console.log(canPlantFlowers([1, 1, 1], 1) === false);
+console.log(canPlantFlowers([1, 1, 1, 1], 1) === false);
+console.log(canPlantFlowers([1, 1, 1, 1, 1], 1) === false);
+
+// mixture of slots filled
+console.log(canPlantFlowers([0, 0, 1, 0, 0], 2) === true);
