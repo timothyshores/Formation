@@ -4,4 +4,13 @@
 // • Given an array: [1, 2, 2, 3, 3], k: 2 // returns 2
 // • Given an array: [], k: 1 // returns -1
 
-function firstKTimes(array, k) {}
+function firstKTimes(array, k) {
+	const frequencyCounter = {};
+
+	for (const number of array) {
+		frequencyCounter[number] = (frequencyCounter[number] || 0) + 1;
+		if (frequencyCounter[number] === k) return number;
+	}
+
+	return -1;
+}
