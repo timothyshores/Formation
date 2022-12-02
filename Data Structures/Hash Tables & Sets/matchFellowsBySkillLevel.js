@@ -22,3 +22,32 @@ const canMatchFellows = (dictionary) => {
 
 	return ratingsSet.size === 0;
 };
+
+// empty dictionary
+console.log(canMatchFellows({}) === true); // true
+
+// odd-length dictionary
+console.log(canMatchFellows({ oliver: 1 }) === false); // true
+console.log(canMatchFellows({ oliver: 3, pixel: 3, pinky: 3 }) === false); // true
+console.log(
+	canMatchFellows({ oliver: 3, pixel: 3, pinky: 5, tobey: 5, paavo: 1 }) ===
+		false
+); // true
+
+// even-length dictionary
+console.log(
+	canMatchFellows({ oliver: 3, pixel: 4, pinky: 5, tobey: 5 }) === false
+); // true
+
+console.log(
+	canMatchFellows({ oliver: 3, pixel: 4, pinky: 5, tobey: 5 }) === false
+); // true
+
+// even-length dictionary with paired skill levels
+console.log(
+	canMatchFellows({ oliver: 3, pixel: 3, pinky: 3, tobey: 3 }) === true
+); // true
+
+console.log(
+	canMatchFellows({ oliver: 3, pixel: 3, pinky: 5, tobey: 5 }) == true
+); // true
