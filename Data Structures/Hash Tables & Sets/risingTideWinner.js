@@ -4,4 +4,20 @@
 // Expected Time Complexity: O(N) to iterate through the length N array
 // Expected Space Complexity: O(N) to store up to N nominations
 
-const risingTideWinner = (nominations) => {};
+const risingTideWinner = (nominations) => {
+	let map = {};
+
+	for (const nomination of nominations) {
+		map[nomination] = (map[nomination] || 0) + 1;
+	}
+
+	const maxValue = Math.max(...Object.values(map));
+
+	const keysWithMaxValue = Object.keys(map).filter(
+		(key) => map[key] === maxValue
+	);
+
+	if (keysWithMaxValue.length === 1) return keysWithMaxValue[0];
+	if (keysWithMaxValue.length > 1) return keysWithMaxValue.sort().pop();
+	return null;
+};
