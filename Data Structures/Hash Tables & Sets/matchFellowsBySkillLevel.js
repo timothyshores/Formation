@@ -9,4 +9,16 @@
 // console.log(canMatchFellows({"oliver": 3, "pixel": 3, "pinky": 5, "tobey": 5}) == True)
 // console.log(canMatchFellows({"oliver": 3, "pixel": 4, "pinky": 5, "tobey": 5}) == False)
 
-const canMatchFellows = (dictionary) => {};
+const canMatchFellows = (dictionary) => {
+	const ratingsSet = new Set();
+
+	for (const rating of Object.values(dictionary)) {
+		if (ratingsSet.has(rating)) {
+			ratingsSet.delete(rating);
+		} else {
+			ratingsSet.add(rating);
+		}
+	}
+
+	return ratingsSet.size === 0;
+};
