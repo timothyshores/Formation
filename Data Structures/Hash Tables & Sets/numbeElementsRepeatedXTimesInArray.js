@@ -14,4 +14,14 @@
  * @param {number} exactOccurrences
  * @return {number}
  */
-const countExactOccurrences = (arr, exactOccurrences) => {};
+const countExactOccurrences = (arr, exactOccurrences) => {
+	const counter = {};
+
+	for (const element of arr) {
+		counter[element] = (counter[element] || 0) + 1;
+	}
+
+	return Object.values(counter).filter((value) => value === exactOccurrences)
+		.length;
+};
+
