@@ -21,3 +21,27 @@ const risingTideWinner = (nominations) => {
 	if (keysWithMaxValue.length > 1) return keysWithMaxValue.sort().pop();
 	return null;
 };
+
+// empty list
+console.log(risingTideWinner([]) === null); // true
+
+// 1-element list
+console.log(risingTideWinner(["oliver"]) === "oliver"); // true
+
+// all unique elements
+console.log(risingTideWinner(["oliver", "bob", "sarah", "vlad"]) === "vlad"); // true
+
+// 1 nominee with the most votes
+console.log(risingTideWinner(["oliver", "pixel", "pinky", "pixel"]) == "pixel"); // true
+
+// multiple nominees with the same number of votes
+console.log(
+	risingTideWinner([
+		"zelenskyy",
+		"oliver",
+		"zelenskyy",
+		"pixel",
+		"pinky",
+		"pixel",
+	]) === "zelenskyy"
+); // true
