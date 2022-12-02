@@ -14,3 +14,12 @@ function firstKTimes(array, k) {
 
 	return -1;
 }
+
+// Test Cases
+console.log(firstKTimes([], 1)); // -1
+console.log(firstKTimes([1, 2, 3, 3], 2)); // 3
+console.log(firstKTimes([1, 1, 1, 2, 3], 3)); // 1
+console.log(firstKTimes([1, 2, 2, 3, 3], 2)); // 2
+console.log(firstKTimes([1, 2, 2, 3, 3], 3)); // -1
+console.log(firstKTimes([1, 2, 2, 2, 3, 3], 3)); // 2
+console.log(firstKTimes([1, 2, 2, 3, 3, 3], 3)); // 3
