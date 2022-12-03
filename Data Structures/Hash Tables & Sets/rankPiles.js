@@ -19,4 +19,30 @@
 // Input: [2, 1]
 // Output: [2, 1]
 
-const rankPiles = (piles) => {};
+const rankPiles = (piles) => {
+	// Create copy by values of piles
+	const unsorted = [...piles];
+
+	// sort the array using built in sort in log linear O(N log N)
+    const sorted = piles.sort((a, b) => a - b);
+
+	// create an object / has map to store key value pairs using O(n) space
+	const rankingsMap = {};
+    
+	// iterate through the array in linear O(N) time 
+	for (let i = 0; i < sorted.length; i++) {
+        // set the key as the element in piles and value with it's corresponding rank
+		rankingsMap[sorted[i]] = i + 1;
+	}
+
+    // Store rankings in O(n) space
+    const rankings = [];
+    
+	// after object is created loop through the original piles array in linear O(n) time
+    for (const pile of unsorted) { 
+        rankings.push(rankingsMap[pile]);
+	}
+
+	// return the new array containing just the rankings only
+	return rankings;
+};
