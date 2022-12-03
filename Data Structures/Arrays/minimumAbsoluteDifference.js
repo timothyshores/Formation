@@ -18,4 +18,31 @@
 // Output: [[1,2],[2,3],[3,4]]
 // Explanation: There are 3 pairs of elements with a minimum absolute difference of 1 which are listed in ascending order according to the smaller value in the pair.
 
-const minAbsDiffPairs = (arr) => {};
+const minAbsDiffPairs = (arr) => {
+	let pairs = [];
+	let minAbsoluteDifference = Infinity;
+	// Need to sort the array first
+	const sorted = arr.sort((a, b) => a - b);
+
+	let lagValue, leadValue, currentAbsDiff;
+
+	// do a for loop through the sorted array
+	for (let i = 0; i < arr.length - 1; i++) {
+		// two pointer approach with lag and lead pointers
+		lagValue = arr[i];
+		leadValue = arr[i + 1];
+
+		// Find the absolute difference Math.abs(lagValue - leadValue)
+		currentAbsDiff = Math.abs(leadValue - lagValue);
+
+		// If the difference is less than minAbsoluteDifference push
+		if (currentAbsDiff < minAbsoluteDifference) {
+			minAbsoluteDifference = currentAbsDiff;
+			pairs = [[lagValue, leadValue]];
+		} else if (currentAbsDiff === minAbsoluteDifference) {
+			pairs.push([lagValue, leadValue]);
+		}
+	}
+
+	return pairs;
+};
