@@ -46,3 +46,28 @@ const rankPiles = (piles) => {
 	// return the new array containing just the rankings only
 	return rankings;
 };
+
+// empty array
+console.log(rankPiles([])); // []
+
+// 1-element array
+console.log(rankPiles([1])); // [1]
+console.log(rankPiles([0])); // [1]
+console.log(rankPiles([-1])); // [1]
+console.log(rankPiles([100])); // [1]
+
+// sorted ascending array
+console.log(rankPiles([1, 2])); // [1, 2]
+console.log(rankPiles([1, 3])); // [1, 2]
+console.log(rankPiles([1, 2, 3])); // [1, 2, 3]
+console.log(rankPiles([1, 2, 3, 4])); // [1, 2, 3, 4]
+console.log(rankPiles([2, 4, 6, 8])); // [1, 2, 3, 4]
+
+// sorted descending array
+console.log(rankPiles([2, 1])); // [2, 1]
+console.log(rankPiles([3, 2, 1])); // [2, 1]
+console.log(rankPiles([4, 3, 2, 1])); // [2, 1]
+
+// unsorted array
+console.log(rankPiles([3, 4, 1])); // [2, 3, 1]
+console.log(rankPiles([10, 8, 15, 12, 6, 20, 1])); // [4, 3, 6, 5, 2, 7, 1]
