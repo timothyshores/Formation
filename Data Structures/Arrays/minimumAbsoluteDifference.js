@@ -46,3 +46,20 @@ const minAbsDiffPairs = (arr) => {
 
 	return pairs;
 };
+
+// 2-element arrays
+console.log(minAbsDiffPairs([1, 2])); // [[1, 2]]
+console.log(minAbsDiffPairs([-1, 1])); // [[-1, 1]]
+console.log(minAbsDiffPairs([0, 1])); // [[0, 1]]
+console.log(minAbsDiffPairs([-1, 0])); // [[-1, 0]]
+console.log(minAbsDiffPairs([0, -1])); // [[-1, 0]]
+console.log(minAbsDiffPairs([0, 0])); // [[0, 0]]
+
+// array with exactly 1 pair with a minimum absolute difference
+console.log(minAbsDiffPairs([1, 3, 6, 10, 15])); // [[1, 3]]
+console.log(minAbsDiffPairs([1, 6, 10, 15, 2])); // [[1, 2]]
+console.log(minAbsDiffPairs([-10, -9, -1, 6, 10, 2, 4])); // [[-10, -9]]
+
+// array with multiple pairs with the same minimum absolute difference
+console.log(minAbsDiffPairs([4, 2, 1, 3])); // [[1, 2], [2, 3], [3, 4]]
+console.log(minAbsDiffPairs([-4, -2, -1, -3])); // [[-4, -3,], [-3, -2], [-2, -1]]
