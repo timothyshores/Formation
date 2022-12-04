@@ -24,4 +24,19 @@ function toString(head) {
 	return parts.join(" -> ");
 }
 
-const createLL = (count, value) => {};
+const createLL = (count, value) => {
+	if (count === 0) return null;
+
+	// Create head node
+	const headNode = new Node(value);
+	let currentNode = headNode;
+
+	// loop iterates count number of times
+	while (count > 1) {
+		currentNode.next = new Node(value);
+		currentNode = currentNode.next;
+		count--;
+	}
+
+	return headNode;
+};
