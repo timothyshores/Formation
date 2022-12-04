@@ -40,3 +40,35 @@ const createLL = (count, value) => {
 
 	return headNode;
 };
+
+// X is zero
+console.log(toString(createLL(0, 1))); // null
+console.log(toString(createLL(0, 10))); // null
+
+// X is one
+console.log(toString(createLL(5, 3)) === "3 -> 3 -> 3 -> 3 -> 3"); // true
+console.log(toString(createLL(6, 6)) === "6 -> 6 -> 6 -> 6 -> 6 -> 6"); // true
+
+// X is two
+console.log(toString(createLL(2, 0)) === "0 -> 0"); // true
+console.log(toString(createLL(2, 1)) === "1 -> 1"); // true
+console.log(toString(createLL(2, -1)) === "-1 -> -1"); // true
+
+// X is a large number
+console.log(toString(createLL(5, 1)) === "1 -> 1 -> 1 -> 1 -> 1"); // true
+console.log(
+	toString(createLL(10, 1)) === "1 -> 1 -> 1 -> 1 -> 1 -> 1 -> 1 -> 1 -> 1 -> 1"
+); // true
+
+// X == Y
+console.log(toString(createLL(2, 2)) === "2 -> 2"); // true
+console.log(toString(createLL(3, 3)) === "3 -> 3 -> 3"); // true
+console.log(toString(createLL(4, 4)) === "4 -> 4 -> 4 -> 4"); // true
+
+// Y is zero
+console.log(toString(createLL(2, 0)) === "0 -> 0"); // true
+console.log(toString(createLL(3, 0)) === "0 -> 0 -> 0"); // true
+console.log(toString(createLL(4, 0)) === "0 -> 0 -> 0 -> 0"); // true
+
+// Y is negative
+console.log(toString(createLL(2, -10)) === "-10 -> -10"); // true
