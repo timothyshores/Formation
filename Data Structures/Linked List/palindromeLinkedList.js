@@ -49,3 +49,34 @@ const createPalindromeLL = (array) => {
 
 	return headNode;
 };
+
+console.log(toString(createPalindromeLL([99])) === "99"); // true
+console.log(
+	toString(createPalindromeLL([1, 4, 5])) === "1 -> 4 -> 5 -> 4 -> 1"
+); // true
+
+// empty array
+console.log(toString(createPalindromeLL([])) === null); // true
+
+// 1 element array
+console.log(toString(createPalindromeLL([1])) === "1"); // true
+
+// odd-length array
+console.log(
+	toString(createPalindromeLL([1, 2, 3])) === "1 -> 2 -> 3 -> 2 -> 1"
+); // true
+
+// even-length array
+console.log(toString(createPalindromeLL([1, 2])) === "1 -> 2 -> 1"); // true
+console.log(
+	toString(createPalindromeLL([1, 2, 3, 4])) ===
+		"1 -> 2 -> 3 -> 4 -> 3 -> 2 -> 1"
+); // true
+
+// array with duplicates
+console.log(toString(createPalindromeLL([1, 1])) === "1 -> 1 -> 1"); // true
+
+// palindrome array
+console.log(
+	toString(createPalindromeLL([1, 2, 1])) === "1 -> 2 -> 1 -> 2 -> 1"
+); // true
