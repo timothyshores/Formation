@@ -51,3 +51,53 @@ const everyKthNode = (node, target) => {
 
 	return beforeHead.next;
 };
+
+// empty list
+console.log(toString(everyKthNode(new Node(), 3)) === "<empty>"); // true
+
+// 1 node list with target == 1
+console.log(toString(everyKthNode(new Node(0), 1)) === "0"); // true
+console.log(toString(everyKthNode(new Node(1), 1)) === "1"); // true
+console.log(toString(everyKthNode(new Node(-1), 1)) === "-1"); // true
+
+// 1 node list with target > 1
+console.log(toString(everyKthNode(new Node(1), 2)) === "<empty>"); // true
+console.log(toString(everyKthNode(new Node(1), 3)) === "<empty>"); // true
+console.log(toString(everyKthNode(new Node(1), 4)) === "<empty>"); // true
+console.log(toString(everyKthNode(new Node(1), 100)) === "<empty>"); // true
+
+// 2 node list with target == 1
+console.log(toString(everyKthNode(new Node(1, new Node(2)), 1)) === "1 -> 2"); // true
+console.log(
+	toString(everyKthNode(new Node(10, new Node(100)), 1)) === "10 -> 100"
+); // true
+
+// 2 node list with target == 2
+console.log(toString(everyKthNode(new Node(1, new Node(2)), 2)) === "2"); // true
+console.log(toString(everyKthNode(new Node(10, new Node(100)), 2)) === "100"); // true
+
+// 2 node list with target > 2
+console.log(toString(everyKthNode(new Node(1, new Node(2)), 3)) === "<empty>"); // true
+console.log(toString(everyKthNode(new Node(1, new Node(2)), 4)) === "<empty>"); // true
+console.log(toString(everyKthNode(new Node(1, new Node(2)), 5)) === "<empty>"); // true
+console.log(
+	toString(everyKthNode(new Node(1, new Node(2)), 100)) === "<empty>"
+); // true
+
+// list with multiple nodes and is divisible by target
+let oneToFour = new Node(1, new Node(2, new Node(3, new Node(4))));
+console.log(toString(everyKthNode(oneToFour, 2)) === "2 -> 4"); // true
+
+let oneToSix = new Node(
+	1,
+	new Node(2, new Node(3, new Node(4, new Node(5, new Node(6)))))
+);
+console.log(toString(everyKthNode(oneToSix, 3)) === "3 -> 6"); // true
+
+// list with multiple nodes and is not divisible by target (there is remainder)
+console.log(toString(everyKthNode(oneToFour, 5)) === "<empty>"); // true
+console.log(toString(everyKthNode(oneToFour, 6)) === "<empty>"); // true
+console.log(toString(everyKthNode(oneToSix, 7)) === "<empty>"); // true
+console.log(toString(everyKthNode(oneToSix, 8)) === "<empty>"); // true
+console.log(toString(everyKthNode(oneToSix, 9)) === "<empty>"); // true
+console.log(toString(everyKthNode(oneToSix, 10)) === "<empty>"); // true
