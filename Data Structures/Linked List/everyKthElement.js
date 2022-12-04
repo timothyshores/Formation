@@ -28,4 +28,26 @@ function toString(head) {
 	return parts.join(" -> ");
 }
 
-const everyKthNode = (node, target) => {};
+const everyKthNode = (node, target) => {
+	let beforeHead = new Node(null);
+	let returnNode = beforeHead;
+	let inputNode = node;
+	let index = 1;
+
+	// iterate through the linked list
+	while (inputNode) {
+		// check if we're at a multiple of K
+		if (index % target === 0) {
+			// create new node and add to our linked list
+			let newNode = new Node(inputNode.val, null);
+			returnNode.next = newNode;
+			returnNode = newNode;
+		}
+		// iterate to the next node
+		inputNode = inputNode.next;
+		// increment index++
+		index++;
+	}
+
+	return beforeHead.next;
+};
