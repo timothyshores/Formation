@@ -28,4 +28,24 @@ function toString(head) {
 	return parts.join(" -> ");
 }
 
-const createPalindromeLL = (array) => {};
+const createPalindromeLL = (array) => {
+	if (array.length === 0) return null;
+
+	let headNode = new Node(array[0]);
+	let current = headNode;
+	let newNode;
+
+	for (let i = 1; i < array.length; i++) {
+		newNode = new Node(array[i]);
+		current.next = newNode;
+		current = newNode;
+	}
+
+	for (let j = array.length - 2; j >= 0; j--) {
+		newNode = new Node(array[j]);
+		current.next = newNode;
+		current = newNode;
+	}
+
+	return headNode;
+};
