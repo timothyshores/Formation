@@ -17,4 +17,14 @@ class Node {
 	}
 }
 
-const firstIndexInLL = (node, target) => {};
+const firstIndexInLL = (node, target) => {
+	let index = 0;
+
+	while (node) {
+		if (node.val === target) return index;
+		node = node.next;
+		index++;
+	}
+
+	return -1;
+};
