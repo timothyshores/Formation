@@ -33,4 +33,18 @@ function toString(head) {
  * @param {number[]} array
  * @return {Node} head node
  */
-const arrayToLL = (array) => {};
+const arrayToLL = (array) => {
+	const { length } = array;
+
+	if (length === 0) return null;
+
+	let headNode = new Node(array[0]);
+	let current = headNode;
+
+	for (let i = 1; i < length; i++) {
+		current.next = new Node(array[i]);
+		current = current.next;
+	}
+
+	return headNode;
+};
