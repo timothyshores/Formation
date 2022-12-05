@@ -48,3 +48,26 @@ const arrayToLL = (array) => {
 
 	return headNode;
 };
+
+// empty array
+console.log(toString(arrayToLL([])) == "<empty>"); // true
+
+// array with 1 element
+console.log(toString(arrayToLL([1])) == "1"); // true
+console.log(toString(arrayToLL([0])) == "0"); // true
+console.log(toString(arrayToLL([-1])) == "-1"); // true
+
+// odd length array
+console.log(toString(arrayToLL([1, 2, 3])) == "1 -> 2 -> 3"); // true
+console.log(toString(arrayToLL([3, 2, 1])) == "3 -> 2 -> 1"); // true
+console.log(toString(arrayToLL([1, 2, 3, 4, 5])) == "1 -> 2 -> 3 -> 4 -> 5"); // true
+
+// even length array
+console.log(toString(arrayToLL([1, 2])) == "1 -> 2"); // true
+console.log(toString(arrayToLL([2, 1])) == "2 -> 1"); // true
+console.log(toString(arrayToLL([1, 2, 3, 4])) == "1 -> 2 -> 3 -> 4"); // true
+
+// array with duplicate values
+console.log(toString(arrayToLL([1, 1])) == "1 -> 1"); // true
+console.log(toString(arrayToLL([1, 1, 1])) == "1 -> 1 -> 1"); // true
+console.log(toString(arrayToLL([0, 0, 0, 0])) == "0 -> 0 -> 0 -> 0"); // true
