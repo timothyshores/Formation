@@ -5,7 +5,10 @@ class ListNode {
 	}
 }
 
-const findMax = (node) => {};
+const findMax = (node) => {
+	if (node.next === null) return node.value;
+	return Math.max(node.value, findMax(node.next));
+};
 
 // Test Cases
 var LL1 = new ListNode(1, new ListNode(4, new ListNode(5, new ListNode(1))));
