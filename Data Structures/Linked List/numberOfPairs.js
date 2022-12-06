@@ -17,4 +17,17 @@ class Node {
 	}
 }
 
-const numPairs = (head) => {};
+const numPairs = (head) => {
+	let current = head;
+
+	if (!current) return 0;
+
+	let counter = {};
+
+	while (current) {
+		counter[current.value] = (counter[current.value] || 0) + 1;
+		current = current.next;
+	}
+
+	return Object.values(counter).filter((value) => value === 2).length;
+};
