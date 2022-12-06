@@ -23,3 +23,36 @@ const count = (head) => {
 
 	return count;
 };
+
+// All test cases return true
+console.log(count(null) === 0);
+
+console.log(count(new ListNode()) === 1);
+console.log(count(new ListNode(0)) === 1);
+console.log(count(new ListNode(-1)) === 1);
+
+console.log(count(new ListNode(1, new ListNode(2))) === 2);
+console.log(count(new ListNode(0, new ListNode(1))) === 2);
+console.log(count(new ListNode(-1, new ListNode(0))) === 2);
+
+console.log(count(new ListNode(1, new ListNode(2, new ListNode(3)))) === 3);
+console.log(count(new ListNode(-1, new ListNode(-2, new ListNode(-3)))) === 3);
+console.log(count(new ListNode(0, new ListNode(0, new ListNode(0)))) === 3);
+
+console.log(
+	count(new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4))))) ===
+		4
+);
+console.log(
+	count(new ListNode(0, new ListNode(0, new ListNode(0, new ListNode(0))))) ===
+		4
+);
+console.log(
+	count(new ListNode(1, new ListNode(1, new ListNode(1, new ListNode(1))))) ===
+		4
+);
+console.log(
+	count(
+		new ListNode(-1, new ListNode(-1, new ListNode(-1, new ListNode(-1))))
+	) === 4
+);
