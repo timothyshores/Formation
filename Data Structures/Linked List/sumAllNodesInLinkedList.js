@@ -11,4 +11,13 @@ class Node {
 	}
 }
 
-const sum = (node) => {};
+const sum = (node) => {
+	let sum = 0;
+
+	while (node) {
+		sum += node.value;
+		node = node.next;
+	}
+
+	return sum;
+};
