@@ -12,7 +12,17 @@ class ListNode {
 	}
 }
 
-const kthFromLast = (head, k) => {};
+const kthFromLast = (head, k) => {
+	let current = head;
+	const nodes = [];
+
+	while (current) {
+		nodes.push(current.value);
+		current = current.next;
+	}
+
+	return nodes[nodes.length - k] || -1;
+}
 
 // Test Data
 const LL1 = new ListNode(
