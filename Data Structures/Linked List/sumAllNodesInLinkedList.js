@@ -21,3 +21,23 @@ const sum = (node) => {
 
 	return sum;
 };
+
+// Empty Linked List
+console.log(sum(null)); // 0
+console.log(sum(new Node())); // 0
+
+// Linked List with 1 node
+console.log(sum(new Node(1))); // 1
+console.log(sum(new Node(0))); // 0
+console.log(sum(new Node(-1))); // -1
+
+// Linked List with 2 nodes
+console.log(sum(new Node(0, new Node(0)))); // 0
+console.log(sum(new Node(1, new Node(1)))); // 2
+console.log(sum(new Node(1, new Node(2)))); // 3
+console.log(sum(new Node(-1, new Node(-1)))); // -2
+
+// Linked List with 3 nodes
+console.log(sum(new Node(1, new Node(2, new Node(3))))); // 6
+console.log(sum(new Node(1, new Node(4, new Node(5))))); // 10
+console.log(sum(new Node(-1, new Node(-5, new Node(-4))))); // -10
