@@ -9,4 +9,16 @@
 // Example
 // ["oliver", "pixel", "oliver", "pinky"] will return ["oliver", "pixel", "pinky"]
 
-const removeDuplicateFellows = (fellows) => {};
+const removeDuplicateFellows = (fellows) => {
+	const uniqueFellows = [];
+	let set = new Set();
+
+	for (const fellow of fellows) {
+		if (!set.has(fellow)) {
+			set.add(fellow);
+			uniqueFellows.push(fellow);
+		}
+	}
+
+	return uniqueFellows;
+};
