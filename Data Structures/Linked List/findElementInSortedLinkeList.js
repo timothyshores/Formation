@@ -35,3 +35,18 @@ const LL1 = new ListNode(
 		)
 	)
 );
+
+// All test cases return true
+console.log(search(LL1, 1));
+console.log(search(LL1, 2));
+console.log(search(LL1, 3));
+console.log(search(LL1, 5));
+console.log(search(LL1, 6));
+console.log(search(LL1, 7));
+console.log(search(LL1, 10));
+console.log(search(LL1, 0) === false);
+console.log(search(LL1, 4) === false);
+console.log(search(LL1, 8) === false);
+console.log(search(null, 1) === false);
+console.log(search(LL1, -1) === false);
+console.log(search(LL1, 11) === false);
