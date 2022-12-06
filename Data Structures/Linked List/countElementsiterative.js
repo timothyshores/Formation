@@ -11,4 +11,15 @@ class ListNode {
 	}
 }
 
-const count = (head) => {};
+const count = (head) => {
+	if (!head) return 0;
+
+	let count = 0;
+
+	while (head) {
+		count++;
+		head = head.next;
+	}
+
+	return count;
+};
