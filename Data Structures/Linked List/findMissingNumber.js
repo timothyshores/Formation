@@ -51,3 +51,47 @@ const findMissing = (head) => {
 
 	return max + 1;
 };
+
+// empty list
+console.log(findMissing(new Node()) === 1); // true
+
+// 1-node list
+console.log(findMissing(new Node(0)) === 1); // true
+console.log(findMissing(new Node(1)) === 2); // true
+console.log(findMissing(new Node(-1)) === 0); // true
+console.log(findMissing(new Node(999)) === 1000); // true
+
+// list with all consecutive numbers
+console.log(findMissing(new Node(1, new Node(2))) === 3); // true
+console.log(findMissing(new Node(-2, new Node(-1))) === 0); // true
+console.log(findMissing(new Node(1, new Node(2, new Node(3)))) === 4); // true
+console.log(findMissing(new Node(0, new Node(1, new Node(2)))) === 3); // true
+
+// list skipping a number
+console.log(findMissing(new Node(1, new Node(3))) === 2); // true
+console.log(findMissing(new Node(2, new Node(4))) === 3); // true
+console.log(findMissing(new Node(-1, new Node(1))) === 0); // true
+console.log(findMissing(new Node(-3, new Node(-1))) === -2); // true
+
+// list skipping a number on the second-to-last node
+console.log(findMissing(new Node(1, new Node(2, new Node(4)))) === 3); // true
+console.log(findMissing(new Node(-2, new Node(-1, new Node(1)))) === 0); // true
+console.log(findMissing(new Node(-4, new Node(-3, new Node(-1)))) === -2); // true
+
+// list skipping a number on the second node
+console.log(findMissing(new Node(1, new Node(3, new Node(4)))) === 2); // true
+console.log(findMissing(new Node(-2, new Node(0, new Node(1)))) === -1); // true
+console.log(findMissing(new Node(-4, new Node(-2, new Node(-1)))) === -3); // true
+
+// list with five nodes
+console.log(
+	findMissing(
+		new Node(5, new Node(6, new Node(7, new Node(8, new Node(9)))))
+	) === 10
+); // true
+
+console.log(
+	findMissing(
+		new Node(5, new Node(6, new Node(7, new Node(8, new Node(10)))))
+	) === 9
+); // true
