@@ -32,3 +32,43 @@ const createLLInReverse = (node) => {
 	// return the reversed array
 	return array.reverse();
 };
+
+// empty list
+console.log(JSON.stringify(createLLInReverse()));
+console.log(JSON.stringify(createLLInReverse(new Node())));
+
+// 1 node list
+console.log(JSON.stringify(createLLInReverse(new Node(1))));
+console.log(JSON.stringify(createLLInReverse(new Node(0))));
+console.log(JSON.stringify(createLLInReverse(new Node(-1))));
+console.log(JSON.stringify(createLLInReverse(new Node(99999))));
+
+// odd-length list
+console.log(
+	JSON.stringify(createLLInReverse(new Node(1, new Node(2, new Node(3)))))
+); // [3, 2, 1]
+
+console.log(
+	JSON.stringify(createLLInReverse(new Node(0, new Node(2, new Node(4)))))
+); // [4, 2, 0]
+
+// even-length list
+console.log(JSON.stringify(createLLInReverse(new Node(1, new Node(2))))); // [2, 1]
+
+console.log(JSON.stringify(createLLInReverse(new Node(2, new Node(1))))); // [1, 2]
+
+let head = new Node(1, new Node(3, new Node(5, new Node(2))));
+console.log(
+	JSON.stringify(createLLInReverse(head)) === JSON.stringify([2, 5, 3, 1])
+); // true
+
+// list with duplicates
+console.log(JSON.stringify(createLLInReverse(new Node(0, new Node(1))))); // [1, 0]
+
+console.log(
+	JSON.stringify(createLLInReverse(new Node(4, new Node(0, new Node(4)))))
+); // [4, 0, 4]
+
+console.log(
+	JSON.stringify(createLLInReverse(new Node(0, new Node(0, new Node(0)))))
+); // [0, 0, 0]
