@@ -12,4 +12,25 @@
 // Zoe appeared 1 time.")
 // console.log(printNameFreq("") == "Nobody appeared.")
 
-const printNameFreq = (names) => {};
+const printNameFreq = (names) => {
+	if (names.length === 0) return "Nobody appeared.";
+
+	const namesArray = names.split(", ");
+
+	if (namesArray.length === 1) return `${namesArray[0]} appeared 1 time.`;
+
+	const namesMap = {};
+
+	for (const name of namesArray) {
+		namesMap[name] = (namesMap[name] || 0) + 1;
+	}
+
+	let namesString = "";
+
+	for (const [name, count] of Object.entries(namesMap)) {
+		namesString += `${name} appeared ${count} ${(timeOrTimes =
+			count === 1 ? "time" : "times")}.\n`;
+	}
+
+	return namesString.substring(0, namesString.length - 1);
+};
