@@ -3,6 +3,20 @@
 // Follow-up question:
 // How would removing the Fellows in place, instead of using a new output array, affect the algorithm's runtime?
 
+// If we modified the fellows input parameter array in place it could change the runtime from O(n) to O(n ^ 2)
+// Say we have a large array that's strictly a single name duplicates N number of times
+// If we found the 2nd element was a duplicate of the first element
+// We would have to shift the 3rd element at index 2 to index 1
+// The 4th element at index 3 to index 2
+// We'd have to continue that process until we reached the end of the array
+// This would be N - 1 number of swaps or shifts
+// Now when we check the 3rd original element or the new 2nd element of the array
+// This element is a duplicate of the first element
+// Now we need to make N - 2 number of shifts or swaps
+// This process would continue to N - 3 swaps, N - 4 swaps, N - 5 swaps and so on
+// Ultimately this would result in O(N ^ 2) number of swaps
+// If we store the results in a new array that uses O(N) space then we get O(N) linear time complexity
+
 // Expected Time Complexity: O(N) to iterate through the length N array
 // Expected Space Complexity: O(N) to store up to N elements
 
