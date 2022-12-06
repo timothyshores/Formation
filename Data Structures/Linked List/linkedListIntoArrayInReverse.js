@@ -11,16 +11,24 @@
 // === JSON.stringify([2,5,3,1]))
 
 class Node {
-	constructor(val, next = null) {
-		this.val = val;
+	constructor(value, next = null) {
+		this.value = value;
 		this.next = next;
 	}
 }
 
-const createLLInReverse = (node) => {};
+const createLLInReverse = (node) => {
+	if (!node?.value && node?.value !== 0) return [];
 
-// empty list
-// 1 node list
-// odd-length list
-// even-length list
-// list with duplicates
+	let array = [];
+
+	// iterate through the linked list
+	while (node) {
+		// add each node's value into an array
+		array.push(node.value);
+		node = node.next;
+	}
+
+	// return the reversed array
+	return array.reverse();
+};
