@@ -12,7 +12,22 @@ class ListNode {
 	}
 }
 
-const kthFromLast = (head, k) => {};
+const kthFromLast = (head, k) => {
+	let fastPointer = head;
+	let slowPointer = head;
+
+	for (let i = 0; i < k; i++) {
+		fastPointer = fastPointer.next;
+		if (fastPointer === null) return -1;
+	}
+
+	while (fastPointer) {
+		fastPointer = fastPointer.next;
+		slowPointer = slowPointer.next;
+	}
+
+	return slowPointer.value;
+};
 
 // Test Data
 const LL1 = new ListNode(
@@ -22,3 +37,4 @@ const LL1 = new ListNode(
 		new ListNode(5, new ListNode(3, new ListNode(7, new ListNode(10))))
 	)
 );
+
