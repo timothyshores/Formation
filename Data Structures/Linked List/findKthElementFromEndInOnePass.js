@@ -22,7 +22,7 @@ const kthFromLast = (head, k) => {
 	}
 
 	return nodes[nodes.length - k] || -1;
-}
+};
 
 // Test Data
 const LL1 = new ListNode(
@@ -32,3 +32,13 @@ const LL1 = new ListNode(
 		new ListNode(5, new ListNode(3, new ListNode(7, new ListNode(10))))
 	)
 );
+
+// All test cases return true
+console.log(kthFromLast(LL1, 1) === 10);
+console.log(kthFromLast(LL1, 2) === 7);
+console.log(kthFromLast(LL1, 3) === 3);
+console.log(kthFromLast(LL1, 4) === 5);
+console.log(kthFromLast(LL1, 6) === 13);
+console.log(kthFromLast(LL1, 7) === -1);
+console.log(kthFromLast(LL1, 8) === -1);
+console.log(kthFromLast(LL1, 999) === -1);
