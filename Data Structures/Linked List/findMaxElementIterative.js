@@ -5,7 +5,16 @@ class ListNode {
 	}
 }
 
-const findMax = (node) => {};
+const findMax = (node) => {
+	let max = -Infinity;
+
+	while (node) {
+		max = Math.max(max, node.value);
+		node = node.next;
+	}
+
+	return max;
+};
 
 // Test Cases
 
