@@ -34,3 +34,27 @@ const printNameFreq = (names) => {
 
 	return namesString.substring(0, namesString.length - 1);
 };
+
+// empty string
+console.log(printNameFreq("") === "Nobody appeared."); // true
+
+// 1 name
+console.log(printNameFreq("Tim") === "Tim appeared 1 time."); // true
+
+// all unique names
+console.log(printNameFreq("Tony, Jessica")); // "Tony appeared 1 time.\n Jessica appeared 1 time."
+console.log(printNameFreq("Tony, Jessica, Paavo")); // "Tony appeared 1 time.Jessica appeared 1 time. Paavo appeared 1 time.
+console.log(printNameFreq("Tony, Jessica, Paavo, Jessica")); // / "Tony appeared 1 time. Jessica appeared 2 times. Paavo appeared 1 time.";
+
+// duplicate names
+console.log(printNameFreq("Tony, Jessica, Paavo, Jessica, Tony")); // "Tony appeared 2 times. Jessica appeared 2 times. Paavo appeared 1 time.";
+
+console.log(printNameFreq("Tony, Jessica, Paavo, Jessica, Tony, Zoe")); /// "Tony appeared 2 times. Jessica appeared 2 times. Paavo appeared 1 time. Zoe appeared 1 time.";
+
+// all the same name
+console.log(printNameFreq("Tim, Tim") == "Tim appeared 2 times."); /// true
+console.log(printNameFreq("Tim, Tim, Tim") == "Tim appeared 3 times."); /// true
+console.log(printNameFreq("Tim, Tim, Tim, Tim") == "Tim appeared 4 times."); /// true
+console.log(
+	printNameFreq("Tim, Tim, Tim, Tim, Tim") == "Tim appeared 5 times."
+); /// true
