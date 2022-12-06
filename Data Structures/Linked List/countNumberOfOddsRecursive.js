@@ -21,4 +21,12 @@ class Node {
 	}
 }
 
-const countOdds = (head) => {};
+const countOdds = (head) => {
+	if (!head) return 0;
+
+	if (head.next === null) {
+		return head.value % 2 === 1 ? 1 : 0;
+	} else {
+		return (head.value % 2 === 1 ? 1 : 0) + countOdds(head.next);
+	}
+};
