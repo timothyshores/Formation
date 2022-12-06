@@ -30,3 +30,39 @@ const countOdds = (head) => {
 		return (head.value % 2 === 1 ? 1 : 0) + countOdds(head.next);
 	}
 };
+
+// empty list
+console.log(countOdds() === 0); // true
+console.log(countOdds(new Node()) === 0); // true
+
+// 1 node list with an odd value
+console.log(countOdds(new Node(1)) === 1); // true
+console.log(countOdds(new Node(3)) === 1); // true
+console.log(countOdds(new Node(5)) === 1); // true
+console.log(countOdds(new Node(101)) === 1); // true
+
+// 1 node list without an odd value
+console.log(countOdds(new Node(0)) === 0); // true
+console.log(countOdds(new Node(2)) === 0); // true
+console.log(countOdds(new Node(4)) === 0); // true
+console.log(countOdds(new Node(8)) === 0); // true
+
+// list with some odd values
+console.log(countOdds(new Node(1, new Node(1))) === 2);
+console.log(countOdds(new Node(0, new Node(1, new Node(1)))) === 2); // true
+console.log(countOdds(new Node(1, new Node(0, new Node(1)))) === 2); // true
+console.log(countOdds(new Node(1, new Node(1, new Node(0)))) === 2); // true
+console.log(countOdds(new Node(1, new Node(1, new Node(1)))) === 3); // true
+console.log(
+	countOdds(new Node(1, new Node(1, new Node(1, new Node(1))))) === 4
+); // true
+
+// list with no odd values
+console.log(countOdds(new Node(0, new Node(0))) === 0); // true
+console.log(countOdds(new Node(2, new Node(2))) === 0); // true
+console.log(countOdds(new Node(2, new Node(4))) === 0); // true
+console.log(countOdds(new Node(2, new Node(2, new Node(2)))) === 0); // true
+console.log(countOdds(new Node(2, new Node(4, new Node(6)))) === 0); // true
+console.log(
+	countOdds(new Node(2, new Node(4, new Node(6), new Node(8)))) === 0
+); // true
