@@ -16,4 +16,12 @@ class Node {
 	}
 }
 
-const secondToLast = (head) => {};
+const secondToLast = (head) => {
+	let current = head;
+	if (!current.next) return null;
+
+	while (current) {
+		if (current.next.next == null) return current.value;
+		current = current.next;
+	}
+};
