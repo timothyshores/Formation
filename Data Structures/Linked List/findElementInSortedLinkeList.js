@@ -11,7 +11,19 @@ class ListNode {
 	}
 }
 
-const search = (head, target) => {};
+const search = (head, target) => {
+	if (!head || target < head.value) return false;
+
+	let current = head;
+
+	while (current) {
+		if (target === current.value) return true;
+		if (target < current.value) return false;
+		current = current.next;
+	}
+
+	return false;
+};
 
 const LL1 = new ListNode(
 	1,
