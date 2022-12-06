@@ -22,4 +22,32 @@ class Node {
 	}
 }
 
-const findMissing = (head) => {};
+const findMissing = (head) => {
+	if (!head.value) return 1;
+	let min = Infinity;
+	let max = -Infinity;
+	let set = new Set();
+
+	// iterate through the linked list
+	while (head) {
+		// get the min
+		min = Math.min(head.value, min);
+		// get the max
+		max = Math.max(head.value, max);
+
+		// Store the current node's value in a set
+		set.add(head.value);
+		head = head.next;
+	}
+
+	// iterate starting at min, min + 1, min + 2, ..., max
+	for (let i = min; i <= max; i++) {
+		if (set.has(i)) {
+			set.delete(i);
+		} else if (!set.has(i)) {
+			return i;
+		}
+	}
+
+	return max + 1;
+};
