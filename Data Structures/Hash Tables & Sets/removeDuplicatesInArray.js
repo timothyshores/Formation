@@ -22,3 +22,30 @@ const removeDuplicateFellows = (fellows) => {
 
 	return uniqueFellows;
 };
+
+// empty array
+console.log(removeDuplicateFellows([]));
+
+// 1-element array
+console.log(removeDuplicateFellows(["oliver"])); // ["oliver"]
+
+// all unique elements
+console.log(removeDuplicateFellows(["oliver", "pixel"])); // ["oliver", "pixel"]
+console.log(removeDuplicateFellows(["oliver", "pixel", "pinky"])); // ["oliver", "pixel", "pinky"]
+
+// 1 duplicate
+console.log(removeDuplicateFellows(["oliver", "oliver", "pixel", "pinky"])); // ["oliver", "pixel", "pinky"]
+console.log(removeDuplicateFellows(["oliver", "pixel", "oliver", "pinky"])); // ["oliver", "pixel", "pinky"]
+console.log(removeDuplicateFellows(["oliver", "pixel", "pinky", "oliver"])); // ["oliver", "pixel", "pinky"]
+console.log(removeDuplicateFellows(["pixel", "oliver", "oliver", "pinky"])); // ["pixel", "oliver", "pinky"]
+
+// some duplicates
+console.log(removeDuplicateFellows(["oliver", "oliver", "pinky", "oliver"])); // ["oliver", "pinky"]
+console.log(removeDuplicateFellows(["oliver", "pixel", "oliver", "oliver"])); // ["oliver", "pixel"]
+console.log(removeDuplicateFellows(["oliver", "oliver", "oliver", "pixel"])); // ["oliver", "pixel"
+console.log(removeDuplicateFellows(["pinky", "oliver", "oliver", "oliver"])); // ["pinky", "oliver"]
+
+// all the same duplicate
+console.log(removeDuplicateFellows(["oliver", "oliver"])); // ["oliver"]
+console.log(removeDuplicateFellows(["oliver", "oliver", "oliver"])); // ["oliver"]
+console.log(removeDuplicateFellows(["oliver", "oliver", "oliver", "oliver"])); // ["oliver"]
