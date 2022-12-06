@@ -23,4 +23,25 @@ function arrayify(head) {
 	return array;
 }
 
-function insert(head, target) {}
+function insert(head, target) {
+	let current = head;
+
+	if (!current) return new Node(target);
+
+	while (current) {
+		if (target + 1 === current.value) {
+			let newHead = new Node(target);
+			newHead.next = current;
+			return newHead;
+		} else if (current.value === target - 1) {
+			let nodeAfterTarget = current.next;
+			let newNode = new Node(target);
+			current.next = newNode;
+			newNode.next = nodeAfterTarget;
+			return head;
+		}
+		current = current.next;
+	}
+
+	return head;
+}
