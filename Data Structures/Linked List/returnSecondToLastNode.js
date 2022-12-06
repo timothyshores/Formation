@@ -25,3 +25,29 @@ const secondToLast = (head) => {
 		current = current.next;
 	}
 };
+
+// empty list
+console.log(secondToLast(new Node()));
+
+// 1-node list
+console.log(secondToLast(new Node(1)) === null);
+console.log(secondToLast(new Node(0)) === null);
+console.log(secondToLast(new Node(-1)) === null);
+
+// 2-node list
+console.log(secondToLast(new Node(1, new Node(2))) === 1); // true
+console.log(secondToLast(new Node(-1, new Node(1))) === -1); // true
+
+// odd-length list
+console.log(secondToLast(new Node(1, new Node(2, new Node(3)))) === 2); // true
+
+console.log(
+	secondToLast(
+		new Node(1, new Node(2, new Node(3, new Node(4, new Node(5)))))
+	) === 4
+); // true
+
+// even-length list
+console.log(
+	secondToLast(new Node(1, new Node(2, new Node(3, new Node(4))))) === 3
+); // true
