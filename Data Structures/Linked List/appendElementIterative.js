@@ -23,4 +23,16 @@ const arrayify = (head) => {
 	return array;
 };
 
-const append = (head, target) => {};
+const append = (head, target) => {
+	if (head === null) return new Node(target);
+
+	let current = head;
+
+	while (current.next) {
+		current = current.next;
+	}
+
+	current.next = new Node(target);
+
+	return head;
+};
