@@ -7,4 +7,22 @@
 // Example
 // {"oliver": 3, "pixel": 1, "pinky": 3} => 3
 
-const highestSkillOverlap = (fellowSkills) => {};
+const highestSkillOverlap = (fellowSkills) => {
+	if (fellowSkills.size === 0) return null;
+
+	const skillRatings = Object.values(fellowSkills);
+	const skillMap = {};
+
+	let maxCount = 0;
+	let mostFrequentSkillRating;
+
+	for (const skill of skillRatings) {
+		skillMap[skill] = (skillMap[skill] || 0) + 1;
+		if (skillMap[skill] > maxCount) {
+			maxCount = skillMap[skill];
+			mostFrequentSkillRating = skill;
+		}
+	}
+
+	return mostFrequentSkillRating;
+};
