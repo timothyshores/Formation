@@ -10,4 +10,21 @@ class Node {
 	}
 }
 
-const findThirdQuarterNode = (head) => {};
+const findThirdQuarterNode = (head) => {
+	let before = new Node();
+	before.next = head;
+
+	let current = before;
+	let lead = before;
+
+	while (lead.next !== null) {
+		for (let i = 0; i < 4; i++) {
+			lead = lead.next;
+		}
+		for (let i = 0; i < 3; i++) {
+			current = current.next;
+		}
+	}
+
+	return current;
+};
