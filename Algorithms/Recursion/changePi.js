@@ -10,4 +10,17 @@
 // changePi("pipi") == "3.143.14"
 // changePi("pip") == "3.14p"
 
-const changePi = (word) => {};
+const changePi = (word) => {
+	if (word === "") return "";
+
+	// check if the first 2 letters are pi
+	// if the first two letters are pi
+	if (word.substring(0, 2) === "pi") {
+		// return 3.14 and do string addition by calling the changePI function starting at the third character until the end of the string
+		return "3.14" + changePi(word.substring(2));
+	} else {
+		// else the first two letters are NOT pi
+		// return the first character of the string and do string addition by calling the changePi function starting at the second character until the end of the string
+		return word.substring(0, 1) + changePi(word.substring(1));
+	}
+};
