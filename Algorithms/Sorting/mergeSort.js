@@ -11,32 +11,33 @@ const mergeSort = (arr) => {
 const merge = (left, right) => {
 	const mergedArray = [];
 
-	const addFirstElementFromTheLeftArrayThenRemove = () =>
-		mergedArray.push(left.shift());
+	let leftPointer = 0;
+	let rightPointer = 0;
 
-	const addFirstElementFromTheRightArrayThenRemove = () =>
-		mergedArray.push(right.shift());
-
-	while (left.length && right.length) {
-		if (left[0] <= right[0]) {
-			addFirstElementFromTheLeftArrayThenRemove();
+	while (leftPointer < left.length && rightPointer < right.length) {
+		if (left[leftPointer] <= right[rightPointer]) {
+			mergedArray.push(left[leftPointer]);
+			leftPointer++;
 		} else {
-			addFirstElementFromTheRightArrayThenRemove();
+			mergedArray.push(right[rightPointer]);
+			rightPointer++;
 		}
 	}
 
-	while (left.length) {
-		addFirstElementFromTheLeftArrayThenRemove();
+	while (leftPointer < left.length) {
+		mergedArray.push(left[leftPointer]);
+		leftPointer++;
 	}
-	while (right.length) {
-		addFirstElementFromTheRightArrayThenRemove();
+
+	while (rightPointer < right.length) {
+		mergedArray.push(right[rightPointer]);
+		rightPointer++;
 	}
 
 	return mergedArray;
 };
 
 // Test Cases
-
 console.log(mergeSort([])); // []
 console.log(mergeSort([1])); // [1]
 console.log(mergeSort([3, 1, 2, 4])); // [1, 2, 3, 4]
