@@ -10,4 +10,18 @@
 // console.log(bunnyEarsTwist(3) === 7); // true
 // console.log(bunnyEarsTwist(5) === 12); // true
 
-const bunnyEarsTwist = (bunnies) => {};
+const bunnyEarsTwist = (bunnies) => {
+	if (!bunnies) return 0;
+	if (bunnies % 2 === 1) return 2 + bunnyEarsTwist(bunnies - 1);
+	if (bunnies % 2 === 0) return 3 + bunnyEarsTwist(bunnies - 1);
+};
+
+// Test Cases
+console.log(bunnyEarsTwist(0) === 0); // true
+console.log(bunnyEarsTwist(1) === 2); // true
+console.log(bunnyEarsTwist(2) === 5); // true
+console.log(bunnyEarsTwist(3) === 7); // true
+console.log(bunnyEarsTwist(4) === 10); // true
+console.log(bunnyEarsTwist(5) === 12); // true
+console.log(bunnyEarsTwist(12) == 30); // true
+console.log(bunnyEarsTwist(10) == 25); // true
