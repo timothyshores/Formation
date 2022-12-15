@@ -10,4 +10,7 @@
 // console.log(triangle(3) === 6); // true
 // console.log(triangle(5) === 15); // true
 
-const triangle = (rows) => {};
+const triangle = (rows) => {
+	if (rows === 0 || rows === 1) return rows;
+	return rows + triangle(rows - 1);
+};
