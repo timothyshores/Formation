@@ -24,3 +24,24 @@ const changePi = (word) => {
 		return word.substring(0, 1) + changePi(word.substring(1));
 	}
 };
+
+// Test Cases
+console.log(changePi("") === ""); // true
+console.log(changePi("p") === "p"); // true
+console.log(changePi("i") === "i"); // true
+console.log(changePi("pi") === "3.14"); // true
+console.log(changePi("pii") === "3.14i"); // true
+console.log(changePi("pip") === "3.14p"); // true
+console.log(changePi("ip ip") === "ip ip"); // true
+console.log(changePi("xpix") === "x3.14x"); // true
+console.log(changePi("ppii") === "p3.14i"); // true
+console.log(changePi("pipi") === "3.143.14"); // true
+console.log(changePi("pi pi pi") === "3.14 3.14 3.14"); // true
+
+console.log(
+	changePi("strings without p i occurring") === "strings without p i occurring"
+); // true
+
+console.log(
+	changePi("strings with pi occurring") === "strings with 3.14 occurring"
+); // true
