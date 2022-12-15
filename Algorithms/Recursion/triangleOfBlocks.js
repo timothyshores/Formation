@@ -14,3 +14,18 @@ const triangle = (rows) => {
 	if (rows === 0 || rows === 1) return rows;
 	return rows + triangle(rows - 1);
 };
+
+// Test Cases
+console.log(triangle(0) === 0); // true
+console.log(triangle(1) === 1); // true
+console.log(triangle(2) === 3); // true
+console.log(triangle(3) === 6); // true
+console.log(triangle(4) === 10); // true
+console.log(triangle(5) === 15); // true
+console.log(triangle(6) === 21); // true
+console.log(triangle(7) === 28); // true
+console.log(triangle(8) === 36); // true
+console.log(triangle(9) === 45); // true
+console.log(triangle(10) === 55); // true
+console.log(triangle(11) === 66); // true
+console.log(triangle(12) === 78); // true
