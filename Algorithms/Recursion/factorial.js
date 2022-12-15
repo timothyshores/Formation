@@ -13,3 +13,11 @@ const factorial = (n) => {
 	if (n === 1) return 1;
 	return n * factorial(n - 1);
 };
+
+// Test Cases
+console.log(factorial(1) === 1); // true
+console.log(factorial(2) === 2); // true
+console.log(factorial(3) === 6); // true
+console.log(factorial(4) === 24); // true
+console.log(factorial(5) === 120); // true
+console.log(factorial(6) === 720); // true
