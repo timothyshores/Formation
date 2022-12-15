@@ -9,4 +9,7 @@
 // console.log(factorial(3) === 6); // true
 // console.log(factorial(5) === 120); // true
 
-const factorial = (n) => {};
+const factorial = (n) => {
+	if (n === 1) return 1;
+	return n * factorial(n - 1);
+};
