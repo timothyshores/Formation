@@ -11,4 +11,15 @@ class Node {
 	}
 }
 
-const count = (head) => {};
+const count = (head) => {
+	if (!head) return 0;
+
+	return 1 + count(head.next);
+};
+
+// Test Cases
+console.log(count(null) === 0); // true
+console.log(count(new Node()) === 1); // true
+console.log(count(new Node(1, new Node(2))) === 2); // true
+console.log(count(new Node(1, new Node(2, new Node(3)))) === 3); // true
+console.log(count(new Node(1, new Node(2, new Node(3, new Node(4))))) === 4); // true
