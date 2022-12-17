@@ -17,3 +17,38 @@ const strCount = (word, sub) => {
 
 	return strCount(word.substring(1), sub);
 };
+
+// empty word and non-empty sub
+console.log(strCount("", "hi"));
+console.log(strCount("", "HI"));
+
+// non empty word does NOT contain sub
+console.log(strCount("I", "HI"));
+console.log(strCount("H", "HI"));
+
+// 1 character word
+console.log(strCount("a", "a"));
+console.log(strCount("A", "A"));
+console.log(strCount("z", "z"));
+console.log(strCount("Z", "Z"));
+
+// word matches sub
+console.log(strCount("hi", "hi"));
+console.log(strCount("HI", "HI"));
+
+// word is the sub twice
+console.log(strCount("hihi", "hi"));
+console.log(strCount("HIHI", "HI"));
+
+// word has sub at the beginning and end
+console.log(strCount("hih", "hi"));
+console.log(strCount("HII", "HI"));
+
+// word has sub followed by some text followed by sub
+console.log(strCount("hihellotherehi", "hi"));
+console.log(strCount("helloWorldhello", "hello"));
+
+// word has overlapping sub
+console.log(strCount("IHIHI", "HI"));
+console.log(strCount("ihihi", "hi"));
+console.log(strCount("HIHIHI", "HI"));
