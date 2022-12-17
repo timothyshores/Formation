@@ -10,4 +10,8 @@
 // console.log(addStars("abc") === "a*b*c"); // true
 // console.log(addStars("ab") === "a*b"); // true
 
-const addStars = (word) => {};
+const addStars = (word) => {
+	if (word === "") return "";
+	if (word.length === 1) return word;
+	return word[0] + "*" + addStars(word.substring(1));
+};
