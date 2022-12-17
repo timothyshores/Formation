@@ -10,4 +10,13 @@
 // console.log(array10x([3, 30], 0) === true); // true
 // console.log(array10x([1, 2, 20], 0) === true); // true
 
-const array10x = (nums) => {};
+const array10x = (nums) => {
+	if (nums.length < 2) return false;
+
+	let lastElement = nums.pop();
+	let secondToLastElement = nums[nums.length - 1];
+
+	if (secondToLastElement * 10 === lastElement) return true;
+
+	return array10x(nums);
+};
