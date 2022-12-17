@@ -10,4 +10,8 @@
 // console.log(array6([1, 2, 6], 0) === 1); // true
 // console.log(array6([1, 2, 3, 4], 0) === 0); // true
 
-const array6 = (nums, index) => {};
+const array6 = (nums, index) => {
+	if (index >= nums.length) return 0;
+	if (nums[index] === 6) return 1 + array6(nums, index + 1);
+	return array6(nums, index + 1);
+};
