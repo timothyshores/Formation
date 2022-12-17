@@ -15,3 +15,36 @@ const array6 = (nums, index) => {
 	if (nums[index] === 6) return 1 + array6(nums, index + 1);
 	return array6(nums, index + 1);
 };
+
+// empty array
+console.log(array6([], 0) === 0); // true
+
+// array with 1 element
+console.log(array6([1], 0) === 0); // true
+console.log(array6([0], 0) === 0); // true
+console.log(array6([-1], 0) === 0); // true
+
+// array with 1 element that's a 6
+console.log(array6([6], 0) === 1); // true
+
+// array with multiple numbers and 1 element that's a 6
+console.log(array6([6, 1, 2], 0) === 1); // true
+console.log(array6([1, 6, 2], 0) === 1); // true
+console.log(array6([1, 2, 6], 0) === 1); // true
+
+// array with two 6's elements
+console.log(array6([6, 6], 0) === 2); // true
+console.log(array6([6, 1, 6], 0) === 2); // true
+console.log(array6([6, 0, 6], 0) === 2); // true
+console.log(array6([6, -1, 6], 0) === 2); // true
+
+// array with two 6's elements next to each other
+console.log(array6([1, 6, 6], 0) === 2); // true
+console.log(array6([6, 6, 0], 0) === 2); // true
+console.log(array6([-1, 6, 6, 1], 0) === 2); // true
+
+// array with all 6's elements
+console.log(array6([6, 6, 6], 0) === 3); // true
+console.log(array6([6, 6, 6, 6], 0) === 4); // true
+console.log(array6([6, 6, 6, 6, 6], 0) === 5); // true
+console.log(array6([6, 6, 6, 6, 6, 6], 0) === 6); // true
