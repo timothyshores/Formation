@@ -10,4 +10,8 @@
 // console.log(pairStars("xxyy") === "x*xy*y"); // true
 // console.log(pairStars("aaaa") === "a*a*a*a"); // true
 
-const pairStars = (word) => {};
+const pairStars = (word) => {
+	if (word === "") return "";
+	if (word[0] === word[1]) return word[0] + "*" + pairStars(word.substring(1));
+	return word[0] + pairStars(word.substring(1));
+};
