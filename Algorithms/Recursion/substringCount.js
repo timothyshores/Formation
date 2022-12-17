@@ -10,4 +10,10 @@
 // print(strCount("catcowcat", "cow") == 1)
 // print(strCount("catcowcat", "dog") == 0)
 
-const strCount = (word, sub) => {};
+const strCount = (word, sub) => {
+	if (word.length < sub.length) return 0;
+	if (word.substring(0, sub.length) === sub)
+		return 1 + strCount(word.substring(sub.length), sub);
+
+	return strCount(word.substring(1), sub);
+};
