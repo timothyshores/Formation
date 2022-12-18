@@ -10,4 +10,36 @@
 // console.log(findMaxIndex([8, 6, 7, 5, 3, 7]) === 0);
 // console.log(findMaxIndex([12, 1234, 45, 67, 1]) === 1);
 
-const findMaxIndex = (arr) => {};
+const findMaxIndex = (arr) => {
+	let currentIndex, currentValue;
+
+	const helper = (
+		array,
+		maxValue = arr[arr.length - 1],
+		maxIndex = arr.length - 1
+	) => {
+		// save the current length of the array
+		currentIndex = array.length - 1;
+
+		// pop off the last element in the array
+		currentValue = array.pop();
+
+		// if the last element in the array is less than the current minimum
+		if (maxValue <= currentValue) {
+			// set the new minimum value and index
+			maxValue = currentValue;
+			maxIndex = currentIndex;
+		}
+
+		// when there is no more elements left in the array
+		if (array.length === 0) {
+			// return the minimum index
+			return maxIndex;
+		}
+
+		// else check the remaining elements by calling the function again
+		return helper(array, maxValue, maxIndex);
+	};
+
+	return helper(arr);
+};
