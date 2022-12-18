@@ -10,4 +10,17 @@
 // console.log(parenBit("x(hello)") === "(hello)");
 // console.log(parenBit("(xy)1") === "(xy)");
 
-const parenBit = (word) => {};
+const parenBit = (word) => {
+	// if the first character is not (
+	if (word[0] !== "(")
+		// remove the first letter and call the parenBit function with .substring(1)
+		return parenBit(word.substring(1));
+
+	// if the last character is not )
+	if (word[word.length - 1] !== ")")
+		// remove the last letter and call the parenBit function with .substring(0, str.length - 1)
+		return parenBit(word.substring(0, word.length - 1));
+
+	// the first char is "(" and the last char is ")"
+	return word;
+};
