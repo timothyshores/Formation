@@ -10,4 +10,16 @@
 // Time: O(n), where n is the total count of numbers in the nested array
 // Space: O(d), where d is the depth of the deepest nesting, since a stack frame is needed for each recursive call.
 
-const sumNestedListWithDepth = (list, depth = 2) => {};
+const sumNestedListWithDepth = (list, depth = 2) => {
+	let sum = 0;
+
+	for (let i = 0; i < list.length; i++) {
+		if (Array.isArray(list[i])) {
+			sum += sumNestedListWithDepth(list[i], depth + 1) * depth;
+		} else {
+			sum += list[i];
+		}
+    }
+    
+	return sum;
+};
