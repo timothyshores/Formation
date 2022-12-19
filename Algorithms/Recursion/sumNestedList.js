@@ -19,3 +19,18 @@ const sumNestedList = (list) => {
 
 	return sum;
 };
+
+// All test cases return true
+console.log(sumNestedList([]) === 0);
+console.log(sumNestedList([1]) === 1);
+console.log(sumNestedList([[1]]) === 1);
+console.log(sumNestedList([[[1]]]) === 1);
+console.log(sumNestedList([[[[]]]]) === 0);
+console.log(sumNestedList([[[[1]]]]) === 1);
+console.log(sumNestedList([1, 2, 3]) === 6);
+console.log(sumNestedList([1, [2, 3]]) === 6);
+console.log(sumNestedList([1, [2, [3]]]) === 6);
+console.log(sumNestedList([1, [1, 2, 3], 3]) === 10);
+console.log(sumNestedList([1, [1, [1, [1, [1]]]]]) === 5);
+console.log(sumNestedList([1, [1, [2], [], [], [], 3], 3]) === 10);
+console.log(sumNestedList([1, [1, [2], [], [[[[]]]], [], 3], 3]) === 10);
