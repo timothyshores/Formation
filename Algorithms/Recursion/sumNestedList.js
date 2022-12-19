@@ -10,4 +10,12 @@
 // console.log(sumNestedList([1, 2, 3]) === 6);
 // console.log(sumNestedList([1, [1, 2, 3], 3]) === 10);
 
-const sumNestedList = (list) => {};
+const sumNestedList = (list) => {
+	let sum = 0;
+
+	for (const num of list) {
+		sum += Array.isArray(num) ? sumNestedList(num) : num;
+	}
+
+	return sum;
+};
