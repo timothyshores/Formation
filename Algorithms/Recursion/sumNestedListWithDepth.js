@@ -23,3 +23,19 @@ const sumNestedListWithDepth = (list, depth = 2) => {
     
 	return sum;
 };
+
+// All test cases return true
+console.log(sumNestedListWithDepth([1]) === 1);
+console.log(sumNestedListWithDepth([[1]]) === 2);
+console.log(sumNestedListWithDepth([[[1]]]) === 6);
+console.log(sumNestedListWithDepth([[[[]]]]) === 0);
+console.log(sumNestedListWithDepth([1, 2, 3]) === 6);
+console.log(sumNestedListWithDepth([[[[1]]]]) === 24);
+console.log(sumNestedListWithDepth([1, [2, 3]]) === 11);
+console.log(sumNestedListWithDepth([1, [2, [3]]]) === 23);
+console.log(sumNestedListWithDepth([1, [1, 2, 3], 3]) === 16);
+console.log(sumNestedListWithDepth([1, [1, [1, [1, [1]]]]]) === 153);
+console.log(sumNestedListWithDepth([1, [1, [2], [], [], [], 3], 3]) === 24);
+console.log(
+	sumNestedListWithDepth([1, [1, [2], [], [[[[]]]], [], 3], 3]) === 24
+);
