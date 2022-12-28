@@ -18,12 +18,20 @@ Create examples & test cases:
 🧠 BRAINSTORM
 What approaches could work? Consider data structures or algorithmic patterns.
 Analyze the space & time complexity.
-Approach 1:
-Time: 
-Space: 
+Approach 1: Use recursion
+Time: O(n)
+Space: O(n)
 
 📆 PLAN
 High-level outline of approach #: 
+    Implement using recursion
+    The base case is where n is a single digit number e.g. n < 10
+    When n is two or more digits 
+        Check the right most number
+            If the number is 7 then we add 1 to the count
+            Else the number is NOT seven so we add 0 or don't count the number
+        Call the function again but don't include the right most number
+            Use Math.floor(n / 10) to remove the right most number
 */
 
 // 🛠️ IMPLEMENT
