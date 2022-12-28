@@ -44,3 +44,28 @@ const count7 = (n) => {
 };
 
 // 🧪 VERIFY - All test cases return true
+console.log(count7(0) === 0);
+console.log(count7(1) === 0);
+console.log(count7(5) === 0);
+console.log(count7(7) === 1);
+console.log(count7(07) === 1);
+console.log(count7(17) === 1);
+console.log(count7(70) === 1);
+console.log(count7(71) === 1);
+console.log(count7(77) === 2);
+console.log(count7(123) === 0);
+console.log(count7(007) === 1);
+console.log(count7(717) === 2);
+console.log(count7(707) === 2);
+console.log(count7(770) === 2);
+console.log(count7(770) === 2);
+console.log(count7(777) === 3);
+console.log(count7(7123) === 1);
+console.log(count7(99999) === 0);
+console.log(count7(99799) === 1);
+console.log(count7(47571) === 2);
+console.log(count7(771237) === 3);
+console.log(count7(771737) === 4);
+console.log(count7(777777) === 6);
+console.log(count7(70701277) === 4);
+console.log(count7(777576197) === 5);
