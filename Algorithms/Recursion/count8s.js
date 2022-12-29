@@ -29,12 +29,17 @@ count8(188188188) == 9
 🧠 BRAINSTORM
 What approaches could work? Consider data structures or algorithmic patterns.
 Analyze the space & time complexity.
-Approach 1: 
-Time: 
-Space: 
+Approach 1: Recursion
+Time: O(n)
+Space: O(n)
 
 📆 PLAN
 High-level outline of approach #: 
+Check the right most digit
+    If that number is an 8 then we add 1 to the count
+        If the number to its left or the 2nd to right digit is also an 8 then add 1 more
+Remove the right most digit and call the function again
+Base case is when the number is 0
 */
 
 // 🛠️ IMPLEMENT
