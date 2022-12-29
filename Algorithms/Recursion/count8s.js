@@ -14,6 +14,17 @@ count8(8818) == 4  (because 2+1+0+1)
 State your assumptions & discoveries:
 
 Create examples & test cases:
+count8(1) == 0
+count8(11) == 0
+count8(88) == 3
+count8(111) == 0
+count8(888) == 5
+count8(8888) == 7
+count8(88188) == 6
+count8(881881) == 6
+count8(1881881) == 6
+count8(881881881) == 9
+count8(188188188) == 9
 
 🧠 BRAINSTORM
 What approaches could work? Consider data structures or algorithmic patterns.
@@ -27,7 +38,8 @@ High-level outline of approach #:
 */
 
 // 🛠️ IMPLEMENT
-const count8 = (n) => {};
+const count8 = (n) => {
+};
 
 /* 
 🧪 VERIFY
