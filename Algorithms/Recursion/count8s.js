@@ -44,6 +44,19 @@ Base case is when the number is 0
 
 // 🛠️ IMPLEMENT
 const count8 = (n) => {
+	// Base case is when the number is 0
+	if (n === 0) return 0;
+
+	// Check the right most digit
+	// If that number is an 8 then we add 1 to the count
+	// If the number to its left or the 2nd to right digit is also an 8 then add 1 more
+	if (n % 100 === 88) return 2 + count8(Math.floor(n / 10));
+
+	// If the second to the right
+	if (n % 10 === 8) return 1 + count8(Math.floor(n / 10));
+
+	// Remove the right most digit and call the function again
+	return count8(Math.floor(n / 10));
 };
 
 /* 
