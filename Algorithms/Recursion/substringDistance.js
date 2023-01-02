@@ -10,15 +10,32 @@ strDist("ooowhwhwooo", "whw") == 5
 
 🔎 EXPLORE
 State your assumptions & discoveries: 
+Need to remove characters from both the start and end of the string
 
 Create examples & test cases:
+
+console.log(strDist("", "z") === 0)
+console.log(strDist("x", "z") === 0)
+console.log(strDist("z", "z") === 1)
+console.log(strDist("xyx", "z") === 0)
+console.log(strDist("xyx", "y") === 1)
+console.log(strDist("xyx", "x") === 3)
+console.log(strDist("catcowcat", "cow") === 3)
+console.log(strDist("catcowcat", "cat") === 9)
+console.log(strDist("hiHellohihihi", "o") === 1)
+console.log(strDist("ooowhwhwooo", "whw") === 5)
+console.log(strDist("hiHellohihihi", "ll") === 2)
+console.log(strDist("hiHellohihihi", "hi") === 13)
+console.log(strDist("hiHellohihihi", "hih") === 5)
+console.log(strDist("cccatcowcatxx", "cat") === 9)
+console.log(strDist("abccatcowcatcatxyz", "cat") === 12)
 
 🧠 BRAINSTORM
 What approaches could work? Consider data structures or algorithmic patterns.
 Analyze the space & time complexity.
-Approach 1: 
-Time: O()
-Space: O()
+Approach 1: Recursion
+Time: O(n)
+Space: O(n)
 
 📆 PLAN
 High-level outline of approach #: 
