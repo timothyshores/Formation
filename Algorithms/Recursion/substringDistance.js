@@ -38,7 +38,22 @@ Time: O(n)
 Space: O(n)
 
 📆 PLAN
-High-level outline of approach #: 
+High-level outline of approach #: 1
+
+Check the start of the string
+If the string does NOT start with the substring 
+    Remove the first character and call the function again
+
+When the string starts with the substring
+Check the end of the string
+If the string does NOT end with the substring 
+    Remove the last character and call the function again
+
+When the string starts and ends with the substring
+Return the length of the current string
+
+If the string's length is less than the length of substring
+Return 0
 
 🛠️ IMPLEMENT  */
 
