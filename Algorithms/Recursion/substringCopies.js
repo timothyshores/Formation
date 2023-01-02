@@ -32,15 +32,27 @@ console.log(!strCopies("iiiiij", "iii", 4));
 console.log(!strCopies("catcowcat", "cow", 2));
 console.log(!strCopies("ijiiiiij", "iiii", 3));
 
+
 🧠 BRAINSTORM
 What approaches could work? Consider data structures or algorithmic patterns.
 Analyze the space & time complexity.
-Approach 1: 
-Time: O()
-Space: O()
+Approach 1: Recursion
+Time: O(n)
+Space: O(n)
 
 📆 PLAN
 High-level outline of approach 1:
+Initialize a count variable and set it to zero
+Get the length of the substring
+Call .substring(0, substring.length) on the string
+Compare if the .substring method is equal to substring
+If it is then we add one to the count
+Else add zero
+If the count is equal to n we could end the function early and return true
+Remove the first character of the function 
+Use the built in .substring(1) method
+Recursively call the function again with the rest of the characters in the string
+If the string is 0 characters then we return false
 
 🛠️ IMPLEMENT
 */
