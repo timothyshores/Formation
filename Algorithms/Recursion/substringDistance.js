@@ -57,10 +57,38 @@ Return 0
 
 🛠️ IMPLEMENT  */
 
-const strDist = (word, sub) => {};
+const strDist = (word, sub) => {
+	if (word.length < sub.length) return 0;
+
+	let start = word.substring(0, sub.length);
+	let end = word.slice(-sub.length);
+
+	if (start !== sub) return strDist(word.substring(1), sub);
+
+	if (end !== sub) return strDist(word.substring(0, word.length - 1), sub);
+
+	if (start === sub && end === sub) return word.length;
+};
 
 /*
 🧪 VERIFY
 Run your examples & test cases.
 Methodically analyze and debug issue(s).
 */
+
+// All test cases return true
+console.log(strDist("", "z") === 0);
+console.log(strDist("x", "z") === 0);
+console.log(strDist("z", "z") === 1);
+console.log(strDist("xyx", "z") === 0);
+console.log(strDist("xyx", "y") === 1);
+console.log(strDist("xyx", "x") === 3);
+console.log(strDist("catcowcat", "cow") === 3);
+console.log(strDist("catcowcat", "cat") === 9);
+console.log(strDist("hiHellohihihi", "o") === 1);
+console.log(strDist("ooowhwhwooo", "whw") === 5);
+console.log(strDist("hiHellohihihi", "ll") === 2);
+console.log(strDist("hiHellohihihi", "hi") === 13);
+console.log(strDist("hiHellohihihi", "hih") === 5);
+console.log(strDist("cccatcowcatxx", "cat") === 9);
+console.log(strDist("abccatcowcatcatxyz", "cat") === 12);
