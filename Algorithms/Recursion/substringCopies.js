@@ -16,6 +16,22 @@ Else return false
 
 Create examples & test cases:
 
+console.log(strCopies("iiijjj", "x", 0));
+console.log(strCopies("iiijjj", "i", 3));
+console.log(strCopies("iiijjj", "ii", 2));
+console.log(strCopies("iiiiij", "iii", 3));
+console.log(strCopies("catcowcat", "cow", 1));
+console.log(strCopies("ijiiiiij", "iiii", 2));
+console.log(strCopies("catcowcat", "cat", 2));
+console.log(strCopies("dogcatdogcat", "dog", 2));
+
+console.log(!strCopies("iiijjj", "x", 3));
+console.log(!strCopies("iiijjj", "i", 4));
+console.log(!strCopies("iiijjj", "ii", 3));
+console.log(!strCopies("iiiiij", "iii", 4));
+console.log(!strCopies("catcowcat", "cow", 2));
+console.log(!strCopies("ijiiiiij", "iiii", 3));
+
 🧠 BRAINSTORM
 What approaches could work? Consider data structures or algorithmic patterns.
 Analyze the space & time complexity.
