@@ -57,10 +57,35 @@ If the string is 0 characters then we return false
 🛠️ IMPLEMENT
 */
 
-const strCopies = (word, sub, n) => {};
+const strCopies = (word, sub, n) => {
+	if (word === "") return false;
+	if (n === 0) return true;
+
+	if (word.substring(0, sub.length) === sub)
+		return strCopies(word.substring(1), sub, n - 1);
+
+	return strCopies(word.substring(1), sub, n);
+};
 
 /*
 🧪 VERIFY
 Run your examples & test cases.
 Methodically analyze and debug issue(s).
 */
+
+// All test cases return true
+console.log(strCopies("iiijjj", "x", 0));
+console.log(strCopies("iiijjj", "i", 3));
+console.log(strCopies("iiijjj", "ii", 2));
+console.log(strCopies("iiiiij", "iii", 3));
+console.log(strCopies("catcowcat", "cow", 1));
+console.log(strCopies("ijiiiiij", "iiii", 2));
+console.log(strCopies("catcowcat", "cat", 2));
+console.log(strCopies("dogcatdogcat", "dog", 2));
+
+console.log(!strCopies("iiijjj", "x", 3));
+console.log(!strCopies("iiijjj", "i", 4));
+console.log(!strCopies("iiijjj", "ii", 3));
+console.log(!strCopies("iiiiij", "iii", 4));
+console.log(!strCopies("catcowcat", "cow", 2));
+console.log(!strCopies("ijiiiiij", "iiii", 3));
