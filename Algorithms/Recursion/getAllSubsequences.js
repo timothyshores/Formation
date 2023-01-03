@@ -31,7 +31,28 @@ High-level outline of approach #:
 
 🛠️ IMPLEMENT  */
 
-const getAllSubsequences = (str) => {};
+const getAllSubsequences = (str) => {
+	const allSubsequences = [];
+
+	const helper = (currentSubsequence = "", index = 0) => {
+		// Base case is no more characters to add
+		if (index === str.length) {
+			// Push non-empty currentSubsequence into allSubsequences
+			if (currentSubsequence) allSubsequences.push(currentSubsequence);
+			return;
+		}
+
+		// Skip current character in recursive call
+		helper(currentSubsequence, index + 1);
+
+		// Add current character in recursive call
+		helper(currentSubsequence + str[index], index + 1);
+	};
+
+	helper();
+
+	return allSubsequences;
+};
 
 /*
 🧪 VERIFY
