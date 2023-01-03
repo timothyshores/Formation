@@ -10,14 +10,21 @@ console.log(getAllSubsequences("abc")); // ["a","b","c","ab","ac","bc","abc"]
 🔎 EXPLORE
 State your assumptions & discoveries: 
 
+Want to output all unique permutations of the input string
+
 Create examples & test cases:
+
+console.log(getAllSubsequences("")); // [""]
+console.log(getAllSubsequences("a")); // ["a"]
+console.log(getAllSubsequences("ab")); // ["a, b, ab"]
+
 
 🧠 BRAINSTORM
 What approaches could work? Consider data structures or algorithmic patterns.
 Analyze the space & time complexity.
-Approach 1: 
-Time: O()
-Space: O()
+Approach 1: Recursion
+Time: O(n^2)
+Space: O(n)
 
 📆 PLAN
 High-level outline of approach #: 
