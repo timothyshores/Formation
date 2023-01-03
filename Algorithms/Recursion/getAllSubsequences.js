@@ -59,3 +59,11 @@ const getAllSubsequences = (str) => {
 Run your examples & test cases.
 Methodically analyze and debug issue(s).
 */
+
+console.log(getAllSubsequences("a")); // ['a']
+console.log(getAllSubsequences("ab")); // ['b', 'a', 'ab']
+console.log(getAllSubsequences("1A")); // ["A", "1", "1A"])
+console.log(getAllSubsequences("abc")); // ["c","b","bc","a","ac","ab","abc"]]
+console.log(getAllSubsequences("abcd")); // ["d","c","cd","b","bd","bc","bcd","a","ad","ac","acd","ab","abd","abc","abcd"]
+console.log(getAllSubsequences("1A2b")); // ["b","2","2b","A","Ab","A2","A2b","1","1b","12","12b","1A","1Ab","1A2","1A2b"]
+console.log(getAllSubsequences("jesitony").length === 255); // true
