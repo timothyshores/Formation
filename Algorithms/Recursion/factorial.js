@@ -8,15 +8,20 @@ factorial(5) == 120
 
 🔎 EXPLORE
 State your assumptions & discoveries:
+N must be a positive non-zero integer
 
 Create examples & test cases:
+console.log(factorial(1) === 1); // true
+console.log(factorial(2) === 2); // true
+console.log(factorial(3) === 6); // true
+console.log(factorial(4) === 24); // true
 
 🧠 BRAINSTORM
 What approaches could work? Consider data structures or algorithmic patterns.
 Analyze the space & time complexity.
-Approach 1: 
-Time: O()
-Space: O()
+Approach 1: Recursion
+Time: O(n)
+Space: O(n)
 
 📆 PLAN
 
