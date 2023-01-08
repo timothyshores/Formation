@@ -39,3 +39,14 @@ const factorial = (n) => {
 🧪 VERIFY
 Run your examples & test cases.
 Methodically analyze and debug issue(s) */
+
+// All Test Cases Return True
+console.log(factorial(1) === 1); // true
+console.log(factorial(2) === 2); // true
+console.log(factorial(3) === 6); // true
+console.log(factorial(4) === 24); // true
+console.log(factorial(5) === 120); // true
+console.log(factorial(6) === 720); // true
+console.log(factorial(7) === 5040); // true
+console.log(factorial(8) === 40320); // true
+console.log(factorial(9) === 362880); // true
