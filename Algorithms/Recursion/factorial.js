@@ -1,23 +1,28 @@
-// Prompt
-// In mathematics, the factorial of a non-negative integer N, denoted as N!, is the multiplication product of all positive integers <= N. Compute the result recursively (without loops).
+/*
+❓ PROMPT
+In mathematics, the factorial of a non-negative integer N, denoted as N!, is the multiplication product of all positive integers <= N. Compute the result recursively (without loops).
 
-// Expected Runtime
-// Time: O(N) to calculate N digits
-// Space: O(N) to store N frames on the function call stack
+Example(s)
+factorial(3) == 6
+factorial(5) == 120
 
-// Examples
-// console.log(factorial(3) === 6); // true
-// console.log(factorial(5) === 120); // true
+🔎 EXPLORE
+State your assumptions & discoveries:
 
-const factorial = (n) => {
-	if (n === 1) return 1;
-	return n * factorial(n - 1);
-};
+Create examples & test cases:
 
-// Test Cases
-console.log(factorial(1) === 1); // true
-console.log(factorial(2) === 2); // true
-console.log(factorial(3) === 6); // true
-console.log(factorial(4) === 24); // true
-console.log(factorial(5) === 120); // true
-console.log(factorial(6) === 720); // true
+🧠 BRAINSTORM
+What approaches could work? Consider data structures or algorithmic patterns.
+Analyze the space & time complexity.
+Approach 1: 
+Time: O()
+Space: O()
+
+📆 PLAN
+
+🛠️ IMPLEMENT */
+
+/*
+🧪 VERIFY
+Run your examples & test cases.
+Methodically analyze and debug issue(s) */
