@@ -24,8 +24,16 @@ Time: O(n)
 Space: O(n)
 
 📆 PLAN
+High-level outline of approach #: 1
+Return the current integer n multiplied by the next smaller integer
+E.g. if we want to find the factorial of 5 we'd multiply 5 * 4 * 3 * ...
+We'll stop at the number 1 and return 1 which will be our base case
 
 🛠️ IMPLEMENT */
+const factorial = (n) => {
+	if (n === 1) return 1;
+	return n * factorial(n - 1);
+};
 
 /*
 🧪 VERIFY
