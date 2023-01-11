@@ -25,4 +25,10 @@ const arrayify = (head) => {
 	return array;
 };
 
-const append = (head, target) => {};
+const append = (head, target) => {
+	if (!head) return new Node(target);
+
+	head.next = append(head.next, target);
+	return head;
+};
+
