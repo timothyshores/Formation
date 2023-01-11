@@ -13,3 +13,10 @@ const findMaxNodeValue = (head) => {
 	return Math.max(head.value, findMaxNodeValue(head.next));
 };
 
+// All test cases return true
+console.log(findMaxNodeValue(new Node(1))); // 1
+console.log(findMaxNodeValue(new Node(2))); // 2
+console.log(findMaxNodeValue(new Node(1, new Node(2)))); // 2
+console.log(findMaxNodeValue(new Node(1, new Node(2, new Node(3))))); // 3
+console.log(findMaxNodeValue(new Node(3, new Node(2, new Node(1))))); // 3
+console.log(findMaxNodeValue(new Node(1, new Node(3, new Node(2))))); // 3
