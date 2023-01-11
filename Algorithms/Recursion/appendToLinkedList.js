@@ -32,3 +32,10 @@ const append = (head, target) => {
 	return head;
 };
 
+// Test Cases
+console.log(arrayify(append(null, 1))); // [1]
+console.log(arrayify(append(new Node(), 7))); // [0, 7]
+console.log(arrayify(append(new Node(1, new Node(2)), 3))); // [1, 2, 3]
+console.log(arrayify(append(new Node(3, new Node(2)), 1))); // [3, 2, 1]
+console.log(arrayify(append(new Node(1, new Node(2, new Node(3))), 4))); // [1, 2, 3, 4]
+console.log(arrayify(append(new Node(1, new Node(4, new Node(5))), 7))); // [1, 4, 5, 7]
