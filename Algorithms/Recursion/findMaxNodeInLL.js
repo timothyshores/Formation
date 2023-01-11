@@ -7,4 +7,9 @@ class Node {
 	}
 }
 
-const findMaxNodeValue = (head) => {};
+const findMaxNodeValue = (head) => {
+	if (!head) return -Infinity;
+
+	return Math.max(head.value, findMaxNodeValue(head.next));
+};
+
