@@ -7,4 +7,8 @@ class Node {
 	}
 }
 
-const getLengthOfLL = (head) => {};
+const getLengthOfLL = (head) => {
+	if (!head) return 0;
+	return 1 + getLengthOfLL(head.next);
+};
+
