@@ -8,4 +8,21 @@ Examples:
 
 */
 
+class Node {
+	constructor(value = 0, next = null) {
+		this.value = value;
+		this.next = next;
+	}
+}
+
+const arrayify = (head) => {
+	let ptr = head;
+	var array = [];
+	while (ptr != null) {
+		array.push(ptr.value);
+		ptr = ptr.next;
+	}
+	return array;
+};
+
 const append = (head, target) => {};
