@@ -36,3 +36,44 @@ const printBinaryWithoutConsecutive1s = (maxLen) => {
 	helper("0");
 	helper("1");
 };
+
+printBinaryWithoutConsecutive1s(1);
+// 0
+// 1
+
+printBinaryWithoutConsecutive1s(2);
+// 00
+// 01
+// 10
+
+printBinaryWithoutConsecutive1s(3);
+// 000
+// 001
+// 010
+// 100
+// 101
+
+printBinaryWithoutConsecutive1s(4);
+// 0000
+// 0001
+// 0010
+// 0100
+// 0101
+// 1000
+// 1001
+// 1010
+
+printBinaryWithoutConsecutive1s(5);
+// 00000
+// 00001
+// 00010
+// 00100
+// 00101
+// 01000
+// 01001
+// 01010
+// 10000
+// 10001
+// 10010
+// 10100
+// 10101
