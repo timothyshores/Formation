@@ -17,4 +17,22 @@ printBinaryWithoutConsecutive1s(maxLen=3)
 
 */
 
-const printBinaryWithoutConsecutive1s = (maxLen) => {};
+const printBinaryWithoutConsecutive1s = (maxLen) => {
+	// binary string cannot be less than or equal to 1 char
+	if (maxLen < 1) return;
+
+	const helper = (string) => {
+		if (string.length === maxLen) {
+			console.log(string);
+			return;
+		}
+
+		// only add 1 to the end of the current string if the last character is 0
+		if (string[string.length - 1] === "0") helper(string + "1");
+
+		helper(string + "0");
+	};
+
+	helper("0");
+	helper("1");
+};
