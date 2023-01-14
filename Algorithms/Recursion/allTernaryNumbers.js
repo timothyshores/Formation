@@ -20,6 +20,12 @@ generateNDigitTernaries(2) == ["10","11","12","20","21","22"]
 
 🏴‍☠️  Explore
 Summarize this problem in your own words
+• We want to return all combinations of ternary numbers
+• Ternary is like binary except it also includes the number 2
+• We only want to return the ternary numbers that have an input of the argument n passed into our function 
+• The number 0 is only included when n === 1
+• If n > 1 then every number MUST start with either 1 or 2
+• Another way to phrase this is if n > 1 then numbers can NOT start with a 0
 
 🧠  Brainstorm
 
