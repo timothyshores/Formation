@@ -37,3 +37,26 @@ Summarize this problem in your own words
 
 🛠️  Implement
 */
+
+const generateNDigitTernaries = (n) => {
+	const results = [];
+
+	const helper = (num) => {
+		if (num.length === n) {
+			results.push(num);
+			return;
+		}
+
+		if (num !== "0") {
+			helper(num + "0");
+			helper(num + "1");
+			helper(num + "2");
+		}
+	};
+
+	helper("0");
+	helper("1");
+	helper("2");
+
+	return results;
+};
