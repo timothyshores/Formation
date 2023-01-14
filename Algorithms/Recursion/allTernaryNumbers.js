@@ -28,6 +28,12 @@ Summarize this problem in your own words
 • Another way to phrase this is if n > 1 then numbers can NOT start with a 0
 
 🧠  Brainstorm
+• We'll want to use recursion to solve this problem
+• The values 0, 1 and 2 will need to be hard coded into the function implementation
+• We'll need so,e sort of logic to NOT add 0 to the start of the numbers when n > 1
+• When n > 1 we'll add 0, 1 and 2 to the end of every previous number from the earlier recursive call
+• Base case is n === 1 return [0, 1, 2]
+
 
 🛠️  Implement
 */
