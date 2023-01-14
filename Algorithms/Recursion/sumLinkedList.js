@@ -13,4 +13,8 @@ class Node {
 	}
 }
 
-const sumAllValues = (head) => {};
+const sumAllValues = (head) => {
+	if (!head) return 0;
+
+	return head.value + sumAllValues(head.next);
+};
