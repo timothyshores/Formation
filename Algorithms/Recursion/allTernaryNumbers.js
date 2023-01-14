@@ -60,3 +60,16 @@ const generateNDigitTernaries = (n) => {
 
 	return results;
 };
+
+/*
+🧪  Verify
+*/
+
+console.log(generateNDigitTernaries(1)); //  [0, 1, 2];
+console.log(generateNDigitTernaries(2)); // [10, 11, 12, 20, 21, 22];
+console.log(generateNDigitTernaries(3)); // [100, 101, 102, 110, 111, 112, 120, 121, 122, 200, 201, 202, 210, 211, 212, 220, 221, 222]
+console.log(generateNDigitTernaries(4).length === 54); // true
+console.log(generateNDigitTernaries(5).length === 162); // true
+console.log(generateNDigitTernaries(6).length === 486); // true
+console.log(generateNDigitTernaries(7).length === 1458); // true
+console.log(generateNDigitTernaries(8).length === 4374); // true
