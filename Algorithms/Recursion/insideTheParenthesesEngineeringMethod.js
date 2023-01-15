@@ -34,12 +34,21 @@ console.log(parenBit("hello(not really)there") === "(not really)");
 🧠 BRAINSTORM
 What approaches could work? Consider data structures or algorithmic patterns.
 Analyze the space & time complexity.
-Approach 1: 
-Time: O()
-Space: O()
+Approach 1: Recursion
+Time: O(N)
+Space: O(N^2)
 
 📆 PLAN
-High-level outline of approach #: 
+High-level outline of approach #: 1
+· Check the first character of the string
+· If the first character of the string is an opening parenthesis "("
+    · Include this character in our results string
+    · Call the function again excluding the first character
+· Else the first character of the string is any other character besides "("
+    · Ignore this character in our results string
+    · Call the function again excluding the first character
+· When we get to the closing parenthesis ")" we add that to the results string and then return
+
 🛠️ IMPLEMENT */
 
 const parenBit = (word) => {};
