@@ -20,6 +20,20 @@ State your assumptions & discoveries:
 
 Create examples & test cases:
 
+iterativeFactorial(1) -> 1
+iterativeFactorial(2) -> 2
+iterativeFactorial(3) -> 6
+iterativeFactorial(4) -> 24
+iterativeFactorial(5) -> 140
+
+recursiveMax([]); // null
+recursiveMax([1, 2]); // 2
+recursiveMax([2, 1]); // 2
+recursiveMax([-2, 0]); // 0
+recursiveMax([-2, -1]); // -1
+recursiveMax([1, 2, 3]); // 3
+recursiveMax([3, 2, 1]); // 3
+
 🧠 BRAINSTORM
 What approaches could work? Consider data structures or algorithmic patterns.
 Analyze the space & time complexity.
