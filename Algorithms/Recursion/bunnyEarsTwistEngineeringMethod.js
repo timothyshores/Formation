@@ -9,8 +9,21 @@ bunnyEarsTwist(5) == 12
 
 🔎 EXPLORE
 State your assumptions & discoveries:
+· Same as the previous bunnies ears problem except
+    · Even numbered bunnies count as 3 ears
+· When the input parameter bunnies is even e.g. bunnies % 2 === 0
+    · Add 3 instead of 2 
 
 Create examples & test cases:
+
+console.log(bunnyEarsTwist(0) === 0); // true
+console.log(bunnyEarsTwist(1) === 2); // true
+console.log(bunnyEarsTwist(2) === 5); // true
+console.log(bunnyEarsTwist(3) === 7); // true
+console.log(bunnyEarsTwist(4) === 10); // true
+console.log(bunnyEarsTwist(5) === 12); // true
+console.log(bunnyEarsTwist(12) == 30); // true
+console.log(bunnyEarsTwist(10) == 25); // true
 
 🧠 BRAINSTORM
 What approaches could work? Consider data structures or algorithmic patterns.
