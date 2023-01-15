@@ -78,3 +78,21 @@ const parenBit = (word) => {
 Run your examples & test cases.
 Methodically analyze and debug issue(s).
 */
+
+// All test cases return true
+console.log(parenBit("()") === "()");
+console.log(parenBit("()1") === "()");
+console.log(parenBit("1()") === "()");
+console.log(parenBit("(x)") === "(x)");
+console.log(parenBit("1()1") === "()");
+console.log(parenBit("(xy)1") === "(xy)");
+console.log(parenBit("(abc)") === "(abc)");
+console.log(parenBit("(abc)x") === "(abc)");
+console.log(parenBit("ab(ab)ab") === "(ab)");
+console.log(parenBit("ab(ab)ab") === "(ab)");
+console.log(parenBit("(abc)xyz") === "(abc)");
+console.log(parenBit("x(hello)") === "(hello)");
+console.log(parenBit("xyz(abc)123") === "(abc)");
+console.log(parenBit("res (ipsa) loquitor") === "(ipsa)");
+console.log(parenBit("not really (possible)") === "(possible)");
+console.log(parenBit("hello(not really)there") === "(not really)");
