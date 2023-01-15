@@ -28,16 +28,22 @@ console.log(bunnyEars(101) === 202);
 🧠 BRAINSTORM
 What approaches could work? Consider data structures or algorithmic patterns.
 Analyze the space & time complexity.
-Approach 1: 
-Time: O()
-Space: O()
+Approach 1: Use recursion
+Time: O(n)
+Space: O(n)
 
 📆 PLAN
-High-level outline of approach #: 
+High-level outline of approach #: 1
+· If there are 0 bunnies then we return 0 ears
+· For every bunny was increment the count by 2 since a bunny has 2 ears
+· We can keep track of the count by recursively calling the function with 1 less bunny
+· Continue to call the recursive case until we hit the base case of 0 bunnies
 
 🛠️ IMPLEMENT */
 
-const bunnyEars = (bunnies) => {};
+const bunnyEars = (bunnies) => {
+
+};
 
 /*
 🧪 VERIFY
