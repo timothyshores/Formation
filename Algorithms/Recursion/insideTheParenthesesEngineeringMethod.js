@@ -51,7 +51,27 @@ High-level outline of approach #: 1
 
 🛠️ IMPLEMENT */
 
-const parenBit = (word) => {};
+const parenBit = (word) => {
+	let result = "(";
+
+	const helper = (index = 0, insideParentheses = false) => {
+		if (word[index] === "(") return helper(index + 1, true);
+		if (word[index] === ")") {
+			result += ")";
+			return;
+		}
+		if (insideParentheses) {
+			result += word[index];
+			return helper(index + 1, true);
+		}
+
+		return helper(index + 1, false);
+	};
+
+	helper();
+
+	return result;
+};
 
 /*
 🧪 VERIFY
