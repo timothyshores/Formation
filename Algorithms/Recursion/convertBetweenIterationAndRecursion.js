@@ -71,7 +71,15 @@ function recursiveFactorial(x) {
 	else return x * recursiveFactorial(x - 1);
 }
 
-function iterativeFactorial(x) {}
+function iterativeFactorial(x) {
+	let factorial = 1;
+
+	for (let i = 2; i <= x; i++) {
+		factorial *= i;
+	}
+
+	return factorial;
+}
 
 function iterativeMax(arr) {
 	let result = arr.length > 0 ? arr[0] : null;
@@ -83,7 +91,13 @@ function iterativeMax(arr) {
 	return result;
 }
 
-function recursiveMax(arr, curMax = -Infinity, i = 0) {}
+function recursiveMax(arr, curMax = -Infinity, i = 0) {
+	if (!arr.length) return null;
+	if (i === arr.length) return curMax;
+	if (arr[i] > curMax) curMax = arr[i];
+
+	return recursiveMax(arr, curMax, i + 1);
+}
 
 /*
 🧪 VERIFY
