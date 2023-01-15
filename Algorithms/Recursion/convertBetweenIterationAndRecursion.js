@@ -37,15 +37,30 @@ recursiveMax([3, 2, 1]); // 3
 🧠 BRAINSTORM
 What approaches could work? Consider data structures or algorithmic patterns.
 Analyze the space & time complexity.
-Approach 1: 
-Time: O()
-Space: O()
+Approach 1: Iterative factorial
+Time: O(n)
+Space: O(1)
 
-Approach 2: 
-Time: O()
-Space: O()
+Approach 2: Recursive max
+Time: O(n)
+Space: O(n)
 
 📆 PLAN
+High-level outline of approach #: 1
+· Create a for loop 
+· Loop from 1 to n
+· Multiply the previous result by the new number
+· Return the factorial
+
+High-level outline of approach #: 2
+· Look at the first element in the array
+· Compare the first element to the second element
+· Store the value of the number that is larger
+· Look at the third element in the array
+· Compare the value of the 3rd element in the array to the current max
+· Continue this process until we reach the end of the array
+· Return the max value when i is equal to the length of the array
+
 
 🛠️ IMPLEMENT
 Javascript Starter Code
