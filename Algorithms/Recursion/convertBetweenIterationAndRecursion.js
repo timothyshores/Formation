@@ -104,3 +104,14 @@ function recursiveMax(arr, curMax = -Infinity, i = 0) {
 Run your examples & test cases.
 Methodically analyze and debug issue(s).
 */
+
+// All test cases return true
+console.log(iterativeFactorial(1) === 1);
+console.log(iterativeFactorial(2) === 2);
+console.log(iterativeFactorial(3) === 6);
+console.log(iterativeFactorial(4) === 24);
+console.log(iterativeFactorial(5) === 120);
+console.log(iterativeFactorial(6) === 720);
+console.log(iterativeFactorial(7) === 5040);
+console.log(iterativeFactorial(8) === 40320);
+
