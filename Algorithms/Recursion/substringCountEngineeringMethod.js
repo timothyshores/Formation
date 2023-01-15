@@ -58,10 +58,56 @@ High-level outline of approach #: 1
 
 
 🛠️ IMPLEMENT */
-const strCount = (word, sub) => {};
+const strCount = (word, sub) => {
+	if (word.length < sub.length) return 0;
+
+	if (word.startsWith(sub))
+		return 1 + strCount(word.substring(sub.length), sub);
+
+	return strCount(word.substring(1), sub);
+};
 
 /*
 🧪 VERIFY
 Run your examples & test cases.
 Methodically analyze and debug issue(s).
 */
+
+// All test cases return true
+console.log(strCount("", "hi") === 0);
+console.log(strCount("", "HI") === 0);
+console.log(strCount("", "1") === 0);
+console.log(strCount("", "12") === 0);
+console.log(strCount("a", "a") === 1);
+console.log(strCount("A", "A") === 1);
+console.log(strCount("z", "z") === 1);
+console.log(strCount("Z", "Z") === 1);
+console.log(strCount("1", "1") === 1);
+console.log(strCount("2", "2") === 1);
+console.log(strCount("I", "HI") === 0);
+console.log(strCount("H", "HI") === 0);
+console.log(strCount("xyx", "x") == 2);
+console.log(strCount("hi", "hi") === 1);
+console.log(strCount("HI", "HI") === 1);
+console.log(strCount("10", "10") === 1);
+console.log(strCount("hih", "hi") === 1);
+console.log(strCount("HII", "HI") === 1);
+console.log(strCount("123", "12") === 1);
+console.log(strCount("hihi", "hi") === 2);
+console.log(strCount("HIHI", "HI") === 2);
+console.log(strCount("iiiijj", "i") == 4);
+console.log(strCount("IHIHI", "HI") === 2);
+console.log(strCount("ihihi", "hi") === 2);
+console.log(strCount("31212", "12") === 2);
+console.log(strCount("iiiijj", "ii") == 2);
+console.log(strCount("iiiijj", "iii") == 1);
+console.log(strCount("HIHIHI", "HI") === 3);
+console.log(strCount("catcowcat", "dog") == 0);
+console.log(strCount("catcowcat", "cow") == 1);
+console.log(strCount("aaabababab", "aa") == 1);
+console.log(strCount("catcowcat", "cat") == 2);
+console.log(strCount("aaabababab", "ab") == 4);
+console.log(strCount("cacatcowcat", "cat") == 2);
+console.log(strCount("123456789012", "12") === 2);
+console.log(strCount("hihellotherehi", "hi") === 2);
+console.log(strCount("helloWorldhello", "hello") === 2);
