@@ -115,3 +115,18 @@ console.log(iterativeFactorial(6) === 720);
 console.log(iterativeFactorial(7) === 5040);
 console.log(iterativeFactorial(8) === 40320);
 
+console.log(recursiveMax([]) === null);
+console.log(recursiveMax([1, 2]) === 2);
+console.log(recursiveMax([2, 1]) === 2);
+console.log(recursiveMax([-2, 0]) === 0);
+console.log(recursiveMax([-2, -1]) === -1);
+console.log(recursiveMax([1, 2, 3]) === 3);
+console.log(recursiveMax([3, 2, 1]) === 3);
+console.log(recursiveMax([-3, -2, -1]) === -1);
+console.log(recursiveMax([1, 2, 3, 4, 5]) === 5);
+console.log(recursiveMax([-10, -5, -3, 0, 7]) === 7);
+console.log(recursiveMax([-1, -5, 0, 2, 10]) === 10);
+console.log(recursiveMax([100, 50, 25, 75, 90]) === 100);
+console.log(recursiveMax([-100, -50, -25, -75, -90]) === -25);
+console.log(recursiveMax([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) === 10);
+console.log(recursiveMax([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) === 1);
