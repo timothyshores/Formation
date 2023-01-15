@@ -33,12 +33,17 @@ console.log(triangle(12) === 78);
 🧠 BRAINSTORM
 What approaches could work? Consider data structures or algorithmic patterns.
 Analyze the space & time complexity.
-Approach 1: 
-Time: O()
-Space: O()
+Approach 1: Recursive
+Time: O(n)
+Space: O(n)
 
 📆 PLAN
-High-level outline of approach #: 
+High-level outline of approach #: 1
+· Base case is if rows is 0 return 0 and if rows is 1 return 1
+· If rows is greater than 1
+    ·  Add the current row number to the previous total
+· Recursively call the function until we get to the row number passed into the function
+· Return the total sum which represents the total number of blocks in the triangle
 
 🛠️ IMPLEMENT */
 const triangle = (rows) => {};
