@@ -28,12 +28,17 @@ console.log(bunnyEarsTwist(10) == 25); // true
 🧠 BRAINSTORM
 What approaches could work? Consider data structures or algorithmic patterns.
 Analyze the space & time complexity.
-Approach 1: 
-Time: O()
-Space: O()
+Approach 1: Recursion
+Time: O(n)
+Space: O(n)
 
 📆 PLAN
-High-level outline of approach #: 
+High-level outline of approach #: 1
+· If bunnies === 0 return 0
+· If current number of bunnies is even
+    · Add 3 to the current count and call the function again with 1 less bunny
+· Else the current number of bunnies is odd
+    · Add 2 to the current count and call the function again with 1 less bunny
 
 🛠️ IMPLEMENT */
 
