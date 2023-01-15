@@ -39,12 +39,23 @@ console.log(strCount("HIHIHI", "HI") === 2);
 🧠 BRAINSTORM
 What approaches could work? Consider data structures or algorithmic patterns.
 Analyze the space & time complexity.
-Approach 1: 
-Time: O()
-Space: O()
+Approach 1: Use recursion
+Time: O(N)
+Space: O(N^2)
 
 📆 PLAN
-High-level outline of approach #: 
+High-level outline of approach #: 1
+· If the length of the string is smaller than the length of the substring return 0
+· When the length of the string is longer than the substring
+· Look at the first n characters of the string where n is the length of the substring
+· If the first n characters of the string is the same as the subsequence
+    · Add 1 to count
+    · Remove the first n characters from the current string
+    · Recursively call the function again with the remaining string.length - n characters
+· Else the first n characters of the string are NOT the same as the substring
+    · Remove the first characters\ from the current string
+    · Recursively call the function again with the remaining string.length - 1 characters
+
 
 🛠️ IMPLEMENT */
 const strCount = (word, sub) => {};
