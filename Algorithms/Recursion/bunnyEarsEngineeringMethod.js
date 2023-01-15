@@ -42,7 +42,9 @@ High-level outline of approach #: 1
 🛠️ IMPLEMENT */
 
 const bunnyEars = (bunnies) => {
+	if (!bunnies) return 0;
 
+	return 2 + bunnyEars(bunnies - 1);
 };
 
 /*
@@ -50,3 +52,17 @@ const bunnyEars = (bunnies) => {
 Run your examples & test cases.
 Methodically analyze and debug issue(s).
 */
+
+// All test cases return true
+console.log(bunnyEars(0) === 0);
+console.log(bunnyEars(1) === 2);
+console.log(bunnyEars(2) === 4);
+console.log(bunnyEars(3) === 6);
+console.log(bunnyEars(4) === 8);
+console.log(bunnyEars(5) === 10);
+console.log(bunnyEars(10) === 20);
+console.log(bunnyEars(12) === 24);
+console.log(bunnyEars(50) === 100);
+console.log(bunnyEars(69) === 138);
+console.log(bunnyEars(100) === 200);
+console.log(bunnyEars(101) === 202);
