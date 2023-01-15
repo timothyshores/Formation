@@ -42,10 +42,24 @@ High-level outline of approach #: 1
 
 🛠️ IMPLEMENT */
 
-const bunnyEarsTwist = (bunnies) => {};
+const bunnyEarsTwist = (bunnies) => {
+    if (bunnies === 0) return 0;
+    if (bunnies % 2 === 0) return 3 + bunnyEarsTwist(bunnies - 1);
+    return 2 + bunnyEarsTwist(bunnies - 1);
+};
 
 /*
 🧪 VERIFY
 Run your examples & test cases.
 Methodically analyze and debug issue(s).
 */
+
+// All test cases return true
+console.log(bunnyEarsTwist(0) === 0); 
+console.log(bunnyEarsTwist(1) === 2); 
+console.log(bunnyEarsTwist(2) === 5); 
+console.log(bunnyEarsTwist(3) === 7); 
+console.log(bunnyEarsTwist(4) === 10); 
+console.log(bunnyEarsTwist(5) === 12); 
+console.log(bunnyEarsTwist(10) == 25); 
+console.log(bunnyEarsTwist(12) == 30); 
