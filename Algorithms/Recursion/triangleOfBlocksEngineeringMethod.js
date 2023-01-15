@@ -10,8 +10,25 @@ triangle(5) == 15
 
 🔎 EXPLORE
 State your assumptions & discoveries:
+· We're adding on the current row number to the previous cumulative total. See examples below.
+· Kind of like fibonacci sequence except 
+    · Instead of recalculating the n - 1 and n - 2
+    · Calculate the previous total, add the current row number and return the sum 
 
 Create examples & test cases:
+console.log(triangle(0) === 0); 
+console.log(triangle(1) === 1); 
+console.log(triangle(2) === 3); 
+console.log(triangle(3) === 6); 
+console.log(triangle(4) === 10); 
+console.log(triangle(5) === 15); 
+console.log(triangle(6) === 21); 
+console.log(triangle(7) === 28); 
+console.log(triangle(8) === 36); 
+console.log(triangle(9) === 45); 
+console.log(triangle(10) === 55); 
+console.log(triangle(11) === 66); 
+console.log(triangle(12) === 78); 
 
 🧠 BRAINSTORM
 What approaches could work? Consider data structures or algorithmic patterns.
