@@ -10,8 +10,23 @@ array10x([3], 0) == False
 
 🔎 EXPLORE
 State your assumptions & discoveries:
+· Want to check if there's an element in the array where it's value is 10x more than the element to it's left
+· Every empty array and array with one element will return false
 
 Create examples & test cases:
+
+console.log(array10x([], 0)); // false
+console.log(array10x([0], 0)); // false
+console.log(array10x([1], 0)); // false
+console.log(array10x([10], 0)); // false
+console.log(array10x([0, 0], 0)); // true
+console.log(array10x([1, 10], 0)); // true
+console.log(array10x([10, 1], 0)); // false
+console.log(array10x([-1, -10], 0)); // true
+console.log(array10x([0, 1, 10], 0)); // true
+console.log(array10x([1, 10, 0], 0)); // true
+console.log(array10x([1, 2, 20], 0)); // true
+console.log(array10x([-10, -1], 0)); // false
 
 🧠 BRAINSTORM
 What approaches could work? Consider data structures or algorithmic patterns.
