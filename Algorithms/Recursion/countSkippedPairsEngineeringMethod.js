@@ -45,12 +45,24 @@ console.log(countSkippedPairs("aaaaaaaa") === 6);
 🧠 BRAINSTORM
 What approaches could work? Consider data structures or algorithmic patterns.
 Analyze the space & time complexity.
-Approach 1: 
-Time: O()
-Space: O()
+Approach 1: Recursion helper method and index based pointed
+Time: O(N)
+Space: O(N)
 
 📆 PLAN
-High-level outline of approach #: 
+High-level outline of approach #: 1
+· Create a helper method to keep track of the current index
+· Base case is where index is greater than or equal to the second to last character in the string
+    · Need at least 3 characters based on the definition of a skipped pair
+    · If this scenario occurs return 0
+· Recursive case is checking the first and third character of the word argument
+    · If the first and third character are the same 
+        · Add 1 to our total sum and call the function again with index + 1
+    · If the first and third character are different then we call the function again
+        · Call the function again with index + 1
+· Continue calling the recursive case 
+    · Recursion ends when we hit our base case and the pointer is at the second to last character
+· Call our helper method with the word argument and index 0
 
 🛠️ IMPLEMENT
 */
