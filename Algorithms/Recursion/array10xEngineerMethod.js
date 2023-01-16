@@ -53,10 +53,48 @@ High-level outline of approach #: 1
  * @param {Array<number>} arr - array of integers
  * @param {int} index - Current index
  */
-const array10x = (arr, index = 0) => {};
+const array10x = (arr, index = 0) => {
+	if (index >= arr.length - 1) return false;
+
+	const firstElement = arr[index];
+    const secondElement = arr[index + 1];
+
+	return firstElement * 10 === secondElement || array10x(arr, index + 1);
+};
 
 /*
 🧪 VERIFY
 Run your examples & test cases.
 Methodically analyze and debug issue(s).
 */
+
+// All test cases return true
+console.log(array10x([0, 0]));
+console.log(!array10x([], 0));
+console.log(!array10x([0], 0));
+console.log(!array10x([1], 0));
+console.log(!array10x([1, 2]));
+console.log(array10x([1, 10]));
+console.log(array10x([2, 20]));
+console.log(array10x([3, 30]));
+console.log(!array10x([10], 0));
+console.log(!array10x([10, 1]));
+console.log(!array10x([20, 2]));
+console.log(!array10x([30, 3]));
+console.log(array10x([0, 0], 0));
+console.log(array10x([-1, -10]));
+console.log(!array10x([-1, -2]));
+console.log(array10x([1, 10], 0));
+console.log(!array10x([1, 2, 10]));
+console.log(!array10x([10, 1], 0));
+console.log(array10x([-1, -10], 0));
+console.log(array10x([0, 1, 10], 0));
+console.log(array10x([1, 10, 0], 0));
+console.log(array10x([1, 2, 20], 0));
+console.log(!array10x([-10, -1], 0));
+console.log(array10x([1, 2, 20, 3]));
+console.log(!array10x([1, 2, 3, 10]));
+console.log(array10x([1, 2, 20, 3, 4]));
+console.log(array10x([1, 2, 3, 30, 4]));
+console.log(!array10x([1, 2, 3, 4, 10]));
+console.log(!array10x([1, 2, 3, 4, 5, 10]));
