@@ -31,12 +31,21 @@ console.log(array10x([-10, -1], 0)); // false
 🧠 BRAINSTORM
 What approaches could work? Consider data structures or algorithmic patterns.
 Analyze the space & time complexity.
-Approach 1:
-Time: O()
-Space: O()
+Approach 1: Use recursion and a pointer index
+Time: O(n)
+Space: O(n)
 
 📆 PLAN
-High-level outline of approach #: 
+High-level outline of approach #: 1
+· We'll need to begin checking the first and second elements at indices 0 and 1 respectfully
+    · If the second element is exactly 10x the first element return true
+    · Else the second element is any other value besides 10x the first element
+        · Move the pointer one index to the right by adding 1 to the index
+· Repeat the comparison now with the second and third element
+    · Continue checking until our pointer has examined the last 2 elements in the array
+· When the pointers have check every element in the array 
+    · And there exist no adjacent pair where the element to the right is 10x the value of the element on the left
+    · Return false
 
 🛠️ IMPLEMENT */
 
