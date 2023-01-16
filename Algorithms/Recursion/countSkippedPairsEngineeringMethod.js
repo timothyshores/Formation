@@ -10,8 +10,37 @@ countSkippedPairs("aaa") == 1
 
 🔎 EXPLORE
 State your assumptions & discoveries:
+· We want to count the number of times that we find "aba" in the input string
+    · Where the first and third character are the same and separated by a middle second character
 
 Create examples & test cases:
+
+console.log(countSkippedPairs("") === 0);
+console.log(countSkippedPairs("") === 0);
+console.log(countSkippedPairs("a") === 0);
+console.log(countSkippedPairs("A") === 0);
+console.log(countSkippedPairs("1") === 0);
+console.log(countSkippedPairs("aa") === 0);
+console.log(countSkippedPairs("ab") === 0);
+console.log(countSkippedPairs("AB") === 0);
+console.log(countSkippedPairs("12") === 0);
+console.log(countSkippedPairs("hi") === 0);
+console.log(countSkippedPairs("aba") === 1);
+console.log(countSkippedPairs("aaa") === 1);
+console.log(countSkippedPairs("ABA") === 1);
+console.log(countSkippedPairs("121") === 1);
+console.log(countSkippedPairs("axa") === 1);
+console.log(countSkippedPairs("ABAb") === 1);
+console.log(countSkippedPairs("abaB") === 1);
+console.log(countSkippedPairs("ABAB") === 2);
+console.log(countSkippedPairs("abab") === 2);
+console.log(countSkippedPairs("1212") === 2);
+console.log(countSkippedPairs("axax") === 2);
+console.log(countSkippedPairs("axbx") === 1);
+console.log(countSkippedPairs("hihih") === 3);
+console.log(countSkippedPairs("ihihhh") === 3);
+console.log(countSkippedPairs("ihjxhh") === 0);
+console.log(countSkippedPairs("aaaaaaaa") === 6);
 
 🧠 BRAINSTORM
 What approaches could work? Consider data structures or algorithmic patterns.
