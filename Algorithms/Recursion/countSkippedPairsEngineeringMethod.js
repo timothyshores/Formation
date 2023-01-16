@@ -67,10 +67,49 @@ High-level outline of approach #: 1
 🛠️ IMPLEMENT
 */
 
-const countSkippedPairs = (word) => {};
+const countSkippedPairs = (word) => {
+	let count = 0;
+
+	const helper = (index = 0) => {
+		if (index >= word.length - 2) return;
+		if (word[index] === word[index + 2]) count++;
+		return helper(index + 1);
+	};
+
+	helper();
+
+	return count;
+};
 
 /*
 🧪 VERIFY
 Run your examples & test cases.
 Methodically analyze and debug issue(s).
 */
+
+// All test cases return true
+console.log(countSkippedPairs("") === 0);
+console.log(countSkippedPairs("a") === 0);
+console.log(countSkippedPairs("A") === 0);
+console.log(countSkippedPairs("1") === 0);
+console.log(countSkippedPairs("aa") === 0);
+console.log(countSkippedPairs("ab") === 0);
+console.log(countSkippedPairs("AB") === 0);
+console.log(countSkippedPairs("12") === 0);
+console.log(countSkippedPairs("hi") === 0);
+console.log(countSkippedPairs("aba") === 1);
+console.log(countSkippedPairs("aaa") === 1);
+console.log(countSkippedPairs("ABA") === 1);
+console.log(countSkippedPairs("121") === 1);
+console.log(countSkippedPairs("axa") === 1);
+console.log(countSkippedPairs("ABAb") === 1);
+console.log(countSkippedPairs("abaB") === 1);
+console.log(countSkippedPairs("ABAB") === 2);
+console.log(countSkippedPairs("abab") === 2);
+console.log(countSkippedPairs("1212") === 2);
+console.log(countSkippedPairs("axax") === 2);
+console.log(countSkippedPairs("axbx") === 1);
+console.log(countSkippedPairs("hihih") === 3);
+console.log(countSkippedPairs("ihihhh") === 3);
+console.log(countSkippedPairs("ihjxhh") === 0);
+console.log(countSkippedPairs("aaaaaaaa") === 6);
