@@ -1,5 +1,5 @@
 /*
-'''
+
 ❓ PROMPT
 Given a nested array where each element may be 1) an integer or 2) an array, whose elements may be integers or other arrays, compute the sum of all the integers in the nested array.
 
@@ -68,3 +68,17 @@ const sumNestedListWithDepth = (list) => {};
 Run your examples & test cases.
 Methodically analyze and debug issue(s).
 */
+
+// All test cases return true
+console.log(sumNestedList([]) === 0);
+console.log(sumNestedList([[]]) === 0);
+console.log(sumNestedList([[[]]]) === 0);
+console.log(sumNestedList([[], []]) === 0);
+console.log(sumNestedList([1, [1]]) === 2);
+console.log(sumNestedList([1, 2, 3]) === 6);
+console.log(sumNestedList([1, [1, 1]]) === 3);
+console.log(sumNestedList([1, [1, 1], 1]) === 4);
+console.log(sumNestedList([1, [1, 2, 3], 3]) === 10);
+console.log(sumNestedList([1, [1, [1], 1], 1]) === 5);
+console.log(sumNestedList([1, [1, [1, 1], 1], 1]) === 6);
+console.log(sumNestedList([1, [1, [1, [1, [1]]]]]) === 5);
