@@ -23,15 +23,22 @@ sumNestedListWithDepth([4, [2, [3]]]) == 26 because 4+(2+ (3*3))*2
 
 🔎 EXPLORE
 State your assumptions & discoveries:
+· We want to return the total sum in sumNestedList
+· We also want to return the total sum in sumNestedList but multiple each element by it's respected depth
 
 Create examples & test cases:
+
+console.log(sumNestedList([]) === 0);
+console.log(sumNestedList([[]]) === 0);
+console.log(sumNestedList([[[]]]) === 0);
+console.log(sumNestedList([[], []]) === 0);
 
 🧠 BRAINSTORM
 What approaches could work? Consider data structures or algorithmic patterns.
 Analyze the space & time complexity.
-Approach 1: 
-Time: O()
-Space: O()
+Approach 1: Use recursion add the integers and then call the function recursively if there's another array
+Time: O(N)
+Space: O(N)
 
 📆 PLAN
 High-level outline of approach #: 
