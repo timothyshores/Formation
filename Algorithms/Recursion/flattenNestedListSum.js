@@ -25,6 +25,7 @@ sumNestedListWithDepth([4, [2, [3]]]) == 26 because 4+(2+ (3*3))*2
 State your assumptions & discoveries:
 · We want to return the total sum in sumNestedList
 · We also want to return the total sum in sumNestedList but multiple each element by it's respected depth
+· In sumNestedListWithDepth we multiple each value by it's depth
 
 Create examples & test cases:
 
@@ -33,10 +34,16 @@ console.log(sumNestedList([[]]) === 0);
 console.log(sumNestedList([[[]]]) === 0);
 console.log(sumNestedList([[], []]) === 0);
 
+console.log(sumNestedListWithDepth([1]) === 1);
+console.log(sumNestedListWithDepth([[1]]) === 2);
+console.log(sumNestedListWithDepth([[[1]]]) === 6);
+console.log(sumNestedListWithDepth([1, [1]]) === 3);
+console.log(sumNestedListWithDepth([1, 2, 3]) === 6);
+
 🧠 BRAINSTORM
 What approaches could work? Consider data structures or algorithmic patterns.
 Analyze the space & time complexity.
-Approach 1: Use recursion add the integers and then call the function recursively if there's another array
+Approach 1: Use recursion add the integers and then call the function recursively if there's another array in the array
 Time: O(N)
 Space: O(N)
 
@@ -48,6 +55,7 @@ High-level outline of approach #: 1
     · If the element is an array of integers
         · Recursively call the function and pass in the sub-array
 · After all element have been traversed return the sum
+· In sumNestedListWithDepth we want to multiple each value by it's respective depth
 
 🛠️ IMPLEMENT */
 const sumNestedList = (list) => {
@@ -61,7 +69,7 @@ const sumNestedList = (list) => {
 	return sum;
 };
 
-const sumNestedListWithDepth = (list) => {};
+function sumNestedListWithDepth(list, depth = 2) {}
 
 /*
 🧪 VERIFY
@@ -71,14 +79,21 @@ Methodically analyze and debug issue(s).
 
 // All test cases return true
 console.log(sumNestedList([]) === 0);
+console.log(sumNestedList([1]) === 1);
 console.log(sumNestedList([[]]) === 0);
+console.log(sumNestedList([[1]]) === 1);
 console.log(sumNestedList([[[]]]) === 0);
+console.log(sumNestedList([[[1]]]) === 1);
 console.log(sumNestedList([[], []]) === 0);
 console.log(sumNestedList([1, [1]]) === 2);
 console.log(sumNestedList([1, 2, 3]) === 6);
 console.log(sumNestedList([1, [1, 1]]) === 3);
+console.log(sumNestedList([1, [2, 3]]) === 6);
+console.log(sumNestedList([1, [2, [3]]]) === 6);
 console.log(sumNestedList([1, [1, 1], 1]) === 4);
 console.log(sumNestedList([1, [1, 2, 3], 3]) === 10);
 console.log(sumNestedList([1, [1, [1], 1], 1]) === 5);
 console.log(sumNestedList([1, [1, [1, 1], 1], 1]) === 6);
 console.log(sumNestedList([1, [1, [1, [1, [1]]]]]) === 5);
+console.log(sumNestedList([1, [1, [2], [], [], [], 3], 3]) === 10);
+console.log(sumNestedList([1, [1, [2], [], [[[[]]]], [], 3], 3]) === 10);
