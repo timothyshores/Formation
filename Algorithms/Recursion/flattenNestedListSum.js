@@ -41,9 +41,25 @@ Time: O(N)
 Space: O(N)
 
 📆 PLAN
-High-level outline of approach #: 
+High-level outline of approach #: 1
+· Loop through the array using a for loop
+· Each element is either an integer or an array of integers
+    · If the element is an integer add it to the sum
+    · If the element is an array of integers
+        · Recursively call the function and pass in the sub-array
+· After all element have been traversed return the sum
+
 🛠️ IMPLEMENT */
-const sumNestedList = (list) => {};
+const sumNestedList = (list) => {
+	let sum = 0;
+
+	for (element of list) {
+		if (typeof element === "number") sum += element;
+		if (Array.isArray(element)) sum += sumNestedList(element);
+	}
+
+	return sum;
+};
 
 const sumNestedListWithDepth = (list) => {};
 
