@@ -69,7 +69,17 @@ const sumNestedList = (list) => {
 	return sum;
 };
 
-function sumNestedListWithDepth(list, depth = 2) {}
+function sumNestedListWithDepth(list, depth = 2) {
+	let sum = 0;
+
+	for (let element of list) {
+		if (typeof element === "number") sum += element;
+		if (Array.isArray(element))
+			sum += sumNestedListWithDepth(element, depth + 1) * depth;
+	}
+
+	return sum;
+}
 
 /*
 🧪 VERIFY
