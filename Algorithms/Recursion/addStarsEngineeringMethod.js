@@ -33,12 +33,18 @@ console.log(addStars("hello") === "h*e*l*l*o");
 🧠 BRAINSTORM
 What approaches could work? Consider data structures or algorithmic patterns.
 Analyze the space & time complexity.
-Approach 1: 
-Time: O()
-Space: O()
+Approach 1: Use recursion and a helper method to add a & between every character
+Time: O(N)
+Space: O(N)
 
 📆 PLAN
-High-level outline of approach #: 
+High-level outline of approach #: 1
+· Create a variable for the final output called withStars and set it equal to an empty string
+· Create a helper method the accepts an index as it's parameter
+    · Add the current character followed by a star if the current character is NOT the last character
+    · If the current character IS the last character then we do NOT add a string
+· Call the helper method
+· Return withStars
 
 🛠️ IMPLEMENT */
 const addStars = (word) => {};
