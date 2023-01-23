@@ -43,11 +43,24 @@ console.log(countX("abcdefghijklmnopqrstuvwyz") === 0);
 What approaches could work? Consider data structures or algorithmic patterns.
 Analyze the space & time complexity.
 Approach 1: 
-Time: O()
-Space: O()
+· Use recursion and a helper method that takes an index number as a parameter
+· Check the first character 
+Time: O(N)
+Space: O(N)
 
 📆 PLAN
-High-level outline of approach #: 
+High-level outline of approach #: 1
+· Handle edge case when empty string is passed in as an argument
+· Create and initialize a count variable to zero
+· Create helper function that takes in an index number as an input    
+    · Look at the character at the given index
+    · If the current character is the letter 'x' then increment count by one
+    · Call the helper method again but with the next index
+    · If the index is equal to the length of the input string 
+        · All characters in the string have been examined and counted if they contain 'x'
+        · Return the function
+· Call helper function
+· Return the count variable
 
 🛠️ IMPLEMENT */
 const countX = (word) => {};
