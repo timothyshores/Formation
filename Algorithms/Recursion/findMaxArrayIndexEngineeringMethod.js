@@ -9,6 +9,9 @@ findMaxIndex([8, 6, 7, 5, 3, 7]) == 0
 
 🔎 EXPLORE
 State your assumptions & discoveries:
+· Return the index of the element with the largest integer value in the input array 
+· Array will always be at least 1 element to avoid having to throw an exception.
+· Array may be sorted or unsorted
 
 Create examples & test cases:
 
@@ -31,12 +34,22 @@ console.log(findMaxIndex([15, 17, 16, 12, 13, 14]) === 1);
 🧠 BRAINSTORM
 What approaches could work? Consider data structures or algorithmic patterns.
 Analyze the space & time complexity.
-Approach 1:
-Time: O()
-Space: O()
+Approach 1: Use recursion and a helper function that take in an integer to track current index
+Time: O(N)
+Space: O(N)
 
 📆 PLAN
-High-level outline of approach #: 
+High-level outline of approach #: 1
+· Create a variable called maxIndex and set to zero
+· Create a helper function that receives an index as a parameter
+    · Base case: array is a single element or all elements have been visited
+        · Break out of the helper function using the return keyword
+    · Recursive case: when all elements in the array have not been visited
+        · Compare the value of the current element to maxValue
+        · If the current element is greater than maxValue
+            · Update maxIndex to the current index
+        · Call the helper function again passing in index + 1 
+· Return maxIndex
 
 🛠️ IMPLEMENT */
 const findMaxIndex = (arr) => {};
