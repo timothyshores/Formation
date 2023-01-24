@@ -45,12 +45,21 @@ console.log(changePi("without p i occurring") === "without p i occurring");
 🧠 BRAINSTORM
 What approaches could work? Consider data structures or algorithmic patterns.
 Analyze the space & time complexity.
-Approach 1: 
-Time: ON)
-Space: O()
+Approach 1: Recursion
+Time: O(N)
+Space: O(N^2)
 
 📆 PLAN
-High-level outline of approach #: 
+High-level outline of approach #: 1
+· Base case is empty string return empty string
+· Check if the word starts with "pi"
+    · If the word starts with "pi"
+        · Add "3.14" to the final result
+        · Call the function again excluding the first two characters
+    · If the word does NOT start with "pi"
+        · Add first character of word to the final result 
+        · Call the function again excluding the first character
+    
 
 🛠️ IMPLEMENT */
 
