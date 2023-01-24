@@ -7,4 +7,10 @@ class Node {
 	}
 }
 
-const linkedListFrequencyCounter = (list, int) => {};
+const linkedListFrequencyCounter = (list, int) => {
+	if (!list) return 0;
+
+	if (list.value == int) return 1 + linkedListFrequencyCounter(list.next, int);
+
+	return linkedListFrequencyCounter(list.next, int);
+};
