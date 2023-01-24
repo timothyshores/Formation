@@ -42,12 +42,24 @@ console.log(findMinIndex([15, 17, 16, 12, 13, 14]) === 3);
 🧠 BRAINSTORM
 What approaches could work? Consider data structures or algorithmic patterns.
 Analyze the space & time complexity.
-Approach 1: 
-Time: O()
-Space: O()
+Approach 1: Use recursion and a helper function that take in an integer to track current index
+Time: O(N)
+Space: O(N)
 
 📆 PLAN
-High-level outline of approach #: 
+High-level outline of approach #: 1
+· Create a variable called minIndex and set to zero
+· Create a helper function that receives an index as a parameter
+    · Base case: array is a single element or all elements have been visited
+        · Break out of the helper function using the return keyword
+    · Recursive case: when all elements in the array have not been visited
+        · Compare the value of the current element to minValue
+        · If the current element is smaller than minValue
+            · Update minValue to the current value
+            · Update minIndex to the current index
+        · Call the helper function again passing in index + 1 
+· Return minIndex
+
 🛠️ IMPLEMENT */
 const findMinIndex = (arr) => {};
 
