@@ -53,7 +53,10 @@ class Node {
 	}
 }
 
-const countNodes = (node) => {};
+const countNodes = (node) => {
+	if (!node) return 0;
+	return 1 + countNodes(node.next);
+};
 
 /* 
 🧪 VERIFY
@@ -62,3 +65,18 @@ Methodically analyze and debug issue(s).
 */
 
 // All test cases return true
+console.log(countNodes(null) === 0);
+console.log(countNodes(new Node()) === 1);
+console.log(countNodes(new Node(0)) === 1);
+console.log(countNodes(new Node(1)) === 1);
+console.log(countNodes(new Node(-1)) === 1);
+console.log(countNodes(new Node(1, new Node(4))) === 2);
+console.log(countNodes(new Node(1, new Node(4, new Node(5)))) === 3);
+console.log(
+	countNodes(new Node(1, new Node(4, new Node(5, new Node(0))))) === 4
+);
+console.log(
+	countNodes(
+		new Node(1, new Node(4, new Node(5, new Node(0, new Node(6)))))
+	) === 5
+);
