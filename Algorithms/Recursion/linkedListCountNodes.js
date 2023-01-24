@@ -33,12 +33,16 @@ console.log(
 What approaches could work? Consider data structures or algorithmic patterns.
 Analyze the space & time complexity.
 
-Approach 1: 
-Time: 
-Space: 
+Approach 1: Use recursion without a helper function
+Time: O(N)
+Space: O(N)
 
 📆 PLAN
 High-level outline of approach #: 1
+· Base case when null value is passed into the function
+· Recursive case 
+    · When we have a node add one
+    · Call the function recursively passing in the next node
 
 🛠️ IMPLEMENT */
 
