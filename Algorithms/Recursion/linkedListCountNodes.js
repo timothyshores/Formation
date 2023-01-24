@@ -10,8 +10,24 @@ console.log(countNodes(new Node(1, new Node(4, new Node(5)))) === 3);
 
 🔎 EXPLORE
 State your assumptions & discoveries:
+· Traverse through the give linked list using recursion
+· Count the number of nodes in the linked list and return count
+· When null is passed into the function return 0
 
 Create examples & test cases:
+
+console.log(countNodes(new Node()) === 1);
+console.log(countNodes(new Node(0)) === 1);
+console.log(countNodes(new Node(-1)) === 1);
+console.log(countNodes(new Node(1, new Node(4))) === 2);
+console.log(
+	countNodes(new Node(1, new Node(4, new Node(5, new Node(0))))) === 4
+);
+console.log(
+	countNodes(
+		new Node(1, new Node(4, new Node(5, new Node(0, new Node(6)))))
+	) === 5
+);
 
 🧠 BRAINSTORM
 What approaches could work? Consider data structures or algorithmic patterns.
