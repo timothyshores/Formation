@@ -14,3 +14,22 @@ const linkedListFrequencyCounter = (list, int) => {
 
 	return linkedListFrequencyCounter(list.next, int);
 };
+
+// Test data
+const LL7 = new Node(1);
+const LL6 = new Node(5, LL7);
+const LL5 = new Node(5, LL6);
+const LL4 = new Node(4, LL5);
+const LL3 = new Node(3, LL4);
+const LL2 = new Node(2, LL3);
+const LL1 = new Node(1, LL2);
+
+// ALl test cases return true
+console.log(linkedListFrequencyCounter(LL1, 0) === 0);
+console.log(linkedListFrequencyCounter(LL1, 6) === 0);
+console.log(linkedListFrequencyCounter(LL4, 3) === 0);
+console.log(linkedListFrequencyCounter(LL5, 4) === 0);
+console.log(linkedListFrequencyCounter(LL4, 4) === 1);
+console.log(linkedListFrequencyCounter(LL6, 1) === 1);
+console.log(linkedListFrequencyCounter(LL1, 1) === 2);
+console.log(linkedListFrequencyCounter(LL5, 5) === 2);
