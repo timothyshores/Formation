@@ -34,12 +34,19 @@ console.log(count7(777) === 3);
 🧠 BRAINSTORM
 What approaches could work? Consider data structures or algorithmic patterns.
 Analyze the space & time complexity.
-Approach 1:
-Time: 
-Space: 
+Approach 1: Use recursion check if the last number is a 7 and check the remaining numbers
+Time: O(N)
+Space: O(N)
 
 📆 PLAN
-High-level outline of approach #: 
+High-level outline of approach #: 1
+· Base case is when we have a single digit number e.g. 0 - 9
+    · If the number is a 7 return 1 
+    · If the number is any other number besides a 7 return 0
+· Recursive case is when the number is 10 or larger
+    · Check if the last digit on the right hand side is a 7
+        · If it is a 7 then we add one and call the function recursively
+        · If it is NOT 7 then we call the function recursively
 
 🛠️ IMPLEMENT */
 const count7 = (n) => {};
