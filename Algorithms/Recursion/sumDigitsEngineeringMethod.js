@@ -10,21 +10,44 @@ sumDigits(126) == 9
 
 🔎 EXPLORE
 State your assumptions & discoveries:
+· Want to compute and return the sum of all digits given an integer
 
 Create examples & test cases:
+console.log(sumDigits(0) === 0);
+console.log(sumDigits(1) === 1);
+console.log(sumDigits(2) === 2);
+console.log(sumDigits(3) === 3);
+console.log(sumDigits(4) === 4);
+console.log(sumDigits(5) === 5);
+console.log(sumDigits(10) === 1);
+console.log(sumDigits(11) === 2);
+console.log(sumDigits(12) === 3);
+console.log(sumDigits(21) === 3);
+console.log(sumDigits(13) === 4);
+console.log(sumDigits(31) === 4);
+console.log(sumDigits(14) === 5);
+console.log(sumDigits(41) === 5);
+console.log(sumDigits(111) === 3);
+console.log(sumDigits(123) === 6);
+console.log(sumDigits(1234) === 10);
+console.log(sumDigits(12345) === 15);
 
 🧠 BRAINSTORM
 What approaches could work? Consider data structures or algorithmic patterns.
 Analyze the space & time complexity.
-Approach 1: 
-Time: 
-Space: 
+Approach 1: Take the right most digit and add that to the sum of the remaining digits
+Time: O(N)
+Space: O(N)
 
 📆 PLAN
-High-level outline of approach #: 
+High-level outline of approach #: 1
+· Base case is when the input n is a single digit number from 0 to 9 return n
+· Recursive case get the right most number and call the function recursively with the remaining numbers
 
 🛠️ IMPLEMENT */
-const sumDigits = (n) => {};
+const sumDigits = (n) => {
+
+};
 
 /*
 🧪 VERIFY
