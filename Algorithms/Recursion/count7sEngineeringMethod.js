@@ -14,8 +14,22 @@ count7(717) == 2
 
 🔎 EXPLORE
 State your assumptions & discoveries:
+· Want function to return the number of 7s in a given integer input using recursion
 
 Create examples & test cases:
+
+console.log(count7(0) === 0);
+console.log(count7(1) === 1);
+console.log(count7(11) === 0);
+console.log(count7(17) === 1);
+console.log(count7(71) === 1);
+console.log(count7(77) === 2);
+console.log(count7(111) === 0);
+console.log(count7(117) === 1);
+console.log(count7(171) === 1);
+console.log(count7(177) === 2);
+console.log(count7(771) === 3);
+console.log(count7(777) === 3);
 
 🧠 BRAINSTORM
 What approaches could work? Consider data structures or algorithmic patterns.
