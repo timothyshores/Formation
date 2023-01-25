@@ -49,10 +49,48 @@ High-level outline of approach #: 1
         · If it is NOT 7 then we call the function recursively
 
 🛠️ IMPLEMENT */
-const count7 = (n) => {};
+const count7 = (n) => {
+    if (n < 10) return n === 7 ? 1 : 0;
+    
+	const lastDigitIs7 = n % 10 === 7;
+    const remainingDigits = Math.floor(n / 10);
+
+	return lastDigitIs7 ? 1 + count7(remainingDigits) : count7(remainingDigits);
+};
 
 /*
 🧪 VERIFY
 Run your examples & test cases.
 Methodically analyze and debug issue(s).
 */
+
+console.log(count7(0) === 0);
+console.log(count7(1) === 0);
+console.log(count7(7) === 1);
+console.log(count7(5) === 0);
+console.log(count7(11) === 0);
+console.log(count7(07) === 1);
+console.log(count7(17) === 1);
+console.log(count7(70) === 1);
+console.log(count7(71) === 1);
+console.log(count7(77) === 2);
+console.log(count7(111) === 0);
+console.log(count7(123) === 0);
+console.log(count7(007) === 1);
+console.log(count7(117) === 1);
+console.log(count7(171) === 1);
+console.log(count7(707) === 2);
+console.log(count7(177) === 2);
+console.log(count7(717) === 2);
+console.log(count7(770) === 2);
+console.log(count7(771) === 2);
+console.log(count7(777) === 3);
+console.log(count7(7123) === 1);
+console.log(count7(99999) === 0);
+console.log(count7(99799) === 1);
+console.log(count7(47571) === 2);
+console.log(count7(771237) === 3);
+console.log(count7(771737) === 4);
+console.log(count7(777777) === 6);
+console.log(count7(70701277) === 4);
+console.log(count7(777576197) === 5);
