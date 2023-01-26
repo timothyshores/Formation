@@ -51,11 +51,25 @@ console.log(count8(881881881) === 9);
 What approaches could work? Consider data structures or algorithmic patterns.
 Analyze the space & time complexity.
 Approach 1: 
-Time: 
-Space: 
+· Use recursion check the right most 8
+· If the right most digit is 8 add 1
+· If the right most digit is 8 to to it's left the second right most digit is also an 8 add 2
+Time: O(N)
+Space: O(N)
 
 📆 PLAN
-High-level outline of approach #: 
+High-level outline of approach #: 1
+· Base case
+    · When input n is a single digit number e.g. 0 to 9
+        · If n is 8 return 1 
+        · If n is any other single digit number besides 8 return 0
+· Recursive case 
+    · When right most digit is an 8
+        · Check the next digit to it's left e.g. the second right most digit
+            · If they're both 8 then we add 2 and pass in the remaining digits
+            · If only the right most digit is an 8 and it's preceded by not an 8
+                · E.g. 08, 18, 28, 38, 48, 58, 68 ,78, 98
+    · When right most digit is NOT an 8 recursively call the function with the remaining digits
 
 🛠️ IMPLEMENT */
 
