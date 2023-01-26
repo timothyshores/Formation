@@ -73,10 +73,57 @@ High-level outline of approach #: 1
 
 🛠️ IMPLEMENT */
 
-const count8 = (n) => {};
+const count8 = (n) => {
+	const isLastDigit8 = n % 10 === 8;
+
+	// Base case single digit number
+	if (n < 10) return isLastDigit8 ? 1 : 0;
+
+	const remainingDigits = Math.floor(n / 10);
+	const isSecondToLastDigit8 = remainingDigits % 10 === 8;
+
+	// Recursive case
+	if (isLastDigit8) {
+		return isSecondToLastDigit8
+			? 2 + count8(remainingDigits)
+			: 1 + count8(remainingDigits);
+	}
+
+	return count8(remainingDigits);
+};
 
 /*
 🧪 VERIFY
 Run your examples & test cases.
 Methodically analyze and debug issue(s).
 */
+
+console.log(count8(0) === 0);
+console.log(count8(1) === 0);
+console.log(count8(8) === 1);
+console.log(count8(11) === 0);
+console.log(count8(78) === 1);
+console.log(count8(88) === 3);
+console.log(count8(111) === 0);
+console.log(count8(123) === 0);
+console.log(count8(818) === 2);
+console.log(count8(888) === 5);
+console.log(count8(188) === 3);
+console.log(count8(8234) === 1);
+console.log(count8(2348) === 1);
+console.log(count8(1080) === 1);
+console.log(count8(9898) === 2);
+console.log(count8(8088) === 4);
+console.log(count8(8818) === 4);
+console.log(count8(8888) === 7);
+console.log(count8(81238) === 2);
+console.log(count8(23884) === 3);
+console.log(count8(88188) === 6);
+console.log(count8(88788) === 6);
+console.log(count8(88888) === 9);
+console.log(count8(881881) === 6);
+console.log(count8(1818188) === 5);
+console.log(count8(8818181) === 5);
+console.log(count8(1881881) === 6);
+console.log(count8(188188188) === 9);
+console.log(count8(881881881) === 9);
