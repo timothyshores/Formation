@@ -21,15 +21,31 @@ generatePasswords(["a", "b", "c"], 2, 3) === [
 
 🔎 EXPLORE
 State your assumptions & discoveries:
+· Want to return a list of strings that are equal to and in between two given lengths
+
 
 Create examples & test cases:
+
+generatePasswords(["a"], 0, 0); // [""]
+generatePasswords(["a"], 0, 1); // ["", "a"]
+generatePasswords(["a"], 1, 2); // ["a", "aa"]
+generatePasswords(["a"], 2, 3); // ["aa", "aaa"]
+generatePasswords(["a"], 0, 2); // ["", "a", "aa"]
+generatePasswords(["a"], 1, 3); // ["a", "aa", "aaa"]
+generatePasswords(["a"], 0, 3); // ["", "a", "aa", "aaa"]
+
+generatePasswords(["a", "b"], 0, 0); // [""]
+generatePasswords(["a", "b"], 1, 1); // ["a", "b"]
+generatePasswords(["a", "b"], 2, 2); // ["aa", "ab", "ba", "bb"]
+generatePasswords(["a", "b"], 3, 3); // ["aaa", "aab" "aba", "abb", "baa", "bab", "bba", "bbb"]
+
 
 🧠 BRAINSTORM
 What approaches could work? Consider data structures or algorithmic patterns.
 Analyze the space & time complexity.
-Approach 1:
-Time: 
-Space: 
+Approach 1: Recursion
+Time: O(N^2)
+Space: O(N)
 
 📆 PLAN
 High-level outline of approach #: 1
