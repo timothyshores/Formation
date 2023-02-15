@@ -14,14 +14,40 @@ goldilockFlapjacks([2, -1, 3, -3, 2, -1]) => [true, 4]
 
 const goldilockFlapjacks = (pancakes) => {
 	let currentStack = 0;
-	let maximumPancakeStack = 0;
+	let maximumStack = 0;
 	let managerRequirements = true;
 
 	for (const pancake of pancakes) {
 		currentStack += pancake;
-		maximumPancakeStack = Math.max(currentStack, maximumPancakeStack);
+		maximumStack = Math.max(currentStack, maximumStack);
 		if (currentStack > 4 || currentStack < 0) managerRequirements = false;
 	}
 
-	return [managerRequirements, maximumPancakeStack];
+	return [managerRequirements, maximumStack];
 };
+
+// All test cases return true
+console.log(goldilockFlapjacks([2])[0] && goldilockFlapjacks([2])[1] === 2);
+console.log(!goldilockFlapjacks([-2])[0] && goldilockFlapjacks([-2])[1] === 0);
+console.log(goldilockFlapjacks([4])[0] && goldilockFlapjacks([4])[1] === 4);
+console.log(!goldilockFlapjacks([5])[0] && goldilockFlapjacks([5])[1] === 5);
+
+console.log(
+	goldilockFlapjacks([4, -2, 1, -2])[0] &&
+		goldilockFlapjacks([4, -2, 1, -2])[1] === 4
+);
+
+console.log(
+	goldilockFlapjacks([2, -1, 1, -1, 1])[0] &&
+		goldilockFlapjacks([2, -1, 1, -1, 1])[1] === 2
+);
+
+console.log(
+	!goldilockFlapjacks([4, -2, 1, -2, 4])[0] &&
+		goldilockFlapjacks([4, -2, 1, -2, 4])[1] === 5
+);
+
+console.log(
+	!goldilockFlapjacks([4, -2, 1, -2, -4])[0] &&
+		goldilockFlapjacks([4, -2, 1, -2, -4])[1] === 4
+);
