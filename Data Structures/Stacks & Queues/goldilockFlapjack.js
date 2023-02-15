@@ -12,4 +12,16 @@ goldilockFlapjacks([2, -1, 3, -3, 2, -1]) => [true, 4]
 
 */
 
-const goldilockFlapjacks = (pancakes) => {};
+const goldilockFlapjacks = (pancakes) => {
+	let currentStack = 0;
+	let maximumPancakeStack = 0;
+	let managerRequirements = true;
+
+	for (const pancake of pancakes) {
+		currentStack += pancake;
+		maximumPancakeStack = Math.max(currentStack, maximumPancakeStack);
+		if (currentStack > 4 || currentStack < 0) managerRequirements = false;
+	}
+
+	return [managerRequirements, maximumPancakeStack];
+};
