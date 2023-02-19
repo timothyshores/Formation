@@ -15,3 +15,15 @@ const countInteger = (array, target, index = 0) => {
 		return 1 + countInteger(array, target, index + 1);
 	return countInteger(array, target, index + 1);
 };
+
+// All test cases return true
+console.log(countInteger([], 0) === 0);
+console.log(countInteger([1, 2, 3], 1) === 1);
+console.log(countInteger([1, 2, 3], 2) === 1);
+console.log(countInteger([1, 2, 3], 3) === 1);
+console.log(countInteger([1, 2, 3], 4) === 0);
+console.log(countInteger([1, 2, 3], -1) === 0);
+console.log(countInteger([1, 2, 3, 3, 4, 5, 6, 3], 4) === 1);
+console.log(countInteger([1, 2, 3, 3, 4, 5, 6, 3], 5) === 1);
+console.log(countInteger([1, 2, 3, 3, 4, 5, 6, 3], 6) === 1);
+console.log(countInteger([1, 2, 3, 3, 4, 5, 6, 3], 3) === 3);
