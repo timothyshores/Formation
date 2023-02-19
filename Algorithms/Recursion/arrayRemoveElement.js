@@ -12,10 +12,22 @@ State your assumptions & discoveries:
 · Similar to the built in .filter() method for arrays arr.filter(el => el !== targetValue);
 
 🛠️ IMPLEMENT */
-const removeElement = (arr, el) => {};
+const removeElement = (arr, el) => {
+	const removed = [];
+
+	const helper = (index = 0) => {
+		if (index === arr.length) return;
+        if (arr[index] !== el) removed.push(arr[index]);
+        helper(index + 1);
+	};
+
+	helper();
+	return removed;
+};
 
 /* 
 🧪 VERIFY
 Run your examples & test cases.
 Methodically analyze and debug issue(s).
 */
+
