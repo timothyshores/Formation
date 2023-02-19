@@ -9,4 +9,9 @@ Replace all negative values with a 0
 Reverse the values in an array
  */
 
-const countInteger = (array, target, index = 0) => {};
+const countInteger = (array, target, index = 0) => {
+	if (index >= array.length) return 0;
+	if (array[index] === target)
+		return 1 + countInteger(array, target, index + 1);
+	return countInteger(array, target, index + 1);
+};
