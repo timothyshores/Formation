@@ -66,9 +66,36 @@ High-level outline of approach #: 1
         · Set max to the value to the current value
 
 🛠️ IMPLEMENT */
-const findMin = (arr) => {};
+const findMin = (arr) => {
+	let min = Infinity;
 
-const findMax = (arr) => {};
+	const helper = (index = 0) => {
+		if (index === arr.length) return;
+		if (arr[index] < min) {
+			min = arr[index];
+		}
+		helper(index + 1);
+	};
+
+	helper();
+	return min;
+};
+
+const findMax = (arr) => {
+	let max = -Infinity;
+
+	const helper = (index = 0) => {
+		if (index === arr.length) return;
+		if (arr[index] > max) {
+			max = arr[index];
+		}
+		helper(index + 1);
+	};
+
+	helper();
+
+	return max;
+};
 
 /*
 🧪 VERIFY
