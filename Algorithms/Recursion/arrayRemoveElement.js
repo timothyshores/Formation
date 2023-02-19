@@ -31,3 +31,15 @@ Run your examples & test cases.
 Methodically analyze and debug issue(s).
 */
 
+// Test Cases
+console.log(removeElement([], 0)); // []
+console.log(removeElement([], 1)); // []
+console.log(removeElement([1], 1)); // []
+console.log(removeElement([1], 0)); // [1]
+console.log(removeElement([1, 2], 1)); // [2]
+console.log(removeElement([1, 1], 0)); // [1, 1]
+console.log(removeElement([1, 2], 3)); // [1, 2]
+console.log(removeElement([1, 2, 3], 3)); // [1, 2]
+console.log(removeElement([1, 2, 3], 2)); // [1, 3]
+console.log(removeElement([1, 2, 3], 1)); // [2, 3]
+console.log(removeElement([1, 2, 3], 0)); // [1, 2, 3]
