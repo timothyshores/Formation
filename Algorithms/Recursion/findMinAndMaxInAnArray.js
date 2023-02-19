@@ -51,12 +51,19 @@ console.log(findMax([2, 1, 3]) === 3);
 🧠 BRAINSTORM
 What approaches could work? Consider data structures or algorithmic patterns.
 Analyze the space & time complexity.
-Approach 1: 
-Time: O()
-Space: O()
+Approach 1: Create index based helper function and call the helper function recursively
+Time: O(N)
+Space: O(N)
 
 📆 PLAN
-High-level outline of approach #: 
+High-level outline of approach #: 1
+· Create a global variable to store the minimum or maximum value respectively
+· Set min and max to the first value in the array
+· If there's a second element in the array we'll compare the two values
+    · In findMin if the current value is less than the current minimum value
+        · Set min to the value to the current value
+    · In findMax if the current value is greater than the current minimum value
+        · Set max to the value to the current value
 
 🛠️ IMPLEMENT */
 const findMin = (arr) => {};
