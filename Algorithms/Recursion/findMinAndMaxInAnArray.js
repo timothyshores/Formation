@@ -1,5 +1,5 @@
 /*
-'''
+
 ❓ PROMPT
 Given an array, write 2 recursive functions to find the minimum and maximum element in an array. You may use the *min(a,b)* and *max(a,b)* functions to shorthand picking the minimum and maximum between 2 values.
 
@@ -102,3 +102,50 @@ const findMax = (arr) => {
 Run your examples & test cases.
 Methodically analyze and debug issue(s).
 */
+
+// All test cases return true;
+console.log(findMin([0]) === 0);
+console.log(findMin([1]) === 1);
+console.log(findMin([6]) === 6);
+console.log(findMin([-1]) === -1);
+console.log(findMin([1, 1]) === 1);
+console.log(findMin([1, 2]) === 1);
+console.log(findMin([2, 1]) === 1);
+console.log(findMin([1, -1]) === -1);
+console.log(findMin([-1, 1]) === -1);
+console.log(findMin([-1, -1]) === -1);
+console.log(findMin([1, 1, 1]) === 1);
+console.log(findMin([1, 2, 3]) === 1);
+console.log(findMin([3, 2, 1]) === 1);
+console.log(findMin([2, 1, 3]) === 1);
+console.log(findMin([10, 20, 30]) === 10);
+console.log(findMin([30, 20, 10]) === 10);
+console.log(findMin([20, 10, 30]) === 10);
+console.log(findMin([10, 20, 30, 10]) === 10);
+console.log(findMin([10, 10, 10, 10]) === 10);
+console.log(findMin([8, 6, 7, 5, 3, 7]) === 3);
+console.log(findMin([-10, -5, -3, -30]) === -30);
+console.log(findMin([12, 1234, 45, 67, 1]) === 1);
+
+console.log(findMax([0]) === 0);
+console.log(findMax([1]) === 1);
+console.log(findMax([6]) === 6);
+console.log(findMax([-1]) === -1);
+console.log(findMax([1, 1]) === 1);
+console.log(findMax([1, 2]) === 2);
+console.log(findMax([2, 1]) === 2);
+console.log(findMax([1, -1]) === 1);
+console.log(findMax([-1, 1]) === 1);
+console.log(findMax([-1, -1]) === -1);
+console.log(findMax([1, 1, 1]) === 1);
+console.log(findMax([1, 2, 3]) === 3);
+console.log(findMax([3, 2, 1]) === 3);
+console.log(findMax([2, 1, 3]) === 3);
+console.log(findMax([10, 20, 30]) === 30);
+console.log(findMax([30, 20, 10]) === 30);
+console.log(findMax([20, 10, 30]) === 30);
+console.log(findMax([10, 20, 30, 10]) === 30);
+console.log(findMax([10, 10, 10, 10]) === 10);
+console.log(findMax([8, 6, 7, 5, 3, 7]) === 8);
+console.log(findMax([-10, -5, -3, -30]) === -3);
+console.log(findMax([12, 1234, 45, 67, 1]) === 1234);
