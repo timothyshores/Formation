@@ -47,6 +47,20 @@ Space: O(N) Need N space for the precomputed maximums from the right to the left
 📆 PLAN
 High-level outline of approach #: 2
 
+Create a new array that's the same size as the input array arr
+Start at the right most index arr.length - 1 
+Set this element to 0 because there are NO elements to the right of arr[arr.length - 1]
+Move our pointer to the left by one index and look at index arr.length - 2
+Set this value to the maximum of the original arr at index arr.length - 1 because this is the only element to the right of arr.length - 2
+Repeat this process at arr.length - 3 and set it to the max of the element at arr.length - 2 or arr.length - 1 because these are the two elements to the right of arr.length - 3
+Continue this process until we're at index 0 for the new array
+Create a final left peaks array and initialize it to an empty array
+Iterate through the original input array arr and compare this to our precomputed maximums from the right to the left
+If the current element in the original input array arr is greater than it's related precomputed maximums array then push the current element into the final left peaks array
+Return the final left peaks array
+
+Make sure to handle smaller inputs like arr.length === 0, 1 & 2
+
 🛠️ IMPLEMENT */
 const find_left_peaks = (arr) => {};
 
