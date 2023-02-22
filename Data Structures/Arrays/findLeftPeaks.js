@@ -62,7 +62,34 @@ Return the final left peaks array
 Make sure to handle smaller inputs like arr.length === 0, 1 & 2
 
 🛠️ IMPLEMENT */
-const find_left_peaks = (arr) => {};
+const find_left_peaks = (arr) => {
+	// If arr is a single element return the input array
+	if (arr.length === 1) return arr;
+
+	// Initialize a new array to store the local maximums from all elements to it's right and set to the length of input array arr
+	const maximums = Array(arr.length).fill();
+	
+    // Set right most index of maximums to -Infinity 
+    maximums[arr.length - 1] = -Infinity;
+
+    // Start from the second to last element at arr.length -2 and work backwards to left most index 0
+    for (let i = arr.length - 2; i >= 0; i--) {
+        // Set the current maximum to the previous maximum or the element to it's right in the input array arr
+		maximums[i] = Math.max(maximums[i + 1], arr[i + 1]);
+	}
+
+    // Initialize a new empty array called leftPeaks
+	const leftPeaks = [];
+
+    // Iterate through input array arr
+    for (let i = 0; i < arr.length; i++) {
+        // If the current element is greater than all elements to it's right then push it into the leftPeaks array
+		if (arr[i] > maximums[i]) leftPeaks.push(arr[i]);
+	}
+
+    // Return leftPeaks array 
+	return leftPeaks;
+};
 
 /*
 
