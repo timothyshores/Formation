@@ -68,33 +68,80 @@ const find_left_peaks = (arr) => {
 
 	// Initialize a new array to store the local maximums from all elements to it's right and set to the length of input array arr
 	const maximums = Array(arr.length).fill();
-	
-    // Set right most index of maximums to -Infinity 
-    maximums[arr.length - 1] = -Infinity;
 
-    // Start from the second to last element at arr.length -2 and work backwards to left most index 0
-    for (let i = arr.length - 2; i >= 0; i--) {
-        // Set the current maximum to the previous maximum or the element to it's right in the input array arr
+	// Set right most index of maximums to -Infinity
+	maximums[arr.length - 1] = -Infinity;
+
+	// Start from the second to last element at arr.length -2 and work backwards to left most index 0
+	for (let i = arr.length - 2; i >= 0; i--) {
+		// Set the current maximum to the previous maximum or the element to it's right in the input array arr
 		maximums[i] = Math.max(maximums[i + 1], arr[i + 1]);
 	}
 
-    // Initialize a new empty array called leftPeaks
+	// Initialize a new empty array called leftPeaks
 	const leftPeaks = [];
 
-    // Iterate through input array arr
-    for (let i = 0; i < arr.length; i++) {
-        // If the current element is greater than all elements to it's right then push it into the leftPeaks array
+	// Iterate through input array arr
+	for (let i = 0; i < arr.length; i++) {
+		// If the current element is greater than all elements to it's right then push it into the leftPeaks array
 		if (arr[i] > maximums[i]) leftPeaks.push(arr[i]);
 	}
 
-    // Return leftPeaks array 
+	// Return leftPeaks array
 	return leftPeaks;
 };
 
-/*
+/* 
 
 🧪 VERIFY
 Run your examples & test cases.
-Methodically analyze and debug issue(s).
+Methodically analyze and debug issue(s) 
 
 */
+
+// All test cases return true
+console.log(find_left_peaks([]).length === 0);
+console.log(find_left_peaks([0])[0] === 0 && find_left_peaks([0]).length === 1);
+console.log(find_left_peaks([1])[0] === 1 && find_left_peaks([1]).length === 1);
+
+console.log(
+	find_left_peaks([-1])[0] === -1 && find_left_peaks([-1]).length === 1
+);
+
+console.log(
+	find_left_peaks([0, 1])[0] === 1 && find_left_peaks([0, 1]).length === 1
+);
+
+console.log(
+	find_left_peaks([1, 2])[0] === 2 && find_left_peaks([1, 2]).length === 1
+);
+
+console.log(
+	find_left_peaks([2, 1])[0] === 2 &&
+		find_left_peaks([2, 1])[1] === 1 &&
+		find_left_peaks([2, 1]).length === 2
+);
+
+console.log(
+	find_left_peaks([1, 0])[0] === 1 &&
+		find_left_peaks([1, 0])[1] === 0 &&
+		find_left_peaks([1, 0]).length === 2
+);
+
+console.log(
+	find_left_peaks([1, 2, 3])[0] === 3 && find_left_peaks([1, 2, 3]).length === 1
+);
+
+console.log(
+	find_left_peaks([3, 2, 1])[0] === 3 &&
+		find_left_peaks([3, 2, 1])[1] === 2 &&
+		find_left_peaks([3, 2, 1])[2] === 1 &&
+		find_left_peaks([3, 2, 1]).length === 3
+);
+
+console.log(
+	find_left_peaks([1, 2, 5, 3, 1, 2])[0] === 5 &&
+		find_left_peaks([1, 2, 5, 3, 1, 2])[1] === 3 &&
+		find_left_peaks([1, 2, 5, 3, 1, 2])[2] === 2 &&
+		find_left_peaks([1, 2, 5, 3, 1, 2]).length === 3
+);
