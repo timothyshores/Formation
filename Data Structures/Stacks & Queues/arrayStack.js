@@ -63,3 +63,40 @@ class ArrayStack {
 		return this.index;
 	}
 }
+
+// All console logs statements return true
+stack = new ArrayStack();
+
+console.log(stack.size() === 0);
+console.log(stack.pop() === "Can NOT call .pop() on empty ArrayStack");
+stack.push(2);
+console.log(stack.size() === 1);
+stack.push(3);
+console.log(stack.size() === 2);
+console.log(stack.pop() === 3);
+console.log(stack.size() === 1);
+console.log(stack.pop() === 2);
+console.log(stack.size() === 0);
+console.log(stack.pop() === "Can NOT call .pop() on empty ArrayStack");
+stack.push(1);
+console.log(stack.size() === 1);
+stack.push(2);
+console.log(stack.size() === 2);
+stack.push(3);
+console.log(stack.size() === 3);
+stack.push(4);
+console.log(stack.size() === 4);
+stack.push(5);
+console.log(stack.size() === 5);
+stack.push(6);
+console.log(stack.size() === 6);
+stack.push(7);
+console.log(stack.size() === 7);
+stack.push(8);
+console.log(stack.size() === 8);
+stack.push(9);
+console.log(stack.size() === 9);
+stack.push(10);
+console.log(stack.size() === 10);
+console.log(stack.push(11) === `Unable to push to ArrayStack with capacity 10`);
+console.log(stack.size() === 10);
