@@ -37,4 +37,29 @@ class ArrayStack {
 
 */
 
-class ArrayStack {}
+class ArrayStack {
+	constructor(initialCapacity = 10) {
+		this.stack = new Array(initialCapacity).fill(undefined);
+		this.index = 0;
+	}
+
+	push(val) {
+		if (this.index < this.stack.length) {
+			this.stack[this.index++] = val;
+		} else {
+			return `Unable to push to ArrayStack with capacity ${this.stack.length}`;
+		}
+	}
+
+	pop() {
+		if (this.index > 0) {
+			return this.stack[--this.index];
+		} else {
+			return `Can NOT call .pop() on empty ArrayStack`;
+		}
+	}
+
+	size() {
+		return this.index;
+	}
+}
