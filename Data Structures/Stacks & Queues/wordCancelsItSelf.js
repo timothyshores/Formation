@@ -31,6 +31,20 @@ console.log(wordsCancelItself('what what what what what what'));
 
 Approach 1:
 
+Split the input string str into seperate strings
+Store in an array called words
+If words array has an odd lenth return false 
+Each word needs another word to cancel itself out
+Another way of saying this is that there needs to be an even number of words
+Iterate through the words array using a for loop starting at index 1
+When the index is odd we current the current word and the previous word
+If the previous word and current word are NOT the same then return false
+When we've checked every pair of words in the words array
+And every word pair cancels itself out return true
+
+Time complexity: O(N) to iterate through the loop 
+Space complexity: O(N) to store the string as an array of words
+
 FUNCTION SIGNATURE
 function isNegated(str)
 */
