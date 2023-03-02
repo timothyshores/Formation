@@ -82,3 +82,20 @@ const wordsCancelItself1 = (str) => {
 
 	return true;
 };
+
+const wordsCancelItself2 = (str) => {
+	const stack = [];
+	const words = str.split(" ");
+
+	if (words.length % 2 === 1) return false;
+
+	for (const word of words) {
+		if (stack.length) {
+			if (stack.pop() !== word) return false;
+		} else {
+			stack.push(word);
+		}
+	}
+
+	return !stack.length;
+};
