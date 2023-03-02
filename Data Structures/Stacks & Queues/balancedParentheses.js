@@ -85,4 +85,22 @@ Space complexity: O(1) to store the current count
 
 */
 
-const isBalanced = (str) => {};
+const stackBasedApproach = (brackets) => {
+	if (brackets.length === 0) return true;
+	if (brackets.length % 2 === 1) return false;
+
+	const stack = [];
+
+	for (const bracket of brackets) {
+		switch (bracket) {
+			case "(":
+				stack.push(")");
+				break;
+			case ")":
+				if (stack.pop() !== ")") return false;
+		}
+	}
+
+	return stack.length === 0;
+};
+
