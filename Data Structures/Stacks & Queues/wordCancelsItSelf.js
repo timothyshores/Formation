@@ -99,3 +99,20 @@ const wordsCancelItself2 = (str) => {
 
 	return !stack.length;
 };
+
+console.log("Test cases using approach 1 should all return true");
+console.log("--------------------------------------------------");
+console.log(!wordsCancelItself1("no"));
+console.log(!wordsCancelItself1("what"));
+console.log(!wordsCancelItself1("no what"));
+console.log(wordsCancelItself1("what what"));
+console.log(!wordsCancelItself1("what no what"));
+console.log(wordsCancelItself1("what what no no"));
+console.log(wordsCancelItself1("no no what what"));
+console.log(!wordsCancelItself1("what what what"));
+console.log(!wordsCancelItself1("what no no what"));
+console.log(!wordsCancelItself1("what no no what"));
+console.log(wordsCancelItself1("what what what what"));
+console.log(wordsCancelItself1("what what no no yes yes"));
+console.log(!wordsCancelItself1("what what what what what"));
+console.log(wordsCancelItself1("what what what what what what"));
