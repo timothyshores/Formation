@@ -68,7 +68,17 @@ Time complexity: O(N) to iterate through the loop
 Space complexity: O(N) to store the string as an array of words and words in a stack
 
 FUNCTION SIGNATURE
-function isNegated(str)
+function wordsCancelsItself(str)
 */
 
-const wordsCancelItself1 = (str) => {};
+const wordsCancelItself1 = (str) => {
+	const words = str.split(" ");
+
+	if (words.length % 2 !== 0) return false;
+
+	for (let i = 1; i < words.length; i++) {
+		if (i % 2 === 1 && words[i - 1] !== words[i]) return false;
+	}
+
+	return true;
+};
