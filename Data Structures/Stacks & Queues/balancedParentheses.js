@@ -60,6 +60,18 @@ If we encounter a closing bracket pop from the stack and check if it's a closing
 Time complexity: O(N) iterates through the string
 Space complexity: O(N) store up to str.length - 1 characters in the stack
 
+Approach 2: Use string manipulation
+
+Create a while loop
+While string is NOT empty 
+Replace '()' with '' 
+When there's no more () found in the string
+Return true if the final string is '' 
+If the sting is NOT empty then return false
+
+Time complexity: O(N^2) call .replace N number of times and .replace is an O(N) operation
+Space complexity: O(N) to store the initial input string 
+
 */
 
 const isBalanced = (str) => {};
