@@ -104,3 +104,45 @@ const stackBasedApproach = (brackets) => {
 	return stack.length === 0;
 };
 
+console.log("Test Cases Return True");
+console.table([
+	{ Input: "", Output: stackBasedApproach("") },
+	{ Input: "()", Output: stackBasedApproach("()") },
+	{ Input: "(())", Output: stackBasedApproach("(())") },
+	{ Input: "()()", Output: stackBasedApproach("()()") },
+	{ Input: "(()())", Output: stackBasedApproach("(()())") },
+	{ Input: "((()))", Output: stackBasedApproach("((()))") },
+	{ Input: "()()()", Output: stackBasedApproach("()()()") },
+	{ Input: "(()())", Output: stackBasedApproach("(()())") },
+	{ Input: "()(())", Output: stackBasedApproach("()(())") },
+	{ Input: "(())(())", Output: stackBasedApproach("(())(())") },
+	{ Input: "()(())()", Output: stackBasedApproach("()(())()") },
+	{ Input: "()((()))", Output: stackBasedApproach("()((()))") },
+	{ Input: "()(())(())", Output: stackBasedApproach("()(())(())") },
+	{ Input: "((()))((()))", Output: stackBasedApproach("((()))((()))") },
+	{ Input: "(())(())(())", Output: stackBasedApproach("(())(())(())") },
+]);
+
+console.log("Test Cases Return False");
+console.table([
+	{ Input: "(", Output: stackBasedApproach("(") },
+	{ Input: ")", Output: stackBasedApproach(")") },
+	{ Input: "()", Output: stackBasedApproach(")(") },
+	{ Input: "())", Output: stackBasedApproach("())") },
+	{ Input: "(()", Output: stackBasedApproach("(()") },
+	{ Input: "((", Output: stackBasedApproach("((") },
+	{ Input: "))", Output: stackBasedApproach("))") },
+	{ Input: "))(", Output: stackBasedApproach("))(") },
+	{ Input: "(((", Output: stackBasedApproach("(((") },
+	{ Input: ")))", Output: stackBasedApproach(")))") },
+	{ Input: "))((", Output: stackBasedApproach("))((") },
+	{ Input: "((((", Output: stackBasedApproach("((((") },
+	{ Input: "(((()", Output: stackBasedApproach("(((()") },
+	{ Input: "(((())", Output: stackBasedApproach("(((())") },
+	{ Input: "()))))", Output: stackBasedApproach("()))))") },
+	{ Input: "(()))))", Output: stackBasedApproach("(()))))") },
+	{ Input: "(()(()(", Output: stackBasedApproach("(()(()(") },
+	{ Input: "((())))))", Output: stackBasedApproach("((())))))") },
+	{ Input: "((((((((((((((", Output: stackBasedApproach("((((((((((((((") },
+	{ Input: "))))))))))))", Output: stackBasedApproach("))))))))))))") },
+]);
