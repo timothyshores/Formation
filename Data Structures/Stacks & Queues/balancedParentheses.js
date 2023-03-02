@@ -72,6 +72,17 @@ If the sting is NOT empty then return false
 Time complexity: O(N^2) call .replace N number of times and .replace is an O(N) operation
 Space complexity: O(N) to store the initial input string 
 
+Approach 3: Iterate and use counter
+
+Initialize a count variable and set to 0
+If we encounter an opening bracket '(' add 1 to the count
+If we encounter a closing bracket ')' subtract 1 from the count
+If count ever drops below 0 then return false
+After checking all characters return true if count is 0 else return false
+
+Time complexity: O(N) to iterate through the input string str
+Space complexity: O(1) to store the current count
+
 */
 
 const isBalanced = (str) => {};
