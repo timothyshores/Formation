@@ -45,6 +45,28 @@ And every word pair cancels itself out return true
 Time complexity: O(N) to iterate through the loop 
 Space complexity: O(N) to store the string as an array of words
 
+Approach 2:
+
+Split the input string str into separate strings
+Store in an array called words
+If words array has an odd length return false 
+Each word needs another word to cancel itself out
+Another way of saying this is that there needs to be an even number of words
+In initialize an empty stack
+Iterate through the words array
+If the stack is empty then add the current word to the top of the stack
+If the stack is NOT empty then pop the top element from the top of the stack
+Compare the current word to the word that was popped off of the top of the currentStack
+If the words are different then the words do NOT cancel themselves out and return false
+If the words are the same then we continue iterating until we reach the end of the words array
+If we reach the end of the words array and the stack is NOT empty 
+Then the words do NOT cancel themselves out and return false
+If we reach the end of the words array and the stack is empty
+Then all words have a matching pair that cancels itself out and return true
+
+Time complexity: O(N) to iterate through the loop 
+Space complexity: O(N) to store the string as an array of words and words in a stack
+
 FUNCTION SIGNATURE
 function isNegated(str)
 */
