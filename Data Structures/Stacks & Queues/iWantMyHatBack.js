@@ -85,10 +85,27 @@ console.table([
 What approaches could work? Consider data structures or algorithmic patterns.
 Analyze the space & time complexity.
 
-Approach 1:
+Approach 1: Traverse the graph
+Worst Time: O(N) Worst case scenario we need to ask all dogs in the park
+Best Time: O(1) The best friend saw the hat
+Space: O(N) Store dogs in the dogs to ask queue and dogs seen queue
 
 📆 PLAN
-High-level outline of approach #: 
+High-level outline of approach #: 1
+
+Start at the best friend
+Ask the best friend who he saw at the dog park
+Store the dogs the best friend saw in park in a queue
+Call the queue dogs to ask
+Dequeue the first dog from the front of the queue
+Ask that dog who he saw at the park
+If the dog didn't see any other dogs at the dog park return "Couldn't find the hat"
+Add those dogs to the queue
+Add the dog who we asked who we saw at the park to a set
+Call this set dogs asked
+Continue removing dogs from the front of the queue by dequeuing
+If we dequeue a dog who's already been asked then we have circulat logic
+    Return "Couldn't find the hat"
 
 🛠️ IMPLEMENT 
 
