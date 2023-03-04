@@ -111,7 +111,35 @@ If we dequeue a dog who's already been asked then we have circulat logic
 
 */
 
-const findHat = (dogsFriends, dogsBestFriend) => {};
+const findHat = (dogsFriends, dogsBestFriend) => {
+	const dogsToAsk = [dogsBestFriend];
+	const dogsAlreadyAsked = new Set();
+
+	while (dogsToAsk.length) {
+		const currentDog = dogsToAsk.shift();
+		const otherDogsCurrentDogSawAtTheDogPark = dogsFriends[currentDog];
+		const currentDogSawTheHat = otherDogsCurrentDogSawAtTheDogPark[0] === "HAT";
+
+		if (currentDogSawTheHat) return currentDog;
+
+		const currentDogDidNotSeeAnotherDogAndNoMoreDogsToAsk =
+			!otherDogsCurrentDogSawAtTheDogPark.length && !dogsToAsk.length;
+
+		const currentDogWasAlreadyAsked = dogsAlreadyAsked.has(currentDog);
+
+		if (
+			currentDogDidNotSeeAnotherDogAndNoMoreDogsToAsk ||
+			currentDogWasAlreadyAsked
+		)
+			return "Couldn't find the hat";
+
+		for (const dog of otherDogsCurrentDogSawAtTheDogPark) {
+			dogsToAsk.push(dog);
+		}
+
+		dogsAlreadyAsked.add(currentDog);
+	}
+};
 
 /*
 
