@@ -148,3 +148,61 @@ Run your examples & test cases.
 Methodically analyze and debug issue(s).
 
 */
+
+const row = (dogs, bestfriend, expectedResult) => ({
+	bestfriend: bestfriend,
+	expectedResult: expectedResult,
+	Output: findHat(dogs, bestfriend) === expectedResult,
+});
+
+const allDogsKnow = {
+	Ariel: ["Bork"],
+	Bork: ["Cassie"],
+	Cassie: ["Drex"],
+	Drex: ["Zoe"],
+	Zoe: ["HAT"],
+};
+
+console.log("allDogsKnow");
+console.table([
+	row(allDogsKnow, "Ariel", "Zoe"),
+	row(allDogsKnow, "Bork", "Zoe"),
+	row(allDogsKnow, "Bork", "Zoe"),
+	row(allDogsKnow, "Cassie", "Zoe"),
+	row(allDogsKnow, "Drex", "Zoe"),
+	row(allDogsKnow, "Zoe", "Zoe"),
+]);
+
+const fidoDoesNotKnow = {
+	Carter: ["Fido", "Ivy"],
+	Ivy: ["HAT"],
+	Loki: ["Snoopy"],
+	Pepper: ["Carter"],
+	Snoopy: ["Pepper"],
+	Fido: [],
+};
+
+console.log("fidoDoesNotKnow");
+console.table([
+	row(fidoDoesNotKnow, "Loki", "Ivy"),
+	row(fidoDoesNotKnow, "Snoopy", "Ivy"),
+	row(fidoDoesNotKnow, "Ivy", "Ivy"),
+	row(fidoDoesNotKnow, "Fido", "Couldn't find the hat"),
+]);
+
+const dogsDoNotKnow = {
+	Zoe: ["Jono"],
+	Jono: ["Angus"], // circular reference to each other
+	Angus: ["Jono"], // circular reference to each other
+	Paavo: ["Zoe", "Oliver"],
+	Oliver: ["HAT"],
+};
+
+console.log("dogsDoNotKnow");
+console.table([
+	row(dogsDoNotKnow, "Paavo", "Oliver"),
+	row(dogsDoNotKnow, "Oliver", "Oliver"),
+	row(dogsDoNotKnow, "Zoe", "Couldn't find the hat"),
+	row(dogsDoNotKnow, "Angus", "Couldn't find the hat"),
+	row(dogsDoNotKnow, "Jono", "Couldn't find the hat"),
+]);
