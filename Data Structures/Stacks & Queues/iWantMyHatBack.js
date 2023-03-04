@@ -30,7 +30,56 @@ findHat(dogs, 'Loki') == 'Ivy'
 🔎 EXPLORE
 State your assumptions & discoveries:
 
+Want to find the path from the dog's best friend to the dog key that contains the value "HAT"
+
 Create examples & test cases:
+
+const allDogsKnow = {
+	Ariel: ["Bork"],
+	Bork: ["Cassie"],
+	Cassie: ["Drex"],
+	Drex: ["Zoe"],
+	Zoe: ["HAT"],
+};
+console.table([
+	findHat(allDogsKnow, "Ariel") == "Zoe",
+	findHat(allDogsKnow, "Bork") == "Zoe",
+	findHat(allDogsKnow, "Cassie") == "Zoe",
+	findHat(allDogsKnow, "Drex") == "Zoe",
+	findHat(allDogsKnow, "Zoe") == "Zoe",
+]);
+
+const fidoDoesNotKnow = {
+	Carter: ["Fido", "Ivy"],
+	Ivy: ["HAT"], // Ivy has seen the hat
+	Loki: ["Snoopy"],
+	Pepper: ["Carter"],
+	Snoopy: ["Pepper"],
+	Fido: [],
+};
+
+console.table([
+	findHat(fidoDoesNotKnow, "Loki") == "Ivy",
+	findHat(fidoDoesNotKnow, "Snoopy") == "Ivy",
+	findHat(fidoDoesNotKnow, "Ivy") == "Ivy",
+	findHat(fidoDoesNotKnow, "Fido") == "Couldn't find the hat",
+]);
+
+const dogsDoNotKnow = {
+	Zoe: ["Jono"],
+	Jono: ["Angus"], // dead-end, circular knowledge
+	Angus: ["Jono"], // dead-end, circular knowledge
+	Paavo: ["Zoe", "Oliver"],
+	Oliver: ["HAT"],
+};
+console.table([
+	findHat(dogsDoNotKnow, "Paavo") == "Oliver",
+	findHat(dogsDoNotKnow, "Oliver") == "Oliver",
+	findHat(dogsDoNotKnow, "Zoe") == "Couldn't find the hat",
+	findHat(dogsDoNotKnow, "Angus") == "Couldn't find the hat",
+	findHat(dogsDoNotKnow, "Jono") == "Couldn't find the hat",
+]);
+
 
 🧠 BRAINSTORM
 What approaches could work? Consider data structures or algorithmic patterns.
