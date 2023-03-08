@@ -80,6 +80,43 @@ const possibleVacations = (flightTable, homeCity, destinationList) => {
 		}
 	}
 
-    // Return the results object after we have visited all cities
+	// Return the results object after we have visited all cities
 	return results;
 };
+
+// Test cases data
+const testcase1 = possibleVacations(
+	{
+		Phoenix: ["Seattle"],
+		Seattle: ["Boston", "Phoenix"],
+		Boston: ["Phoenix"],
+	},
+	"Phoenix",
+	["Seattle", "Boston"]
+);
+
+const testcase2 = possibleVacations({ Phoenix: [], Seattle: [] }, "Phoenix", [
+	"Seattle",
+]);
+
+const testcase3 = possibleVacations(
+	{
+		Phoenix: ["Seattle", "Boston"],
+		Seattle: ["Phoenix", "Boston"],
+		Boston: ["Phoenix", "Seattle"],
+	},
+	"Phoenix",
+	["Seattle", "Boston"]
+);
+
+// All test cases return true
+console.log(testcase1.Seattle === 1);
+console.log(testcase1.Boston === 2);
+console.log(Object.keys(testcase1).length === 2);
+
+console.log(Object.keys(testcase2).length === 0);
+console.log(JSON.stringify(testcase2) === "{}");
+
+console.log(testcase3["Seattle"] === 1);
+console.log(testcase3["Boston"] === 1);
+console.log(Object.keys(testcase3).length === 2);
