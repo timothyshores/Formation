@@ -39,4 +39,47 @@ function possibleVacations(flightTable, homeCity, destinationList) {
 
 */
 
-const possibleVacations = (flightTable, homeCity, destinationList) => {};
+const possibleVacations = (flightTable, homeCity, destinationList) => {
+	// Store the destinations that are passed into the function into a set called destinations
+	const destinations = new Set(destinationList);
+
+	// Store the home city in a set called cities visited
+	const citiesVisited = new Set();
+
+	// Initialize an empty object called results to return at the end of the function
+	const results = {};
+
+	// Create a queue and push in a tuple with the home city paired with 0 to represent the starting point
+	const cityAndDistanceTupleList = [[homeCity, 0]];
+
+	while (cityAndDistanceTupleList.length > 0) {
+		// Remove the first element from the cityAndDistanceTupleList queue
+		const [currentCity, numberOfFlights] = cityAndDistanceTupleList.shift();
+
+		// Add the current city to the cities visited set
+		citiesVisited.add(currentCity);
+
+		// Iterate through the array that is the key of the current city in the fightsTable
+		for (const destination of flightTable[currentCity]) {
+			// If the current city has already been visited
+			if (citiesVisited.has(destination)) {
+				// Continue to the next destination
+				continue;
+			}
+			// The current city has NOT been visited yet
+			else {
+				// Add the destination city and number of flights tuple to our cityAndDistanceTupleList queue
+				cityAndDistanceTupleList.push([destination, numberOfFlights + 1]);
+
+				// If the current destination is in our destinations set and it is NOT in the results object
+				if (destinations.has(destination) && !results[destination]) {
+					// Add the current destination as the key and one additional flight to results object
+					results[destination] = numberOfFlights + 1;
+				}
+			}
+		}
+	}
+
+    // Return the results object after we have visited all cities
+	return results;
+};
