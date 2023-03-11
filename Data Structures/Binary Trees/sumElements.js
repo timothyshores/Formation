@@ -42,7 +42,10 @@ class TreeNode {
 	}
 }
 
-const sumBT = (root) => {};
+const sumBT = (root) => {
+	if (!root) return 0;
+	return root.value + sumBT(root.left) + sumBT(root.right);
+};
 
 /*
 
@@ -50,3 +53,16 @@ const sumBT = (root) => {};
 Run tests. Methodically debug & analyze issues.
 
 */
+
+// All Test Cases Return True
+console.log(sumBT(null) === 0);
+console.log(sumBT(new TreeNode(1)) === 1);
+console.log(sumBT(new TreeNode(1, new TreeNode(2), new TreeNode(3))) === 6);
+
+const sixNodeBinaryTree = new TreeNode(
+	2,
+	new TreeNode(29, new TreeNode(26)),
+	new TreeNode(4, null, new TreeNode(2, new TreeNode(9)))
+);
+
+console.log(sumBT(sixNodeBinaryTree) === 72);
