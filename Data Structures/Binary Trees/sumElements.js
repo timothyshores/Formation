@@ -16,15 +16,18 @@ Example:
 
 🔎 EXPLORE
 What are some other insightful & revealing test cases?
+Want to return the sum of all node values given the root of a binary tree
 
 🧠 BRAINSTORM
 What approaches could work?
-Algorithm 1: 
-Time: O()
-Space: O()
+Algorithm 1: Recursion
+Time: O(N)
+Space: O(N)
 
 📆 PLAN
-Outline of algorithm #: 
+Outline of algorithm #: 1
+If there's no root node return 0
+Return the value of the root node plus recursively call the function on the left and right children
 
 🛠️ IMPLEMENT
 Write your algorithm.
