@@ -15,15 +15,20 @@ Example:
 
 🔎 EXPLORE
 What are some other insightful & revealing test cases?
+Want to count all elements in the binary tree
+If the tree is empty return 0
+If the tree is a root node with no child return 1
 
 🧠 BRAINSTORM
 What approaches could work?
-Algorithm 1: 
-Time: O()
-Space: O()
+Algorithm 1: Recursion
+Time: O(N)
+Space: O(1)
 
 📆 PLAN
 Outline of algorithm #: 
+If the tree is empty i.e. there's no root return 0
+Return 1 if the root TreeNode is NOT null and recursively call the function on the left and right child nodes
 
 🛠️ IMPLEMENT
 Write your algorithm.
