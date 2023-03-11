@@ -43,7 +43,10 @@ class TreeNode {
 	}
 }
 
-const countTree = (root) => {};
+const countTree = (root) => {
+	if (!root) return 0;
+	return 1 + countTree(root.left) + countTree(root.right);
+};
 
 /* 
 
@@ -51,3 +54,18 @@ const countTree = (root) => {};
 Run tests. Methodically debug & analyze issues 
 
 */
+
+// Test Data
+const treeThreeNodes = new TreeNode(1, new TreeNode(2), new TreeNode(3));
+
+const treeSixNodes = new TreeNode(
+	2,
+	new TreeNode(29, new TreeNode(26)),
+	new TreeNode(4, null, new TreeNode(2, new TreeNode(9)))
+);
+
+// All test cases return true
+console.log(countTree(null) === 0);
+console.log(countTree(new TreeNode()) === 1);
+console.log(countTree(treeThreeNodes) === 3);
+console.log(countTree(treeSixNodes) === 6);
