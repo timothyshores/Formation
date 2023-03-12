@@ -71,10 +71,50 @@ Implement
 
 */
 
-const iterativeSearchInBST = (root, target) => {};
+const iterativeSearchInBST = (root, target) => {
+	if (!root) return false;
+	if (root.val === target) return true;
+
+	let node = root;
+
+	while (node.val !== target) {
+		if (target < node.val && node.left) node = node.left;
+		if (target > node.val && node.right) node = node.right;
+		if ((target < node.val && !node.left) || (target > node.val && !node.right))
+			return false;
+	}
+
+	return true;
+};
 
 /*
 
 Verify all test cases return true
 
 */
+
+console.log(iterativeSearchInBST(root, 5));
+console.log(iterativeSearchInBST(root, 11));
+console.log(iterativeSearchInBST(root, 12));
+console.log(iterativeSearchInBST(root, 14));
+console.log(iterativeSearchInBST(root, 15));
+console.log(iterativeSearchInBST(root, 18));
+console.log(iterativeSearchInBST(root, 19));
+console.log(iterativeSearchInBST(root, 21));
+console.log(iterativeSearchInBST(root, 23));
+console.log(iterativeSearchInBST(root, 25));
+console.log(iterativeSearchInBST(root, 27));
+console.log(iterativeSearchInBST(root, 28));
+console.log(iterativeSearchInBST(root, 30));
+console.log(iterativeSearchInBST(root, 32));
+console.log(iterativeSearchInBST(root, 37));
+
+console.log(!iterativeSearchInBST(null, 1));
+console.log(!iterativeSearchInBST(root, 4));
+console.log(!iterativeSearchInBST(root, 6));
+console.log(!iterativeSearchInBST(root, 16));
+console.log(!iterativeSearchInBST(root, 24));
+console.log(!iterativeSearchInBST(root, 29));
+console.log(!iterativeSearchInBST(root, 31));
+console.log(!iterativeSearchInBST(root, 33));
+console.log(!iterativeSearchInBST(root, 38));
