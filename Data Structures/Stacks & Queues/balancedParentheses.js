@@ -104,7 +104,15 @@ const stackBasedApproach = (brackets) => {
 	return stack.length === 0;
 };
 
-console.log("Test Cases Return True");
+const stringManipulationApproach = (brackets) => {
+	while (brackets.length && brackets.indexOf("()") >= 0) {
+		brackets.replace("()", "");
+	}
+
+	return brackets === "";
+};
+
+console.log("Stack Based Implementation Return True");
 console.table([
 	{ Input: "", Output: stackBasedApproach("") },
 	{ Input: "()", Output: stackBasedApproach("()") },
@@ -123,7 +131,7 @@ console.table([
 	{ Input: "(())(())(())", Output: stackBasedApproach("(())(())(())") },
 ]);
 
-console.log("Test Cases Return False");
+console.log("Stack Based Implementation Return False");
 console.table([
 	{ Input: "(", Output: stackBasedApproach("(") },
 	{ Input: ")", Output: stackBasedApproach(")") },
@@ -145,4 +153,50 @@ console.table([
 	{ Input: "((())))))", Output: stackBasedApproach("((())))))") },
 	{ Input: "((((((((((((((", Output: stackBasedApproach("((((((((((((((") },
 	{ Input: "))))))))))))", Output: stackBasedApproach("))))))))))))") },
+]);
+
+console.log("String manipulation implementation return True");
+console.table([
+	{ Input: "", Output: stringManipulationApproach("") },
+	{ Input: "()", Output: stringManipulationApproach("()") },
+	{ Input: "(())", Output: stringManipulationApproach("(())") },
+	{ Input: "()()", Output: stringManipulationApproach("()()") },
+	{ Input: "(()())", Output: stringManipulationApproach("(()())") },
+	{ Input: "((()))", Output: stringManipulationApproach("((()))") },
+	{ Input: "()()()", Output: stringManipulationApproach("()()()") },
+	{ Input: "(()())", Output: stringManipulationApproach("(()())") },
+	{ Input: "()(())", Output: stringManipulationApproach("()(())") },
+	{ Input: "(())(())", Output: stringManipulationApproach("(())(())") },
+	{ Input: "()(())()", Output: stringManipulationApproach("()(())()") },
+	{ Input: "()((()))", Output: stringManipulationApproach("()((()))") },
+	{ Input: "()(())(())", Output: stringManipulationApproach("()(())(())") },
+	{ Input: "((()))((()))", Output: stringManipulationApproach("((()))((()))") },
+	{ Input: "(())(())(())", Output: stringManipulationApproach("(())(())(())") },
+]);
+
+console.log("String manipulation implementation return False");
+console.table([
+	{ Input: "(", Output: stringManipulationApproach("(") },
+	{ Input: ")", Output: stringManipulationApproach(")") },
+	{ Input: "()", Output: stringManipulationApproach(")(") },
+	{ Input: "())", Output: stringManipulationApproach("())") },
+	{ Input: "(()", Output: stringManipulationApproach("(()") },
+	{ Input: "((", Output: stringManipulationApproach("((") },
+	{ Input: "))", Output: stringManipulationApproach("))") },
+	{ Input: "))(", Output: stringManipulationApproach("))(") },
+	{ Input: "(((", Output: stringManipulationApproach("(((") },
+	{ Input: ")))", Output: stringManipulationApproach(")))") },
+	{ Input: "))((", Output: stringManipulationApproach("))((") },
+	{ Input: "((((", Output: stringManipulationApproach("((((") },
+	{ Input: "(((()", Output: stringManipulationApproach("(((()") },
+	{ Input: "(((())", Output: stringManipulationApproach("(((())") },
+	{ Input: "()))))", Output: stringManipulationApproach("()))))") },
+	{ Input: "(()))))", Output: stringManipulationApproach("(()))))") },
+	{ Input: "(()(()(", Output: stringManipulationApproach("(()(()(") },
+	{ Input: "((())))))", Output: stringManipulationApproach("((())))))") },
+	{
+		Input: "((((((((((((((",
+		Output: stringManipulationApproach("(((((((((((((("),
+	},
+	{ Input: "))))))))))))", Output: stringManipulationApproach("))))))))))))") },
 ]);
