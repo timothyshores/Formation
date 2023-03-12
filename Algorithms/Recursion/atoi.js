@@ -59,7 +59,38 @@ For each character in the input string
 If the integer is positive, return the result variable, otherwise return the product of the result variable and -1 to convert it to a negative integer
 
 🛠️ IMPLEMENT */
-const atoi = (intAsString) => {};
+const atoi = (intAsString) => {
+	// Store the integer value of the string and initialize to 0
+	let result = 0;
+
+	// Keep track of the current index in the string and initialize to 0
+	let index = 0;
+
+	// Create boolean variable to keep track if integer is positive or negative
+	let isPositive = true;
+
+	// If the input string is a negative number
+	if (intAsString[0] === "-") {
+		// Increment the starting index to 1
+		index++;
+		// Set boolean isPositive to false
+		isPositive = false;
+	}
+
+	// Iterate through the input string
+	for (; index < intAsString.length; index++) {
+		// Convert the character to its ASCII code using the charCodeAt method
+		const asciiCode = intAsString.charCodeAt(index);
+		// Subtract 48 from the ASCII code to get the integer value of the character
+		const integerValueOfChar = asciiCode - 48;
+		// Multiply the result variable by 10 and add the integer value of the character.
+		// This effectively shifts the existing digits of result one place to the left and adds the new digit on the right.
+		result = result * 10 + integerValueOfChar;
+	}
+
+	// If integer is positive return the result else return the product of the result times -1
+	return isPositive ? result : result * -1;
+};
 
 /*
 
