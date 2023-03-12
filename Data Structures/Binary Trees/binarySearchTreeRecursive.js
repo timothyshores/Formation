@@ -29,9 +29,22 @@ const root = new ListNode(21, leftSubTree, rightSubTree);
 
 EXPLORE
 
+Four possible scenarios searching a BST for a target value
+
+If target value is equal to root.value
+    Return true
+If target value is less than root.value
+    Search the left subtree
+If target value is greater than root.value
+    Search the right subtree
+If root.value is null
+    Return false
+
 BRAINSTORM
 
-Approach 1: 
+Approach 1: Use recursion
+Time complexity: O(log N)
+Space complexity: O(log N)
 
 PLAN
 
