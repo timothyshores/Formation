@@ -29,9 +29,43 @@ const root = new ListNode(21, leftSubTree, rightSubTree);
 
 EXPLORE
 
+Four possible scenarios searching a BST for a target value
+
+If target value is equal to root.value
+    Return true
+If target value is less than root.value
+    Search the left subtree
+If target value is greater than root.value
+    Search the right subtree
+If root.value is null
+    Return false
+
 BRAINSTORM
 
+Approach 1: Use iterative while loop with a pointer to the current node
+Time complexity: O(log N)
+Space complexity: O(1)
+
 Plan
+
+If a null value is passed in as a root return false
+If the root value is equal to target return true
+
+Create a pointer variable called node and set it to the root
+
+Create a while loop that continues if the current node is not equal to the target value
+
+If the target value is less than the current node's value and the current node has a left child 
+    Set the current node to the left child
+
+If the target value is greater than the current node's value and the current node has a right child 
+    Set the current node to the right child
+
+If either condition is return return false
+    The target value is less than the current node's value and the current node does NOT have a left child 
+    The target value is greater than the current node's value and the current node does NOT has a right child 
+
+Return true
 
 Implement
 
