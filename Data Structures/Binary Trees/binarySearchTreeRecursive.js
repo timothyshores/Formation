@@ -52,10 +52,41 @@ IMPLEMENT
 
 */
 
-const recursiveSearchInBST = (root, target) => {};
+const recursiveSearchInBST = (root, target) => {
+	if (!root) return false;
+	if (root.val === target) return true;
+	if (target < root.val) return recursiveSearchInBST(root.left, target);
+	if (target > root.val) return recursiveSearchInBST(root.right, target);
+};
 
 /*
 
 VERIFY all test cases return true
 
 */
+
+console.log(recursiveSearchInBST(root, 5));
+console.log(recursiveSearchInBST(root, 11));
+console.log(recursiveSearchInBST(root, 12));
+console.log(recursiveSearchInBST(root, 14));
+console.log(recursiveSearchInBST(root, 15));
+console.log(recursiveSearchInBST(root, 18));
+console.log(recursiveSearchInBST(root, 19));
+console.log(recursiveSearchInBST(root, 21));
+console.log(recursiveSearchInBST(root, 23));
+console.log(recursiveSearchInBST(root, 25));
+console.log(recursiveSearchInBST(root, 27));
+console.log(recursiveSearchInBST(root, 28));
+console.log(recursiveSearchInBST(root, 30));
+console.log(recursiveSearchInBST(root, 32));
+console.log(recursiveSearchInBST(root, 37));
+
+console.log(!recursiveSearchInBST(null, 1));
+console.log(!recursiveSearchInBST(root, 4));
+console.log(!recursiveSearchInBST(root, 6));
+console.log(!recursiveSearchInBST(root, 16));
+console.log(!recursiveSearchInBST(root, 24));
+console.log(!recursiveSearchInBST(root, 29));
+console.log(!recursiveSearchInBST(root, 31));
+console.log(!recursiveSearchInBST(root, 33));
+console.log(!recursiveSearchInBST(root, 38));
