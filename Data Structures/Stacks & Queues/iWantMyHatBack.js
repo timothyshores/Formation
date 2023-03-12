@@ -112,33 +112,35 @@ If we dequeue a dog who's already been asked then we have circulat logic
 */
 
 const findHat = (dogsFriends, dogsBestFriend) => {
-	const dogsToAsk = [dogsBestFriend];
+    // Create a stack to store the dogs we should ask if they saw the hat using an array
+    const dogsToAsk = [dogsBestFriend];
+    
+    // Create a set to store the dogs we already asked to find a circular reference
 	const dogsAlreadyAsked = new Set();
 
-	while (dogsToAsk.length) {
-		const currentDog = dogsToAsk.shift();
+    // Continue looping while there are more dogs to ask in the stack
+    while (dogsToAsk.length) {
+        // Remove the last element from our dogsToAsk stack and set as currentDog
+        const currentDog = dogsToAsk.pop();
+        
+        // Look at the hash map of dogs for the current dogs and set to a semantic variable
 		const otherDogsCurrentDogSawAtTheDogPark = dogsFriends[currentDog];
-		const currentDogSawTheHat = otherDogsCurrentDogSawAtTheDogPark[0] === "HAT";
 
-		if (currentDogSawTheHat) return currentDog;
+		// If current dog saw the hat then return the current dog
+		if (otherDogsCurrentDogSawAtTheDogPark[0] === "HAT") return currentDog;
 
-		const currentDogDidNotSeeAnotherDogAndNoMoreDogsToAsk =
-			!otherDogsCurrentDogSawAtTheDogPark.length && !dogsToAsk.length;
+		// If current dog was already asked if he saw the hat then skip the current dog
+		if (dogsAlreadyAsked.has(currentDog)) continue;
 
-		const currentDogWasAlreadyAsked = dogsAlreadyAsked.has(currentDog);
+		// Add the other dogs that the current dog saw to dogs to ask
+		for (const dog of otherDogsCurrentDogSawAtTheDogPark) dogsToAsk.push(dog);
 
-		if (
-			currentDogDidNotSeeAnotherDogAndNoMoreDogsToAsk ||
-			currentDogWasAlreadyAsked
-		)
-			return "Couldn't find the hat";
-
-		for (const dog of otherDogsCurrentDogSawAtTheDogPark) {
-			dogsToAsk.push(dog);
-		}
-
+        // Add the current dog to the set of dogs already asked
 		dogsAlreadyAsked.add(currentDog);
 	}
+
+    // After we asked all dogs who they saw at the dog park without returning a dog
+	return "Couldn't find the hat";
 };
 
 /*
