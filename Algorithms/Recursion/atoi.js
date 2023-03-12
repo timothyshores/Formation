@@ -99,3 +99,29 @@ Run your examples & test cases.
 Methodically analyze and debug issue(s).
 
 */
+
+// All test cases return true
+console.log(atoi("0") === 0);
+console.log(atoi("1") === 1);
+console.log(atoi("0") === 0);
+console.log(atoi("4") === 4);
+console.log(atoi("00") === 0);
+console.log(atoi("01") === 1);
+console.log(atoi("-1") === -1);
+console.log(atoi("007") === 7);
+console.log(atoi("10") === 10);
+console.log(atoi("001") === 1);
+console.log(atoi("0001") === 1);
+console.log(atoi("010") === 10);
+console.log(atoi("00001") === 1);
+console.log(atoi("100") === 100);
+console.log(atoi("123") === 123);
+console.log(atoi("600") === 600);
+console.log(atoi("0100") === 100);
+console.log(atoi("-234") === -234);
+console.log(atoi("00500") === 500);
+console.log(atoi("1000") === 1000);
+console.log(atoi("01000") === 1000);
+console.log(atoi("001000") === 1000);
+console.log(atoi("0001000") === 1000);
+console.log(atoi("00001000") === 1000);
