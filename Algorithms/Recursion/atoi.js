@@ -42,7 +42,21 @@ Time: O(N) to iterate through N characters of intAsString
 Space: O(N) to store the result string
 
 📆 PLAN
-High-level outline of approach #: 
+High-level outline of approach #: 1
+
+Initialize a variable result to 0, which will store the integer value of the string
+Initialize a variable index to 0, which will keep track of our current position in the string
+Initialize a boolean variable isPositive and set to true which will keep track of whether the integer is positive or negative
+If the first character in the input string is '-', increment index by 1 to skip over the '-' character and set isPositive to false
+Iterate through the string, starting from our current position index and moving right one index at a time
+
+For each character in the input string
+    Convert the character to its ASCII code using the charCodeAt method
+    Subtract 48 from the ASCII code to get the integer value of the character
+    Multiply the result variable by 10 and add the integer value of the character
+        This effectively shifts the existing digits of result one place to the left and adds the new digit on the right
+
+If the integer is positive, return the result variable, otherwise return the product of the result variable and -1 to convert it to a negative integer
 
 🛠️ IMPLEMENT */
 const atoi = (intAsString) => {};
