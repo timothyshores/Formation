@@ -43,7 +43,28 @@ If the length of restOfString is 0, we return sign * digit, which is the final r
 Otherwise, we recursively call atoi on restOfString to obtain the integer value of the rest of the string, and then add digit multiplied by 10 raised to the power of the length of restOfString to shift the existing digits of the result to the left and add the new digit on the right. We multiply this sum by sign to account for the sign of the original input string, and return it as the final result.
 
 🛠️ IMPLEMENT */
-const atoi = (intAsString) => {};
+const atoi = (intAsString) => {
+	if (intAsString.length === 0) return NaN;
+
+	let sign = 1;
+
+	if (intAsString[0] === "-") {
+		sign = -1;
+		intAsString = intAsString.substring(1);
+	}
+
+	const digit = intAsString.charCodeAt(0) - 48;
+
+	const restOfString = intAsString.substring(1);
+
+	if (restOfString.length === 0) {
+		return sign * digit;
+	} else {
+		return (
+			sign * (digit * Math.pow(10, restOfString.length) + atoi(restOfString))
+		);
+	}
+};
 
 /*
 
