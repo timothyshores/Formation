@@ -69,6 +69,15 @@ const depthFirstValues = (root) => {
 	return visited;
 };
 
+const depthFirstValuesRecursive = (root) => {
+	if (!root) return [];
+
+	const leftValues = depthFirstValuesRecursive(root.left);
+	const rightValues = depthFirstValuesRecursive(root.right);
+
+	return [root.val, ...leftValues, ...rightValues];
+};
+
 /*
 
 Verify 
