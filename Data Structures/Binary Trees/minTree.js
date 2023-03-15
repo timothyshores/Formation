@@ -28,4 +28,17 @@ class Node {
 	}
 }
 
-const treeMinValue = (root) => {};
+// Approach 1: Iterative breadth first search
+const minTreeIterativeBFS = (root) => {
+	let min = Infinity;
+	const queue = [root];
+
+	while (queue.length) {
+		const node = queue.pop();
+		min = Math.min(node.val, min);
+		if (node.left) queue.unshift(node.left);
+		if (node.right) queue.unshift(node.right);
+	}
+
+	return min;
+};
