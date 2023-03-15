@@ -14,4 +14,30 @@ class Node {
 	}
 }
 
-const breadthFirstValues = (root) => {};
+const breadthFirstValues = (root) => {
+	// Handle null input edge case and return empty array
+	if (!root) return [];
+
+	// Nodes that need to be processed
+	const queue = [root];
+
+	// Initialize empty array to store value of nodes visited in breadth first search order
+	const values = [];
+
+	// Continue iterating until all nodes have been processed
+	while (queue.length) {
+		// Dequeue the front element from the queue and store in current variable
+		const current = queue.pop();
+
+		// Add the current node to the valuess array
+		values.push(current.val);
+
+		// If the current node has a left child, enqueue and add it to the back of the queue
+		if (current.left) queue.unshift(current.left);
+
+		// If the current node has a right child, enqueue and add it to the back of the queue
+		if (current.right) queue.unshift(current.right);
+	}
+
+	return values;
+};
