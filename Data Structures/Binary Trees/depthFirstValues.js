@@ -44,7 +44,30 @@ class Node {
 	}
 }
 
-const depthFirstValues = (root) => {};
+const depthFirstValues = (root) => {
+	// Handle edge case null input value
+	if (!root) return [];
+
+	// Add the root node a stack
+	const stack = [root];
+
+	// Store the values of the nodes visited in a visited array
+	const visited = [];
+
+	// Continue looping while stack has at least 1 or more elements
+	while (stack.length) {
+		// Pop off the top element from the store and store in currentNode variable
+		const currentNode = stack.pop();
+		// Add the currentNode to a set of visited nodes
+		visited.push(currentNode?.val);
+		// If the currentNode has a right child, add it to the stack
+		if (currentNode.right) stack.push(currentNode.right);
+		// If the currentNode has a left child, add it to the stack
+		if (currentNode.left) stack.push(currentNode.left);
+	}
+
+	return visited;
+};
 
 /*
 
