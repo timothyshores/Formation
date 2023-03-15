@@ -14,4 +14,12 @@ class Node {
 	}
 }
 
-const treeIncludes = (root, target) => {};
+// Recursive DFS Implementation
+const treeIncludes = (root, target) => {
+	if (!root) return false;
+	if (root.val === target) return true;
+
+	return (
+		treeIncludesDFS(root.left, target) || treeIncludesDFS(root.right, target)
+	);
+};
