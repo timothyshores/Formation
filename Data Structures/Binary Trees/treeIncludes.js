@@ -23,3 +23,18 @@ const treeIncludes = (root, target) => {
 		treeIncludesDFS(root.left, target) || treeIncludesDFS(root.right, target)
 	);
 };
+
+// Iterative BFS Implementation
+const treeIncludesBFS = (root, target) => {
+	if (!root) return false;
+	const queue = [root];
+
+	while (queue.length) {
+		const node = queue.shift();
+		if (node.val === target) return true;
+		if (node.left) queue.push(node.left);
+		if (node.right) queue.push(node.right);
+	}
+
+	return false;
+};
