@@ -42,3 +42,13 @@ const minTreeIterativeBFS = (root) => {
 
 	return min;
 };
+
+// Approach 2: Recursive depth first search
+const minTreeRecursiveDFS = (root) => {
+	if (root === null) return Infinity;
+
+	const leftSubTreeMin = minTreeRecursiveDFS(root.left);
+	const rightSubTreeMin = minTreeRecursiveDFS(root.right);
+
+	return Math.min(root.val, leftSubTreeMin, rightSubTreeMin);
+};
