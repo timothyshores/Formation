@@ -18,6 +18,20 @@ Space complexity: O(H) where H is the maximum height in the binary tree
 
 PLAN
 
+If the root node is null return an empty array
+Create an empty stack and push the root node onto the stack
+Create an empty array to store the value of the nodes in the order visited
+
+While the stack is not empty
+
+1. Pop the top element from the stack and store in a variable called current node
+2. Push the current node's value to the visited array
+3. If the current node has a right child, push the right child onto the stack
+4. If the current node has a left child, push the left child onto the stack
+5. Repeat steps 1 through 4 until the stack is empty
+
+Return the visited array
+
 IMPLEMENT
 
 */
