@@ -52,3 +52,18 @@ const minTreeRecursiveDFS = (root) => {
 
 	return Math.min(root.val, leftSubTreeMin, rightSubTreeMin);
 };
+
+// Approach 3: Iterative depth first search
+const minTreeIterativeDFS = (root) => {
+	let min = Infinity;
+	const stack = [root];
+
+	while (stack.length) {
+		const node = stack.pop();
+		min = Math.min(node.val, min);
+		if (node.left) stack.push(node.left);
+		if (node.right) stack.push(node.right);
+	}
+
+	return min;
+};
