@@ -44,7 +44,7 @@ class Node {
 	}
 }
 
-const depthFirstValues = (root) => {
+const depthFirstValuesIterative = (root) => {
 	// Handle edge case null input value
 	if (!root) return [];
 
@@ -104,7 +104,8 @@ c1.right = f1;
 //  / \     \
 // d   e     f
 
-console.log(depthFirstValues(a1)); // ['a', 'b', 'd', 'e', 'c', 'f']
+console.log(depthFirstValuesIterative(a1)); // ['a', 'b', 'd', 'e', 'c', 'f']
+console.log(depthFirstValuesRecursive(a1)); // ['a', 'b', 'd', 'e', 'c', 'f']
 
 // Test 2
 const a2 = new Node("a");
@@ -128,10 +129,13 @@ d2.right = e2;
 //         \
 //          e
 
-console.log(depthFirstValues(a2)); // ['a', 'b', 'c', 'd', 'e']
+console.log(depthFirstValuesIterative(a2)); // ['a', 'b', 'c', 'd', 'e']
+console.log(depthFirstValuesRecursive(a2)); // ['a', 'b', 'c', 'd', 'e']
 
 // Test 3
-console.log(depthFirstValues(new Node("a"))); // ['a']
+console.log(depthFirstValuesIterative(new Node("a"))); // ['a']
+console.log(depthFirstValuesRecursive(new Node("a"))); // ['a']
 
 // Test 4
-console.log(depthFirstValues(null)); // []
+console.log(depthFirstValuesIterative(null)); // []
+console.log(depthFirstValuesRecursive(null)); // []
