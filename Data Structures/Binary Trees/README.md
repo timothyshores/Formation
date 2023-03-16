@@ -27,14 +27,20 @@ Like a ListNode, TreeNodes also contain a `.val` or `.value` property to store a
 
 Each parent node has a reference to the child nodes but the child nodes will likely **NOT** have a reference to the parent node.
 
+## Requirements
+
+- Maximum of 2 child nodes
+- A single root node
+- Only 1 path from the root to any given node
+
 ## Terminology
 
 There's a few words that represent specific nodes or collections of nodes within a binary root.
 
-**root node** - the top parent node in a binary tree
+**root node** - the top parent node in a binary tree. A root node has no parent node.
 **parent node** - a node that has one or two child nodes
 **child node** - a node that comes after a parent node when moving away from the root
-**leaf node** - a node that has no children. Visually this would be the bottom nodes
+**leaf node** - a node that has no children. Visually this would be the bottom nodes.
 **full binary tree** - a binary tree where every node other than the leaves has either zero or two child nodes
 
 
@@ -45,3 +51,18 @@ There's a few words that represent specific nodes or collections of nodes within
 - Perfect binary trees have O(log N) time complexity for search, insert and delete
 - Perfect binary trees have a heigh of O(log N)
 
+## Binary Search Tree (BST)
+
+Binary Search Trees are trees are optimized for searching and comparisons. It maintains parent child relationships unlike a hash table or array. 
+
+### BST Requirements
+
+All child nodes to the right of a parent node must be greater than the parent node.
+
+All child nodes to the less of a parent node must be less than the parent node.
+
+Given these two properties makes it very simple to find the minimum and maximum values within a BST. 
+
+By continually traversing left starting from the root node until there are no more children will be the minimum value in the BST.
+
+By continually traversing right starting from the root node until there are no more children will be the maximum value in the BST.
