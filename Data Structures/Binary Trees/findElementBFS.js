@@ -20,13 +20,15 @@ Examples:
 '''
 🔎 EXPLORE
 What are some other insightful & revealing test cases?
+· If the null tree is passed in return false
+· 
 
 🧠 BRAINSTORM
 What approaches could work?
 Algorithm 1: Iterative BFS
-Worst case time: 
-Best case time: 
-Space:
+Worst case time: O(N) to traverse N number of nodes where target is the bottom right node
+Best case time: O(1) where the value of the root node is the target
+Space: O(N) to store N number of nodes in a queue if the binary tree is a Linked List e.g. exclusively left or right child nodes only
 
 📆 PLAN
 Outline of algorithm #: 
