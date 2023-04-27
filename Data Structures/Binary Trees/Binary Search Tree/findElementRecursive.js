@@ -26,4 +26,26 @@ class TreeNode {
 	}
 }
 
-const searchBST = (root, target) => {};
+const searchBST = (root, target) => {
+	// Base case: root is null
+	if (!root) return false;
+
+	// Scenario 1: target is equal to the root value
+	if (root.value === target) {
+		// found target
+		return true;
+	}
+
+	// Scenario 2: target is less than the root's value
+	else if (target < root.value) {
+		// search left subtree
+		return searchBST(root.left, target);
+	}
+
+	// Scenario 3: target is greater than the root's value
+	else {
+		// search right subtree
+		return searchBST(root.right, target);
+	}
+};
+
