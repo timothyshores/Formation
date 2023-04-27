@@ -57,7 +57,20 @@ class TreeNode {
 	}
 }
 
-const BFSTree = (root, target) => {};
+const BFSTree = (root, target) => {
+	if (!root) return false;
+
+	const queue = [root];
+
+	while (queue.length) {
+		const current = queue.pop();
+		if (current.value === target) return true;
+		if (current.left) queue.unshift(current.left);
+		if (current.right) queue.unshift(current.right);
+	}
+
+	return false;
+};
 
 /*
 
