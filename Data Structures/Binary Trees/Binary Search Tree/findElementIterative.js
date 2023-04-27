@@ -26,4 +26,19 @@ class TreeNode {
 	}
 }
 
-const searchBST = (root, target) => {};
+const searchBST = (root, target) => {
+	let current = root;
+
+	while (current) {
+		if (current.value === target) {
+			return true;
+		} else if (target < current.value) {
+			current = current.left;
+		} else {
+			current = current.right;
+		}
+	}
+
+	return false;
+};
+
