@@ -78,3 +78,28 @@ const BFSTree = (root, target) => {
 Run tests. Methodically debug & analyze issues.
 
 */
+
+// All test cases return true
+const tree = new TreeNode(
+	3,
+	new TreeNode(29, new TreeNode(2)),
+	new TreeNode(4, null, new TreeNode(2, new TreeNode(9)))
+);
+
+// Values contained in binary tree
+console.log(BFSTree(tree, 2));
+console.log(BFSTree(tree, 3));
+console.log(BFSTree(tree, 4));
+console.log(BFSTree(tree, 9));
+console.log(BFSTree(tree, 29));
+console.log(BFSTree(new TreeNode(1), 1));
+
+// Values NOT contained in binary tree
+console.log(!BFSTree(null, 1));
+console.log(!BFSTree(tree, 0));
+console.log(!BFSTree(tree, 1));
+console.log(!BFSTree(tree, 28));
+console.log(!BFSTree(tree, 30));
+console.log(!BFSTree(new TreeNode(1), 0));
+console.log(!BFSTree(new TreeNode(1), 2));
+console.log(!BFSTree(new TreeNode(1), 3));
