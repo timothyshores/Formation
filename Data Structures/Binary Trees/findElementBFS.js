@@ -32,6 +32,18 @@ Space: O(N) to store N number of nodes in a queue if the binary tree is a Linked
 
 📆 PLAN
 Outline of algorithm #: 
+- Edge case if a empty tree is passed into the function return false
+- Create a queue with the root node using an array
+- Iterate through the binary tree using a while loop when the queue is NOT empty
+- Create a variable called current to store the current node
+- Dequeue the last element in the queue using JavaScript's built in Array .pop() method
+- Check if the current node's value is equal to target
+    - If the current node's value is equal to target return true and exit the while loop
+    - Else the current node's value is NOT equal to target
+        - If there's a left child node then add it to the queue using .unshift()
+        - If there's a right child node then add it to the queue using .unshift()
+- Continue checking each node in the queue if it's value is equal to target
+- If we traverse all nodes in the binary tree and do NOT find the target return false
 
 🛠️ IMPLEMENT
 
