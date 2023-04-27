@@ -42,3 +42,17 @@ const searchBST = (root, target) => {
 	return false;
 };
 
+// Test cases tree
+const tree = new TreeNode(
+	8,
+	new TreeNode(3, new TreeNode(1), new TreeNode(6)),
+	new TreeNode(10, null, new TreeNode(14, new TreeNode(13)))
+);
+
+// All test cases return true
+console.log(!searchBST(null, 1));
+console.log(searchBST(tree, 1));
+console.log(searchBST(tree, 14));
+console.log(!searchBST(tree, 2));
+console.log(searchBST(tree, 13));
+console.log(searchBST(new TreeNode(), 0));
