@@ -45,6 +45,19 @@ const solution2 = (arr, k) => {
 
 // 3. For each element, iterate through the rest of the array to see if it's repeated k times. If it is, return it. Otherwise, go on to the next element. Walk through how this approach is O(n^2) runtime.
 
+const solution3 = (arr, k) => {
+	for (let i = 0; i < arr.length - 1; i++) {
+		let count = 1;
+
+		for (let j = i + 1; j < arr.length; j++) {
+			if (arr[i] === arr[j]) count++;
+			if (count === k) return arr[i];
+		}
+	}
+
+	return -1;
+};
+
 // 4. How many distinct values occur exactly k times?
 
 // 5. How many distinct values occur at minimum k times?
