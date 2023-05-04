@@ -94,4 +94,33 @@ console.log(solution5([1, 2, 3, 4, 5, 5, 5, 1, 1], 1)); //  5
 
 // 6. Find the minium value that occurs at least k times?
 
+const solution6 = (arr, k) => {
+	const frequencyCounter = {};
+	let minValue = Infinity;
+
+	for (const num of arr) {
+		frequencyCounter[num] = (frequencyCounter[num] || 0) + 1;
+	}
+
+	for ([value, frequency] of Object.entries(frequencyCounter)) {
+		if (frequency >= k && value < minValue) {
+			minValue = value;
+		}
+	}
+
+	return minValue === Infinity ? -1 : minValue;
+};
+
+console.log(solution6([], 2)); //  -1
+console.log(solution6([1, 2, 3], 2)); // -1
+console.log(solution6([1, 2, 2, 3], 2)); // 2
+console.log(solution6([1, 1, 2, 3], 2)); // 1
+console.log(solution6([1, 1, 2, 2, 3], 2)); // 1
+console.log(solution6([1, 2, 3, 4, 5], 1)); // 1
+console.log(solution6([1, 2, 2, 3, 3], 2)); // 2
+console.log(solution6([1, 2, 2, 3, 3, 3], 3)); // 1
+console.log(solution6([1, 2, 2, 3, 3, 3], 3)); //  3
+console.log(solution6([1, 2, 2, 3, 3, 4, 4, 4], 2)); //  2
+console.log(solution6([1, 2, 3, 4, 5, 5, 5, 1, 1], 1)); //  1
+
 // 7. Find the mode. Recall the mode is the most frequently occurring value?
