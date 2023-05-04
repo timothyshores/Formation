@@ -60,6 +60,23 @@ const solution3 = (arr, k) => {
 
 // 4. How many distinct values occur exactly k times?
 
+const solution4 = (arr, k) => {
+	const frequencyCounter = {};
+	for (const num of arr) {
+		frequencyCounter[num] = (frequencyCounter[num] || 0) + 1;
+	}
+	return Object.values(frequencyCounter).filter((key) => key === k).length;
+};
+
+console.log(solution4([], 2)); // 0
+console.log(solution4([1, 2, 3], 2)); // 0
+console.log(solution4([1, 2, 2, 3], 2)); // 1
+console.log(solution4([1, 1, 2, 3], 2)); // 1
+console.log(solution4([1, 1, 2, 2, 3], 2)); // 2
+console.log(solution4([1, 2, 3, 4, 5], 1)); // 5
+console.log(solution4([1, 2, 2, 3, 3], 2)); // 2
+console.log(solution4([1, 2, 2, 3, 3, 3], 3)); // 1
+
 // 5. How many distinct values occur at minimum k times?
 
 // 6. Find the minium value that occurs at least k times?
