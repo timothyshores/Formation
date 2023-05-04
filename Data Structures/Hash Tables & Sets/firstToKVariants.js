@@ -79,6 +79,19 @@ console.log(solution4([1, 2, 2, 3, 3, 3], 3)); // 1
 
 // 5. How many distinct values occur at minimum k times?
 
+const solution5 = (arr, k) => {
+	const frequencyCounter = {};
+	for (const num of arr) {
+		frequencyCounter[num] = (frequencyCounter[num] || 0) + 1;
+	}
+	return Object.values(frequencyCounter).filter((key) => key >= k).length;
+};
+
+console.log(solution5([], 2)); //  0
+console.log(solution5([1, 2, 2, 3, 3, 3], 3)); //  1
+console.log(solution5([1, 2, 2, 3, 3, 4, 4, 4], 2)); //  3
+console.log(solution5([1, 2, 3, 4, 5, 5, 5, 1, 1], 1)); //  5
+
 // 6. Find the minium value that occurs at least k times?
 
 // 7. Find the mode. Recall the mode is the most frequently occurring value?
