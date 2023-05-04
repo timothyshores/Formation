@@ -124,3 +124,34 @@ console.log(solution6([1, 2, 2, 3, 3, 4, 4, 4], 2)); //  2
 console.log(solution6([1, 2, 3, 4, 5, 5, 5, 1, 1], 1)); //  1
 
 // 7. Find the mode. Recall the mode is the most frequently occurring value?
+
+const solution7 = (arr, k) => {
+	const frequencyCounter = {};
+	let maxFrequency = 0;
+	let currentMode;
+
+	for (const num of arr) {
+		frequencyCounter[num] = (frequencyCounter[num] || 0) + 1;
+	}
+
+	for ([value, frequency] of Object.entries(frequencyCounter)) {
+		if (frequency >= maxFrequency) {
+			maxFrequency = frequency;
+			currentMode = value;
+		}
+	}
+
+	return maxFrequency > 0 ? currentMode : -1;
+};
+
+console.log(solution7([], 2)); //  -1
+console.log(solution7([1, 2, 3], 2)); // 3
+console.log(solution7([1, 2, 2, 3], 2)); // 2
+console.log(solution7([1, 1, 2, 3], 2)); // 1
+console.log(solution7([1, 1, 2, 2, 3], 2)); // 2
+console.log(solution7([1, 2, 3, 4, 5], 1)); // 5
+console.log(solution7([1, 2, 2, 3, 3], 2)); // 3
+console.log(solution7([1, 2, 2, 3, 3, 3], 3)); // 3
+console.log(solution7([1, 2, 2, 3, 3, 3], 3)); //  3
+console.log(solution7([1, 2, 2, 3, 3, 4, 4, 4], 2)); //  3
+console.log(solution7([1, 2, 3, 4, 5, 5, 5, 1, 1], 1)); //  5
