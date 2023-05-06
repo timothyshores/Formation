@@ -12,7 +12,10 @@ Example test functions include
 
 */
 
-const any = (head, test) => {};
+const any = (head, test) => {
+	if (!head) return false;
+	return test(head.val) ? test(head.val) : any(head.next, test);
+};
 
 class Node {
 	constructor(val, next = null) {
@@ -22,5 +25,7 @@ class Node {
 }
 
 // Test functions
+const isEven = (num) => num % 2 === 0;
+const squareRootIsInteger = (num) => Number.isInteger(Math.sqrt(num));
 
 // All test cases return true
