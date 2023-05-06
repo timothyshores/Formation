@@ -22,3 +22,35 @@ const sumLinkedListRecursively = (node) => {
 	// Recursive case
 	return node.value + sumLinkedListRecursively(node.next);
 };
+
+// All Test Cases Return True
+console.log(sumLinkedListRecursively(null) === 0);
+console.log(sumLinkedListRecursively(new ListNode()) === 0);
+console.log(sumLinkedListRecursively(new ListNode(1)) === 1);
+console.log(sumLinkedListRecursively(new ListNode(2)) === 2);
+console.log(sumLinkedListRecursively(new ListNode(3, new ListNode(4))) === 7);
+console.log(
+	sumLinkedListRecursively(
+		new ListNode(1, new ListNode(4, new ListNode(5)))
+	) === 10
+);
+console.log(
+	sumLinkedListRecursively(
+		new ListNode(0, new ListNode(-1, new ListNode(1)))
+	) === 0
+);
+console.log(
+	sumLinkedListRecursively(
+		new ListNode(-1, new ListNode(-2, new ListNode(-3)))
+	) === -6
+);
+console.log(
+	sumLinkedListRecursively(
+		new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4))))
+	) === 10
+);
+console.log(
+	sumLinkedListRecursively(
+		new ListNode(10, new ListNode(20, new ListNode(30, new ListNode(40))))
+	) === 100
+);
