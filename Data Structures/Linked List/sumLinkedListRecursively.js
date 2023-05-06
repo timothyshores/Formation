@@ -16,4 +16,9 @@ class ListNode {
 	}
 }
 
-const sumLinkedListRecursively = (node) => {};
+const sumLinkedListRecursively = (node) => {
+	// Base case
+	if (!node) return 0;
+	// Recursive case
+	return node.value + sumLinkedListRecursively(node.next);
+};
