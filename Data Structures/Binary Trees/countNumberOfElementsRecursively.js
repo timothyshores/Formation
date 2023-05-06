@@ -1,3 +1,4 @@
+
 /*
 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
 ✏️ Description
@@ -17,13 +18,16 @@ console.log(countTree(rootNode 1)); // 5
 */
 
 class TreeNode {
-	constructor(value = 0, leftChild = null, rightChild = null) {
-		this.value = value;
-		this.left = leftChild;
-		this.right = rightChild;
-	}
+    constructor(value = 0, leftChild = null, rightChild = null) {
+        this.value = value
+        this.left = leftChild
+        this.right = rightChild
+    }
 }
-
-const countTree = (root) => {};
+        
+const countTree = (root) =>{
+	if (!root) return 0;
+	return 1 + countTree(root.left) + countTree(root.right);
+}
 
 // Test Cases
