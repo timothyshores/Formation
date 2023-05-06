@@ -29,3 +29,30 @@ const isEven = (num) => num % 2 === 0;
 const squareRootIsInteger = (num) => Number.isInteger(Math.sqrt(num));
 
 // All test cases return true
+
+console.log(any(new Node(2), isEven));
+console.log(any(new Node(2, new Node(3)), isEven));
+console.log(any(new Node(2, new Node(4)), isEven));
+console.log(any(new Node(3, new Node(4)), isEven));
+console.log(any(new Node(2, new Node(4, new Node(6))), isEven));
+
+console.log(!any(null, isEven));
+console.log(!any(new Node(1), isEven));
+console.log(!any(new Node(1, new Node(3)), isEven));
+
+console.log(squareRootIsInteger(1));
+console.log(squareRootIsInteger(4));
+
+console.log(!squareRootIsInteger(2));
+console.log(!squareRootIsInteger(3));
+
+console.log(any(new Node(0), squareRootIsInteger));
+console.log(any(new Node(1), squareRootIsInteger));
+console.log(any(new Node(4), squareRootIsInteger));
+console.log(any(new Node(3, new Node(4)), squareRootIsInteger));
+console.log(any(new Node(4, new Node(9)), squareRootIsInteger));
+
+console.log(!any(new Node(2), squareRootIsInteger));
+console.log(!any(new Node(3), squareRootIsInteger));
+console.log(!any(new Node(5, new Node(6)), squareRootIsInteger));
+console.log(!any(new Node(5, new Node(6, new Node(7))), squareRootIsInteger));
