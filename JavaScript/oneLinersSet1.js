@@ -14,16 +14,14 @@ function test(...tests) {
   takes no parameters and returns the original function's parameter.
 */
 
-function redundant(p) {
-	// YOUR CODE HERE
-}
+const redundant = (p) => () => p;
 
-// test(
-//   [redundant("hello")(), "hello"],
-//   [redundant(1)(), 1],
-//   [redundant()(), undefined],
-//   [redundant([1, 2])(), [1, 2]],
-// );
+test(
+  [redundant("hello")(), "hello"],
+  [redundant(1)(), 1],
+  [redundant()(), undefined],
+  [redundant([1, 2])(), [1, 2]],
+);
 
 /* PROBLEM 2
   Write a function that sorts an array where the elements in the array
