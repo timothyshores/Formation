@@ -1,4 +1,4 @@
-var original = [
+const original = [
 	{ name: "Oliver" },
 	{ name: "Charlotte" },
 	{ name: "Liam" },
@@ -6,8 +6,8 @@ var original = [
 	{ name: "Ethan" },
 	{ name: "Olivia" },
 ];
-var copy = null;
-var temp = null;
+const copy = [...original];
+const temp = null;
 
 /**
  * This is a quick exercise is in splicing arrays. You should only use the following
