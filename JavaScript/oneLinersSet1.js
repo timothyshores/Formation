@@ -82,13 +82,38 @@ test(
   This last problem is tricky because it requires multiple steps!
 */
 
-function keysAndValues(obj) {
-	// YOUR CODE HERE
-}
+const keysAndValues = (obj) => {
+	const sortedKeysArr = Object.keys(obj).sort((a, b) => a.localeCompare(b));
+	return [sortedKeysArr, sortedKeysArr.map((key) => obj[key])];
+};
 
-// test(
-//   [keysAndValues({ a: 1, b: 2, c: 3 }), [["a", "b", "c"], [1, 2, 3]]],
-//   [keysAndValues({ a: "AAPL", b: "MSFT", c: "GOOG" }), [["a", "b", "c"], ["AAPL", "MSFT", "GOOG"]]],
-//   [keysAndValues({ k1: true, k2: false, k3: undefined }), [["k1", "k2", "k3"], [true, false, undefined]]],
-//   [keysAndValues({ b: 2, c: 3, a: 1 }), [["a", "b", "c"], [1, 2, 3]]]
-// );
+test(
+	[
+		keysAndValues({ a: 1, b: 2, c: 3 }),
+		[
+			["a", "b", "c"],
+			[1, 2, 3],
+		],
+	],
+	[
+		keysAndValues({ a: "AAPL", b: "MSFT", c: "GOOG" }),
+		[
+			["a", "b", "c"],
+			["AAPL", "MSFT", "GOOG"],
+		],
+	],
+	[
+		keysAndValues({ k1: true, k2: false, k3: undefined }),
+		[
+			["k1", "k2", "k3"],
+			[true, false, undefined],
+		],
+	],
+	[
+		keysAndValues({ b: 2, c: 3, a: 1 }),
+		[
+			["a", "b", "c"],
+			[1, 2, 3],
+		],
+	]
+);
