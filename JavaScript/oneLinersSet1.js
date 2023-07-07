@@ -28,15 +28,13 @@ test(
   might be number, or an array that contains a single number
 */
 
-function sortIt(array) {
-	// YOUR CODE HERE
-}
+const sortIt = (arr) => arr.sort((a, b) => a - b);
 
-// test(
-//   [sortIt([4, 3, 2, 10]), [2, 3, 4, 10]],
-//   [sortIt([[4], 3, 2, 10]), [2, 3, [4], 10]],
-//   [sortIt([[20], [1], [3], [2]]), [[1], [2], [3], [20]]]
-// );
+test(
+  [sortIt([4, 3, 2, 10]), [2, 3, 4, 10]],
+  [sortIt([[4], 3, 2, 10]), [2, 3, [4], 10]],
+  [sortIt([[20], [1], [3], [2]]), [[1], [2], [3], [20]]]
+);
 
 /* PROBLEM 3
   Write a function that takes a variable number of arrays as input
