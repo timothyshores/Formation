@@ -17,10 +17,10 @@ function test(...tests) {
 const redundant = (p) => () => p;
 
 test(
-  [redundant("hello")(), "hello"],
-  [redundant(1)(), 1],
-  [redundant()(), undefined],
-  [redundant([1, 2])(), [1, 2]],
+	[redundant("hello")(), "hello"],
+	[redundant(1)(), 1],
+	[redundant()(), undefined],
+	[redundant([1, 2])(), [1, 2]]
 );
 
 /* PROBLEM 2
@@ -31,9 +31,9 @@ test(
 const sortIt = (arr) => arr.sort((a, b) => a - b);
 
 test(
-  [sortIt([4, 3, 2, 10]), [2, 3, 4, 10]],
-  [sortIt([[4], 3, 2, 10]), [2, 3, [4], 10]],
-  [sortIt([[20], [1], [3], [2]]), [[1], [2], [3], [20]]]
+	[sortIt([4, 3, 2, 10]), [2, 3, 4, 10]],
+	[sortIt([[4], 3, 2, 10]), [2, 3, [4], 10]],
+	[sortIt([[20], [1], [3], [2]]), [[1], [2], [3], [20]]]
 );
 
 /* PROBLEM 3
@@ -44,8 +44,8 @@ test(
 const concat = (...arrays) => [].concat(...arrays);
 
 test(
-  [concat([1, 2], [3, 4]), [1, 2, 3, 4]],
-  [concat([1, 2], [], [3, 4], [0]), [1, 2, 3, 4, 0]]
+	[concat([1, 2], [3, 4]), [1, 2, 3, 4]],
+	[concat([1, 2], [], [3, 4], [0]), [1, 2, 3, 4, 0]]
 );
 
 /* PROBLEM 4
@@ -56,8 +56,22 @@ test(
 const objectToArray = (obj) => Object.entries(obj);
 
 test(
-  [objectToArray({D:1,B:2,C:3}), [["D", 1], ["B", 2], ["C", 3]]],
-  [objectToArray({likes:2,dislikes:3,followers:10}),[["likes", 2], ["dislikes", 3], ["followers", 10]]]
+	[
+		objectToArray({ D: 1, B: 2, C: 3 }),
+		[
+			["D", 1],
+			["B", 2],
+			["C", 3],
+		],
+	],
+	[
+		objectToArray({ likes: 2, dislikes: 3, followers: 10 }),
+		[
+			["likes", 2],
+			["dislikes", 3],
+			["followers", 10],
+		],
+	]
 );
 
 /* PROBLEM 5
