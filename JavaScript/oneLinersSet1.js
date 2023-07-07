@@ -50,17 +50,15 @@ test(
 
 /* PROBLEM 4
   Write a function that converts an object into an array of
-  [keys, value] pairs.
+  [keys, value] pairs. 
 */
 
-function objectToArray(obj) {
-	// YOUR CODE HERE
-}
+const objectToArray = (obj) => Object.entries(obj);
 
-// test(
-//   [objectToArray({D:1,B:2,C:3}), [["D", 1], ["B", 2], ["C", 3]]],
-//   [objectToArray({likes:2,dislikes:3,followers:10}),[["likes", 2], ["dislikes", 3], ["followers", 10]]]
-// );
+test(
+  [objectToArray({D:1,B:2,C:3}), [["D", 1], ["B", 2], ["C", 3]]],
+  [objectToArray({likes:2,dislikes:3,followers:10}),[["likes", 2], ["dislikes", 3], ["followers", 10]]]
+);
 
 /* PROBLEM 5
   Create a function that takes an object and returns the keys and
