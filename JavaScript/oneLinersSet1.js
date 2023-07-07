@@ -41,14 +41,12 @@ test(
   and concatenates them into a single array
 */
 
-function concat(...args) {
-	// YOUR CODE HERE
-}
+const concat = (...arrays) => [].concat(...arrays);
 
-// test(
-//   [concat([1, 2], [3, 4]), [1, 2, 3, 4]],
-//   [concat([1, 2], [], [3, 4], [0]), [1, 2, 3, 4, 0]]
-// );
+test(
+  [concat([1, 2], [3, 4]), [1, 2, 3, 4]],
+  [concat([1, 2], [], [3, 4], [0]), [1, 2, 3, 4, 0]]
+);
 
 /* PROBLEM 4
   Write a function that converts an object into an array of
