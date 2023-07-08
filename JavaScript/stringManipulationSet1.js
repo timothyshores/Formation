@@ -46,10 +46,6 @@ const findNemo = (text) => {
 		: "I can't find Nemo!";
 };
 
-console.log(findNemo("This quest is fruitless"));
-console.log(findNemo("On a quest to find Nemo"));
-console.log(findNemo("Nemo is not an otter"));
-
 test(
 	[findNemo("This quest is fruitless"), "I can't find Nemo!"],
 	[findNemo("On a quest to find Nemo"), "Nemo is word 6"],
@@ -64,17 +60,15 @@ test(
   "0011.2200" -> "11.22"
 */
 
-function removeZeros(f) {
-	// YOUR CODE HERE
-}
+const removeZeros = (f) => parseFloat(f).toString();
 
-// test(
-//   [removeZeros("0011.2200"), "11.22"],
-//   [removeZeros("0123.4560"), "123.456"],
-//   [removeZeros(".456000"), "0.456"],
-//   [removeZeros("0.456000"), "0.456"],
-//   [removeZeros("030"), "30"],
-// );
+test(
+	[removeZeros("0011.2200"), "11.22"],
+	[removeZeros("0123.4560"), "123.456"],
+	[removeZeros(".456000"), "0.456"],
+	[removeZeros("0.456000"), "0.456"],
+	[removeZeros("030"), "30"]
+);
 
 /* PROBLEM 4
   Create a string that consists of a given string repeated the
