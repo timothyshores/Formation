@@ -17,18 +17,16 @@ function test(...tests) {
   factorial(5) = 5! = 5 * 4 * 3 * 2 * 1 = 120
 */
 
-function factorial(v) {
-	// YOUR CODE HERE
-}
+const factorial = (v) => (v < 2 ? 1 : v * factorial(v - 1));
 
-// test(
-//   [factorial(0), 1],
-//   [factorial(1), 1],
-//   [factorial(2), 2],
-//   [factorial(3), 6],
-//   [factorial(5), 120],
-//   [factorial(13), 6227020800],
-// );
+test(
+	[factorial(0), 1],
+	[factorial(1), 1],
+	[factorial(2), 2],
+	[factorial(3), 6],
+	[factorial(5), 120],
+	[factorial(13), 6227020800]
+);
 
 /* PROBLEM 2
   Write a function that takes two arrays, and zips them together.
