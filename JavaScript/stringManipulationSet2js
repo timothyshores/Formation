@@ -49,16 +49,15 @@ test(
   greeting("Oliver", 0) -> "Hello Oliver"
 */
 
-function greeting(name, greeting) {
-	// YOUR CODE HERE
-}
+const greeting = (name, greeting) =>
+	`${greeting === 0 ? `Hello` : "Bye"} ${name}`;
 
-// test(
-//   [greeting("Oliver", 0), "Hello Oliver"],
-//   [greeting("Oliver", 1), "Bye Oliver"],
-//   [greeting("Oliver"), "Bye Oliver"],
-//   [greeting("Sweet Tea", 0), "Hello Sweet Tea"],
-// );
+test(
+	[greeting("Oliver", 0), "Hello Oliver"],
+	[greeting("Oliver", 1), "Bye Oliver"],
+	[greeting("Oliver"), "Bye Oliver"],
+	[greeting("Sweet Tea", 0), "Hello Sweet Tea"]
+);
 
 /* PROBLEM 4
   Write a function that moves all uppercase characters
