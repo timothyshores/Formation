@@ -89,16 +89,20 @@ test(
 */
 
 function isPalindrome(word) {
-	// YOUR CODE HERE
+	const helper = (l, r) =>
+		l >= r
+			? true
+			: word[l].toLowerCase() === word[r].toLowerCase() && helper(l + 1, r - 1);
+	return helper(0, word.length - 1);
 }
 
-// test(
-//   [isPalindrome(""), true],
-//   [isPalindrome("a"), true],
-//   [isPalindrome("Hannah"), true],
-//   [isPalindrome("radar"), true],
-//   [isPalindrome("otter"), false],
-// );
+test(
+	[isPalindrome(""), true],
+	[isPalindrome("a"), true],
+	[isPalindrome("Hannah"), true],
+	[isPalindrome("radar"), true],
+	[isPalindrome("otter"), false]
+);
 
 /* PROBLEM 6 (bonus)
   Write a function that is given a sentence (no punctuation,
