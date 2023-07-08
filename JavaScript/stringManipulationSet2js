@@ -1,0 +1,113 @@
+// Test driver
+function test(...tests) {
+	const results = [["passed", "actual", "expected"]];
+	for (const [actual, expected] of tests) {
+		const a = JSON.stringify(actual);
+		const e = JSON.stringify(expected);
+		results.push([a === e, a, a === e ? "-" : e]);
+	}
+	console.log(results);
+}
+
+/* PROBLEM 1
+  Write a function that takes a string and switches the case
+  of every alphabetic character. "Hello World" becomes
+  "hELLO wORLD". Other characteres are unchanged.
+*/
+
+function reverseCase(text) {
+	// YOUR CODE HERE
+}
+
+// test(
+//   [reverseCase("oTtEr"), "OtTeR"],
+//   [reverseCase("Hello World"), "hELLO wORLD"],
+// );
+
+/* PROBLEM 2
+  Count the occurrences of a letter in a string. 
+*/
+
+function countOccurrences(str, c) {
+	// YOUR CODE HERE
+}
+
+// test(
+//   [countOccurrences("otter", 't'), 2],
+//   [countOccurrences("otter", 'q'), 0],
+//   [countOccurrences("occurrences", 'c'), 3],
+// );
+
+/* PROBLEM 3
+  Write a function that creates a greeting for a
+  person. The person's name is the first parameter. If
+  the second parameter is 0, then the greeting is "Hello",
+  otherwise, "Bye".
+
+  greeting("Oliver", 0) -> "Hello Oliver"
+*/
+
+function greeting(name, greeting) {
+	// YOUR CODE HERE
+}
+
+// test(
+//   [greeting("Oliver", 0), "Hello Oliver"],
+//   [greeting("Oliver", 1), "Bye Oliver"],
+//   [greeting("Oliver"), "Bye Oliver"],
+//   [greeting("Sweet Tea", 0), "Hello Sweet Tea"],
+// );
+
+/* PROBLEM 4
+  Write a function that moves all uppercase characters
+  to the front. Otherwise, the relative order should
+  remain consistent.
+*/
+
+function capitalsToTheFront(word) {
+	// YOUR CODE HERE
+}
+
+// test(
+//   [capitalsToTheFront("aBcDeF"), "BDFace"],
+//   [capitalsToTheFront("moveMENT"), "MENTmove"],
+// );
+
+/* PROBLEM 5
+  Write a recursive function that returns true
+  if the given string is a palindrome, ignoring case.
+
+  Be sure to do this WITHOUT string slicing! Optionally,
+  write a second version that may use slicing.
+
+  Bonus: What if an empty string is not considered a palindrome?
+*/
+
+function isPalindrome(word) {
+	// YOUR CODE HERE
+}
+
+// test(
+//   [isPalindrome(""), true],
+//   [isPalindrome("a"), true],
+//   [isPalindrome("Hannah"), true],
+//   [isPalindrome("radar"), true],
+//   [isPalindrome("otter"), false],
+// );
+
+/* PROBLEM 6 (bonus)
+  Write a function that is given a sentence (no punctuation,
+  only words separated by spaces) and makes a new sentence
+  with the letters in each word reversed. If the first letter
+  of the original word is capitalized, the the first letter of
+  the new word must also be capitalized. Other characters
+  should be lower cased.
+*/
+
+function reverseLettersInWords(sentence) {
+	// YOUR CODE HERE
+}
+
+// test(
+//   [reverseLettersInWords("Pixel is a good dog"), "Lexip si a doog god"],
+// );
