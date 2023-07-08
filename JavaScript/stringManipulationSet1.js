@@ -76,14 +76,14 @@ test(
   greater than or equal to zero.
 */
 
-function repetition(word, count) {
-	// YOUR CODE HERE
-}
+const repetition = (word, count) => {
+	return count === 0 ? "" : `${word} `.repeat(count - 1) + word;
+};
 
-// test(
-//   [repetition("otter", 0), ""],
-//   [repetition("otter", 3), "otter otter otter"],
-// );
+test(
+	[repetition("otter", 0), ""],
+	[repetition("otter", 3), "otter otter otter"]
+);
 
 /* PROBLEM 5
   Write a function to convert an array of strings in percent notation
