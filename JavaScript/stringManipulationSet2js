@@ -65,14 +65,18 @@ test(
   remain consistent.
 */
 
-function capitalsToTheFront(word) {
-	// YOUR CODE HERE
-}
+const capitalsToTheFront = (word) => {
+	const isUpper = (l) => (l.toUpperCase() === l ? 1 : 0);
+	return word
+		.split("")
+		.sort((a, b) => isUpper(b) - isUpper(a))
+		.join("");
+};
 
-// test(
-//   [capitalsToTheFront("aBcDeF"), "BDFace"],
-//   [capitalsToTheFront("moveMENT"), "MENTmove"],
-// );
+test(
+	[capitalsToTheFront("aBcDeF"), "BDFace"],
+	[capitalsToTheFront("moveMENT"), "MENTmove"]
+);
 
 /* PROBLEM 5
   Write a recursive function that returns true
