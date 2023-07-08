@@ -38,15 +38,23 @@ test(
   The input text will only contain alphabetic characters, no punctuation.
 */
 
-function findNemo(text) {
-	// YOUR CODE HERE
-}
+const findNemo = (text) => {
+	const ordinalPosition = text.split(" ").indexOf("Nemo") + 1;
 
-// test(
-//   [findNemo("This quest is fruitless"), "I can't find Nemo!"],
-//   [findNemo("On a quest to find Nemo"), "Nemo is word 6"],
-//   [findNemo("Nemo is not an otter"), "Nemo is word 1"],
-// );
+	return ordinalPosition
+		? `Nemo is word ${ordinalPosition}`
+		: "I can't find Nemo!";
+};
+
+console.log(findNemo("This quest is fruitless"));
+console.log(findNemo("On a quest to find Nemo"));
+console.log(findNemo("Nemo is not an otter"));
+
+test(
+	[findNemo("This quest is fruitless"), "I can't find Nemo!"],
+	[findNemo("On a quest to find Nemo"), "Nemo is word 6"],
+	[findNemo("Nemo is not an otter"), "Nemo is word 1"]
+);
 
 /* PROBLEM 3
   Write a function that takes a string representation of a float
