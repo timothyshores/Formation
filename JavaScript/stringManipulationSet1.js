@@ -93,13 +93,15 @@ test(
   The input string will always be well formed.
 */
 
-function percentToDecimal(percentages) {
-	// WRITE YOUR CODE
-}
+const percentToDecimal = (percentages) =>
+	percentages.map((percentage) => percentage.slice(0, -1) / 100);
 
-// test(
-//   [percentToDecimal([]), []],
-//   [percentToDecimal(["10%", "50.2%"]), [.1, .502]],
-//   [percentToDecimal(["12.31%", "76.42%", "1%"]), [.1231, .7642, .01]],
-//   [percentToDecimal(["33%", "98.1%", "56.44%", "100%"]), [.33, .981, .5644, 1]],
-// );
+test(
+	[percentToDecimal([]), []],
+	[percentToDecimal(["10%", "50.2%"]), [0.1, 0.502]],
+	[percentToDecimal(["12.31%", "76.42%", "1%"]), [0.1231, 0.7642, 0.01]],
+	[
+		percentToDecimal(["33%", "98.1%", "56.44%", "100%"]),
+		[0.33, 0.981, 0.5644, 1],
+	]
+);
