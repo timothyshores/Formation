@@ -113,10 +113,23 @@ test(
   should be lower cased.
 */
 
-function reverseLettersInWords(sentence) {
-	// YOUR CODE HERE
-}
+const reverseLettersInWords = (sentence) => {
+	const helper = (word) =>
+		word[0] === word[0].toUpperCase()
+			? switchCase(reverseWord(word))
+			: reverseWord(word);
 
-// test(
-//   [reverseLettersInWords("Pixel is a good dog"), "Lexip si a doog god"],
-// );
+	const switchCase = (word) =>
+		word.charAt(0).toUpperCase() +
+		word.slice(1, -1) +
+		word.charAt(word.length - 1).toLowerCase();
+
+	const reverseWord = (word) => word.split("").reverse().join("");
+
+	return sentence
+		.split(" ")
+		.map((word) => helper(word))
+		.join(" ");
+};
+
+test([reverseLettersInWords("Pixel is a good dog"), "Lexip si a doog god"]);
