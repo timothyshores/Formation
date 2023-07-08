@@ -94,16 +94,14 @@ test(
   strings and return a new array without the strings.
 */
 
-function removeStrings(array) {
-	// YOUR CODE HERE
-}
+const removeStrings = (array) => array.filter((element) => !isNaN(+element));
 
-// test(
-//   [removeStrings(["a"]), []],
-//   [removeStrings(["a", 1]), [1]],
-//   [removeStrings([1, "a", "b", 0, 15]), [1, 0, 15]],
-//   [removeStrings([1, 2, "aasf", "1", "123", 123]), [1, 2, 123]]
-// );
+test(
+	[removeStrings(["a"]), []],
+	[removeStrings(["a", 1]), [1]],
+	[removeStrings([1, "a", "b", 0, 15]), [1, 0, 15]],
+	[removeStrings([1, 2, "aasf", "1", "123", 123]), [1, 2, 123]]
+);
 
 /* PROBLEM 5
   Write a function that returns an array of [value, key] pairs.
