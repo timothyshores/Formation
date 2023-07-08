@@ -68,17 +68,26 @@ test(
   Create a function that squares every digit of a number.
 */
 
-function squareDigits(n) {
-	// YOUR CODE HERE
-}
+const squareDigits = (n) =>
+	parseInt(
+		n
+			// convert the number n to a string
+			.toString()
+			// split each number in the n string into an array of single digit numbers
+			.split("")
+			// multiple each number by itself aka square each number
+			.map((num) => parseInt(num * num))
+			// Combine each square in the array into a single number
+			.join("")
+	);
 
-// test(
-//   [squareDigits(3), 9],
-//   [squareDigits(7), 49],
-//   [squareDigits(62), 364],
-//   [squareDigits(9119), 811181],
-//   [squareDigits(2483), 416649],
-// );
+test(
+	[squareDigits(3), 9],
+	[squareDigits(7), 49],
+	[squareDigits(62), 364],
+	[squareDigits(9119), 811181],
+	[squareDigits(2483), 416649]
+);
 
 /* PROBLEM 4
   Create a function that takes an array of integers and
