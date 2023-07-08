@@ -31,15 +31,14 @@ test(
   Count the occurrences of a letter in a string. 
 */
 
-function countOccurrences(str, c) {
-	// YOUR CODE HERE
-}
+const countOccurrences = (str, c) =>
+	str.split("").filter((char) => char === c).length;
 
-// test(
-//   [countOccurrences("otter", 't'), 2],
-//   [countOccurrences("otter", 'q'), 0],
-//   [countOccurrences("occurrences", 'c'), 3],
-// );
+test(
+	[countOccurrences("otter", "t"), 2],
+	[countOccurrences("otter", "q"), 0],
+	[countOccurrences("occurrences", "c"), 3]
+);
 
 /* PROBLEM 3
   Write a function that creates a greeting for a
