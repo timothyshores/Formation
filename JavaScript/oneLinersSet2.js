@@ -40,16 +40,29 @@ test(
   [1, 2] and [3, 4] zip into [[1, 3], [2, 4]]
 */
 
-function zip(a1, a2) {
-	// YOUR CODE HERE
-}
+const zip = (a1, a2) => {
+	if (a1.length !== a2.length) return "not possible";
+	return a1.map((val, index) => [val, a2[index]]);
+};
 
-// test(
-//   [zip([], []), []],
-//   [zip([1, 2], [3, 4]), [[1, 3], [2, 4]]],
-//   [zip([1, 2], ['a', 'b']), [[1, 'a'], [2, 'b']]],
-//   [zip([1, 2], ['a']), "not possible"],
-// );
+test(
+	[zip([], []), []],
+	[
+		zip([1, 2], [3, 4]),
+		[
+			[1, 3],
+			[2, 4],
+		],
+	],
+	[
+		zip([1, 2], ["a", "b"]),
+		[
+			[1, "a"],
+			[2, "b"],
+		],
+	],
+	[zip([1, 2], ["a"]), "not possible"]
+);
 
 /* PROBLEM 3
   Create a function that squares every digit of a number.
