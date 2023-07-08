@@ -107,11 +107,16 @@ test(
   Write a function that returns an array of [value, key] pairs.
 */
 
-function valuesAndKeys(obj) {
-	// YOUR CODE HERE
-}
+const valuesAndKeys = (obj) =>
+	Object.entries(obj).map((pair) => [pair[1], pair[0]]);
 
-// test(
-//   [valuesAndKeys({}), []],
-//   [valuesAndKeys({a:1, b:2}), [[1, 'a'], [2, 'b']]],
-// );
+test(
+	[valuesAndKeys({}), []],
+	[
+		valuesAndKeys({ a: 1, b: 2 }),
+		[
+			[1, "a"],
+			[2, "b"],
+		],
+	]
+);
