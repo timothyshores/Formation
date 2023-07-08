@@ -15,14 +15,17 @@ function test(...tests) {
   "hELLO wORLD". Other characteres are unchanged.
 */
 
-function reverseCase(text) {
-	// YOUR CODE HERE
-}
+const reverseCase = (text) => {
+	return text
+		.split("")
+		.map((c) => (c === c.toUpperCase() ? c.toLowerCase() : c.toUpperCase()))
+		.join("");
+};
 
-// test(
-//   [reverseCase("oTtEr"), "OtTeR"],
-//   [reverseCase("Hello World"), "hELLO wORLD"],
-// );
+test(
+	[reverseCase("oTtEr"), "OtTeR"],
+	[reverseCase("Hello World"), "hELLO wORLD"]
+);
 
 /* PROBLEM 2
   Count the occurrences of a letter in a string. 
