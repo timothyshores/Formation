@@ -16,18 +16,17 @@ function test(...tests) {
   lower case.
 */
 
-function isPlural(word) {
-	// YOUR CODE HERE
-}
+const isPlural = (word) =>
+	word.length ? word[word.length - 1].toLowerCase() === "s" : 0;
 
-// test(
-//   [isPlural(""), false],
-//   [isPlural("goose"), false],
-//   [isPlural("geese"), false],
-//   [isPlural("foxes"), true],
-//   [isPlural("otters"), true],
-//   [isPlural("OTTERS"), true],
-// );
+test(
+	[isPlural(""), false],
+	[isPlural("goose"), false],
+	[isPlural("geese"), false],
+	[isPlural("foxes"), true],
+	[isPlural("otters"), true],
+	[isPlural("OTTERS"), true]
+);
 
 /* PROBLEM 2
   Write a function that finds the word 'Nemo' in some text. If
