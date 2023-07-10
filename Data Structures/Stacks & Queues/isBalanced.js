@@ -153,3 +153,24 @@ Follow up :
 
 */
 
+const isAlmostBalanced = (brackets) => {
+	let count = 0;
+	let mistakeCount = 0;
+
+	for (const bracket of brackets) {
+		if (bracket === "(") {
+			count++;
+		} else if (bracket === ")") {
+			if (count > 0) {
+				count--;
+			} else {
+				mistakeCount++;
+				if (mistakeCount > 1) {
+					return false;
+				}
+			}
+		}
+	}
+
+	return count === 0 || mistakeCount === 1;
+};
