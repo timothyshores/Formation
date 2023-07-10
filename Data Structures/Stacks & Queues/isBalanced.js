@@ -57,6 +57,24 @@ Space complexity: O(1)
 
 */
 
+const stackBased = (brackets) => {
+	if (brackets.length === 0) return true;
+	if (brackets.length % 2 === 1) return false;
+
+	const stack = [];
+
+	for (const bracket of brackets) {
+		switch (bracket) {
+			case "(":
+				stack.push(")");
+			case ")":
+				if (stack.pop() !== ")") return false;
+		}
+	}
+
+	return stack.length === 0;
+};
+
 /* 
 
 What if we add all 3 types of brackets (), {} and []
