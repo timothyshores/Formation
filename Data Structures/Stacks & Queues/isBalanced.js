@@ -75,6 +75,14 @@ const stackBased = (brackets) => {
 	return stack.length === 0;
 };
 
+const stringManipulation = (brackets) => {
+	while (bracket.length && brackets.indexOf("()") >= 0) {
+		brackets.replace("()", "");
+	}
+
+	return brackets === "";
+};
+
 /* 
 
 What if we add all 3 types of brackets (), {} and []
