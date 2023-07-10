@@ -32,6 +32,19 @@ If we encounter a closing bracket pop from the stack and check if it's a closing
 Time complexity: O(N) iterates through the string
 Space complexity: O(N) store up to str.length - 1 characters in the stack
 
+Approach 2: Use string manipulation
+
+Create a while loop
+While string is NOT empty 
+replace '()' with '' 
+When there's no more () found in the string
+Return true if the final string is '' else return false
+If the sting is NOT empty then return false
+
+Time complexity: O(N^2)
+Space complexity: O(1)
+
+
 */
 
 /* 
