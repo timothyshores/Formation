@@ -151,6 +151,20 @@ const multiStringManipulation = (brackets) => {
 Follow up : 
 - isAlmostBalanced - string contains only ( and ) but may contain at most one mistake.
 
+Approach:
+
+Initialize a `count` variable to keep track of the opening brackets encountered and set it to 0.
+Initialize a `mistakeCount` variable to count the number of mistakes and set it to 0.
+
+For each bracket in the input string `brackets`:
+  - If the bracket is an opening bracket '(', increment the `count`.
+  - If the bracket is a closing bracket ')':
+    - If the `count` is greater than 0, decrement the `count`.
+    - Otherwise, increment the `mistakeCount`.
+      - If the `mistakeCount` exceeds 1, return false.
+      
+After checking all characters, return true if the `count` is 0 or the `mistakeCount` is 1, else return false.
+
 */
 
 const isAlmostBalanced = (brackets) => {
