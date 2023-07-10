@@ -1,4 +1,4 @@
 .box {
-    overflow-y: scroll;
-    /* height: 200px; */
+    overflow-x: scroll;
+    white-space: nowrap;
 }
