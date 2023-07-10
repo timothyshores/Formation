@@ -103,6 +103,34 @@ Examples
 
 */
 
+const multiStackBased = (brackets) => {
+	if (brackets.length === 0) return true;
+	if (brackets.length % 2 === 1) return false;
+
+	const stack = [];
+
+	const bracketPair = {
+		"(": ")",
+		"{": "}",
+		"[": "]",
+	};
+
+	for (const bracket of brackets) {
+		// Semantic boolean logic variables
+		const openingBracket = bracketPair[bracket];
+		const closingBracket = !bracketPair[bracket];
+
+		// If bracket is an opening bracket add to top of stack
+		if (openingBracket) stack.push(")");
+
+		// If bracket is a closing bracket, pop from top of stack
+		// If popped element is NOT the corresponding closing bracket then return false
+		if (closingBracket && stack.pop() !== bracket) return false;
+	}
+
+	return stack.length === 0;
+};
+
 /*
 
 Follow up : 
