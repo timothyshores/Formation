@@ -44,6 +44,16 @@ If the sting is NOT empty then return false
 Time complexity: O(N^2)
 Space complexity: O(1)
 
+Approach 3: Iterate and use counter
+
+Initialize a count variable and set to 0
+If we encounter an opening bracket '(' add 1 to the count
+If we encounter a closing bracket ')' subtract 1 from the count
+If count is below 0 then we return false
+After checking all characters return true if count is 0 else return false
+
+Time complexity: O(N)
+Space complexity: O(1)
 
 */
 
