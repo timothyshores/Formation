@@ -83,6 +83,18 @@ const stringManipulation = (brackets) => {
 	return brackets === "";
 };
 
+const countBased = (brackets) => {
+	let count = 0;
+
+	for (const bracket of brackets) {
+		if (bracket === "(") count++;
+		if (bracket === ")") count--;
+		if (count < 0) return false;
+	}
+
+	return count === 0;
+};
+
 /* 
 
 What if we add all 3 types of brackets (), {} and []
