@@ -131,6 +131,21 @@ const multiStackBased = (brackets) => {
 	return stack.length === 0;
 };
 
+const multiStringManipulation = (brackets) => {
+	while (
+		brackets.length &&
+		(brackets.indexOf("()") >= 0 ||
+			brackets.indexOf("{}") >= 0 ||
+			brackets.indexOf("[]") >= 0)
+	) {
+		brackets.replace("()", "");
+		brackets.replace("[]", "");
+		brackets.replace("{}", "");
+	}
+
+	return brackets === "";
+};
+
 /*
 
 Follow up : 
