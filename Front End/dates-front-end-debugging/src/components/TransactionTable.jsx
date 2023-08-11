@@ -1,33 +1,32 @@
 import React, { useState } from "react";
 
-function TransactionTable({ txns }) {
-	const [date, setDates] = useState(new Date());
-	const sort = () => {};
+function TransactionTable({ transactions }) {
+	const [selectedDate, setSelectedDate] = useState("2019-11-29");
+	const [filteredTransactions, setFilteredTransactions] =
+		useState(transactions);
 
-	const filterItem = (e) => {
-		e.preventDefault();
-		setDates(e.target.value);
-		// console.log("hey target value");
+	const handleFilter = () => {
+		setFilteredTransactions((prevTransactions) =>
+			prevTransactions.filter(
+				(transaction) => transaction.date === selectedDate
+			)
+		);
 	};
-
-	txns.filter((i) => {
-		return i.date.match(date);
-	});
-	// console.log(date);
-
-	console.log(txns);
 
 	return (
 		<div className="layout-column align-items-center mt-50">
 			<section className="layout-row align-items-center justify-content-center">
 				<label className="mr-10">Transaction Date</label>
-				<input id="date" type="date" defaultValue="2019-11-29" onChange="" />
-				<button className="small" onClick={filterItem} value={date}>
-					{console.log(date)}
+				<input
+					id="date"
+					type="date"
+					value={selectedDate}
+					onChange={(e) => setSelectedDate(e.target.value)}
+				/>
+				<button className="small" onClick={handleFilter}>
 					Filter
 				</button>
 			</section>
-
 			<div className="card mt-50">
 				<table className="table">
 					<thead>
@@ -36,25 +35,23 @@ function TransactionTable({ txns }) {
 							<th className="table-header">Description</th>
 							<th className="table-header">Type</th>
 							<th className="table-header">
-								<span id="amount" onClick={sort}>
-									Amount ($)
-								</span>
+								<span id="amount">Amount ($)</span>
 							</th>
 							<th className="table-header">Available Balance</th>
 						</tr>
 					</thead>
 					<tbody>
-						{txns.map((tran) => {
-							return (
-								<tr>
-									<td>{tran.date}</td>
-									<td>{tran.description}</td>
-									<td>{tran.type === 1 ? "Debit" : "Credit"}</td>
-									<td>{tran.amount}</td>
-									<td>{tran.balance}</td>
+						{filteredTransactions.map(
+							({ date, description, type, amount, balance }) => (
+								<tr key={description}>
+									<td>{date}</td>
+									<td>{description}</td>
+									<td>{type === 1 ? "Debit" : "Credit"}</td>
+									<td>{amount}</td>
+									<td>{balance}</td>
 								</tr>
-							);
-						})}
+							)
+						)}
 					</tbody>
 				</table>
 			</div>
