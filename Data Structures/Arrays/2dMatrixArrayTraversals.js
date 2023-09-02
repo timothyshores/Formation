@@ -63,7 +63,18 @@ function linearizeColumnMajor(matrix) {
 
 */
 
+const linearizeRowMajor = (matrix) => {
+	const result = [];
 
+	for (let i = 0; i < matrix.length; i++) {
+		const subarray = matrix[i];
+		for (let j = 0; j < subarray.length; j++) {
+			result.push(subarray[j]);
+		}
+	}
+
+	return result;
+};
 
 // def linearizeColumnMajor(matrix: list[list[int]]) -> list[int]:
 
