@@ -63,6 +63,12 @@ function linearizeColumnMajor(matrix) {
 
 */
 
+// Helper function to check if a matrix is empty or has no columns
+const isMatrixEmpty = (matrix) => {
+    return matrix.length === 0 || matrix[0].length === 0;
+};
+
+
 const linearizeRowMajor = (matrix) => {
 	const result = [];
 
@@ -77,7 +83,7 @@ const linearizeRowMajor = (matrix) => {
 };
 
 const linearizeColumnMajor = (matrix) => {
-	if (matrix.length === 0 || matrix[0].length === 0) return [];
+    if (isMatrixEmpty(matrix)) return [];
 
 	const result = [];
 
@@ -106,7 +112,7 @@ const linearizeRowMajorBackwardRows = (matrix) => {
 
 // Each column is output backward, and the columns themselves are in order:
 const linearizeRowMajorBackwardColumns = (matrix) => {
-	if (matrix.length === 0 || matrix[0].length === 0) return [];
+    if (isMatrixEmpty(matrix)) return [];
 
 	const result = [];
 
