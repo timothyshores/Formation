@@ -168,3 +168,29 @@ const linearizeColumnMajorTests = () => {
 };
 
 linearizeColumnMajorTests();
+
+// Test linearizeColumnMajor helper function
+const testLinearizeRowMajorBackwardRows = (inputData, expectedOutput) =>
+	testLinearizeFunction(
+		linearizeRowMajorBackwardRows,
+		inputData,
+		expectedOutput
+	);
+
+// All linearizeColumnMajor Test Cases return true
+const linearizeRowMajorBackwardRowsTests = () => {
+	console.log(testLinearizeRowMajorBackwardRows(emptyMatrix, []));
+	console.log(testLinearizeRowMajorBackwardRows(oneRowMatrix, [3, 2, 1]));
+	console.log(
+		testLinearizeRowMajorBackwardRows(multipleColumnsWithOneRow, [1, 2, 3])
+	);
+	console.log(testLinearizeRowMajorBackwardRows(squareMatrix, [2, 1, 4, 3]));
+	console.log(
+		testLinearizeRowMajorBackwardRows(rectangularMatrix1, [3, 2, 1, 6, 5, 4])
+	);
+	console.log(
+		testLinearizeRowMajorBackwardRows(rectangularMatrix2, [2, 1, 4, 3, 6, 5])
+	);
+};
+
+linearizeRowMajorBackwardRowsTests();
