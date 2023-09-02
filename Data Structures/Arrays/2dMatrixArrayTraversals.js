@@ -97,4 +97,10 @@ const rectangularMatrix2 = [[1, 2], [3, 4], [5, 6]];
 const areArraysEqual = (arr1, arr2) =>
 	JSON.stringify(arr1) === JSON.stringify(arr2);
 
-
+// All linearizeRowMajor Test Cases return true
+console.log(areArraysEqual(linearizeRowMajor(emptyMatrix), [])); 
+console.log(areArraysEqual(linearizeRowMajor(oneRowMatrix), [1, 2, 3])); 
+console.log(areArraysEqual(linearizeRowMajor(multipleColumnsWithOneRow), [1, 2, 3])); 
+console.log(areArraysEqual(linearizeRowMajor(squareMatrix), [1, 2, 3, 4]));
+console.log(areArraysEqual(linearizeRowMajor(rectangularMatrix1), [1, 2, 3, 4, 5, 6])); 
+console.log(areArraysEqual(linearizeRowMajor(rectangularMatrix2), [1, 2, 3, 4, 5, 6]));
