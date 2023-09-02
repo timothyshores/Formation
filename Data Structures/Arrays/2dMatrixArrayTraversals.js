@@ -90,6 +90,20 @@ const linearizeColumnMajor = (matrix) => {
 	return result;
 };
 
+// Each row is output backward, but the rows themselves are in order:
+const linearizeRowMajorBackwardRows = (matrix) => {
+	const result = [];
+
+	for (let i = 0; i < matrix.length; i++) {
+		const subarray = matrix[i];
+		for (let j = subarray.length - 1; j >= 0; j--) {
+			result.push(subarray[j]);
+		}
+	}
+
+	return result;
+};
+
 /*
 
 🧪 VERIFY
