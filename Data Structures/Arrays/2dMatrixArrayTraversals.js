@@ -106,10 +106,12 @@ const linearizeRowMajorBackwardRows = (matrix) => {
 
 // Each column is output backward, and the columns themselves are in order:
 const linearizeRowMajorBackwardColumns = (matrix) => {
+	if (matrix.length === 0 || matrix[0].length === 0) return [];
+
 	const result = [];
 
-	for (let j = 0; j < matrix[0].length; j++) {
-		for (let i = matrix.length - 1; i >= 0; i--) {
+	for (let j = matrix[0].length - 1; j >= 0; j--) {
+		for (let i = 0; i < matrix.length; i++) {
 			result.push(matrix[i][j]);
 		}
 	}
@@ -207,3 +209,29 @@ const linearizeRowMajorBackwardRowsTests = () => {
 };
 
 linearizeRowMajorBackwardRowsTests();
+
+// Test linearizeRowMajorBackwardColumns helper function
+const testLinearizeRowMajorBackwardColumns = (inputData, expectedOutput) =>
+	testLinearizeFunction(
+		linearizeRowMajorBackwardColumns,
+		inputData,
+		expectedOutput
+	);
+
+// All linearizeRowMajorBackwardColumns Test Cases return true
+const linearizeRowMajorBackwardColumnsTests = () => {
+	console.log(testLinearizeRowMajorBackwardColumns(emptyMatrix, []));
+	console.log(testLinearizeRowMajorBackwardColumns(oneRowMatrix, [3, 2, 1]));
+	console.log(
+		testLinearizeRowMajorBackwardColumns(multipleColumnsWithOneRow, [1, 2, 3])
+	);
+	console.log(testLinearizeRowMajorBackwardColumns(squareMatrix, [2, 4, 1, 3]));
+	console.log(
+		testLinearizeRowMajorBackwardColumns(rectangularMatrix1, [3, 6, 2, 5, 1, 4])
+	);
+	console.log(
+		testLinearizeRowMajorBackwardColumns(rectangularMatrix2, [2, 4, 6, 1, 3, 5])
+	);
+};
+
+linearizeRowMajorBackwardColumnsTests();
