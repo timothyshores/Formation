@@ -31,8 +31,18 @@ linearizeColumnMajor(matrix) == [1,6,11,2,7,12,3,8,13,4,9,14,5,10,15]
 
 🔎 EXPLORE
 List your assumptions & discoveries:
+------------------------------------
+For this problem the number of elements of length of each subarray will be the same
+The matrix could be either a square or a rectangle
 
 Insightful & revealing test cases:
+----------------------------------
+const emptyMatrix = []
+const oneRowMatrix = [[1, 2, 3]]
+const multipleColumnsWithOneRow = [[1], [2], [3]]
+const squareMatrix = [[1, 2], [3, 4]]
+const rectangularMatrix1 = [[1, 2, 3], [4, 5, 6]];
+const rectangularMatrix2 = [[1, 2], [3, 4], [5, 6]];
 
 🧠 BRAINSTORM
 What approaches could work?
