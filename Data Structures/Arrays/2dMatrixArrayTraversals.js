@@ -84,3 +84,17 @@ const linearizeRowMajor = (matrix) => {
 Run tests. Methodically debug & analyze issues.
 
 */
+
+// Test Data
+const emptyMatrix = [];
+const oneRowMatrix = [[1, 2, 3]];
+const multipleColumnsWithOneRow = [[1], [2], [3]];
+const squareMatrix = [[1, 2],[3, 4]];
+const rectangularMatrix1 = [[1, 2, 3], [4, 5, 6]];
+const rectangularMatrix2 = [[1, 2], [3, 4], [5, 6]];
+
+// Helper function to compare to arrays using JSON.stringify
+const areArraysEqual = (arr1, arr2) =>
+	JSON.stringify(arr1) === JSON.stringify(arr2);
+
+
