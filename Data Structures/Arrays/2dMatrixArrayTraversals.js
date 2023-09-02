@@ -123,7 +123,7 @@ const areArraysEqual = (arr1, arr2) =>
 const testLinearizeFunction = (linearizeFn, inputData, expectedOutput) =>
 	areArraysEqual(linearizeFn(inputData), expectedOutput);
 
-// Test linearizeRowMajor function with provided input and expected output
+// Test linearizeRowMajor helper function
 const testLinearizeRowMajor = (inputData, expectedOutput) =>
 	testLinearizeFunction(linearizeRowMajor, inputData, expectedOutput);
 
@@ -138,3 +138,19 @@ const linearizeRowMajorTests = () => {
 };
 
 linearizeRowMajorTests();
+
+// Test linearizeColumnMajor helper function
+const testLinearizeColumnMajor = (inputData, expectedOutput) =>
+	testLinearizeFunction(linearizeColumnMajor, inputData, expectedOutput);
+
+// All linearizeColumnMajor Test Cases return true
+const linearizeColumnMajorTests = () => {
+	console.log(testLinearizeColumnMajor(emptyMatrix, []));
+	console.log(testLinearizeColumnMajor(oneRowMatrix, [1, 2, 3]));
+	console.log(testLinearizeColumnMajor(multipleColumnsWithOneRow, [1, 2, 3]));
+	console.log(testLinearizeColumnMajor(squareMatrix, [1, 3, 2, 4]));
+	console.log(testLinearizeColumnMajor(rectangularMatrix1, [1, 4, 2, 5, 3, 6]));
+	console.log(testLinearizeColumnMajor(rectangularMatrix2, [1, 3, 5, 2, 4, 6]));
+};
+
+linearizeColumnMajorTests();
