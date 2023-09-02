@@ -76,8 +76,6 @@ const linearizeRowMajor = (matrix) => {
 	return result;
 };
 
-// def linearizeColumnMajor(matrix: list[list[int]]) -> list[int]:
-
 /*
 
 🧪 VERIFY
@@ -88,19 +86,45 @@ Run tests. Methodically debug & analyze issues.
 // Test Data
 const emptyMatrix = [];
 const oneRowMatrix = [[1, 2, 3]];
-const multipleColumnsWithOneRow = [[1], [2], [3]];
-const squareMatrix = [[1, 2],[3, 4]];
-const rectangularMatrix1 = [[1, 2, 3], [4, 5, 6]];
-const rectangularMatrix2 = [[1, 2], [3, 4], [5, 6]];
+const multipleColumnsWithOneRow = [
+    [1],
+    [2],
+    [3],
+];
+const squareMatrix = [
+	[1, 2],
+	[3, 4],
+];
+const rectangularMatrix1 = [
+	[1, 2, 3],
+	[4, 5, 6],
+];
+const rectangularMatrix2 = [
+	[1, 2],
+	[3, 4],
+	[5, 6],
+];
 
-// Helper function to compare to arrays using JSON.stringify
+// Compare to arrays using JSON.stringify
 const areArraysEqual = (arr1, arr2) =>
 	JSON.stringify(arr1) === JSON.stringify(arr2);
 
+// Test a linearization function with provided input and expected output
+const testLinearizeFunction = (linearizeFn, inputData, expectedOutput) =>
+	areArraysEqual(linearizeFn(inputData), expectedOutput);
+
+// Test linearizeRowMajor function with provided input and expected output
+const testLinearizeRowMajor = (inputData, expectedOutput) =>
+	testLinearizeFunction(linearizeRowMajor, inputData, expectedOutput);
+
 // All linearizeRowMajor Test Cases return true
-console.log(areArraysEqual(linearizeRowMajor(emptyMatrix), [])); 
-console.log(areArraysEqual(linearizeRowMajor(oneRowMatrix), [1, 2, 3])); 
-console.log(areArraysEqual(linearizeRowMajor(multipleColumnsWithOneRow), [1, 2, 3])); 
-console.log(areArraysEqual(linearizeRowMajor(squareMatrix), [1, 2, 3, 4]));
-console.log(areArraysEqual(linearizeRowMajor(rectangularMatrix1), [1, 2, 3, 4, 5, 6])); 
-console.log(areArraysEqual(linearizeRowMajor(rectangularMatrix2), [1, 2, 3, 4, 5, 6]));
+const linearizeRowMajorTests = () => {
+	console.log(testLinearizeRowMajor(emptyMatrix, []));
+	console.log(testLinearizeRowMajor(oneRowMatrix, [1, 2, 3]));
+	console.log(testLinearizeRowMajor(multipleColumnsWithOneRow, [1, 2, 3]));
+	console.log(testLinearizeRowMajor(squareMatrix, [1, 2, 3, 4]));
+	console.log(testLinearizeRowMajor(rectangularMatrix1, [1, 2, 3, 4, 5, 6]));
+	console.log(testLinearizeRowMajor(rectangularMatrix2, [1, 2, 3, 4, 5, 6]));
+};
+
+linearizeRowMajorTests();
