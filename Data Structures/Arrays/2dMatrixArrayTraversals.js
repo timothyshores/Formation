@@ -46,19 +46,28 @@ const rectangularMatrix2 = [[1, 2], [3, 4], [5, 6]];
 
 🧠 BRAINSTORM
 What approaches could work?
-Algorithm 1:
-Time: O()
-Space: O()
+Algorithm 1: 
+Nested for loops. 
+
+Time: O(N)
+Space: O(1)
 
 📆 PLAN
-Outline of algorithm #: 
+Outline of algorithm #: 1
+- Row traversal: outer for loop represents the subarray and inner for loop is the index of that subarray
+- Column traversal: out for loop represents the index of each sub array and inner for loop is the subarray
 
 🛠️ IMPLEMENT
 function linearizeRowMajor(matrix) {
 function linearizeColumnMajor(matrix) {
 
-def linearizeRowMajor(matrix: list[list[int]]) -> list[int]:
-def linearizeColumnMajor(matrix: list[list[int]]) -> list[int]:
+*/
+
+
+
+// def linearizeColumnMajor(matrix: list[list[int]]) -> list[int]:
+
+/*
 
 🧪 VERIFY
 Run tests. Methodically debug & analyze issues.
