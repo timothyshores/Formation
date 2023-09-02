@@ -76,6 +76,20 @@ const linearizeRowMajor = (matrix) => {
 	return result;
 };
 
+const linearizeColumnMajor = (matrix) => {
+	if (matrix.length === 0 || matrix[0].length === 0) return [];
+
+	const result = [];
+
+	for (let i = 0; i < matrix[0].length; i++) {
+		for (let j = 0; j < matrix.length; j++) {
+			result.push(matrix[j][i]);
+		}
+	}
+
+	return result;
+};
+
 /*
 
 🧪 VERIFY
@@ -86,11 +100,7 @@ Run tests. Methodically debug & analyze issues.
 // Test Data
 const emptyMatrix = [];
 const oneRowMatrix = [[1, 2, 3]];
-const multipleColumnsWithOneRow = [
-    [1],
-    [2],
-    [3],
-];
+const multipleColumnsWithOneRow = [[1], [2], [3]];
 const squareMatrix = [
 	[1, 2],
 	[3, 4],
