@@ -104,6 +104,19 @@ const linearizeRowMajorBackwardRows = (matrix) => {
 	return result;
 };
 
+// Each column is output backward, and the columns themselves are in order:
+const linearizeRowMajorBackwardColumns = (matrix) => {
+	const result = [];
+
+	for (let j = 0; j < matrix[0].length; j++) {
+		for (let i = matrix.length - 1; i >= 0; i--) {
+			result.push(matrix[i][j]);
+		}
+	}
+
+	return result;
+};
+
 /*
 
 🧪 VERIFY
