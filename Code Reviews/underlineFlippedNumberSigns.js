@@ -67,3 +67,34 @@ const underlineMistakenNumbersImperative = (upperBound) => {
 
 	return mistakenNumbers;
 };
+
+// Check if a number contains non-flippable digits (Declarative)
+const containsNonFlippableDigitsDeclarative = (num) => {
+	const numStr = num.toString();
+	return ![...numStr].every((digit) => rotateMap[digit]);
+};
+
+// Return the value of the rotated number (Declarative)
+const rotateNumberDeclarative = (num) => {
+	const numStr = num.toString();
+	const rotatedDigits = [...numStr].map((digit) => rotateMap[digit]).reverse();
+	const rotatedStr = rotatedDigits.join("");
+	return parseInt(rotatedStr);
+};
+
+// Find mistaken numbers within a given upper bound (Declarative)
+const underlineMistakenNumbersDeclarative = (upperBound) => {
+	const mistakenNumbers = [];
+
+	for (let num = 1; num <= upperBound; num++) {
+		if (containsNonFlippableDigitsDeclarative(num)) continue;
+		if (num % 10 === 0) continue;
+		const rotatedNum = rotateNumberDeclarative(num);
+		if (num === rotatedNum) continue;
+		if (rotatedNum > upperBound) continue;
+		mistakenNumbers.push(num);
+	}
+
+	return mistakenNumbers;
+};
+
