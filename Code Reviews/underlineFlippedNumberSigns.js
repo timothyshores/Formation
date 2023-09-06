@@ -98,3 +98,20 @@ const underlineMistakenNumbersDeclarative = (upperBound) => {
 	return mistakenNumbers;
 };
 
+// Test Cases
+const imperativeResults = underlineMistakenNumbersImperative(650);
+const declarativeResults = underlineMistakenNumbersDeclarative(650);
+const expectedResults = [
+	6, 9, 16, 18, 19, 61, 66, 68, 81, 86, 89, 91, 98, 99, 109, 119, 161, 191, 601,
+	611,
+];
+
+console.log(
+	"Test Passed (Imperative):",
+	JSON.stringify(imperativeResults) === JSON.stringify(expectedResults)
+);
+
+console.log(
+	"Test Passed (Declarative):",
+	JSON.stringify(declarativeResults) === JSON.stringify(expectedResults)
+);
