@@ -62,3 +62,80 @@ const result4 = [42];
 Please implement the `spiralOrder` function and ensure it handles the edge cases as specified.
 
 */
+
+const traverseLeftToRight = (matrix, top, bottom, left, right, result) => {
+	for (let i = left; i <= right; i++) {
+		result.push(matrix[top][i]);
+	}
+};
+
+const traverseTopToBottom = (matrix, top, bottom, left, right, result) => {
+	for (let i = top; i <= bottom; i++) {
+		result.push(matrix[i][right]);
+	}
+};
+
+const traverseRightToLeft = (matrix, top, bottom, left, right, result) => {
+	for (let i = right; i >= left; i--) {
+		result.push(matrix[bottom][i]);
+	}
+};
+
+const traverseBottomToTop = (matrix, top, bottom, left, right, result) => {
+	for (let i = bottom; i >= top; i--) {
+		result.push(matrix[i][left]);
+	}
+};
+
+const spiralOrder = (matrix) => {
+	if (!matrix.length) return [];
+
+	const result = [];
+	const numRows = matrix.length;
+	const numColumns = matrix[0].length;
+	let topBoundary = 0,
+		bottomBoundary = numRows - 1,
+		leftBoundary = 0,
+		rightBoundary = numColumns - 1;
+
+	while (topBoundary <= bottomBoundary && leftBoundary <= rightBoundary) {
+		traverseLeftToRight(
+			matrix,
+			topBoundary,
+			bottomBoundary,
+			leftBoundary,
+			rightBoundary,
+			result
+		);
+		topBoundary++;
+		traverseTopToBottom(
+			matrix,
+			topBoundary,
+			bottomBoundary,
+			leftBoundary,
+			rightBoundary,
+			result
+		);
+		rightBoundary--;
+		traverseRightToLeft(
+			matrix,
+			topBoundary,
+			bottomBoundary,
+			leftBoundary,
+			rightBoundary,
+			result
+		);
+		bottomBoundary--;
+		traverseBottomToTop(
+			matrix,
+			topBoundary,
+			bottomBoundary,
+			leftBoundary,
+			rightBoundary,
+			result
+		);
+		leftBoundary++;
+	}
+
+	return result;
+};
