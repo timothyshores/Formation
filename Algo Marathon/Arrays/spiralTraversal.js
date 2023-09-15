@@ -63,25 +63,25 @@ Please implement the `spiralOrder` function and ensure it handles the edge cases
 
 */
 
-const traverseLeftToRight = (matrix, top, bottom, left, right, result) => {
+const traverseLeftToRight = (matrix, top, left, right, result) => {
 	for (let i = left; i <= right; i++) {
 		result.push(matrix[top][i]);
 	}
 };
 
-const traverseTopToBottom = (matrix, top, bottom, left, right, result) => {
+const traverseTopToBottom = (matrix, top, bottom, right, result) => {
 	for (let i = top; i <= bottom; i++) {
 		result.push(matrix[i][right]);
 	}
 };
 
-const traverseRightToLeft = (matrix, top, bottom, left, right, result) => {
+const traverseRightToLeft = (matrix, bottom, left, right, result) => {
 	for (let i = right; i >= left; i--) {
 		result.push(matrix[bottom][i]);
 	}
 };
 
-const traverseBottomToTop = (matrix, top, bottom, left, right, result) => {
+const traverseBottomToTop = (matrix, top, bottom, left, result) => {
 	for (let i = bottom; i >= top; i--) {
 		result.push(matrix[i][left]);
 	}
@@ -102,7 +102,6 @@ const spiralOrder = (matrix) => {
 		traverseLeftToRight(
 			matrix,
 			topBoundary,
-			bottomBoundary,
 			leftBoundary,
 			rightBoundary,
 			result
@@ -112,14 +111,12 @@ const spiralOrder = (matrix) => {
 			matrix,
 			topBoundary,
 			bottomBoundary,
-			leftBoundary,
 			rightBoundary,
 			result
 		);
 		rightBoundary--;
 		traverseRightToLeft(
 			matrix,
-			topBoundary,
 			bottomBoundary,
 			leftBoundary,
 			rightBoundary,
@@ -131,7 +128,6 @@ const spiralOrder = (matrix) => {
 			topBoundary,
 			bottomBoundary,
 			leftBoundary,
-			rightBoundary,
 			result
 		);
 		leftBoundary++;
@@ -139,3 +135,30 @@ const spiralOrder = (matrix) => {
 
 	return result;
 };
+
+// Example 1
+const matrix1 = [
+	[1, 2, 3],
+	[4, 5, 6],
+	[7, 8, 9],
+];
+
+console.log(spiralOrder(matrix1)); // Output: [1, 2, 3, 6, 9, 8, 7, 4, 5]
+
+// Example 2
+const matrix2 = [
+	[1, 2, 3],
+	[4, 5, 6],
+];
+
+console.log(spiralOrder(matrix2)); // Output: [1, 2, 3, 6, 5, 4]
+
+// Example 3
+const emptyMatrix = [];
+
+console.log(spiralOrder(emptyMatrix)); // Output: []
+
+// Example 4
+const singleElementMatrix = [[1]];
+
+console.log(spiralOrder(singleElementMatrix)); // Output: [1]
