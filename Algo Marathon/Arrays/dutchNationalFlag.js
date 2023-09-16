@@ -38,4 +38,25 @@ Once we're at the end then nums will be sorted
 
 */
 
-const sortColors = (nums) => {};
+const sortColors = (nums) => {
+	let currentIndex = 0,
+		left = 0;
+	let right = nums.length - 1;
+
+	while (currentIndex <= right) {
+		const currentElement = nums[currentIndex];
+
+		if (currentElement == 0) {
+			[nums[left], nums[currentIndex]] = [nums[currentIndex], nums[left]];
+			left++;
+			currentIndex++;
+		} else if (currentElement == 1) {
+			currentIndex++;
+		} else if (currentElement == 2) {
+			[nums[right], nums[currentIndex]] = [nums[currentIndex], nums[right]];
+			right--;
+		}
+	}
+
+	return nums;
+};
