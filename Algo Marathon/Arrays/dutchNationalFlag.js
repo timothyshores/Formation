@@ -60,3 +60,18 @@ const sortColors = (nums) => {
 
 	return nums;
 };
+
+/* Helper method to assess array equality */
+const arrayEquals = (a, b) => {
+	return a.length === b.length && a.every((val, index) => val === b[index]);
+};
+
+const tests = [
+	arrayEquals(sortColors([2, 1, 2, 1, 0]), [0, 1, 1, 2, 2]),
+	arrayEquals(sortColors([0, 1, 2, 1]), [0, 1, 1, 2]),
+	arrayEquals(sortColors([0, 1]), [0, 1]),
+	arrayEquals(sortColors([]), []),
+];
+
+// All test cases should return true
+console.log(tests); // [true, true, true, true]
