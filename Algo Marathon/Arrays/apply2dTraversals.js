@@ -112,3 +112,12 @@ Run tests. Methodically debug & analyze issues.
 
 */
 
+matrix = [
+	[32, 23, 3],
+	[23, 7, 5],
+];
+
+console.log(averageRowMinimum([[]])); // 0
+console.log(averageColumnMinimum([[]])); // 0
+console.log(averageRowMinimum(matrix)); // 4 because 3 is min of top row, 5 is min of bottom row 3 + 5 = 8 / 2 rows == 4
+console.log(averageColumnMinimum(matrix)); // 11 (because 23 is left column min, 7 is middle and 3 is right column min and 23 + 7 + 3 = 33 / 3 rows == 1
