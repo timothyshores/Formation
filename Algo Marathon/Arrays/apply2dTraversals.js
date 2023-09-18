@@ -64,7 +64,26 @@ Initialize a for loop
 */
 
 const averageColumnMinimum = (matrix) => {
+	if (matrix[0].length === 0) return 0;
 
+	const numOfCols = matrix[0].length;
+	const numOfRows = matrix.length;
+
+	let sum = 0;
+
+	// Traverse input matrix by column
+	for (let currentCol = 0; currentCol < numOfCols; currentCol++) {
+		let columnMinimum = Infinity;
+
+		// Traverse input matrix by rows
+		for (let currentRow = 0; currentRow < numOfRows; currentRow++) {
+			columnMinimum = Math.min(matrix[currentRow][currentCol], columnMinimum);
+		}
+
+		sum += columnMinimum;
+	}
+
+	return sum / numOfCols;
 };
 
 const averageRowMinimum = (matrix) => {
