@@ -38,7 +38,26 @@ Time: O(N) - must iterate through all N elements in the matrix. Could also be m 
 Space: O(1) - Need to track the sum of the minimum elements in each row or column and the total number of rows or columns to calculate the ACM or ARM. 
 
 📆 PLAN
-Outline of algorithm #:
+Outline of algorithm #: 1
+
+Handle the edge case where input matrix is [[]]
+Create a variable called sum and initialize to 0
+Initialize a for loop
+- Row major traversal 
+    - Iterate over each row 
+    - Get the minimum integer in each row
+    - Sum all minimums for each row together
+    - Divide by the total number of rows in matrix 
+        - Total number of rows is matrix.length
+    - Return the average row minimum
+- Column major traversal
+    - Iterate over each column
+        - Iterate over all rows for that given column
+        - Get the minimum integer value for that column
+    - Sum all column minimum values together
+    - Divide the sum by the total number of columns in the matrix
+        - Total number of columns is matrix[0].length
+    - Return the average column minimum
 
 🛠️ IMPLEMENT 
 
