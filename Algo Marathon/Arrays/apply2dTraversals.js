@@ -87,7 +87,22 @@ const averageColumnMinimum = (matrix) => {
 };
 
 const averageRowMinimum = (matrix) => {
+	if (matrix[0].length === 0) return 0;
+	let sum = 0;
 
+	for (let row of matrix) {
+		let rowMinimum = Infinity;
+
+		for (let element of row) {
+			rowMinimum = Math.min(element, rowMinimum);
+		}
+
+		sum += rowMinimum;
+	}
+
+	const numberOfRows = matrix.length;
+
+	return sum / numberOfRows;
 };
 
 /*
