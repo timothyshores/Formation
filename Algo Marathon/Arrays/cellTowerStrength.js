@@ -32,7 +32,26 @@ Space Complexity: O(1) only need integers to track max distance, left and right 
 
 PLAN
 
+Initialize maxDistance to 0.
+Initialize left pointer to 0.
+Initialize right pointer to 0.
+
+For each customer position:
+    While right is within the bounds of the tower array and the right tower is to the left of the customer:
+        Update left pointer to right pointer.
+        Increment right pointer.
+    
+    Calculate leftDistance as the absolute distance between the customer and the left tower.
+    
+    Calculate rightDistance as the absolute distance between the customer and the right tower 
+    (or set it to Infinity if right is out of bounds).
+    
+    Calculate minDistance as the minimum of leftDistance and rightDistance.
+    
+    Update maxDistance as the maximum of maxDistance and minDistance.
+
+Return maxDistance as the minimum signal strength required.
+
 */
 
-const search = (customers, towers) => {
-};
+const search = (customers, towers) => {};
