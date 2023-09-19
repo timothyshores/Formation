@@ -75,3 +75,9 @@ const search = (customers, towers) => {
 
 	return maxDistance;
 };
+
+// All test cases return true
+console.log(search([3], [3]) == 0); // 0
+console.log(search([4], [2, 6]) == 2); //2
+console.log(search([0, 5, 11], [0, 2, 6, 10]) == 1); // 1
+console.log(search([0, 4, 13], [0, 2, 6, 10]) == 3); // 3
