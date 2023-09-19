@@ -54,4 +54,24 @@ Return maxDistance as the minimum signal strength required.
 
 */
 
-const search = (customers, towers) => {};
+const search = (customers, towers) => {
+	let maxDistance = 0;
+	let left = 0;
+	let right = 0;
+
+	for (let customer of customers) {
+		while (right < towers.length && towers[right] < customer) {
+			left = right;
+			right++;
+		}
+
+		const leftDistance = Math.abs(customer - towers[left]);
+		const rightDistance =
+			right < towers.length ? Math.abs(customer - towers[right]) : Infinity;
+		const min = Math.min(leftDistance, rightDistance);
+
+		maxDistance = Math.max(maxDistance, min);
+	}
+
+	return maxDistance;
+};
