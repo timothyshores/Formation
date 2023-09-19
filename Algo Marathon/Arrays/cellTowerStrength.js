@@ -17,9 +17,18 @@ If the customers were at: [0, 4, 13], you'd need a distance of 3 in order for cu
 FUNCTION SIGNATURE
 def search(customers: list[int], towers: list[int]) -> int:
 
+ENGINEERING METHOD
+
 EXPLORE
+- The problem involves finding the minimum signal strength (k) required for cell towers to cover all customers.
+- Customers and cell towers are represented as 1-dimensional positions along a line.
+- Cell towers must cover customers to their left and right equally.
 
 BRAINSTORM
+Approach 1: Iterate through customers and for each customer, find the nearest left and right tower, calculate the distance, and keep track of the maximum distance. This approach ensures equal coverage to the left and right.
+
+Time Complexity: O(m + n) where m is the number of customers and n is the number of towers
+Space Complexity: O(1) only need integers to track max distance, left and right pointers in memory
 
 PLAN
 
