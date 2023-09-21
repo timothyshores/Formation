@@ -31,7 +31,13 @@ def calculate_tax(taxable_income: float, brackets: List[Tuple[float, float, floa
 
 EXPLORE
 
+You are given a list of tax brackets, each defined by a range of taxable income and a marginal tax rate. Your task is to write a function that takes in taxable income and returns the amount of tax payable on that income based on the given tax brackets.
+
 BRAINSTORM
+Approach 1: Iterate through each tax bracket, calculating taxes owed within each bracket and subtract the taxable income as it's taxed
+
+Time Complexity: O(N) iterate through all N tax brackets
+Space Complexity: O(1) keep track of a set number of variables that remains static regardless of the inputs
 
 PLAN
 
