@@ -53,3 +53,86 @@ PLAN
 5. After iterating through all tax brackets, return the total tax payable (`taxesOwed`) minus any tax credits.
 
 */
+
+/**
+ * Calculate the total tax payable on a given taxable income based on provided tax brackets.
+ *
+ * @param {number} taxableIncome - The amount of taxable income.
+ * @param {Array<Array<number>>} taxBrackets - An array of tax brackets, where each bracket
+ *   is represented as an array with three elements: [lowerBracketLimit, upperBracketLimit, marginalTaxRate].
+ *   - lowerBracketLimit (number): The lower limit of the bracket (exclusive).
+ *   - upperBracketLimit (number): The upper limit of the bracket (inclusive).
+ *   - marginalTaxRate (number): The marginal tax rate for that bracket.
+ * @param {number} [taxDeductions=0] - The amount of tax deductions to be subtracted from taxable income (optional, default is 0).
+ * @param {number} [taxCredits=0] - The amount of tax credits to be subtracted from the total tax payable (optional, default is 0).
+ * @returns {number} The total amount of tax payable on the taxable income.
+ */
+
+const calculateTaxWithComments = (
+	taxableIncome,
+	taxBrackets,
+	taxDeductions = 0,
+	taxCredits = 0
+) => {
+	// Initialize the total tax and the remaining taxable income after subtracting tax deductions
+	let taxesOwed = 0;
+	let taxableRemainingIncome = taxableIncome - taxDeductions;
+
+	// Iterate through each tax bracket
+	for (const [
+		lowerBracketLimit,
+		upperBracketLimit,
+		marginalTaxRate,
+	] of taxBrackets) {
+		// All income has been taxed }
+		if (taxableRemainingIncome <= 0) break;
+
+		// Calculate the taxable income within the current bracket
+		const incomeToBeTaxed = Math.min(
+			taxableRemainingIncome,
+			upperBracketLimit - lowerBracketLimit
+		);
+
+		// Check if there is any income to be taxed in this bracket
+		if (incomeToBeTaxed > 0) {
+			// Calculate and accumulate the tax for the current bracket
+			taxesOwed += incomeToBeTaxed * marginalTaxRate;
+
+			// Update the remaining taxable income
+			taxableRemainingIncome -= incomeToBeTaxed;
+		}
+	}
+
+	// Return the total calculated tax minus the tax credits
+	return taxesOwed - taxCredits;
+};
+
+const calculateTax = (
+	taxableIncome,
+	taxBrackets,
+	taxDeductions = 0,
+	taxCredits = 0
+) => {
+	let taxesOwed = 0;
+	let taxableRemainingIncome = taxableIncome - taxDeductions;
+
+	for (const [
+		lowerBracketLimit,
+		upperBracketLimit,
+		marginalTaxRate,
+	] of taxBrackets) {
+		if (taxableRemainingIncome <= 0) break;
+
+		const incomeToBeTaxed = Math.min(
+			taxableRemainingIncome,
+			upperBracketLimit - lowerBracketLimit
+		);
+
+		if (incomeToBeTaxed > 0) {
+			taxesOwed += incomeToBeTaxed * marginalTaxRate;
+			taxableRemainingIncome -= incomeToBeTaxed;
+		}
+	}
+
+	return taxesOwed - taxCredits;
+};
