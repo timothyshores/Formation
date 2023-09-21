@@ -136,3 +136,29 @@ const calculateTax = (
 
 	return taxesOwed - taxCredits;
 };
+
+// All test cases return true
+let brackets = [[0, 10000, 0.1]];
+console.log(calculateTax(5000, brackets) === 500);
+console.log(calculateTax(10000, brackets) === 1000);
+console.log(calculateTax(15000, brackets) === 1000);
+
+brackets = [
+	[0, 10000, 0.1],
+	[10000, 30000, 0.15],
+	[30000, 60000, 0.25],
+	[60000, Infinity, 0.35],
+];
+
+console.log(calculateTax(5000, brackets) === 500);
+console.log(calculateTax(15000, brackets) === 1750);
+console.log(calculateTax(35000, brackets) === 5250);
+console.log(calculateTax(80000, brackets) === 18500);
+
+brackets = [[0, Infinity, 0.1]];
+console.log(calculateTax(50000, brackets) === 5000);
+console.log(calculateTax(100000, brackets) === 10000);
+console.log(calculateTax(150000, brackets) === 15000);
+
+brackets = [];
+console.log(calculateTax(50000, brackets) === 0);
