@@ -41,4 +41,15 @@ Space Complexity: O(1) keep track of a set number of variables that remains stat
 
 PLAN
 
+1. Initialize a variable `taxesOwed` to keep track of the total tax payable.
+2. Calculate the remaining taxable income by subtracting tax deductions from the taxable income.
+3. Iterate through each tax bracket in the `taxBrackets` list.
+4. For each tax bracket:
+    - Check if the remaining taxable income is greater than 0. If not, exit the loop since all income has been taxed.
+    - Calculate the income to be taxed within the current bracket by taking the minimum of the remaining taxable income and the difference between the upper and lower bracket limits.
+    - If there is income to be taxed in this bracket (i.e., `incomeToBeTaxed` is greater than 0), calculate the tax amount for this bracket by multiplying `incomeToBeTaxed` by the marginal tax rate of the bracket.
+    - Add the tax amount for this bracket to the `taxesOwed` variable.
+    - Update the remaining taxable income by subtracting `incomeToBeTaxed`.
+5. After iterating through all tax brackets, return the total tax payable (`taxesOwed`) minus any tax credits.
+
 */
