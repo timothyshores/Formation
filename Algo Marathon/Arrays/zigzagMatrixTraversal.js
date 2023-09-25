@@ -16,9 +16,46 @@ Additional details:
 
 🔎 EXPLORE
 List your assumptions & discoveries:
+Keep the rows in row
+Every other row we reverse that row
+Flatten the matrix but every other row is reversed. 
 
 Insightful & revealing test cases:
 
+const empty = [[]];
+linearizeZigZag(empty) == []
+
+const oneRow = [[1, 2, 3]];
+linearizeZigZag(oneRow) == [1, 2, 3]
+
+const oneColumnMultipleRows = [[1], [4], [7]];
+linearizeZigZag(oneColumnMultipleRows) == [1, 4, 7]
+
+const squareMatrix1 = [
+	[1, 2],
+	[3, 4],
+];
+linearizeZigZag(squareMatrix1) == [1, 2, 4, 3]
+
+const squareMatrix2 = [
+	[1, 2, 3],
+	[4, 5, 6],
+	[7, 8, 9],
+];
+linearizeZigZag(squareMatrix2) == [1, 2, 3, 6, 5, 4, 7, 8, 9]
+
+const rectangularMatrix1 = [
+	[1, 2, 3],
+	[4, 5, 6],
+];
+linearizeZigZag(rectangularMatrix1) == [1, 2, 3, 6, 5, 4];
+
+const rectangularMatrix2 = [
+	[1, 2],
+	[3, 4],
+	[5, 6],
+];
+linearizeZigZag(rectangularMatrix2) == [1, 2, 4, 3, 5, 6];
 
 🧠 BRAINSTORM
 What approaches could work?
@@ -40,4 +77,6 @@ Run tests. Methodically debug & analyze issues.
 */
 
 // Test Data
-const testData = [];
+const testData = [
+
+];
