@@ -99,4 +99,54 @@ Run tests. Methodically debug & analyze issues.
 */
 
 // Test Data
-const testData = [];
+const testData = [
+	{
+		name: "emptyMatrix",
+		input: [[]],
+		expectedOutput: [],
+	},
+	{
+		name: "oneRow",
+		input: [[1, 2, 3]],
+		expectedOutput: [1, 2, 3],
+	},
+	{
+		name: "oneColumnMultipleRows",
+		input: [[1], [4], [7]],
+		expectedOutput: [1, 4, 7],
+	},
+	{
+		name: "squareMatrix1",
+		input: [
+			[1, 2],
+			[3, 4],
+		],
+		expectedOutput: [1, 2, 4, 3],
+	},
+	{
+		name: "squareMatrix2",
+		input: [
+			[1, 2, 3],
+			[4, 5, 6],
+			[7, 8, 9],
+		],
+		expectedOutput: [1, 2, 3, 6, 5, 4, 7, 8, 9],
+	},
+	{
+		name: "rectangularMatrix1",
+		input: [
+			[1, 2, 3],
+			[4, 5, 6],
+		],
+		expectedOutput: [1, 2, 3, 6, 5, 4],
+	},
+	{
+		name: "rectangularMatrix2",
+		input: [
+			[1, 2],
+			[3, 4],
+			[5, 6],
+		],
+		expectedOutput: [1, 2, 4, 3, 5, 6],
+	},
+];
