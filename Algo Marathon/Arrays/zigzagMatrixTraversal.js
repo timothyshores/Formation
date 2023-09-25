@@ -59,9 +59,19 @@ linearizeZigZag(rectangularMatrix2) == [1, 2, 4, 3, 5, 6];
 
 🧠 BRAINSTORM
 What approaches could work?
+Algorithm 1: Iterate through the matrix by row, when the row index is odd reverse the row, continue until we reach the end of the matrix
+Time: O(m * n) where m is the number of rows and n is the number of columns
+Space: O(m * n) to store the final result matrix it has the same space requirements as the input matrix
 
 📆 PLAN
 Outline of algorithm #: 1
+
+Create an empty array called zigzagged
+Iterate through the matrix starting from the first row to the last row
+Either check if the current index is even or odd or set a boolean flag
+Every odd indexed row we reverse the current row
+Every row we visit we push either the original or the reversed order into zigzagged
+After we've visited all rows return zigzagged
 
 🛠️ IMPLEMENT
 function linearizeZigZag(matrix) {
