@@ -131,9 +131,9 @@ const runTests = (implementation, testData) => {
 		const actualOutput = implementation(input);
 		return {
 			"Test Name": name,
-			"Test Input": input,
-			"Actual Output": actualOutput,
-			"Expected Output": expectedOutput,
+			"Test Input": formatArray(input),
+			"Actual Output": formatArray(actualOutput),
+			"Expected Output": formatArray(expectedOutput),
 			"Test Passes": arrayEquals(actualOutput, expectedOutput),
 		};
 	});

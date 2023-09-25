@@ -186,7 +186,7 @@ const formatArray = (array) => {
  * @param {Array.<TestCase>} testData - An array of test cases to evaluate the function.
  * @returns {Array.<TestResult>} An array of test results, one for each test case.
  */
-const runTests = (implementation, testData) => {
+const runTests = (implementation) => {
 	return testData.map(({ name, input, expectedOutput }) => {
 		const actualOutput = implementation(input);
 		return {
@@ -199,8 +199,7 @@ const runTests = (implementation, testData) => {
 	});
 };
 
-console.log("Zigzag Functional Declarative Test Results:");
-console.table(runTests(linearizeZigZag, testData));
+console.table(runTests(linearizeZigZag));
 
 /*
 
