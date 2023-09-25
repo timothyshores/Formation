@@ -150,3 +150,51 @@ const testData = [
 		expectedOutput: [1, 2, 4, 3, 5, 6],
 	},
 ];
+
+/**
+ * Compare two arrays for equality.
+ *
+ * @param {Array} a - The first array for comparison.
+ * @param {Array} b - The second array for comparison.
+ * @returns {boolean} Returns true if the arrays are equal, otherwise false.
+ */
+const arrayEquals = (a, b) => {
+	return a.length === b.length && a.every((val, index) => val === b[index]);
+};
+
+/**
+ * Format an array as a string representation.
+ *
+ * This function takes an array as input and returns its string representation. If the input is an array,
+ * it is converted to a JSON string, otherwise, the input is returned as is.
+ *
+ * @param {Array|*} array - The array or value to be formatted as a string.
+ * @returns {string} The string representation of the input array or value.
+ */
+const formatArray = (array) => {
+	return Array.isArray(array) ? JSON.stringify(array) : array;
+};
+
+/**
+ * Run a series of test cases on an implementation function.
+ *
+ * This function takes an implementation function and a set of test cases, executes the
+ * implementation with each test case's input, and compares the actual output to the
+ * expected output. It returns an array of test results.
+ *
+ * @param {function} implementation - The function to be tested.
+ * @param {Array.<TestCase>} testData - An array of test cases to evaluate the function.
+ * @returns {Array.<TestResult>} An array of test results, one for each test case.
+ */
+const runTests = (implementation, testData) => {
+	return testData.map(({ name, input, expectedOutput }) => {
+		const actualOutput = implementation(input);
+		return {
+			"Test Name": name,
+			"Test Input": input,
+			"Actual Output": actualOutput,
+			"Expected Output": expectedOutput,
+			"Test Passes": arrayEquals(actualOutput, expectedOutput),
+		};
+	});
+};
