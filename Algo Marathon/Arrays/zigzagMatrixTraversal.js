@@ -79,6 +79,18 @@ def linearizeZigZag(matrix: list[list[int]]) -> list[int]:
 
 */
 
+const linearizeZigZag = (matrix) => {
+	const zigzagged = [];
+	let reverseCurrentRow = false;
+
+	for (const row of matrix) {
+		zigzagged.push(...(reverseCurrentRow ? row.reverse() : row));
+		reverseCurrentRow = !reverseCurrentRow;
+	}
+
+	return zigzagged;
+};
+
 /*
 
 🧪 VERIFY
@@ -87,6 +99,4 @@ Run tests. Methodically debug & analyze issues.
 */
 
 // Test Data
-const testData = [
-
-];
+const testData = [];
