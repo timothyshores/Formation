@@ -191,10 +191,29 @@ const runTests = (implementation, testData) => {
 		const actualOutput = implementation(input);
 		return {
 			"Test Name": name,
-			"Test Input": input,
-			"Actual Output": actualOutput,
-			"Expected Output": expectedOutput,
+			"Test Input": formatArray(input),
+			"Actual Output": formatArray(actualOutput),
+			"Expected Output": formatArray(expectedOutput),
 			"Test Passes": arrayEquals(actualOutput, expectedOutput),
 		};
 	});
 };
+
+console.log("Zigzag Functional Declarative Test Results:");
+console.table(runTests(linearizeZigZag, testData));
+
+/*
+
+┌─────────┬─────────────────────────┬───────────────────────────────┬───────────────────────────────┬───────────────────────────────┬─────────────┐ 
+│ (index) │        Test Name        │          Test Input           │         Actual Output         │        Expected Output        │ Test Passes │ 
+├─────────┼─────────────────────────┼───────────────────────────────┼───────────────────────────────┼───────────────────────────────┼─────────────┤ 
+│    0    │      'emptyMatrix'      │            [ [] ]             │              []               │              []               │    true     │ 
+│    1    │        'oneRow'         │          [ [Array] ]          │          [ 1, 2, 3 ]          │          [ 1, 2, 3 ]          │    true     │ 
+│    2    │ 'oneColumnMultipleRows' │ [ [Array], [Array], [Array] ] │          [ 1, 4, 7 ]          │          [ 1, 4, 7 ]          │    true     │ 
+│    3    │     'squareMatrix1'     │     [ [Array], [Array] ]      │ [ 1, 2, 4, ... 1 more item ]  │ [ 1, 2, 4, ... 1 more item ]  │    true     │ 
+│    4    │     'squareMatrix2'     │ [ [Array], [Array], [Array] ] │ [ 1, 2, 3, ... 6 more items ] │ [ 1, 2, 3, ... 6 more items ] │    true     │ 
+│    5    │  'rectangularMatrix1'   │     [ [Array], [Array] ]      │ [ 1, 2, 3, ... 3 more items ] │ [ 1, 2, 3, ... 3 more items ] │    true     │ 
+│    6    │  'rectangularMatrix2'   │ [ [Array], [Array], [Array] ] │ [ 1, 2, 4, ... 3 more items ] │ [ 1, 2, 4, ... 3 more items ] │    true     │ 
+└─────────┴─────────────────────────┴───────────────────────────────┴───────────────────────────────┴───────────────────────────────┴─────────────┘ 
+
+*/
