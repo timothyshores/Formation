@@ -11,3 +11,15 @@ FUNCTION SIGNATURE
 func maxSubarraySum(input: [Int]) -> Int
 
 */
+
+const maxSubarraySum = (nums) => {
+	let highestSum = -Infinity;
+	let currentSum = 0;
+
+	for (const num of nums) {
+		currentSum = Math.max(num, currentSum + num);
+		highestSum = Math.max(currentSum, highestSum);
+	}
+
+	return highestSum;
+};
