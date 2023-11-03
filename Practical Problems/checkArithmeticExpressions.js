@@ -43,15 +43,26 @@ We should return [True, True, True]
 
 🔎 EXPLORE
 List your assumptions & discoveries:
+- Want to return an array where arr[i] is operands1[i] operators[i] operands2[i] == results[i]
+- Assume that the arrays operands1, operators, operands2 and results have the same length
 
 Insightful & revealing test cases:
 
 🧠 BRAINSTORM
 What approaches could work?
-Algorithm 1: 
+Algorithm 1: For loop using JavaScript's built in eval expression
+Time: O(N)
+Space: O(N)
 
 📆 PLAN
-Outline of algorithm #:
+Outline of algorithm #: 1
+
+initialize a new empty array to store our results
+
+for loop starting at 0 until the length of the array minus 1
+    finalResultsArray.push(Math.floor(eval(operands1[i] operators[i] operands2[i]) == results[i])
+
+return finalResultsArray
 
 🛠️ IMPLEMENT
 function checkArithmeticExpressions(operands1, operators, operands2, results) // returns an array of booleans
