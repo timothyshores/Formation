@@ -96,3 +96,48 @@ const checkArithmeticExpressions = (
 Run tests. Methodically debug & analyze issues.
 
 */
+
+// Test Case 1: Basic arithmetic operations
+operands1 = [3, 5, 2, 9];
+operators = ["+", "-", "*", "/"];
+operands2 = [2, 3, 4, 3];
+results = [5, 2, 8, 3];
+console.log(
+	checkArithmeticExpressions(operands1, operators, operands2, results)
+); // Output: [true, true, true, true]
+
+// Test Case 2: Incorrect results
+operands1 = [3, 5, 2, 9];
+operators = ["+", "-", "*", "/"];
+operands2 = [2, 3, 4, 3];
+results = [6, 1, 7, 4];
+console.log(
+	checkArithmeticExpressions(operands1, operators, operands2, results)
+); // Output: [false, false, false, false]
+
+// Test Case 3: Mixed correct and incorrect results
+operands1 = [10, 15, 8, 12];
+operators = ["-", "*", "+", "/"];
+operands2 = [5, 3, 4, 4];
+results = [5, 45, 12, 2];
+console.log(
+	checkArithmeticExpressions(operands1, operators, operands2, results)
+); // Output: [true, true, true, false]
+
+// Test Case 4: Empty arrays
+operands1 = [];
+operators = [];
+operands2 = [];
+results = [];
+console.log(
+	checkArithmeticExpressions(operands1, operators, operands2, results)
+); // Output: []
+
+// Test Case 5: Division with rounding
+operands1 = [7, 10, 15, 27];
+operators = ["/", "/", "/", "/"];
+operands2 = [2, 3, 4, 5];
+results = [4, 3, 4, 5];
+console.log(
+	checkArithmeticExpressions(operands1, operators, operands2, results)
+); // Output: [true, true, true, true]
