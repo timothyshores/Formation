@@ -70,6 +70,25 @@ def check_arithmetic_expressions(operands1, operators, operands2, results): -> l
 
 */
 
+const checkArithmeticExpressions = (
+	operands1,
+	operators,
+	operands2,
+	results
+) => {
+	const booleanResults = [];
+
+	for (let i = 0; i < results.length; i++) {
+		evaluatedExpression = eval(
+			`${operands1[i]} ${operators[i]} ${operands2[i]}`
+		);
+		if (operators[i] == "/")
+			evaluatedExpression = Math.round(evaluatedExpression);
+		booleanResults.push(evaluatedExpression == results[i]);
+	}
+
+	return booleanResults;
+};
 
 /*
 
