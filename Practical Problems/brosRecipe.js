@@ -22,10 +22,14 @@ Your brother swears he could do this so much faster than you, but he's got more 
 
 🔎 EXPLORE
 List your assumptions & discoveries:
-
+- Want to return the grocery list hash map / JS object
 
 Insightful & revealing test cases:
-
+- no ingredients recipe
+- no ingredients at home
+- some ingredients at home
+- all ingredients at home
+- unneeded ingredients at home
 
 🧠 BRAINSTORM
 What approaches could work?
