@@ -14,22 +14,46 @@ Assume with every subsequent command, the user is already back on the home page,
 
 Example(s)
 let apps = ["Maps", "Music", "Photos", "Messages", "Settings"]
-let commands = ["tap", "scroll down", "scroll up", "scroll up", "scroll down", "scroll down", "tap"]
+    index   0       1        2         3            4
+            Bottom                                  Top
 
-In this example, we first tap on "Maps" in the carousel (Index 0)
+Commands
+            tap
+                                                    down
+            up
+                    up
+            down
+                                                    tap
+
+
+let commands = ["tap", "scroll down", "scroll up", "scroll up", "scroll down", "scroll down", "tap"]
+                Maps    Settings        Maps        Music       Maps            Settings        
+
+
+In this example, we first tap on "Maps" in the carousel (Index 0) 
 Scrolling down takes you to "Settings" (Index 4)
 Scrolling up takes you back to "Maps" (Index 0)
 Scrolling up takes you to "Music" (Index 1)
-Scrolling down takes you to "Maps" (index 0)
-Scrolling down again takes you to "Settings" (index 4)
+Scrolling down takes you to "Maps" (index 0 
+Scrolling down again takes you to "Settings" (index 4) <--)
 Tap to open "Settings" (index 4)
 
 Output: ["Maps", "Settings"]
 
 🔎 EXPLORE
 List your assumptions & discoveries:
+- Start at index 0 or the bottom of the carousel
+- If you scroll down at index 0 then go up to the last element in the apps array at index apps.length - 1
+- If you scroll down at the last element then you go back to the first element at index 0
 
 Insightful & revealing test cases:
+- Empty command list
+- Single "tap" command
+- Single "scroll up" command
+- Single "scroll down" command
+- Multiple "scroll up" and "scroll down" commands
+- Mix of "tap", "scroll up", and "scroll down" commands
+- Carousel with only one app
 
 🧠 BRAINSTORM
 What approaches could work?
