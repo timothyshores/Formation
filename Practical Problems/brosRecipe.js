@@ -46,6 +46,49 @@ def get_grocery_list(bros_recipe: str, ingredients_at_home:dict) -> dict:
 
 */
 
+const convertKeysToLowerCase = (obj) => {
+	for (let key in obj) {
+		obj[key.toLowerCase()] = obj[key];
+		delete obj[key];
+	}
+
+	return obj;
+};
+
+const getGroceryList = (brosRecipe, ingredientsAtHome) => {
+	const groceryList = {};
+
+	if (!brosRecipe) return groceryList;
+
+	// Convert keys in ingredientsAtHome to lowercase
+	ingredientsAtHome = convertKeysToLowerCase(ingredientsAtHome);
+
+	// Create array from brosRecipe string
+	recipeArray = brosRecipe.split(" ");
+
+	// Iterate through recipeArray
+	for (let i = 0; i < recipeArray.length / 2; i++) {
+		const lagPointer = i;
+		const leadPointer = i + recipeArray.length / 2;
+
+		const recipeIngredient = recipeArray[leadPointer].toLowerCase(); // key of ingredientsAtHome
+		const recipeQuantity = Number(recipeArray[lagPointer]); // value ingredientsAtHome
+
+		// Have the ingredient at home
+		if (ingredientsAtHome[recipeIngredient]) {
+			const atHomeQuantity = ingredientsAtHome[recipeIngredient];
+			// Recipe requires more than what we have at home. Add difference to grocery list
+			if (recipeQuantity > atHomeQuantity)
+				groceryList[recipeIngredient] = recipeQuantity - atHomeQuantity;
+		} else {
+			// We do not have the ingredient. Add full quantity to grocery list
+			groceryList[recipeIngredient] = recipeQuantity;
+		}
+	}
+
+	return groceryList;
+};
+
 /*
 
 🧪 VERIFY
