@@ -57,6 +57,24 @@ Insightful & revealing test cases:
 
 🧠 BRAINSTORM
 What approaches could work?
+Algorithm 1: 
+- Modify the array for every command
+- At index 0
+    - For scroll up call .shift() and push it to the end of the array
+    - For scroll down call .pop() and then call .unshift() to add to the front of the array
+    - For tap command .push() apps[0] into our openedApps or results array that we return
+Time: O(n * m) 
+- n is the number of elements in the commands array 
+- m is the number of times we call .unshift on the array which is a O(N) time complexity operation
+    - need to reassign all n number of elements in the app array to the next block of contiguous memory
+Space: O(k)
+- Need to store the modified apps array with k number of apps or elements in the array
+
+Algorithm 2: Keep track of current index
+Time: O(n) to loop through n number of elements in the the commands array
+Space: O(k) 
+- need a current index variable and then k is the number of apps that the user taps on
+- Max size commands array if every command was "tap"
 
 📆 PLAN
 Outline of algorithm #:
