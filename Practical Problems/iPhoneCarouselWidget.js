@@ -100,6 +100,27 @@ Return openedApps
 function simulateCarousel(apps, commands){} // returns list of str
 def simulate_carousel(apps: list[str], commands: list[str]) -> list[str]:
 
+*/
+
+const simulateCarousel = (apps, commands) => {
+	const openedApps = [];
+
+	let index = 0;
+
+	for (const command of commands) {
+		if (command === "tap") {
+			openedApps.push(apps[index]);
+		} else if (command === "scroll down") {
+			index = index === 0 ? apps.length - 1 : index - 1;
+		} else {
+			index = index === apps.length - 1 ? 0 : index + 1;
+		}
+	}
+
+	return openedApps;
+};
+
+/*
 
 🧪 VERIFY
 Run tests. Methodically debug & analyze issues.
