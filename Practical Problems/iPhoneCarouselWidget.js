@@ -126,3 +126,84 @@ const simulateCarousel = (apps, commands) => {
 Run tests. Methodically debug & analyze issues.
 
 */
+
+// All tests cases return true
+
+// Test Case 1: No commands
+const apps1 = ["Maps", "Music", "Photos", "Messages", "Settings"];
+const commands1 = [];
+console.log(simulateCarousel(apps1, commands1).toString() === [].toString());
+
+// Test Case 2: Single "tap" command
+const apps2 = ["Maps", "Music", "Photos", "Messages", "Settings"];
+const commands2 = ["tap"];
+console.log(
+	simulateCarousel(apps2, commands2).toString() === ["Maps"].toString()
+);
+
+// Test Case 3: Single "scroll up" command
+const apps3 = ["Maps", "Music", "Photos", "Messages", "Settings"];
+const commands3 = ["scroll up", "tap"];
+console.log(
+	simulateCarousel(apps3, commands3).toString() === ["Music"].toString()
+);
+
+// Test Case 4: Single "scroll down" command
+const apps4 = ["Maps", "Music", "Photos", "Messages", "Settings"];
+const commands4 = ["scroll down", "tap"];
+console.log(
+	simulateCarousel(apps4, commands4).toString() === ["Settings"].toString()
+);
+
+// Test Case 5: Multiple "scroll up" and "scroll down" commands
+const apps5 = ["Maps", "Music", "Photos", "Messages", "Settings"];
+const commands5 = [
+	"scroll down",
+	"scroll up",
+	"scroll up",
+	"scroll up",
+	"scroll up",
+	"tap",
+];
+console.log(
+	simulateCarousel(apps5, commands5).toString() === ["Messages"].toString()
+);
+
+// Test Case 6: Mix of "tap", "scroll up", and "scroll down" commands
+const apps6 = ["Maps", "Music", "Photos", "Messages", "Settings"];
+const commands6 = [
+	"tap",
+	"scroll up",
+	"tap",
+	"scroll down",
+	"tap",
+	"scroll down",
+	"tap",
+];
+console.log(
+	simulateCarousel(apps6, commands6).toString() ===
+		["Maps", "Music", "Maps", "Settings"].toString()
+);
+
+// Test Case 7: Carousel with only one app
+const apps7 = ["Maps"];
+const commands7 = ["tap", "scroll up", "scroll down", "tap"];
+console.log(
+	simulateCarousel(apps7, commands7).toString() === ["Maps", "Maps"].toString()
+);
+
+// Test Case 8: Carousel with only one app & scroll spam
+const apps8 = ["Maps"];
+const commands8 = [
+	"scroll up",
+	"scroll up",
+	"tap",
+	"scroll up",
+	"scroll up",
+	"scroll up",
+	"scroll up",
+	"tap",
+];
+console.log(
+	simulateCarousel(apps8, commands8).toString() === ["Maps", "Maps"].toString()
+);
