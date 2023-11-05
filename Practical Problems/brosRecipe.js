@@ -95,3 +95,66 @@ const getGroceryList = (brosRecipe, ingredientsAtHome) => {
 Run tests. Methodically debug & analyze issues.
 
 */
+
+// All test cases return true
+
+// Provided example test case
+let brosRecipe1 = "12 3 3 2 egGs baCon sAusaGe souRdoughBread";
+let ingredientsAtHome1 = { SauSage: 6, EGgs: 4, BACoN: 3, banAnA: 1 };
+let actualGroceryList1 = getGroceryList(brosRecipe1, ingredientsAtHome1);
+let expectedGroceryList1 = { eggs: 8, sourdoughbread: 2 };
+console.log(
+	JSON.stringify(actualGroceryList1) === JSON.stringify(expectedGroceryList1)
+);
+
+//  No ingredients in the recipe
+let brosRecipe2 = "";
+let ingredientsAtHome2 = { suGar: 2, floUR: 5 };
+let expectedGroceryList2 = {};
+console.log(
+	JSON.stringify(getGroceryList(brosRecipe2, ingredientsAtHome2)) ===
+		JSON.stringify(expectedGroceryList2)
+);
+
+// No ingredients at home
+let brosRecipe3 = "1 2 toMatO leTTucE";
+let ingredientsAtHome3 = {};
+let expectedGroceryList3 = { tomato: 1, lettuce: 2 };
+console.log(
+	JSON.stringify(getGroceryList(brosRecipe3, ingredientsAtHome3)) ===
+		JSON.stringify(expectedGroceryList3)
+);
+
+// Some ingredients at home
+let brosRecipe4 = "4 2 3 Cheese EggS bReAD";
+let ingredientsAtHome4 = { chEEse: 5, eGGs: 1, LEttUcE: 3 };
+let expectedGroceryList4 = { eggs: 1, bread: 3 };
+console.log(
+	JSON.stringify(getGroceryList(brosRecipe4, ingredientsAtHome4)) ===
+		JSON.stringify(expectedGroceryList4)
+);
+
+// All ingredients at home
+let brosRecipe5 = "2 4 1 MIlK eGGs bReaD";
+let ingredientsAtHome5 = { mILk: 2, EggS: 4, BrEAd: 1 };
+let expectedGroceryList5 = {};
+console.log(
+	JSON.stringify(getGroceryList(brosRecipe5, ingredientsAtHome5)) ===
+		JSON.stringify(expectedGroceryList5)
+);
+
+// Unneeded ingredients at home
+let brosRecipe6 = "3 2 1 apPLeS OraNgeS bANaNA";
+let ingredientsAtHome6 = {
+	SuGaR: 20,
+	aPPleS: 5,
+	CoFfeE: 5,
+	ORanGes: 3,
+	baNANa: 1,
+	TuRkEy: 10,
+};
+let expectedGroceryList6 = {};
+console.log(
+	JSON.stringify(getGroceryList(brosRecipe6, ingredientsAtHome6)) ===
+		JSON.stringify(expectedGroceryList6)
+);
