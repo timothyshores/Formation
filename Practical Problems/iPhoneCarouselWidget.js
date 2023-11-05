@@ -77,7 +77,24 @@ Space: O(k)
 - Max size commands array if every command was "tap"
 
 📆 PLAN
-Outline of algorithm #:
+Outline of algorithm #: 2
+
+Initialize an empty array called openedApps 
+If commands list array is empty then return empty openedApps array
+
+Initialize a variable using let currentIndex and set to 0
+Iterate through all commands in the command list
+- One of 3 commands
+    - "tap"
+        - Push apps[currentIndex] to openedApps array
+    - "scroll down"
+        - Move down 1 app
+            index === 0 ? apps.length - 1 : index - 1;
+    - "scroll up"
+        - Move up 1 app
+            index === apps.length - 1 ? 0 : index + 1;
+        
+Return openedApps
 
 🛠️ IMPLEMENT
 function simulateCarousel(apps, commands){} // returns list of str
