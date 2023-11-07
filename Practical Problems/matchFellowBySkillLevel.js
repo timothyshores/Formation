@@ -83,3 +83,22 @@ Run tests. Methodically debug & analyze issues.
 
 '''
 */
+
+const canMatchFellows = (skillMap) => {
+	const skillRatings = Object.values(skillMap);
+	if (skillRatings.length % 2 === 1) return false;
+
+	const unpairedFellowSkillRatings = new Set();
+
+	for (const key in skillMap) {
+		const skillRating = skillMap[key];
+
+		if (unpairedFellowSkillRatings.has(skillRating)) {
+			unpairedFellowSkillRatings.delete(skillRating);
+		} else {
+			unpairedFellowSkillRatings.add(skillRating);
+		}
+	}
+
+	return unpairedFellowSkillRatings.size === 0;
+};
