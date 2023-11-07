@@ -63,7 +63,17 @@ Space: O(n)
 
 
 📆 PLAN
-Outline of algorithm #:
+Outline of algorithm #: 3
+
+- Initialize an empty set
+- Iterate through values in input dictionary
+    // Either the skill ratings appears in the set or it does not
+    - If skill rating is NOT in the set
+        - Add the current skill rating to the set
+    - Else skill rating is in the set
+        - Remove the current skill rating to the set
+- Return if the set.size() is 0
+
 🛠️ IMPLEMENT
 function canMatchFellows(skillMap) {
 def canMatchFellows(skillMap: dict) -> bool: 
