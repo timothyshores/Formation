@@ -20,7 +20,48 @@ Insightful & revealing test cases:
 
 🧠 BRAINSTORM
 What approaches could work?
-Algorithm 1: 
+Algorithm 1: Brute force
+
+- Convert the values in the input dictionary to an array
+- Nested for loop approach. O(n^2) time complexity
+    - Delete the paired elements. Could be O(N) time if call .shift() on the first element
+- If don't find a pairing return false
+- If array is empty then return true
+
+Time: O(n^3)
+Space: O(n)
+
+Algorithm 2: Sort array
+
+- Convert the values in the input dictionary to an array
+- Call .sort() on values array
+- Loop through the values array
+    for (let i = 0; i < valuesArr.length; i += 2) {
+    
+    }
+- Check the elements at valuesArr[i] and valuesArr[i + 1]
+    - If they're the same then continue
+    - If they're different return false
+- Get to the end of the array then return true
+
+Time: O(n log n)
+Space: O(n)
+
+Algorithm 3: Use a set
+
+- Initialize an empty set
+- Iterate through values in input dictionary
+    // Either the skill ratings appears in the set or it does not
+    - If skill rating is NOT in the set
+        - Add the current skill rating to the set
+    - Else skill rating is in the set
+        - Remove the current skill rating to the set
+- Return if the set.size() is 0
+
+Time: O(n)
+Space: O(n)
+
+
 📆 PLAN
 Outline of algorithm #:
 🛠️ IMPLEMENT
