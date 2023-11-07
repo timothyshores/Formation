@@ -102,3 +102,28 @@ const canMatchFellows = (skillMap) => {
 
 	return unpairedFellowSkillRatings.size === 0;
 };
+
+// All test cases return true
+
+// 4 fellows with 2 paired skill ratings
+console.log(canMatchFellows({ oliver: 3, pixel: 3, pinky: 5, tobey: 5 })); // true
+
+// 4 fellows with the asme skill ratings
+skillMap = { oliver: 3, pixel: 3, pinky: 3, tobey: 3 };
+console.log(canMatchFellows(skillMap)); // true
+
+// Empty input dictionary
+console.log(canMatchFellows({})); // true
+
+// 1 fellow
+console.log(!canMatchFellows({ oliver: 3 })); // false
+
+// 3 fellows
+console.log(!canMatchFellows({ oliver: 3, pixel: 3, pinky: 5 })); // false
+
+// 4 fellows, 2 unpaired
+console.log(!canMatchFellows({ oliver: 3, pixel: 4, pinky: 5, tobey: 5 })); // false
+
+// 3 fellows
+skillMap = { oliver: 3, pixel: 3, pinky: 5, tobey: 5, paavo: 1 };
+console.log(!canMatchFellows(skillMap));
