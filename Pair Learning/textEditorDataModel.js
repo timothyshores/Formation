@@ -57,3 +57,69 @@ class TextEditor {
 }
 
 */
+
+class TextEditor {
+	#text;
+	#cursorPosition;
+
+	constructor(text = "") {
+		this.#text = text;
+		this.#cursorPosition = text.length;
+	}
+
+	#removeCharacterAtIndex(index) {
+		if (index < 0 || index >= this.#text.length) return;
+		this.#text =
+			this.#text.substring(0, index) + this.#text.substring(index + 1);
+	}
+
+	backspace() {
+		if (this.#cursorPosition === 0) return this;
+		this.#removeCharacterAtIndex(--this.#cursorPosition);
+		return this;
+	}
+
+	delete() {
+		if (this.#cursorPosition === this.#text.length) return this;
+		this.#removeCharacterAtIndex(this.#cursorPosition);
+		return this;
+	}
+
+	#addCharacterAtIndex(character, index) {
+		if (character.length !== 1) return;
+		this.#text =
+			this.#text.substring(0, index) + character + this.#text.substring(index);
+	}
+
+	addChar(character) {
+		this.#addCharacterAtIndex(character, this.#cursorPosition++);
+		return this;
+	}
+
+	moveBack() {
+		this.#cursorPosition = Math.max(0, this.#cursorPosition - 1);
+		return this;
+	}
+
+	moveNext() {
+		this.#cursorPosition = Math.min(
+			this.#text.length,
+			this.#cursorPosition + 1
+		);
+		return this;
+	}
+
+	moveStart() {
+		this.#cursorPosition = 0;
+		return this;
+	}
+
+	moveEnd() {
+		this.#cursorPosition = this.#text.length;
+		return this;
+	}
+
+	toString() {
+		return this.#text;
+	}
+}
