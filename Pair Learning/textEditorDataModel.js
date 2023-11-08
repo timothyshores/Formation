@@ -123,3 +123,69 @@ class TextEditor {
 		return this.#text;
 	}
 }
+
+// All test cases return true
+
+// Test initial state
+let editor = new TextEditor("Hello, World!");
+console.log(editor.toString() === "Hello, World!"); // Initial text
+
+// Test backspace in different positions
+editor.moveEnd().backspace();
+console.log(editor.toString() === "Hello, World"); // End position
+
+editor = new TextEditor("Hello, World!"); // Reset editor state
+editor.moveStart().moveNext().backspace();
+console.log(editor.toString() === "ello, World!"); // Middle position
+
+editor.moveStart().backspace();
+console.log(editor.toString() === "ello, World!"); // Start position
+
+// Test delete in different positions
+editor = new TextEditor("Hello, World!"); // Reset editor state
+editor.moveStart().delete();
+console.log(editor.toString() === "ello, World!"); // Start position
+
+editor.moveStart().moveNext().delete();
+console.log(editor.toString() === "elo, World!"); // Middle position
+
+editor.moveEnd().delete();
+console.log(editor.toString() === "elo, World!"); // End position
+
+// Test addChar in different positions
+editor = new TextEditor("Hello, World!"); // Reset editor state
+editor.moveStart().addChar("A");
+console.log(editor.toString() === "AHello, World!"); // Start position
+
+editor.moveStart().moveNext().addChar("B");
+console.log(editor.toString() === "ABHello, World!"); // Middle position
+
+editor.moveEnd().addChar("C");
+console.log(editor.toString() === "ABHello, World!C"); // End position
+
+// Complex operations and chaining
+const complexEditor = new TextEditor("Complex");
+complexEditor
+	.moveStart()
+	.delete()
+	.moveEnd()
+	.backspace()
+	.addChar("!")
+	.moveStart()
+	.addChar("C");
+console.log(complexEditor.toString() === "Comple!"); // Complex sequence
+
+const chainingEditor = new TextEditor("Chain");
+chainingEditor
+	.moveStart()
+	.delete()
+	.addChar("C")
+	.moveEnd()
+	.backspace()
+	.addChar("n");
+console.log(chainingEditor.toString() === "Chain"); // Method chaining
+
+// Test on an empty editor
+const emptyEditor = new TextEditor();
+emptyEditor.addChar("A").backspace().delete().moveBack().moveNext();
+console.log(emptyEditor.toString() === ""); // Empty editor
