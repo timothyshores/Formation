@@ -13,15 +13,37 @@ class Node {
 
 /*
 
+Convert a linked list into a string
+
+Examples
+toArray(new Node(1)) === "1"
+toArray(new Node(1, new Node(2))) === "1 -> 2"
+toArray(new Node(1, new Node(2, new Node(3)))) === "1 -> 2 -> 3"
+
+*/
+const toString = (head) => {
+	if (!head) return "<empty>";
+
+	let parts = [];
+	while (head) {
+		parts.push(head.value);
+		head = head.next;
+	}
+
+	return parts.join(" -> ");
+};
+
+/*
+
 Convert a linked list into an array
 
 Examples
-arrayify(new Node(1)) === [1]
-arrayify(new Node(1, new Node(2))) === [1, 2]
-arrayify(new Node(1, new Node(2, new Node(3)))) === [1, 2, 3]
+toArray(new Node(1)) === [1]
+toArray(new Node(1, new Node(2))) === [1, 2]
+toArray(new Node(1, new Node(2, new Node(3)))) === [1, 2, 3]
 
 */
-const arrayify = (head) => {
+const toArray = (head) => {
 	let pointer = head;
 	const array = [];
 
