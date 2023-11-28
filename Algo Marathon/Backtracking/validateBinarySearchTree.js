@@ -104,3 +104,76 @@ const isValidBST = (root) => {
 
 	return traverseTree(root, Number.NEGATIVE_INFINITY, Number.POSITIVE_INFINITY);
 };
+
+console.log(isValidBST(null));
+console.log(isValidBST(new Node(5)));
+
+//   5
+// 1
+console.log(isValidBST(new Node(5, new Node(1))));
+
+//   5
+// 10
+console.log(isValidBST(new Node(5, new Node(10))) === false);
+
+//  5
+//   10
+console.log(isValidBST(new Node(5, null, new Node(10))));
+
+//  5
+//   1
+console.log(isValidBST(new Node(5, null, new Node(1))) === false);
+
+//   5
+// 1  10
+console.log(isValidBST(new Node(5, new Node(1), new Node(10))));
+
+//   5
+// 10  1
+console.log(isValidBST(new Node(5, new Node(10), new Node(1))) === false);
+
+//      10
+//   5     15
+// 3   7 12   17
+let root = new Node(
+	10,
+	new Node(5, new Node(3), new Node(7)),
+	new Node(15, new Node(12), new Node(17))
+);
+console.log(isValidBST(root));
+
+//      10
+//   5     15
+// 2   16 3   20
+root = new Node(
+	10,
+	new Node(5, new Node(2), new Node(16)),
+	new Node(10, new Node(3), new Node(20))
+);
+console.log(isValidBST(root) === false);
+
+//      10
+//   15     20
+// 30  40  1  12
+root = new Node(
+	10,
+	new Node(15, new Node(30), new Node(40)),
+	new Node(20, new Node(1), new Node(12))
+);
+console.log(isValidBST(root) === false);
+
+//   10
+// 1    20
+//  4 15
+root = new Node(10, new Node(1, null, new Node(4)), new Node(20, new Node(15)));
+console.log(isValidBST(root));
+
+//   10
+// 1    20
+//  99 99
+root = new Node(
+	10,
+	new Node(1, null, new Node(99)),
+	new Node(20, new Node(99))
+);
+console.log(isValidBST(root) === false);
