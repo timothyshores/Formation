@@ -34,14 +34,30 @@ isValidBST(root) == False
 
 🔎 EXPLORE
 List your assumptions & discoveries:
+- All values in the left subtree are less than the value contained within the current node
+- All values in the right subtree are greater than the value contained within the current node
+- Want to check that if a node has a left child that the left child node's value is less than the current node
+- Want to check that if a node has a left right that the right child node's value is less than the current node
 
 Insightful & revealing test cases:
 
+  2 <--- root
+1   3
+isValidBST(root) == True
+
+  1 <--- root
+2   3
+isValidBST(root) == False because 2 is the root node's left child node and 2 > 1
+
+  3 <--- root
+1   2
+isValidBST(root) == False because 2 is the root node's right child node and 3 > 2
+
 🧠 BRAINSTORM
 What approaches could work?
-Algorithm 1: 
-Time:
-Space: 
+Algorithm 1: DFS track all values in a path to the root. If there's larger value return false. If all paths meet this condition than return true
+Time: O(N) to visit N number of nodes
+Space: O(N) where N is the length of the longest path
 
 📆 PLAN
 Outline of algorithm #:
