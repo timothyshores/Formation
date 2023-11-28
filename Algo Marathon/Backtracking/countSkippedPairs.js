@@ -51,3 +51,34 @@ function countSkippedPairs(word) {
 def countSkippedPairs(word: str) -> int:
 
 */
+
+const countSkippedPairs = (word) => {
+	if (word.length < 3) return 0;
+	if (word[0] === word[2]) return 1 + countSkippedPairs(word.substring(1));
+	return countSkippedPairs(word.substring(1));
+};
+
+// All test cases return true
+console.log(countSkippedPairs("") == 0);
+console.log(countSkippedPairs("a") == 0);
+console.log(countSkippedPairs("x") == 0);
+console.log(countSkippedPairs("ax") == 0);
+console.log(countSkippedPairs("ax") == 0);
+console.log(countSkippedPairs("xa") == 0);
+console.log(countSkippedPairs("hi") == 0);
+console.log(countSkippedPairs("axx") == 0);
+console.log(countSkippedPairs("axA") == 0);
+console.log(countSkippedPairs("Axa") == 0);
+console.log(countSkippedPairs("aaa") == 1);
+console.log(countSkippedPairs("axa") == 1);
+console.log(countSkippedPairs("AxA") == 1);
+console.log(countSkippedPairs("axxa") == 0);
+console.log(countSkippedPairs("axaa") == 1);
+console.log(countSkippedPairs("aaxa") == 1);
+console.log(countSkippedPairs("axaz") == 1);
+console.log(countSkippedPairs("axbx") == 1);
+console.log(countSkippedPairs("axax") == 2);
+console.log(countSkippedPairs("hihih") == 3);
+console.log(countSkippedPairs("ihihhh") == 3);
+console.log(countSkippedPairs("ihjxhh") == 0);
+console.log(countSkippedPairs("aaaaaaaa") == 6);
