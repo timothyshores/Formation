@@ -33,9 +33,19 @@ countSkippedPairs("axax") == 2
 
 🧠 BRAINSTORM
 What approaches could work?
+Algorithm 1: Check first and third characters. Add 1 to the count if they're equal. Call the function recursively excluding the first character.
+Time: O(N)
+Space: O(1) assuming that the stack in memory is not included. Only tracking the current count which is an int takes O(1) constant space.
 
 📆 PLAN
-Outline of algorithm #:
+Outline of algorithm #: 1
+
+- If the length of the string is less than 3 e.g. 0, 1 or 2 return 0
+- If the length of the string is 3 characters or more
+    - Check the first and the third character in the word
+        - If they're the same return 1 + then call the function recursively excluding the first character
+        - If they're NOT the same then then call the function recursively excluding the first character
+
 🛠️ IMPLEMENT
 function countSkippedPairs(word) {
 def countSkippedPairs(word: str) -> int:
