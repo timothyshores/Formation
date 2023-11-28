@@ -75,3 +75,21 @@ const slicingWithHelper = (word) => {
 
 	return helper(word);
 };
+
+const indicesNoHelper = (word, start = 0, end = word.length - 1) => {
+	if (word[start] === "(" && word[end] === ")")
+		return word.substring(start, end + 1);
+	if (word[start] !== "(") return indicesNoHelper(word, start + 1, end);
+	if (word[end] !== ")") return indicesNoHelper(word, start, end - 1);
+};
+
+const indicesWithHelper = (word) => {
+	const helper = (start, end) => {
+		if (word[start] === "(" && word[end] === ")")
+			return word.substring(start, end + 1);
+		if (word[start] !== "(") return helper(start + 1, end);
+		if (word[end] !== ")") return helper(start, end - 1);
+	};
+
+	return helper(0, word.length - 1);
+};
