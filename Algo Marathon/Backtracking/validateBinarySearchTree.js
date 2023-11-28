@@ -60,7 +60,17 @@ Time: O(N) to visit N number of nodes
 Space: O(N) where N is the length of the longest path
 
 📆 PLAN
-Outline of algorithm #:
+Outline of algorithm #: 1
+- Initialize a max and min variable and set it to the root node's value
+- If the current node has a left node then traverse left
+    - Make sure that the left node's value is less than the current node's value and the current min
+    - Continue iterating left until we've reached the leftmost leaf node
+    - If at any time we come across a left node who's value is greater than it's parent or any of it's parents then return false
+- Iterate through the right tree after we finish iterating through the left subtree
+    - Make sure that the right node's value is greater than the current node's value and the current max
+    - Continue iterating right until we've reached the rightmost leaf node
+    - If at any time we come across a left node who's value is greater than it's parent or any of it's parents then return false 
+- After all nodes have been visited then return true
 
 🛠️ IMPLEMENT
 function isValidBST(root) {
@@ -71,3 +81,26 @@ Run tests. Methodically debug & analyze issues.
 
 
 */
+
+class Node {
+	constructor(val, left = null, right = null) {
+		this.value = val;
+		this.left = left;
+		this.right = right;
+	}
+}
+
+const isValidBST = (root) => {
+	const traverseTree = (current, min, max) => {
+		if (!current) return true;
+
+		if (current.value < min || current.value > max) return false;
+
+		return (
+			traverseTree(current.left, min, current.value) &&
+			traverseTree(current.right, current.value, max)
+		);
+	};
+
+	return traverseTree(root, Number.NEGATIVE_INFINITY, Number.POSITIVE_INFINITY);
+};
