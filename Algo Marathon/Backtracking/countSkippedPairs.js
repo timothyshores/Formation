@@ -62,16 +62,16 @@ const sliceNoHelper = (word) => {
 };
 
 const sliceWithHelper = (word) => {
-	const helper = (index = 0) => {
-		if (word.length - index < 3) return 0;
-		if (word[index] === word[index + 2]) {
-			return 1 + helper(index + 1);
+	const helper = (str) => {
+		if (str.length < 3) return 0;
+		if (str[0] === str[2]) {
+			return 1 + helper(str.substring(1));
 		} else {
-			return helper(index + 1);
+			return helper(str.substring(1));
 		}
 	};
 
-	return helper();
+	return helper(word);
 };
 
 const indicesNoHelper = (word, index = 0) => {
