@@ -36,7 +36,15 @@ Time: O(N)
 Space: O(N) where N is the length of the string
 
 📆 PLAN
-Outline of algorithm #:
+Outline of algorithm #: 1
+
+- Base Case
+    - The first character is '(' and the last character is ')'
+    - Return the current string
+- Recursive Case
+    - If the first character is NOT '(' then call the function recursively excluding the first character
+    - If the last character is NOT ')' then call the function recursively excluding the last character
+
 🛠️ IMPLEMENT
 function parenBit(word) {
 def parenBit(word: str) -> str:
@@ -45,3 +53,25 @@ def parenBit(word: str) -> str:
 Run tests. Methodically debug & analyze issues.
 
 */
+
+const slicingNoHelper = (word) => {
+	const firstCharacter = word[0];
+	const lastCharacter = word[word.length - 1];
+
+	if (firstCharacter === "(" && lastCharacter === ")") return word;
+	if (firstCharacter !== "(") return slicingNoHelper(word.substring(1));
+	if (lastCharacter !== ")")
+		return slicingNoHelper(word.substring(0, word.length - 1));
+};
+
+const slicingWithHelper = (word) => {
+	const helper = (str) => {
+		const firstCharacter = str[0];
+		const lastCharacter = str[str.length - 1];
+		if (firstCharacter === "(" && lastCharacter === ")") return str;
+		if (firstCharacter !== "(") return helper(str.substring(1));
+		if (lastCharacter !== ")") return helper(str.substring(0, str.length - 1));
+	};
+
+	return helper(word);
+};
