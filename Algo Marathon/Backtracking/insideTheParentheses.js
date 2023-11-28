@@ -14,14 +14,26 @@ Notes
 
 🔎 EXPLORE
 List your assumptions & discoveries:
+- Want to return the substring that is the innermost () and the characters in-between the parentheses
 
 Insightful & revealing test cases:
 
+parenBit("()") == "()"
+parenBit("(x)") == "(x)"
+parenBit("x(hello)") == "(hello)"
+parenBit("(xy)1") == "(xy)"
+parenBit("x(hello)y") == "(hello)"
+parenBit("x(hello)yx") == "(hello)"
+parenBit("x(hello)xy") == "(hello)"
+parenBit("yx(hello)y") == "(hello)"
+parenBit("xxxx(hello)") == "(hello)"
+parenBit("(hello)yyyyy") == "(hello)"
+
 🧠 BRAINSTORM
 What approaches could work?
-Algorithm 1: 
-Time: 
-Space: 
+Algorithm 1: Use a helper function and the .substring built in String method
+Time: O(N)
+Space: O(N) where N is the length of the string
 
 📆 PLAN
 Outline of algorithm #:
