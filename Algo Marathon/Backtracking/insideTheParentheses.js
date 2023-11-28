@@ -93,3 +93,61 @@ const indicesWithHelper = (word) => {
 
 	return helper(0, word.length - 1);
 };
+
+// All test cases return true
+
+// // slicingNoHelper test cases
+console.log(slicingNoHelper("xyz(abc)123") === "(abc)");
+console.log(slicingNoHelper("x(hello)") === "(hello)");
+console.log(slicingNoHelper("(xy)1") === "(xy)");
+console.log(slicingNoHelper("not really (possible)") === "(possible)");
+console.log(slicingNoHelper("(abc)") === "(abc)");
+console.log(slicingNoHelper("(abc)xyz") === "(abc)");
+console.log(slicingNoHelper("(abc)x") === "(abc)");
+console.log(slicingNoHelper("(x)") === "(x)");
+console.log(slicingNoHelper("()") === "()");
+console.log(slicingNoHelper("res (ipsa) loquitor") === "(ipsa)");
+console.log(slicingNoHelper("hello(not really)there") === "(not really)");
+console.log(slicingNoHelper("ab(ab)ab") === "(ab)");
+
+// slicingWithHelper test cases
+console.log(slicingWithHelper("xyz(abc)123") === "(abc)");
+console.log(slicingWithHelper("x(hello)") === "(hello)");
+console.log(slicingWithHelper("(xy)1") === "(xy)");
+console.log(slicingWithHelper("not really (possible)") === "(possible)");
+console.log(slicingWithHelper("(abc)") === "(abc)");
+console.log(slicingWithHelper("(abc)xyz") === "(abc)");
+console.log(slicingWithHelper("(abc)x") === "(abc)");
+console.log(slicingWithHelper("(x)") === "(x)");
+console.log(slicingWithHelper("()") === "()");
+console.log(slicingWithHelper("res (ipsa) loquitor") === "(ipsa)");
+console.log(slicingWithHelper("hello(not really)there") === "(not really)");
+console.log(slicingWithHelper("ab(ab)ab") === "(ab)");
+
+// indicesNoHelper test cases
+console.log(indicesNoHelper("xyz(abc)123") === "(abc)");
+console.log(indicesNoHelper("x(hello)") === "(hello)");
+console.log(indicesNoHelper("(xy)1") === "(xy)");
+console.log(indicesNoHelper("not really (possible)") === "(possible)");
+console.log(indicesNoHelper("(abc)") === "(abc)");
+console.log(indicesNoHelper("(abc)xyz") === "(abc)");
+console.log(indicesNoHelper("(abc)x") === "(abc)");
+console.log(indicesNoHelper("(x)") === "(x)");
+console.log(indicesNoHelper("()") === "()");
+console.log(indicesNoHelper("res (ipsa) loquitor") === "(ipsa)");
+console.log(indicesNoHelper("hello(not really)there") === "(not really)");
+console.log(indicesNoHelper("ab(ab)ab") === "(ab)");
+
+// indicesWithHelper test cases
+console.log(indicesWithHelper("xyz(abc)123") === "(abc)");
+console.log(indicesWithHelper("x(hello)") === "(hello)");
+console.log(indicesWithHelper("(xy)1") === "(xy)");
+console.log(indicesWithHelper("not really (possible)") === "(possible)");
+console.log(indicesWithHelper("(abc)") === "(abc)");
+console.log(indicesWithHelper("(abc)xyz") === "(abc)");
+console.log(indicesWithHelper("(abc)x") === "(abc)");
+console.log(indicesWithHelper("(x)") === "(x)");
+console.log(indicesWithHelper("()") === "()");
+console.log(indicesWithHelper("res (ipsa) loquitor") === "(ipsa)");
+console.log(indicesWithHelper("hello(not really)there") === "(not really)");
+console.log(indicesWithHelper("ab(ab)ab") === "(ab)");
