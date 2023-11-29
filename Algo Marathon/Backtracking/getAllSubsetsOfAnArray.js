@@ -8,21 +8,21 @@ getAllSubsets(['A', 'B', 'C]) => [], ['A'], ['B'], ['C], ['A', 'B'], ['A', 'C], 
 
 */
 
-const getAllSubsets = (nums) => {
+const getAllSubsets = (arr) => {
 	const subsetsArr = [];
 
 	const helper = (index = 0, currentSubset = []) => {
-		// Base case when all numbers have been visited
-		if (index === nums.length) {
+		// Base case when all elements have been visited
+		if (index === arr.length) {
 			subsetsArr.push([...currentSubset]);
 			return;
 		}
 
-		// Include the current number in the subset
-		currentSubset.push(nums[index]);
+		// Include the current element in the subset
+		currentSubset.push(arr[index]);
 		helper(index + 1, currentSubset);
 
-		// Exclude the current number in the subset
+		// Exclude the current element in the subset
 		currentSubset.pop();
 		helper(index + 1, currentSubset);
 	};
