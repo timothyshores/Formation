@@ -42,3 +42,25 @@ const printAllSubsequencesUsingSlicing = (word) => {
 
 	helper();
 };
+
+const printAllSubsequencesUsingIndices = (word) => {
+	const helper = (index = 0, currentSubsequence = "") => {
+		// Base case: when index is word.length all characters have been recursed called recursively
+		if (index === word.length) {
+			console.log(currentSubsequence);
+			return;
+		}
+
+		// Recursive case 1: include the current character
+		helper(index + 1, currentSubsequence + word[index]);
+
+		// Recursive case 2: exclude the current character
+		helper(index + 1, currentSubsequence);
+	};
+
+	helper();
+};
+
+// Test cases
+printAllSubsequencesUsingSlicing("ABCD");
+printAllSubsequencesUsingIndices("ABCD");
