@@ -46,3 +46,13 @@ const getAllSubsetsOfLengthK = (arr, k) => {
 	helper(0);
 	return subsetsArr;
 };
+
+// Test cases
+console.log(getAllSubsetsOfLengthK([1, 2, 3], 0)); // [[]]
+console.log(getAllSubsetsOfLengthK([1, 2, 3], 1)); // [[ 1 ], [ 2 ], [ 3 ]]
+console.log(getAllSubsetsOfLengthK([1, 2, 3], 2)); // [[ 1, 2 ], [ 1, 3 ], [ 2, 3 ]]
+console.log(getAllSubsetsOfLengthK([1, 2, 3], 3)); // [[1, 2, 3]]
+console.log(getAllSubsetsOfLengthK(["A", "B", "C"], 0)); // [[]]
+console.log(getAllSubsetsOfLengthK(["A", "B", "C"], 1)); // [[ 'A' ], [ 'B' ], [ 'C' ]]
+console.log(getAllSubsetsOfLengthK(["A", "B", "C"], 2)); // [[ 'A', 'B' ], [ 'A', 'C' ], [ 'B', 'C' ]]
+console.log(getAllSubsetsOfLengthK(["A", "B", "C"], 3)); // [['A', 'B', 'C']]
