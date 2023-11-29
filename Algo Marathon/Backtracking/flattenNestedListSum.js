@@ -23,14 +23,24 @@ sumNestedListWithDepth([4, [2, [3]]]) == 26 because 4+(2+ (3*3))*2
 
 🔎 EXPLORE
 List your assumptions & discoveries:
+- Return the sum of all values within the array
 
 Insightful & revealing test cases:
 
 🧠 BRAINSTORM
 What approaches could work?
+Algorithm 1: Recursion
+Time: O(N)
+Space: O(1) assuming that the call stack in memory is not counted or else it would be O(N)
 
 📆 PLAN
-Outline of algorithm #:
+Outline of algorithm #: 1
+- Initialize a sum variable to 0
+- For loop iterate through the array
+    - If the current element add it to the sum
+    - If the current element is an array then call the function recursively and pass in the array
+- After all elements have been visited then return the sum
+
 🛠️ IMPLEMENT
 function sumNestedList(list) {
 function sumNestedListWithDepth(list) {
