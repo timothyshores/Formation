@@ -83,3 +83,32 @@ const sumNestedListWithDepth = (array, depth = 1) => {
 
 	return sum * depth;
 };
+
+// All test cases return true
+console.log(sumNestedList([1]) == 1);
+console.log(sumNestedList([[1]]) == 1);
+console.log(sumNestedList([[[1]]]) == 1);
+console.log(sumNestedList([1, 2, 3]) == 6);
+console.log(sumNestedList([[[[]]]]) == 0);
+console.log(sumNestedList([[[[1]]]]) == 1);
+console.log(sumNestedList([1, [2, 3]]) == 6);
+console.log(sumNestedList([1, [2, [3]]]) == 6);
+console.log(sumNestedList([1, [1, 2, 3], 3]) == 10);
+console.log(sumNestedList([1, [1, [1, [1, [1]]]]]) == 5);
+console.log(sumNestedList([1, [1, [2], [], [], [], 3], 3]) == 10);
+console.log(sumNestedList([1, [1, [2], [], [[[[]]]], [], 3], 3]) == 10);
+
+console.log(sumNestedListWithDepth([1]) == 1);
+console.log(sumNestedListWithDepth([[1]]) == 2);
+console.log(sumNestedListWithDepth([[[1]]]) == 6);
+console.log(sumNestedListWithDepth([[[[]]]]) == 0);
+console.log(sumNestedListWithDepth([1, 2, 3]) == 6);
+console.log(sumNestedListWithDepth([[[[1]]]]) == 24);
+console.log(sumNestedListWithDepth([1, [2, 3]]) == 11);
+console.log(sumNestedListWithDepth([1, [2, [3]]]) == 23);
+console.log(sumNestedListWithDepth([1, [1, 2, 3], 3]) == 16);
+console.log(sumNestedListWithDepth([1, [1, [1, [1, [1]]]]]) == 153);
+console.log(sumNestedListWithDepth([1, [1, [2], [], [], [], 3], 3]) == 24);
+console.log(
+	sumNestedListWithDepth([1, [1, [2], [], [[[[]]]], [], 3], 3]) == 24
+);
