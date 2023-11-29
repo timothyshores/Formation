@@ -52,3 +52,34 @@ def sumNestedListWithDepth(nestedList: list[int]) -> int:
 Run tests. Methodically debug & analyze issues.
 
 */
+
+const sumNestedList = (list) => {
+	let sum = 0;
+
+	const helper = (arr) => {
+		for (const element of arr) {
+			if (Number.isInteger(element)) {
+				sum += element;
+			} else {
+				helper(element);
+			}
+		}
+	};
+
+	helper(list);
+	return sum;
+};
+
+const sumNestedListWithDepth = (array, depth = 1) => {
+	let sum = 0;
+
+	for (const element of array) {
+		if (Number.isInteger(element)) {
+			sum += element;
+		} else {
+			sum += sumNestedListWithDepth(element, depth + 1);
+		}
+	}
+
+	return sum * depth;
+};
