@@ -71,3 +71,13 @@ const atoi = (intAsString) => {
 	helper(intAsString.length - 1);
 	return result;
 };
+
+// All test cases return true
+console.log(atoi("0") == 0);
+console.log(atoi("4") == 4);
+console.log(atoi("-1") == -1);
+console.log(atoi("007") == 7);
+console.log(atoi("123") == 123);
+console.log(atoi("600") == 600);
+console.log(atoi("-234") == -234);
+console.log(atoi("00500") == 500);
