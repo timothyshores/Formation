@@ -21,4 +21,28 @@ Constraints:
 
 */
 
-const getAllSubsetsOfLengthK = (arr, k) => {};
+const getAllSubsetsOfLengthK = (arr, k) => {
+	const subsetsArr = [];
+
+	const helper = (index = 0, currentSubset = []) => {
+		// Base case: When the current subset has length K
+		if (currentSubset.length === k) {
+			subsetsArr.push([...currentSubset]);
+			return;
+		}
+
+		// Base case: When all elements have been visited
+		if (index === arr.length) return;
+
+		// Recursive case: Include the current element in the subset
+		currentSubset.push(arr[index]);
+		helper(index + 1, currentSubset);
+
+		// Recursive case: Exclude the current element in the subset
+		currentSubset.pop();
+		helper(index + 1, currentSubset);
+	};
+
+	helper(0);
+	return subsetsArr;
+};
