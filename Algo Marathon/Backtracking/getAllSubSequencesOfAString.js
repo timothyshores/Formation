@@ -43,3 +43,18 @@ def getAllSubsequences(word: str) -> list[str]:
 Run tests. Methodically debug & analyze issues.
 
 */
+
+const getAllSubsequences = (word) => {
+	const subsequences = []; // []
+	const getSubsequence = (index = 0, subsequence = "") => {
+		if (index === word.length) {
+			if (subsequence.length > 0) subsequences.push(subsequence);
+			return;
+		}
+		getSubsequence(index + 1, subsequence + word[index]);
+		getSubsequence(index + 1, subsequence);
+	};
+
+	getSubsequence();
+	return subsequences;
+};
