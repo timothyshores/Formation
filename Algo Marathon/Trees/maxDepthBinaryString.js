@@ -24,6 +24,26 @@ EXAMPLE(S)
       \
        0
 
+Brainstorm
+What approaches could work?
+Algorithm 1: Use a stack to track open and close parenthesis
+Time Complexity: O(N)
+Best Case Space Complexity: O(1) when the first character is the close parenthesis
+Average Case Space Complexity: O(N/2) for valid binary trees strings with equal open and close parenthesis
+Worst Case Space Complexity: O(N) where N represents the number of open parenthesis
+
+What approaches could work?
+Algorithm 2: Use a counter variable to track open and close parenthesis
+Time Complexity: O(N)
+Space Complexity: O(1) to store a maxDepth and currentDepth counts
+
+Pseudocode Plan: 
+- we could perform this "recursion" in a for loop 
+- use a stack
+    - empty stack -> made it to the midpoint or starting out on the branch 
+    - length of stack -> can potentially be used to get the max depth
+    - append/pop -> append "(" and pop ")" 
+
 FUNCTION SIGNATURE
 def maxDepth(tree: str) -> int:
 */
