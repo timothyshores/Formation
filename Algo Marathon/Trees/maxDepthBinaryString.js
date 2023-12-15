@@ -67,6 +67,27 @@ const maxDepthStack = (str) => {
 	return stack.length === 0 ? maxDepth - 1 : -1;
 };
 
+const maxDepthCounter = (str) => {
+	if (!str) return -1;
+
+	let currDepth = 0;
+	let maxDepth = 0;
+
+	for (const char of str) {
+		if (char === "(") {
+			currDepth += 1;
+			maxDepth = Math.max(maxDepth, currDepth);
+		} else if (char === ")") {
+			if (currDepth === 0) return -1;
+			currDepth -= 1;
+		} else {
+			continue;
+		}
+	}
+
+	return currDepth === 0 ? maxDepth - 1 : -1;
+};
+
 // All test cases return true
 
 // Test Cases for maxDepthStack
