@@ -99,3 +99,13 @@ console.log(maxDepthStack("((00)(00))") == 1);
 console.log(maxDepthStack("(((00)0)0)") == 2);
 console.log(maxDepthStack("(((00)(00)0)0)") == 2);
 console.log(maxDepthStack("(((00)(00)0)(00)0)") == 2);
+
+// Test Cases for maxDepthCounter
+console.log(maxDepthCounter("") === -1);
+console.log(maxDepthCounter("(00)") === 0);
+console.log(maxDepthCounter("((00)") === -1);
+console.log(maxDepthCounter("(00))") === -1);
+console.log(maxDepthCounter("((00)(00))") == 1);
+console.log(maxDepthCounter("(((00)0)0)") == 2);
+console.log(maxDepthCounter("(((00)(00)0)0)") == 2);
+console.log(maxDepthCounter("(((00)(00)0)(00)0)") == 2);
