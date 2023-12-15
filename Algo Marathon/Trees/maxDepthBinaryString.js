@@ -66,3 +66,15 @@ const maxDepthStack = (str) => {
 
 	return stack.length === 0 ? maxDepth - 1 : -1;
 };
+
+// All test cases return true
+
+// Test Cases for maxDepthStack
+console.log(maxDepthStack("") === -1);
+console.log(maxDepthStack("(00)") === 0);
+console.log(maxDepthStack("((00)") === -1);
+console.log(maxDepthStack("(00))") === -1);
+console.log(maxDepthStack("((00)(00))") == 1);
+console.log(maxDepthStack("(((00)0)0)") == 2);
+console.log(maxDepthStack("(((00)(00)0)0)") == 2);
+console.log(maxDepthStack("(((00)(00)0)(00)0)") == 2);
