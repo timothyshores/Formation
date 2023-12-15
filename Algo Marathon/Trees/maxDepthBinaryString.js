@@ -47,3 +47,22 @@ Pseudocode Plan:
 FUNCTION SIGNATURE
 def maxDepth(tree: str) -> int:
 */
+
+const maxDepthStack = (str) => {
+	const stack = [];
+	let maxDepth = 0;
+
+	for (const char of str) {
+		if (char === "(") {
+			stack.push("(");
+			maxDepth = Math.max(maxDepth, stack.length);
+		} else if (char === ")") {
+			if (stack.length === 0) return -1;
+			stack.pop("");
+		} else {
+			continue;
+		}
+	}
+
+	return stack.length === 0 ? maxDepth - 1 : -1;
+};
