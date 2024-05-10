@@ -92,3 +92,33 @@ const pairStarsIndex = (word) => {
 Run tests. Methodically debug & analyze issues.
 
 */
+
+// All test cases return true
+
+// String slicing implementation
+console.log(pairStarsSlicing("") == "");
+console.log(pairStarsSlicing("a") == "a");
+console.log(pairStarsSlicing("A") == "A");
+console.log(pairStarsSlicing("1") == "1");
+console.log(pairStarsSlicing("$") == "$");
+console.log(pairStarsSlicing("aa") == "a*a");
+console.log(pairStarsSlicing("AA") == "A*A");
+console.log(pairStarsSlicing("11") == "1*1");
+console.log(pairStarsSlicing("$$") == "$*$");
+console.log(pairStarsSlicing("ab") == "ab");
+console.log(pairStarsSlicing("aA") == "aA");
+console.log(pairStarsSlicing("1$") == "1$");
+
+// Index based inner helper function implementation
+console.log(pairStarsIndex("") == "");
+console.log(pairStarsIndex("a") == "a");
+console.log(pairStarsIndex("A") == "A");
+console.log(pairStarsIndex("1") == "1");
+console.log(pairStarsIndex("$") == "$");
+console.log(pairStarsIndex("aa") == "a*a");
+console.log(pairStarsIndex("AA") == "A*A");
+console.log(pairStarsIndex("11") == "1*1");
+console.log(pairStarsIndex("$$") == "$*$");
+console.log(pairStarsIndex("ab") == "ab");
+console.log(pairStarsIndex("aA") == "aA");
+console.log(pairStarsIndex("1$") == "1$");
