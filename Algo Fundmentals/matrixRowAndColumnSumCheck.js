@@ -67,7 +67,25 @@ After all row and column sums have been checked then return true
 
 */
 
-const checkSums = (matrix, rowSums, columnSums) => {};
+const checkSums = (matrix, rowSums, columnSums) => {
+  const rows = matrix.length;
+  const columns = matrix[0].length;
+
+  if (rows !== rowSums.length) return false;
+  if (columns !== columnSums.length) return false;
+
+  for (let i = 0; i < rows; i++) {
+    const rowSum = matrix[i].reduce((a, b) => a + b, 0);
+    if (rowSum !== rowSums[i]) return false;
+  }
+
+  for (let i = 0; i < columns; i++) {
+    const columnSum = matrix.reduce((acc, row) => acc + row[i], 0);
+    if (columnSum !== columnSums[i]) return false;
+  }
+
+  return true;
+};
 
 /*
 
