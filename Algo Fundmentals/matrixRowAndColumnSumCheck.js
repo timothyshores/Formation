@@ -29,13 +29,42 @@ will return false.
 
 🔎 EXPLORE
 List your assumptions & discoveries:
+
+- Row sums is an array of integers
+    - First element should represent the sum of the elements in the first row
+    - Second element should represent the sum of the elements in the second row
+- Column sums is an array of integers
+    - First element should represent the sum of the elements in the first column
+    - Second element should represent the sum of the elements in the second column
+
+- If numbers of rows in the matrix !== rowSums.length then return false
+- If numbers of columns in the matrix !== rowSums.length then return false
+
+Insightful & revealing test cases:
  
 
 🧠 BRAINSTORM
 What approaches could work?
+Algorithm 1: Iterative nested for loop through all rows and columns. Compare sums to corresponding index in rowSums and then columnSums
+Time: O(M * N) where M is the number of rows and N is the number of columns
+Space: O(1) Return false if any row or column sum does NOT match the corresponding element in rowSum or columnSum
  
 📆 PLAN
-Outline of algorithm #:
+Outline of algorithm #: 1
+ 
+- If number of rows !== rowSums.length return false
+- If number of columns !== columnSums.length return false
+
+Iterate through each row and calculuate the sum of all elements in the given row
+- Compare the calculuate row sum to the corresponding element in rowSums input
+    - If values are NOT equal then return false
+
+Iterate through each row and calculuate the sum of all elements in the given column
+- Compare the calculuate row column to the corresponding element in rowColumns input
+    - If values are NOT equal then return false
+
+After all row and column sums have been checked then return true
+
 */
 
 const checkSums = (matrix, rowSums, columnSums) => {};
