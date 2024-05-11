@@ -93,3 +93,71 @@ const checkSums = (matrix, rowSums, columnSums) => {
 Run tests. Methodically debug & analyze issues.
 
 */
+
+// All test cases return true
+
+console.log(
+  checkSums(
+    [
+      [1, 2],
+      [3, 4],
+    ],
+    [3, 7],
+    [4, 6]
+  ) === true
+);
+
+console.log(
+  checkSums(
+    [
+      [1, 2, 3],
+      [4, 5, 6],
+    ],
+    [6, 15],
+    [5, 7, 9]
+  ) === true
+);
+
+console.log(
+  checkSums(
+    [
+      [1, 2],
+      [3, 4],
+    ],
+    [3, 7],
+    [4, 7]
+  ) === false
+);
+
+console.log(
+  checkSums(
+    [
+      [1, 2],
+      [3, 4],
+    ],
+    [3, 8],
+    [4, 6]
+  ) === false
+);
+
+console.log(
+  checkSums(
+    [
+      [1, 2],
+      [3, 4],
+    ],
+    [3, 7],
+    [4]
+  ) === false
+);
+
+console.log(
+  checkSums(
+    [
+      [1, 2],
+      [3, 4],
+    ],
+    [3, 5, 7],
+    [4, 6]
+  ) === false
+);
