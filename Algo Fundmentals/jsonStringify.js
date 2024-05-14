@@ -20,9 +20,39 @@ A brief note about the input and output. They look very similar, but the input i
 🔎 EXPLORE
 List your assumptions & discoveries:
 
+Want to iterate over all key value pairs
+Input can be either objects or arrays
+- Objects should be wrapped in {}
+- Arrays should be wrapped in []
+Objects and or arrays can be nested within each other
+Output will be wrapped in quotes to return as a string
+
+Insightful & revealing test cases:
+
+Empty objects and arrays
+stringify({}) // '{}'
+stringify([]) // '[]'
+
+Objects and arrays with single entry
+stringify({1: 'a'}) // '{}'
+stringify([1]) // '[1]'
+stringify(['a']) // '['a']'
+
+Flat Objects and Arrays
+stringify([1, 2, 3]) // '[1, 2, 3]'
+stringify(['a', 'b', 'c']) // '['a', 'b', 'c']'
+stringify({"x": 5, "y": "Oliver"}) // '{"x": 5, "y": "Oliver"}'
+
+Nested objects and arrays
+stringify([1, "hello", "null", {"x": 5, "y": "Oliver"}]) // '[1, "hello", "null", {"x": 5, "y": "Oliver"}]'
+ 
 
 🧠 BRAINSTORM
 What approaches could work?
+Algorithm 1: Recursion
+Time: O(N) where N is the number of elements within the object
+Space: O(N) where N is the number of elements within the object
+ 
 
 📆 PLAN
 Outline of algorithm #: 
