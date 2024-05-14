@@ -55,6 +55,53 @@ Space: O(N) where N is the number of elements within the object
  
 
 📆 PLAN
-Outline of algorithm #: 
+Outline of algorithm #: 1
+
+Create an empty string to return the result
+
+Determine if the input object is either an object or an array
+- If input is array
+    - Add '[' to the start of the string
+    - Loop through all elements of the array 
+        - If current element is a primative data type e.g. string, number, boolean, etc.
+            - Add the current element to the string
+        - If the current element is an object or an array
+            - Call the helper function for the object or array
+    - Add ']' to the end of the string
+ - If input is array
+    - Add '[' to the end of the string
+    - Loop through all key value pairs in the object
+    - Add '}' to the end of the string
+
+Return the resulting string
+
 */
+
+const formatArray = (arr) => {
+  const parts = [];
+
+  for (const val of arr) {
+    parts.push(stringify(val));
+  }
+
+  return `[${parts.join(", ")}]`;
+};
+
+const formatObject = (obj) => {};
+
+const stringify = (obj) => {
+  if (obj === null) return null;
+  if (typeof obj === "string" || obj instanceof String) return `"${obj}"`;
+  if (typeof obj === "number") return `${obj}`;
+  if (Array.isArray(obj)) return formatArray(obj);
+
+  const parts = [];
+
+  for (const [key, value] of Object.entries(obj)) {
+    parts.push(`"${key}": ${stringify(value)}`);
+  }
+
+  return `{${parts.join(", ")}}`;
+};
+
 
