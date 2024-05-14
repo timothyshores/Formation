@@ -104,4 +104,30 @@ const stringify = (obj) => {
   return `{${parts.join(", ")}}`;
 };
 
+// All test cases return true
 
+// Test primatives
+console.log(stringify(42) == "42");
+console.log(stringify(null) === null);
+console.log(stringify(3.14) == "3.14");
+console.log(stringify("hello") == '"hello"');
+
+// Empty objects and arrays
+console.log(stringify({}) === "{}");
+console.log(stringify([]) === "[]");
+
+// Objects and arrays with single entry
+console.log(stringify([1]) === "[1]");
+console.log(stringify(["a"]) === '["a"]');
+console.log(stringify({ 1: "a" }) === '{"1": "a"}');
+
+// Flat Objects and Arrays
+console.log(stringify([1, 2, 3]) === "[1, 2, 3]");
+console.log(stringify(["a", "b", "c"]) === '["a", "b", "c"]');
+console.log(stringify({ x: 5, y: "Oliver" }) === '{"x": 5, "y": "Oliver"}');
+
+// Nested objects and arrays
+console.log(
+  stringify([1, "hello", "null", { x: 5, y: "Oliver" }]) ===
+    '[1, "hello", "null", {"x": 5, "y": "Oliver"}]'
+);
