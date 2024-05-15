@@ -1,5 +1,5 @@
 /*
-'''
+
 ❓ PROMPT
 Given an array of arrays representing relations  *child, parent1, and parent2* in each row, print a string representing all children of each parent.
 
@@ -68,3 +68,54 @@ return parentRelationships.join("\n")
 🛠️ IMPLEMENT
 
 */
+
+const createRelationshipMap = (relations) => {
+  const relationshipsMap = {};
+
+  for (const relation of relations) {
+    const [child, parent1, parent2] = relation;
+    addToRelationshipToMap(parent1, child, relationshipsMap);
+    addToRelationshipToMap(parent2, child, relationshipsMap);
+  }
+
+  return relationshipsMap;
+};
+
+const addToRelationshipToMap = (parent, child, relationshipsMap) => {
+  if (parent in relationshipsMap) {
+    relationshipsMap[parent].push(child);
+  } else {
+    relationshipsMap[parent] = [child];
+  }
+};
+
+const createRelationshipStrings = (relationshipsMap) =>
+  Object.entries(relationshipsMap)
+    .map(
+      ([parent, children]) => `${parent} is the parent of ${children.join(",")}`
+    )
+    .join("\n");
+
+const parentToChild = (relations) => {
+  if (relations.length === 0) return "No family relations";
+  const relationshipsMap = createRelationshipMap(relations);
+  return createRelationshipStrings(relationshipsMap);
+};
+
+// Test Cases
+
+console.log(parentToChild([])); // "No family relations";
+
+const relationships = [
+  ["James", "Ben", "Lisa"],
+  ["George", "Taylor", "Fred"],
+  ["Jen", "Ben", "Gloria"],
+];
+
+console.log(parentToChild(relationships));
+
+// "Ben is the parent of James, Jen"
+// "Lisa is the parent of James"
+// "Taylor is the parent of George"
+// "Fred is the parent of George"
+// "Gloria is the parent of Jen"
