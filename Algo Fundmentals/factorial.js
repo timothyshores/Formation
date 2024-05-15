@@ -13,14 +13,31 @@ Note
  
 🔎 EXPLORE
 List your assumptions & discoveries:
+- Factorial is calculate by it's value n * n - 2 * n - 2 * ... 1
 
 Insightful & revealing test cases:
 
+factorial(1) == 1
+factorial(2) == 2
+factorial(3) == 6
+factorial(4) == 24
+factorial(5) == 120
+factorial(6) == 720
 
 🧠 BRAINSTORM
 What approaches could work?
+Algorithm 1: Recursion
+Time: O(N)
+Space: O(1) stack size will be n but n is a positive non-negative integer constant value
+ 
 📆 PLAN
-Outline of algorithm #: 
+Outline of algorithm #: 1
+
+Base case: n == 1
+    return 1
+
+Recursive case: n > 1
+    return n * factorial(n - 1)
 
 🛠️ IMPLEMENT
 
