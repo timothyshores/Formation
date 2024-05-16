@@ -70,3 +70,38 @@ const moneyFormat = (amount) => {
 
   return formattedAmount;
 };
+
+// All test cases return true
+
+// happy cases
+console.log(moneyFormat(0) == "$0.00");
+console.log(moneyFormat(1) == "$1.00");
+console.log(moneyFormat(-1) == "($1.00)");
+console.log(moneyFormat(16) == "$16.00");
+console.log(moneyFormat(123) == "$123.00");
+
+// decimal variants
+console.log(moneyFormat(0.01) == "$0.01");
+console.log(moneyFormat(0.02) == "$0.02");
+console.log(moneyFormat(0.3) == "$0.30");
+console.log(moneyFormat(0.0001) == "$0.00");
+console.log(moneyFormat(4.954) == "$4.95");
+console.log(moneyFormat(4.955) == "$4.96");
+console.log(moneyFormat(4) == "$4.00");
+
+// comma variants
+console.log(moneyFormat(1234) == "$1,234.00");
+console.log(moneyFormat(1001.01) == "$1,001.01");
+console.log(moneyFormat(50000) == "$50,000.00");
+console.log(moneyFormat(6789123456789) == "$6,789,123,456,789.00");
+
+// negative variants
+console.log(moneyFormat(-0.01) == "($0.01)");
+console.log(moneyFormat(-0.02) == "($0.02)");
+console.log(moneyFormat(-0.001) == "($0.00)");
+console.log(moneyFormat(-1000) == "($1,000.00)");
+
+// complex variants
+console.log(moneyFormat(-34567) == "($34,567.00)");
+console.log(moneyFormat(-12345.67) == "($12,345.67)");
+console.log(moneyFormat(-12345.678) == "($12,345.68)");
