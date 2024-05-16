@@ -41,3 +41,32 @@ function moneyFormat(amount) {
 def moneyFormat(amount: float) -> str:
 
 */
+
+
+const addCommaToInt = (str) =>
+  str.length > 3 ? `${addCommaToInt(str.slice(0, -3))},${str.slice(-3)}` : str;
+
+const moneyFormat = (amount) => {
+  // Check if the input amount is negative
+  const isNegative = amount < 0;
+
+  // If the amount is negative, make it positive for easier formatting
+  if (isNegative) amount *= -1;
+
+  // Remove leading zeros and round amount float to two decimal places
+  amount = parseFloat(amount.toFixed(2));
+
+  // Convert amount into a string of arrays for dollars and cents
+  const [dollars, cents] = amount.toFixed(2).split(".");
+
+  // Add commas to dollars
+  const formattedDollars = addCommaToInt(dollars);
+
+  // Add dollars sign and dot formatting
+  let formattedAmount = `$${formattedDollars}.${cents}`;
+
+  // Handle negative amounts by wrapping in parentheses
+  if (isNegative) formattedAmount = `(${formattedAmount})`;
+
+  return formattedAmount;
+};
