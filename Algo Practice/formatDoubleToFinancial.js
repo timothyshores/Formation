@@ -22,6 +22,20 @@ moneyFormat(123) == "$123.00"
 moneyFormat(0.01) == "$1.01"
 moneyFormat(0) == "$0.00"
 
+BRAINSTORM
+Approach: Check if amount is negative, convert to string, manipulate and return string
+Time: O(1)
+Space: O(1)
+
+PLAN
+- Check if amount is negative and store in a boolean variable
+- Remove leading zeros, remove digits < .01 or add digits for cents
+- Split string into an array for dollars and cents
+- Add commas to dollar amonunt
+- Add "$" to the start of the string and '.' between dollars and cents
+- If amount is negative then wrap in "()""
+- Return final string
+
 FUNCTION SIGNATURE
 function moneyFormat(amount) {
 def moneyFormat(amount: float) -> str:
