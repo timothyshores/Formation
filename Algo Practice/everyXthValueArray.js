@@ -56,4 +56,29 @@ Outline of algorithm #: 2
 
 */
 
+const everyXthFor = (arr, x) => {
+  const results = [];
+
+  for (let i = x - 1; i < arr.length; i += x) {
+    results.push(arr[i]);
+  }
+
+  return results;
+};
+
+const everyXthRecursive = (arr, x) => {
+  const results = [];
+
+  const helper = (index) => {
+    if (index >= arr.length) return;
+    results.push(arr[index]);
+    helper(index + x);
+  };
+
+  helper(x - 1);
+  return results;
+};
+
+const forLoopToString = (arr, x) => JSON.stringify(everyXthFor(arr, x));
+
 // All test cases return true
