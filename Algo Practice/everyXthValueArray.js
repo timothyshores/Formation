@@ -82,3 +82,27 @@ const everyXthRecursive = (arr, x) => {
 const forLoopToString = (arr, x) => JSON.stringify(everyXthFor(arr, x));
 
 // All test cases return true
+
+// For loop implementation tests
+console.log(JSON.stringify(everyXthFor([], 1000)) === "[]");
+console.log(JSON.stringify(everyXthFor([5], 1)) === "[5]");
+console.log(JSON.stringify(everyXthFor([5], 2)) === "[]");
+console.log(JSON.stringify(everyXthFor([1, 2, 3, 4, 5, 6], 2)) === "[2,4,6]");
+console.log(JSON.stringify(everyXthFor([1, 2, 3, 4, 5, 6], 3)) === "[3,6]");
+console.log(JSON.stringify(everyXthFor([1, 2, 3, 4, 10, 6], 5)) === "[10]");
+console.log(JSON.stringify(everyXthFor([1, 2, 3, 4, 10, 6], 8)) === "[]");
+
+// Recursive implementation tests
+console.log(JSON.stringify(everyXthRecursive([], 1000)) === "[]");
+console.log(JSON.stringify(everyXthRecursive([5], 1)) === "[5]");
+console.log(JSON.stringify(everyXthRecursive([5], 2)) === "[]");
+console.log(
+  JSON.stringify(everyXthRecursive([1, 2, 3, 4, 5, 6], 2)) === "[2,4,6]"
+);
+console.log(
+  JSON.stringify(everyXthRecursive([1, 2, 3, 4, 5, 6], 3)) === "[3,6]"
+);
+console.log(
+  JSON.stringify(everyXthRecursive([1, 2, 3, 4, 10, 6], 5)) === "[10]"
+);
+console.log(JSON.stringify(everyXthRecursive([1, 2, 3, 4, 10, 6], 8)) === "[]");
