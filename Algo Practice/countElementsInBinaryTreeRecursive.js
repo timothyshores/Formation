@@ -69,3 +69,20 @@ console.log(
 );
 console.log(countTree(new TreeNode()) === 1);
 
+// Refactor to single line ternary
+countTreeTernary = (root) =>
+  root ? 1 + countTreeTernary(root.left) + countTreeTernary(root.right) : 0;
+
+// All refactored test cases return true
+console.log(countTree(null) === 0);
+console.log(countTree(new TreeNode(1, new TreeNode(2), new TreeNode(3))) === 3);
+console.log(
+  countTree(
+    new TreeNode(
+      2,
+      new TreeNode(29, new TreeNode(26)),
+      new TreeNode(4, null, new TreeNode(2, new TreeNode(9)))
+    )
+  ) === 6
+);
+console.log(countTree(new TreeNode()) === 1);
