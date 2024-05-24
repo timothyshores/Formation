@@ -180,3 +180,56 @@ const getLargestDirectory = (fileStorage) => {
 
 const processCommands = (commands) =>
   getLargestDirectory(createFileStorage(commands));
+
+// All test cases return true
+
+// Empty input array returns null
+console.log(processCommands([]) === null);
+
+// All files in the same directory
+console.log(
+  processCommands(["cd dir1", "touch fileA", "touch fileB", "touch fileC"]) ===
+    "dir1"
+);
+
+// Provided example
+console.log(
+  processCommands([
+    "cd dir1",
+    "touch fileA",
+    "cd dir2",
+    "touch fileB",
+    "touch fileB",
+    "cd dir1",
+    "touch fileC",
+  ]) === "dir1"
+);
+
+// Multiple directories with equal number of files
+console.log(
+  ["dir1", "dir2", "dir3"].includes(
+    processCommands([
+      "cd dir1",
+      "touch fileA",
+      "cd dir2",
+      "touch fileB",
+      "cd dir3",
+      "touch fileC",
+    ])
+  )
+);
+
+// Multiple directories with different number of files
+console.log(
+  processCommands([
+    "cd dir1",
+    "touch fileA",
+    "touch fileB",
+    "cd dir2",
+    "touch fileC",
+    "cd dir3",
+    "touch fileD",
+    "touch fileE",
+    "touch fileF",
+  ]) === "dir3"
+);
