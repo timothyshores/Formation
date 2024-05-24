@@ -51,4 +51,95 @@ Notes
     - E.g. Dir1 and dir1 are 2 seperate directories
     - File1 and file1 are 2 unique files would be 2 unique files in a directory
 
+🔎 EXPLORE
+List your assumptions & discoveries:
+- Commands is an array of strings 
+    - Every string represents a command
+        - Types of commands
+            - cd changes directory
+            - touch create a file
+        - Both commands will be followed by a space
+            - Following cd is the directory to navigate into
+            - Following touch is the file name to be created
+        - If the touch command is duplicated in the same directory only one file is created with that name
+ - After processing all commands return the directory with the most files
+
+Insightful & revealing test cases:
+
+// Basic usage
+console.log(processCommands([
+  "cd dir1",
+  "touch fileA",
+  "cd dir2",
+  "touch fileB",
+  "touch fileB",
+  "cd dir1",
+  "touch fileC",
+])); // 'dir1'
+
+// All files in the same directory
+console.log(processCommands([
+  "cd dir1",
+  "touch fileA",
+  "touch fileB",
+  "touch fileC",
+])); // 'dir1'
+
+// Multiple directories with equal number of files
+console.log(processCommands([
+  "cd dir1",
+  "touch fileA",
+  "cd dir2",
+  "touch fileB",
+  "cd dir3",
+  "touch fileC",
+])); // Returns either 'dir1', 'dir2' or 'dir3
+
+console.log(processCommands([])); // null or ""
+
+// Multiple directories with different number of files
+console.log(processCommands([
+  "cd dir1",
+  "touch fileA",
+  "touch fileB",
+  "cd dir2",
+  "touch fileC",
+  "cd dir3",
+  "touch fileD",
+  "touch fileE",
+  "touch fileF",
+])); // 'dir3'
+
+🧠 BRAINSTORM
+What approaches could work?
+Algorithm 1: Create hashmap, set directory name as key and files as a set or array of strings. Return key with most number of unique elements or file names
+Time: O(N) where N is the number of operations
+Space: O(N) where N is the number of unique directory and file names
+
+📆 PLAN
+Outline of algorithm #: 1
+
+Initialize an empty object call data
+
+Iterate through the array
+- Call split on every element in the commands input array
+    - First element will be either "cd" or "touch" to change directory or create a file
+    - Second element will be the directory or file name if the command is "cd" or "touc
+- If command is "cd"
+    - Initialize the key to the second element of the array
+- If command is "touch"
+    - Add the second element of the array to the Set
+
+Initialize two variables
+    - let maxSize = 0
+    - let largestDirectory = ''
+
+Iterate through all key value pairs in the object
+- Call Set.size to get the number of unique elements in the Set
+- If the current directory has more unique files then maxSize
+    - Set maxSize to the number of unique files in the current directory
+    - Set largestDirectory to the current directory
+
+Return largestDirectory
+
 */
