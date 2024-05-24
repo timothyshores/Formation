@@ -143,3 +143,40 @@ Iterate through all key value pairs in the object
 Return largestDirectory
 
 */
+
+const createFileStorage = (commands) => {
+  const fileStorage = {};
+  let currentDirectory = null;
+
+  for (const command of commands) {
+    const [commandType, name] = command.split(" ");
+
+    if (commandType === "cd") {
+      const directoryName = name;
+      fileStorage[directoryName] = new Set();
+      currentDirectory = directoryName;
+    } else {
+      const fileName = name;
+      fileStorage[currentDirectory].add(fileName);
+    }
+  }
+
+  return fileStorage;
+};
+
+const getLargestDirectory = (fileStorage) => {
+  let largestDirectory = null;
+  let maxSize = 0;
+
+  for (const [currDirectory, files] of Object.entries(fileStorage)) {
+    if (files.size > maxSize) {
+      maxSize = files.size;
+      largestDirectory = currDirectory;
+    }
+  }
+
+  return largestDirectory;
+};
+
+const processCommands = (commands) =>
+  getLargestDirectory(createFileStorage(commands));
