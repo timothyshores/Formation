@@ -58,3 +58,28 @@ Iterate through the prices array
 Return maxProfit
 
 */
+
+const maxProfitPotential = (prices) => {
+  let maxProfit = 0;
+  let minPrice = Infinity;
+
+  for (const price of prices) {
+    minPrice = Math.min(minPrice, price);
+    maxProfit = Math.max(maxProfit, price - minPrice);
+  }
+
+  return maxProfit;
+};
+
+// All test cases return true
+console.log(maxProfitPotential([]) == 0);
+console.log(maxProfitPotential([1]) == 0);
+console.log(maxProfitPotential([1, 9]) == 8);
+console.log(maxProfitPotential([8, 2]) == 0);
+console.log(maxProfitPotential([3, 1, 5]) == 4);
+console.log(maxProfitPotential([7, 6, 4, 3, 1]) == 0);
+console.log(maxProfitPotential([3, 3, 3, 3, 3, 3]) == 0);
+console.log(maxProfitPotential([7, 1, 5, 3, 6, 4]) == 5);
+console.log(maxProfitPotential([1, 2, 3, 5, 6, 7]) == 6);
+console.log(maxProfitPotential([2, 5, 7, 1, 3, 4, 5]) == 5);
+console.log(maxProfitPotential([0.55, 1.23, 3.53, 1.75, 5.16]) == 4.61);
