@@ -75,3 +75,52 @@ Run tests. Methodically debug & analyze issues.
 
 '''
 */
+
+class Node {
+  constructor(value, next = null, prev = null) {
+    this.value = value;
+    this.next = next;
+    this.prev = prev;
+  }
+}
+
+class LLQueue {
+  constructor() {
+    this.head = null;
+    this.tail = null;
+    this.count = 0;
+  }
+
+  enqueue(value) {
+    const newNode = new Node(value);
+    if (this.count === 0) {
+      this.head = newNode;
+      this.tail = newNode;
+    } else {
+      newNode.prev = this.tail;
+      this.tail.next = newNode;
+      this.tail = newNode;
+    }
+    this.count += 1;
+  }
+
+  dequeue() {
+    if (this.count === 0) return undefined;
+
+    const oldHead = this.head;
+    this.head = this.head.next;
+
+    if (this.head) {
+      this.head.prev = null;
+    } else {
+      this.tail = null;
+    }
+
+    this.count -= 1;
+    return oldHead.value;
+  }
+
+  size() {
+    return this.count;
+  }
+}
