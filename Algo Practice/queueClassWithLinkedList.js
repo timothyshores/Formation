@@ -124,3 +124,69 @@ class LLQueue {
     return this.count;
   }
 }
+
+const addResult = (results, test, actual, expected) => {
+  results.push({
+    Test: test,
+    Actual: actual,
+    Expected: expected,
+    Pass: actual === expected,
+  });
+};
+
+const results = [];
+const q = new LLQueue();
+
+// Test Case 1: Enqueue elements and check the size
+addResult(results, "Initial size", q.size(), 0);
+q.enqueue(1);
+addResult(results, "Enqueue 1", q.size(), 1);
+q.enqueue(2);
+addResult(results, "Enqueue 2", q.size(), 2);
+q.enqueue(3);
+addResult(results, "Enqueue 3", q.size(), 3);
+
+// Test Case 2: Dequeue elements and check the size
+let dequeueResult = q.dequeue();
+addResult(results, "Dequeue 1", dequeueResult, 1);
+addResult(results, "Size after Dequeue 1", q.size(), 2);
+dequeueResult = q.dequeue();
+addResult(results, "Dequeue 2", dequeueResult, 2);
+addResult(results, "Size after Dequeue 2", q.size(), 1);
+dequeueResult = q.dequeue();
+addResult(results, "Dequeue 3", dequeueResult, 3);
+addResult(results, "Size after Dequeue 3", q.size(), 0);
+
+// Test Case 3: Enqueue and dequeue in an alternating fashion
+q.enqueue(4);
+addResult(results, "Enqueue 4", q.size(), 1);
+dequeueResult = q.dequeue();
+addResult(results, "Dequeue 4", dequeueResult, 4);
+addResult(results, "Size after Dequeue 4", q.size(), 0);
+q.enqueue(5);
+q.enqueue(6);
+addResult(results, "Enqueue 5, 6", q.size(), 2);
+dequeueResult = q.dequeue();
+addResult(results, "Dequeue 5", dequeueResult, 5);
+addResult(results, "Size after Dequeue 5", q.size(), 1);
+
+// Test Case 4: Dequeue from an empty queue
+dequeueResult = q.dequeue();
+addResult(results, "Dequeue 6", dequeueResult, 6);
+dequeueResult = q.dequeue();
+addResult(results, "Dequeue from empty", dequeueResult, undefined);
+addResult(results, "Size after empty Dequeue", q.size(), 0);
+
+// Test Case 5: Enqueue elements after completely dequeuing the queue
+q.enqueue(7);
+addResult(results, "Enqueue 7", q.size(), 1);
+q.enqueue(8);
+addResult(results, "Enqueue 8", q.size(), 2);
+dequeueResult = q.dequeue();
+addResult(results, "Dequeue 7", dequeueResult, 7);
+addResult(results, "Size after Dequeue 7", q.size(), 1);
+dequeueResult = q.dequeue();
+addResult(results, "Dequeue 8", dequeueResult, 8);
+addResult(results, "Size after Dequeue 8", q.size(), 0);
+
+console.table(results);
