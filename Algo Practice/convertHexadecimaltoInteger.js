@@ -67,3 +67,19 @@ const hexToInt = (hexString) => {
   return result;
 };
 
+const hexToIntRecursive = (hexString) => {
+  if (!hexString) return 0;
+
+  const helper = (index = 0) => {
+    // Base Case
+    if (index === hexString.length - 1) return hexMap[hexString[index]];
+    // Recursive Case
+    return (
+      helper(index + 1) +
+      hexMap[hexString[index]] * 16 ** (hexString.length - index - 1)
+    );
+  };
+
+  return helper();
+};
+\
