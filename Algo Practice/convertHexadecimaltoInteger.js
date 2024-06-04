@@ -82,4 +82,27 @@ const hexToIntRecursive = (hexString) => {
 
   return helper();
 };
-\
+
+console.log("Iterative Implemenation Tests");
+console.log(hexToInt("1") == 1);
+console.log(hexToInt("A") == 10);
+console.log(hexToInt("10") == 16);
+console.log(hexToInt("1A") == 26);
+console.log(hexToInt("FF") == 255);
+console.log(hexToInt("100") == 256);
+console.log(hexToInt("FACE") == 64206);
+console.log(hexToInt("123456") == 1193046);
+console.log(hexToInt("0") == 0);
+console.log(hexToInt("") == 0);
+console.log();
+console.log("Recursive Implemenation Tests");
+console.log(hexToIntRecursive("1") == 1);
+console.log(hexToIntRecursive("A") == 10);
+console.log(hexToIntRecursive("10") == 16);
+console.log(hexToIntRecursive("1A") == 26);
+console.log(hexToIntRecursive("FF") == 255);
+console.log(hexToIntRecursive("100") == 256);
+console.log(hexToIntRecursive("FACE") == 64206);
+console.log(hexToIntRecursive("123456") == 1193046);
+console.log(hexToIntRecursive("0") == 0);
+console.log(hexToIntRecursive("") == 0);
