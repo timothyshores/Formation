@@ -40,3 +40,20 @@ Recursive cases
 - Recursively call bunnyEarsTwist(bunnies -1)
 
 */
+
+const bunnyEarsTwist = (bunnies) => {
+  if (bunnies === 0) return 0;
+
+  const ears = bunnies % 2 === 0 ? 3 : 2;
+  return ears + bunnyEarsTwist(bunnies - 1);
+};
+
+// All test cases return true
+console.log(bunnyEarsTwist(0) == 0);
+console.log(bunnyEarsTwist(1) == 2);
+console.log(bunnyEarsTwist(2) === 3);
+console.log(bunnyEarsTwist(3) == 7);
+console.log(bunnyEarsTwist(4) == 10);
+console.log(bunnyEarsTwist(5) == 12);
+console.log(bunnyEarsTwist(10) == 25);
+console.log(bunnyEarsTwist(12) == 30);
