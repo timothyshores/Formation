@@ -38,3 +38,27 @@ const isPortmanteau = (word1, word2, proposed) => {
 
   return false;
 };
+
+const tests = [
+  ["smoke", "fog", "smog", true],
+  ["snake", "fog", "smog", false],
+  ["foot", "ball", "football", false],
+  ["lunch", "breakfast", "brunch", true],
+  ["shrink", "inflation", "shrinkflation", true],
+  ["smoke", "fog", "smoke", false],
+  ["smoke", "fog", "fog", false],
+  ["smoke", "smog", "smokeog", true],
+  ["smart", "stupid", "smupid", true],
+  ["snap", "crackle", "snackle", true],
+  ["smart", "phone", "smartphone", false],
+  ["blue", "berry", "blueberry", false],
+];
+
+const testResults = tests.map((test, index) => {
+  const [word1, word2, proposed, expected] = test;
+  const actual = isPortmanteau(word1, word2, proposed);
+  const result = expected === actual ? "Passed" : "Failed";
+  return { word1, word2, proposed, expected, actual, result };
+});
+
+console.table(testResults);
