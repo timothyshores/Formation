@@ -21,3 +21,20 @@ function isPortmanteau(word1, word2, proposed) {
 def isPortmanteau(word1: str, word2: str, proposed: str) -> bool:
 
 */
+
+const isPortmanteau = (word1, word2, proposed) => {
+  if (proposed.length >= word1.length + word2.length) return false;
+
+  for (let i = 1; i < proposed.length; i++) {
+    const prefix = proposed.slice(0, i);
+    const suffix = proposed.slice(i);
+
+    if (
+      (word1.startsWith(prefix) && word2.endsWith(suffix)) ||
+      (word2.startsWith(prefix) && word1.endsWith(suffix))
+    )
+      return true;
+  }
+
+  return false;
+};
