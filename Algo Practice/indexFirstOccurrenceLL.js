@@ -92,3 +92,49 @@ const firstIndexRecursive = (node, target) => {
 
   return helper(node, 0);
 };
+
+// Test Data
+let list1 = new Node(1, new Node(2, new Node(3, new Node(4, new Node(5)))));
+let list2 = new Node(2);
+let list3 = new Node(
+  -1,
+  new Node(-2, new Node(-3, new Node(-4, new Node(-5))))
+);
+let list4 = new Node(1, new Node(2, new Node(3, new Node(2, new Node(1)))));
+
+// [Description, list, target, expected]
+const testCases = [
+  ["Empty list, target 12", null, 12, -1],
+  ["List 1, target 9", list1, 9, -1],
+  ["List 1, target 3", list1, 3, 2],
+  ["List 2, target 2", list2, 2, 0],
+  ["List 2, target 1", list2, 1, -1],
+  ["List 3, target -2", list3, -2, 1],
+  ["List 4, target 2", list4, 2, 1],
+  ["List 4, target 1", list4, 1, 0],
+];
+
+// Log helper
+const logPassOrFail = (actual, expected) =>
+  actual === expected ? "Pass" : "Fail";
+
+// Array of test result objects
+const testResults = testCases.map((testCase) => {
+  const [description, list, target, expected] = testCase;
+
+  const iterativeActual = firstIndexIterative(list, target);
+  const recursiveActual = firstIndexRecursive(list, target);
+
+  return {
+    Description: description,
+    Target: target,
+    Expected: expected,
+    "Iterative Actual": iterativeActual,
+    "Recursive Actual": recursiveActual,
+    "Iterative Result": logPassOrFail(iterativeActual, expected),
+    "Recursive Result": logPassOrFail(recursiveActual, expected),
+  };
+});
+
+// Log test results in table
+console.table(testResults);
