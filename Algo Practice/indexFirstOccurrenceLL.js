@@ -60,3 +60,35 @@ Recursive Case
 Call the helper function starting at index 0
 
 */
+
+class Node {
+  constructor(value, next) {
+    this.value = value;
+    this.next = next;
+  }
+}
+
+const firstIndexIterative = (node, target) => {
+  let index = 0;
+
+  while (node) {
+    if (node.value === target) return index;
+    index += 1;
+    node = node.next;
+  }
+
+  return -1;
+};
+
+const firstIndexRecursive = (node, target) => {
+  const helper = (node, index) => {
+    // Base Case
+    if (!node) return -1;
+    // Found target in current node
+    if (node.value === target) return index;
+    // Recursive case
+    return helper(node.next, index + 1);
+  };
+
+  return helper(node, 0);
+};
